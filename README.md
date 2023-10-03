@@ -52,21 +52,18 @@ The library is a [Vue plugin](https://v3.vuejs.org/guide/plugins.html). The `ins
 
 The components are also exported by [index.ts](src/index.ts) so that the client app can import them individually and register them locally, instead of using the library as a plugin. This may be a better option if the client app only use a small set of components in your library.
 
-As there are already many UI component libraries for Vue 3, you may just want to build on top of one of them and create components for your specific needs. The Component B in this starter shows the example of using [PrimeVue](https://www.primefaces.org/primevue/) as the fundation library. However, this means the client app shall also use the same fundation component library as your library does.
+As there are already many UI component libraries for Vue 3, you may just want to build on top of one of them and create components for your specific needs.
 
-The doc app itself is a client app of the libary, therefore PrimeVue is imported in [docs/.vitepress/theme/index.js](docs/.vitepress/theme/index.js). The configuration in [docs/.vitepress/config.js](docs/.vitepress/config.js) below forces VitePress to resolve these modules with no duplication, avoiding error at runtime, as PrimeVue also has Vue in its dependency.
 
 ```js
 module.exports = {
   vite: {
     resolve: {
-      dedupe: ['vue', /primevue\/.+/],
+      dedupe: ['vue'],
     },
   },
 }
 ```
-
-> In [vite.config.ts](vite.config.ts), format 'umd' is not present in `build.lib.formats` option. This is because the PrimeVue components used by this library are externalized, and therefore requiring corresponding options in `rollupOptions.output.globals`. To avoid adding global varaibles for PrimeVue components, 'umd' is removed for simplicity.
 
 ### Utilities and constants
 
@@ -113,12 +110,11 @@ The following are some strategies to reduce the size of your library:
 
 #### Externalization
 
-If you expect the client app of your library may also need the same dependency, you may externalize the dependency. For example, to exclude PrimeVue from your library build artifact, in [vite.config.ts](vite.config.ts), you may have
 
 ```js
 module.exports = defineConfig({
     rollupOptions: {
-      external: ['vue', /primevue\/.+/]
+      external: ['vue',]
     }
   }
 })

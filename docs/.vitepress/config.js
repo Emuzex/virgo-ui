@@ -26,7 +26,7 @@ module.exports = {
       alias: {
         'my-lib': path.resolve(__dirname, '../../src'),
       },
-      dedupe: ['vue', /primevue\/.+/], // avoid error when using dependencies that also use Vue
+      dedupe: ['vue'], // avoid error when using dependencies that also use Vue
     }
   }
 }

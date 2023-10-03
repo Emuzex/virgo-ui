@@ -5,15 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  primeflex:
-    specifier: 3.3.1
-    version: 3.3.1
-  primeicons:
-    specifier: 6.0.1
-    version: 6.0.1
-  primevue:
-    specifier: 3.29.2
-    version: 3.29.2(vue@3.3.4)
   vue:
     specifier: 3.3.4
     version: 3.3.4
@@ -1665,22 +1656,6 @@ packages:
       ansi-styles: 5.2.0
       react-is: 18.2.0
     dev: true
-
-  /primeflex@3.3.1:
-    resolution: {integrity: sha512-zaOq3YvcOYytbAmKv3zYc+0VNS9Wg5d37dfxZnveKBFPr7vEIwfV5ydrpiouTft8MVW6qNjfkaQphHSnvgQbpQ==}
-    dev: false
-
-  /primeicons@6.0.1:
-    resolution: {integrity: sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA==}
-    dev: false
-
-  /primevue@3.29.2(vue@3.3.4):
-    resolution: {integrity: sha512-zMk1w5AySLR6ipWH2fONKtDabHrvRZhZFI1OdoiBDdMhZpARmWuCXwE/ZFusUh5Te0RBEd3iVCiizjUkSRraRQ==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.3.4
-    dev: false
 
   /prismjs@1.29.0:
     resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}

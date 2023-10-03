@@ -2,15 +2,11 @@
 import Basic from './demo/ComponentB/Basic.vue'
 </script>
 # Component B
-
-This component depends on third-party component library for Vue 3:
-
-* Component (button) from [PrimeVue](https://www.primefaces.org/primevue/)
-* CSS from [PrimeIcons](https://www.primefaces.org/showcase/icons.xhtml) and [PrimeFlex](https://www.primefaces.org/primeflex/)
+This is a simple div with a text.
 
 ## Example Usage
 
-Click the buttons to change the count.
+It just displays a div
 
 <DemoContainer>
   <Basic/>
