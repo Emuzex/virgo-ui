@@ -1,6 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import DemoContainer from '../components/DemoContainer.vue'
-import MyLib from 'my-lib'
+import MyLib from 'virgo-ui'
 
 import './custom.css'
 

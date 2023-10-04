@@ -1,15 +1,15 @@
 const path = require('path')
 
 module.exports = {
-  title: 'My Lib',
-  description: 'Just playing around.',
+  title: 'Virgo UI',
+  description: 'Virgo-UI is a versatile Vue3 component library built with TypeScript, offering a collection of reusable components and a unique headless mode for enhanced customization. Optimized for performance and flexibility, it\'s a developer-friendly solution for diverse project needs.',
   themeConfig: {
-    repo: 'https://github.com/wuruoyun/vue-component-lib-starter',
+    repo: 'https://github.com/Emuzex/virgo-ui',
     sidebar: [
       {
         text: 'Introduction',
         children: [
-          { text: 'What is My Lib?', link: '/' },
+          { text: 'About Virgo', link: '/' },
           { text: 'Getting Started', link: '/guide/' },
         ],
       }, {
@@ -24,7 +24,7 @@ module.exports = {
   vite: {
     resolve: {
       alias: {
-        'my-lib': path.resolve(__dirname, '../../src'),
+        'virgo-ui': path.resolve(__dirname, '../../src'),
       },
       dedupe: ['vue'], // avoid error when using dependencies that also use Vue
     }
