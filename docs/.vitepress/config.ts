@@ -35,7 +35,7 @@ export default defineConfig({
       copyright: 'Copyright © 2023-present Futó Mirkó & Péli Ferenc',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/emuzex/virgo-vue' },
+      { icon: 'github', link: 'https://github.com/emuzex/virgo-ui' },
 
       // { icon: 'discord', link: 'https://discord.gg/8MTQuasmZf' },
     ],
