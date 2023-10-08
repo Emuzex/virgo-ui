@@ -1,23 +1,64 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "esnext",
-    "useDefineForClassFields": true,
     "module": "esnext",
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
     "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationDir": "./dist/types",
-    "isolatedModules": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "preserve",
     "types": [
-      "vite/client"
-    ]
+      "node"
+    ],
+    "paths": {
+      "anu-vue": [
+        "./packages/anu-vue/src/index.ts"
+      ],
+      "@/*": [
+        "./packages/anu-vue/src/*"
+      ],
+      "@anu-vue/core": [
+        "./packages/anu-vue/src/index.ts"
+      ],
+      "@anu-vue/core/*": [
+        "./packages/anu-vue/src/*"
+      ],
+      "@anu-vue/preset-theme-default": [
+        "./packages/preset-theme-default/src/index.ts"
+      ],
+      "@anu-vue/preset-theme-default/*": [
+        "./packages/preset-theme-default/src/*"
+      ],
+      "@anu-vue/nuxt": [
+        "./packages/anu-nuxt/src/module.ts"
+      ]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/index.js"]
+  "include": [
+    "./packages/*/src/**/*",
+    "./packages/anu-vue/auto-imports.d.ts",
+    "./packages/anu-vue/shims.d.ts",
+    "./packages/anu-vue/volar.d.ts",
+    "./docs/components/**/*",
+    // "./docs/components/Playground.vue",
+    "./docs/utils/*",
+    "./docs/.vitepress/shims.d.ts",
+    "./docs/.vitepress/theme/index.ts"
+  ],
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/playground/**"
+  ]
 }

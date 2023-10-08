@@ -1,9 +1,9 @@
 node_modules
-.DS_Store
 dist
-dist-ssr
-*.local
-docs/.vuepress/.cache
-docs/.vuepress/.temp
-types
-.idea
+*.zip
+
+# General
+.DS_Store
+.idea/
+
+packages/anu-vue/component-meta

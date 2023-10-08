@@ -1,0 +1,52 @@
+{
+  "name": "@anu-vue/preset-theme-default",
+  "version": "0.15.2",
+  "description": "Default theme preset for Anu framework.",
+  "type": "module",
+  "private": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "*.d.ts",
+    "*.css"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "author": "JD Solanki <https://github.com/jd-solanki>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/jd-solanki",
+  "homepage": "https://anu-vue.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jd-solanki/anu.git",
+    "directory": "packages/preset-theme-default"
+  },
+  "bugs": {
+    "url": "https://github.com/jd-solanki/anu/issues"
+  },
+  "keywords": [
+    "component library",
+    "ui components",
+    "vuejs",
+    "vue"
+  ],
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@unocss/core": "^0.51.13",
+    "@unocss/reset": "^0.51.13",
+    "fs-extra": "^11.1.1",
+    "rollup-plugin-scss": "^4.0.0",
+    "sass": "^1.62.1"
+  }
+}

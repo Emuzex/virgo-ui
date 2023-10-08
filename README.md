@@ -1,179 +1,71 @@
-# virgo-ui
- Virgo-UI is a versatile Vue3 component library built with TypeScript, offering a collection of reusable components and a unique headless mode for enhanced customization. Optimized for performance and flexibility, it's a developer-friendly solution for diverse project needs.
+<h1 align="center">
+   <a href="https://anu-vue.netlify.app/" target="_blank" align="center">
+      Anu
+   </a>
+</h1>
 
-> Create your own [Vue 3](https://v3.vuejs.org/) component library with TypeScript, [Vite](https://vitejs.dev) and [VitePress](https://vitepress.vuejs.org/).
+<p align="center"><b>DX focused utility based vue component library</b></p>
 
-Sooner or later, you will find that creating a component library is much better than having all components inside your app project. A component library force to you remove app specific logic from your components, making it easier to test and reuse them in other apps.
+<p align="center">
+   <a href="https://github.com/jd-solanki/anu/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/jd-solanki/anu" alt="license">
+   </a>
+   <a href="https://github.com/jd-solanki/anu/releases">
+    <img src="https://img.shields.io/github/release/jd-solanki/anu.svg" alt="GitHub release">
+  </a>
+   <a href="https://twitter.com/me_jd_solanki" target="_blank">
+      <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/me_jd_solanki">
+   </a>
+</p>
 
-Once the components are in a library, documentation becomes critical. This starter project includes a documentation app powered by VitePress. It not only documents the usage of the component, but also provides a testing bed during the development of components. See the generated documentation app [here](https://sharp-babbage-154f0a.netlify.com/).
+## Features ✨
 
-## Setup
+- 🥳 **DX Focused** - Use bare minimum code to build great UI
+- ✌🏻 **Flexibility** - With UnoCSS's arbitrary values and component customization, build desired UI in no time
+- 💎 **[Pure CSS Icons](https://github.com/unocss/unocss/tree/main/packages/preset-icons/)** - Use any icon from the library you love
+- ⚙️ **[Configurable UI](https://anu-vue.netlify.app/guide/base-components/typography.html#config-array)** - Customize UI via configurable array instead of writing component markup again
+- 🖋 **Neat & clean design** - Anu provides carefully crafted UI components to build stunning & professional UIs
+- ⚡️ **Built using powerful tools** - [UnoCSS](https://github.com/unocss/unocss), [VueUse](https://github.com/vueuse/vueuse) & [Floating UI](https://github.com/floating-ui/floating-ui)
+- 🦾 **Written in TypeScript**
+- 🧪 **Hackable** - Anu is configurable via UnoCSS shortcuts. Want to create [bootstrap like buttons](https://anu-vue.netlify.app/guide/getting-started/customization.html#component-customization)? You can. 🤯
 
-> When running `docs:dev` for the first time, you may encounter error like `vitepress data not properly injected in app` in your browser. Restart the server and reload the browser. Please refer to [issue #30](https://github.com/wuruoyun/vue-component-lib-starter/issues/30) for more details.
+<br>
 
-```bash
-# install dependencies
-npm install
+> Anu means Atom in [Sanskrit](https://en.wikipedia.org/wiki/Sanskrit) ⚛️
 
-# start the doc app with hot reload, great for testing components
-npm run docs:dev
+<br>
 
-# build the library, available under dist
-npm run build
+[![Try now badge](https://img.shields.io/badge/Try%20Now-CodeSandbox-hsl(265%2C97%25%2C66%25)?style=for-the-badge&logo=codesandbox)](https://codesandbox.io/p/github/jd-solanki/anu-demo/master)
 
-# build the doc app, available under docs/.vitepress/dist
-npm run docs:build
+<br>
 
-# preview the doc app locally from docs/.vitepress/dist
-npm run docs:serve
-```
+## Installation 🛠️
 
-You may use [Netlify](https://www.netlify.com/) to auto build and deploy the doc app like this project does.
+Please refer to the [docs](https://anu-vue.netlify.app/guide/getting-started/installation.html)
 
-## Develop and test locally
+## Future 🔮
 
-The best way to develop and test your component is by creating demos in `docs/components/demo` folder, as shown by the example components.
+I will continue to develop this project if I get a positive response. I will introduce more components and amazing things like configurable array if I will be able to spend more time on OSS development.
 
-If you want to test the library in your Vue3 app locally:
+Help me do full-time Open source by sponsoring me.
 
-- In the root folder of this library, run `npm link`. This will create a symbolic link to the library.
-- In the root folder of your client app, run `npm link my-lib`. This will add the symbolic link to the `node_modules` folder in your client app.
-- You can now import `my-lib` in your client app.
+If you like this lib do give it a star or spread some words on Twitter.
 
-There is no need to add `my-lib` to your client app's dependency in this case.
+Thanks 🙏
 
-If you made changes to the library, you will need to rebuild the library. Your Vue3 app shall hot reload when the building of library is completed.
+## Sponsors
 
-## How it works
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/jd-solanki/static/sponsors/sponsors.svg">
+    <img alt="sponsors" src='https://cdn.jsdelivr.net/gh/jd-solanki/static/sponsors/sponsors.svg'/>
+  </a>
+</p>
 
-### Components
+## Credits
 
-The library is a [Vue plugin](https://v3.vuejs.org/guide/plugins.html). The `install` function in [index.ts](src/index.ts) registers all components under [components](src/components) to Vue globably.
-
-The components are also exported by [index.ts](src/index.ts) so that the client app can import them individually and register them locally, instead of using the library as a plugin. This may be a better option if the client app only use a small set of components in your library.
-
-As there are already many UI component libraries for Vue 3, you may just want to build on top of one of them and create components for your specific needs.
-
-
-```js
-module.exports = {
-  vite: {
-    resolve: {
-      dedupe: ['vue'],
-    },
-  },
-}
-```
-
-### Utilities and constants
-
-The library includes example utilities and constants. They are also exported in [index.ts](src/index.ts). The client app may use them as below:
-
-```js
-<script lang="ts">
-import { MyConstants, MyUtil } from 'my-lib'
-
-export default {
-  data () {
-    return {
-      magicNum: MyConstants.MAGIC_NUM
-    }
-  },
-  methods: {
-    add (a:number, b:number) {
-      return MyUtil.add(a, b)
-    }
-  }
-}
-</script>
-```
-
-### Styling
-
-Individual components may have styles defined in its `.vue` file. They will be processed, combined and minified into `dist/style.css`, which is included in the `exports` list in [package.json](package.json).
-
-If you have library level styles shared by all components in the library, you may add them to [src/assets/main.scss](src/assets/main.scss). This file is imported in [index.ts](src/index.ts), therefore the processed styles are also included into `dist/style.css`. To avoid conflicting with other global styles, consider pre-fixing the class names or wrapping them into a namespace class.
-
-If you have your own special set of SVG icons, you may create a font file (`.woff` format) using tools like [Icomoon](https://icomoon.io/) or [Fontello](https://fontello.com/). This starter includes an example font file [src/assets/fonts/myfont.woff](src/assets/fonts/myfont.woff) and references it in [src/assets/main.scss](src/assets/main.scss), with utility icon CSS classes. An icon from the font file is used in Component A. Vite will include the font file into the build, see [https://vitejs.dev/guide/assets.html](https://vitejs.dev/guide/assets.html).
-
-The client app shall import `style.css`, usually in the entry file:
-
-```js
-import 'my-lib/dist/style.css'
-```
-
-### Third-party dependencies
-
-Third-party libraries used by you library may bloat up the size of your library, if you simply add them to the `dependencies` in [package.json](package.json).
-
-The following are some strategies to reduce the size of your library:
-
-#### Externalization
-
-
-```js
-module.exports = defineConfig({
-    rollupOptions: {
-      external: ['vue',]
-    }
-  }
-})
-```
-
-The dependency to be externalized may be declared as peer dependency in your library.
-
-#### Cherry picking
-
-If you don't expect the client app of your library also needing the same dependency, you may embed cherry-picked functions. For example, to embed the `fill` function of popular library [lodash](https://lodash.com), import the `fill` function like the following:
-
-```js
-import fill from 'lodash/fill'
-```
-
-Even with tree-shaking, the codes being brought into your library may still be large, as the function may have its own dependencies.
-
-Note that `import { fill } from 'lodash'` or `import _ from 'lodash'` will not work and will embed the whole `lodash` library.
-
-Finally, if your client app also use `lodash` and you don't want `lodash` to be in both the client app and your libraries, even after cherry-picking, you may consider cherry-picking in component library and re-export them as utils for client to consume, so that the client does not need to depend on `lodash`, therefore avoiding duplication.
-
-### Type generation
-
-In [tsconfig.json](tsconfig.json), the following options instructs `tsc` to emit declaration (`.d.ts` files) only, as `vite build` handles the `.js` file generation. The generated `.d.ts` files are sent to `dist/types` folder.
-
-```json
-"compilerOptions": {
-  "declaration": true,
-  "emitDeclarationOnly": true,
-  "declarationDir": "./dist/types"
-}
-```
-
-In [package.json](package.json), the line below locates the generated types for library client.
-
-```json
-"types": "./dist/types/index.d.ts",
-```
-
-> In [vite.config.ts](vite.config.ts), `build.emptyOutDir` is set to `false` and `rimraf` is used instead to remove the `dist` folder before the build. This is to avoid the `dist/types` folder generated by `tsc` being deleted when running `vite build`.
-
-### Configuration
-
-#### TypeScript
-
-In [tsconfig.json](tsconfig.js), set the following as recommended by Vite (since esbuild is used). However, enableing this option leads to https://github.com/vitejs/vite/issues/5814. The workaround is to also enable `compilerOptions.skipLibCheck`.
-
-```json
-"compilerOptions": {
-  "isolatedModules": true
-}
-```
-
-In [tsconfig.json](tsconfig.js), set the following to address [Issue #32](https://github.com/wuruoyun/vue-component-lib-starter/issues/32). The solution is from https://github.com/johnsoncodehk/volar/discussions/592.
-
-```json
-"compilerOptions": {
-  "types": [
-    "vite/client"
-  ]
-}
-```
+- [UnoCSS](https://github.com/unocss/unocss) - Anu depends on it
+- [VueUse](https://github.com/vueuse/vueuse) - Anu depends on it
+- [Floating UI](https://github.com/floating-ui/floating-ui) - Anu depends on it
+- [Quasar](https://github.com/quasarframework/quasar) - Inspiration
+- [Vuetify](https://github.com/vuetifyjs/vuetify) - Inspiration
+- [Bootstrap](https://github.com/twbs/bootstrap) - Inspiration

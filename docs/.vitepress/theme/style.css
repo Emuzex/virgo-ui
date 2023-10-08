@@ -1,0 +1,291 @@
+/* Styles adjusting VitePress according to theme */
+:root {
+
+  /* Background colors */
+  --vp-background: hsl(var(--a-body-bg-c));
+  --vp-c-bg: var(--vp-background);
+  --vp-c-bg-alt: var(--vp-background);
+  --vp-sidebar-bg-color: var(--vp-background);
+
+  /* Text color */
+  --vp-c-text-1: hsla(var(--a-base-c), var(--a-text-emphasis-medium-opacity));
+
+  /* Font family */
+  --vp-font-family-base: 'Inter', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', monospace;
+
+  /* Branding */
+  --vp-c-brand-lighter: hsl(var(--a-primary-hue), 97%, 75%);
+  --vp-c-brand-light: hsl(var(--a-primary-hue), 97%, 70%);
+  --vp-c-brand: hsl(var(--a-primary-hue), 97%, 66%);
+  --vp-c-brand-dark: hsl(var(--a-primary-hue), 97%, 60%);
+  --vp-c-brand-darker: hsl(var(--a-primary-hue), 97%, 55%);
+
+  /* We need this because menu component has 51 index which overlaps on navbar on scroll */
+  /* --vp-z-index-nav: 52; */
+
+  --vp-code-scrollbar-thumb-bg: hsl(0, 0%, 40%);
+  --vp-code-line-height: 1.9;
+}
+
+:root.dark {
+  /* Branding */
+  --a-primary-hue: 261;
+  --vp-c-brand-lighter: hsl(var(--a-primary-hue), 73%, 75%);
+  --vp-c-brand-light: hsl(var(--a-primary-hue), 73%, 70%);
+  --vp-c-brand: hsl(var(--a-primary-hue), 73%, 66%);
+  --vp-c-brand-dark: hsl(var(--a-primary-hue), 73%, 60%);
+  --vp-c-brand-darker: hsl(var(--a-primary-hue), 73%, 55%);
+
+  --vp-code-scrollbar-thumb-bg: hsl(0, 0%, 25%);
+}
+
+/* ==========================
+👉 Algolia search
+========================== */
+
+.VPNavBarSearch.search {
+  flex-grow: unset;
+  margin-inline-end: 2rem;
+}
+
+@media (min-width: 768px) {
+  .VPNavBarSearch .DocSearch.DocSearch-Button {
+    background-color: hsla(var(--a-base-c), 0.045) !important;
+  }
+}
+
+/* ==========================
+👉 Navbar
+========================== */
+
+/* Add border bottom instead of shadow */
+.VPNav {
+  border-bottom: thin solid hsla(var(--a-base-c), var(--a-border-opacity));
+}
+
+/* Remove shadow effect on scroll */
+.VPNavBar .curtain {
+  display: none;
+}
+
+/* There's height - 1 in VitePress site for maybe shadow, Use actual height */
+.VPNavBar .content-body {
+  height: var(--vp-nav-height);
+}
+
+/* Remove border bottom from title in navbar */
+.VPNavBarTitle.has-sidebar .title {
+  border-bottom: none;
+}
+
+/* Remove double border in mobile */
+.VPNavBar.has-sidebar {
+  border-bottom: none;
+}
+
+/* ==========================
+👉 Sidebar
+========================== */
+
+/* Custom scrollbar */
+.VPSidebar::-webkit-scrollbar {
+  background: rgb(var(--a-layer-c));
+  block-size: 8px;
+  border-end-end-radius: 14px;
+  border-start-end-radius: 14px;
+  inline-size: 8px;
+}
+
+/* Track */
+.VPSidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.VPSidebar::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 90%);
+  border-radius: 0.5rem;
+}
+
+.VPSidebar::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/* Add border on right */
+.VPSidebar {
+  border-right: thin solid hsla(var(--a-base-c), var(--a-border-opacity));
+}
+
+/* Make sidebar starts from bottom of navbar */
+@media (min-width: 960px) {
+  .VPSidebar {
+    padding-top: 0 !important;
+    margin-top: var(--vp-nav-height);
+  }
+}
+
+/* Shift links due to emoji */
+.VPSidebar .VPSidebarItem.is-link {
+  transform: translateX(28px);
+}
+
+/* Hide scrollbar when not hovering */
+.VPSidebar:not(:hover)::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.VPSidebar:not(:hover) {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+/* ==========================
+👉 Dark
+========================== */
+
+:root.dark {
+  --vp-c-bg-alt: var(--vp-background);
+  --vp-code-line-highlight-color: hsl(0, 0%, 12%);
+}
+
+.dark .VPSidebar::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 10%);
+  border-radius: 0.5rem;
+}
+
+/* code blocks */
+.vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
+  border: 1px solid transparent;
+}
+
+.dark .vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
+  border: 1px solid hsla(var(--a-base-c), var(--a-border-opacity));
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+/* ==========================
+👉 Demo
+========================== */
+
+.cards-demo-container {
+  /* rounded-lg border-dashed border border-a-border p-8 bg-[hsla(var(--a-base-c), .05)] */
+  @apply rounded-lg border-dashed border border-a-border p-8;
+  background: hsla(var(--a-body-bg-c));
+}
+
+/* ==========================
+👉 Typography
+========================== */
+
+.vp-doc h2:not(:where(.vp-raw *)) {
+  letter-spacing: inherit;
+}
+
+/* ==========================
+👉 Code snippet styles
+========================== */
+
+.vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
+  border-radius: 8px !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Custom scrollbar */
+.vp-doc [class*='language-'] pre:not(:where(.vp-raw *))::-webkit-scrollbar {
+  background: transparent;
+  block-size: 8px;
+  border-end-end-radius: 14px;
+  border-start-end-radius: 14px;
+  inline-size: 8px;
+}
+
+/* Track */
+.vp-doc [class*='language-'] pre:not(:where(.vp-raw *))::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.vp-doc [class*='language-'] pre:not(:where(.vp-raw *))::-webkit-scrollbar-thumb {
+  background: var(--vp-code-scrollbar-thumb-bg);
+  border-radius: 0.5rem;
+}
+
+.vp-doc [class*='language-'] pre:not(:where(.vp-raw *))::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.vp-doc [class*=language-] code:not(:where(.vp-raw *)) span {
+  font-style: initial !important;
+}
+
+/* Fix: Below style gets overridden by another style in production */
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--vp-font-family-mono) !important;
+}
+
+
+/* ==========================
+👉 Home page
+========================== */
+.VPImage.image-src {
+  width: 270px;
+  height: auto;
+}
+
+html:not(.dark) .VPContent.is-home {
+  background: hsl(var(--a-surface-c));
+}
+
+html:not(.dark) .VPContent.is-home+.VPFooter {
+  background: hsl(var(--a-surface-c));
+}
+
+.VPHome {
+  padding-bottom: 0 !important;
+}
+
+.VPHero.VPHomeHero .text {
+  color: hsla(var(--a-base-c), 0.87)
+}
+
+.VPFooter {
+  border-top: thin solid hsla(var(--a-base-c), var(--a-border-opacity)) !important;
+}
+
+
+/* ==========================
+👉 Misc
+========================== */
+
+.vp-doc>div>p>img:only-child {
+  border-radius: 6px;
+}
+
+/* API heading */
+h2[id="api"] {
+  border-top: none;
+  margin-top: 5rem;
+}
+
+/* HACK: Vue components get red underlined text instead of blue */
+.language-vue span[style="color: rgb(255, 85, 85); font-style: italic; text-decoration: underline;"],
+.language-vue span[style="color:#FF5555;font-style:italic;text-decoration:underline;"] {
+  color: #8BE9FD !important;
+  text-decoration: none !important;
+}
+
+/* Fix code snippet overlaps on floating element (menu, select, etc) */
+.vp-doc .line-numbers-wrapper:not(:where(.vp-raw *)),
+.vp-doc [class*=language-] pre:not(:where(.vp-raw *)) {
+  z-index: 0;
+}
