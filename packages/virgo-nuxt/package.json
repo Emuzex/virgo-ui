@@ -4,14 +4,14 @@
   "description": "virgo-vue - Nuxt 3 Module",
   "license": "MIT",
   "private": false,
-  "homepage": "https://virgo-vue.netlify.app",
+  "homepage": "https://virgo-ui.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jd-solanki/virgo.git",
+    "url": "git+https://github.com/emuzex/virgo.git",
     "directory": "packages/virgo-nuxt"
   },
   "bugs": {
-    "url": "https://github.com/jd-solanki/virgo/issues"
+    "url": "https://github.com/emuzex/virgo/issues"
   },
   "keywords": [
     "nuxt 3",

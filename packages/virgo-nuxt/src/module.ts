@@ -270,7 +270,7 @@ export default defineNuxtModule<ModuleOptions>({
       icon: 'bx:atom',
       view: {
         type: 'iframe',
-        src: 'https://virgo-vue.netlify.app/',
+        src: 'https://virgo-ui.dev/',
       },
     })
 

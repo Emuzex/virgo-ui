@@ -89,12 +89,12 @@ Just change the colors to Bootstrap's color and see the magic 😍
 ![Bootstrap buttons using virgo](/images/guide/virgo-bootstrap-btns.png)
 :::
 
-You can refer to available shortcuts in [this](https://github.com/jd-solanki/virgo/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
+You can refer to available shortcuts in [this](https://github.com/emuzex/virgo/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
 
 If you like this simple customization don't forget to give a **star on Github**. If you don't like it give a triple star 😉.
 
-<a class="!hover:opacity-100 !no-underline" href="https://github.com/jd-solanki/virgo" rel="noopener noreferrer" target="_blank">
-    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/jd-solanki/virgo" tag="a">
+<a class="!hover:opacity-100 !no-underline" href="https://github.com/emuzex/virgo" rel="noopener noreferrer" target="_blank">
+    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/emuzex/virgo" tag="a">
         Give a star
     </ABtn>
 </a>

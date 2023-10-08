@@ -23,17 +23,17 @@
     "build": "unbuild",
     "stub": "unbuild --stub"
   },
-  "author": "JD Solanki <https://github.com/jd-solanki>",
+  "author": "JD Solanki <https://github.com/emuzex>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/jd-solanki",
-  "homepage": "https://virgo-vue.netlify.app",
+  "funding": "https://github.com/sponsors/emuzex",
+  "homepage": "https://virgo-ui.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jd-solanki/virgo.git",
+    "url": "git+https://github.com/emuzex/virgo.git",
     "directory": "packages/preset-theme-default"
   },
   "bugs": {
-    "url": "https://github.com/jd-solanki/virgo/issues"
+    "url": "https://github.com/emuzex/virgo/issues"
   },
   "keywords": [
     "component library",

@@ -6,7 +6,7 @@
 <div class="pt-1"></div>
 
 :::tip
-You can checkout volunteer tasks in [GitHub Projects](https://github.com/users/jd-solanki/projects/2?query=is%3Aopen+sort%3Aupdated-desc) if you don't know where to start.
+You can checkout volunteer tasks in [GitHub Projects](https://github.com/users/emuzex/projects/2?query=is%3Aopen+sort%3Aupdated-desc) if you don't know where to start.
 :::
 
 :::card 🏗 Repository Setup
@@ -155,7 +155,7 @@ In virgo, we follow below convention for template refs:
 
 ### Creating new component
 
-First of all, it is advisable to discuss the design & features of the component by opening the new [issue](https://github.com/jd-solanki/virgo/issues/new). E.g. [New component: Menu](https://github.com/jd-solanki/virgo/issues/26)
+First of all, it is advisable to discuss the design & features of the component by opening the new [issue](https://github.com/emuzex/virgo/issues/new). E.g. [New component: Menu](https://github.com/emuzex/virgo/issues/26)
 
 For creating new component,
 
@@ -167,7 +167,7 @@ For creating new component,
 
 Once you have this setup, create docs page for this component in `packages/documentation/docs/guide/components`
 
-Add the newly created docs page to the sidebar of the docs in [`packages/documentation/docs/.vitepress/config.ts`](https://github.com/jd-solanki/virgo/blob/337eeb676d52646ffeedc57daa540d7e7168a17a/packages/documentation/docs/.vitepress/config.js#L37)
+Add the newly created docs page to the sidebar of the docs in [`packages/documentation/docs/.vitepress/config.ts`](https://github.com/emuzex/virgo/blob/337eeb676d52646ffeedc57daa540d7e7168a17a/packages/documentation/docs/.vitepress/config.js#L37)
 
 For demo you need to create a new demo file in `packages/documentation/docs/demos/<component-name>`. **Make sure to follow the naming convention** (`Demo<component-name><demo-name>`) for creating demo so that it doesn't conflict with other demo file. This is because these files will be globally registered as components in VitePress so we can use them in markdown easily.
 
@@ -253,6 +253,6 @@ Happy coding 🙌🏻
 
 :::card 🦸 Heros
 
-<a href="https://github.com/jd-solanki/virgo/graphs/contributors"><img src="https://contrib.rocks/image?repo=jd-solanki/virgo" /></a>
+<a href="https://github.com/emuzex/virgo/graphs/contributors"><img src="https://contrib.rocks/image?repo=emuzex/virgo" /></a>
 
 :::

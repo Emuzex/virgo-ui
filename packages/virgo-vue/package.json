@@ -4,16 +4,16 @@
   "version": "0.15.2",
   "type": "module",
   "description": "DX focused utility based component library",
-  "author": "JD Solanki <https://github.com/jd-solanki>",
-  "funding": "https://github.com/sponsors/jd-solanki",
-  "homepage": "https://virgo-vue.netlify.app",
+  "author": "JD Solanki <https://github.com/emuzex>",
+  "funding": "https://github.com/sponsors/emuzex",
+  "homepage": "https://virgo-ui.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jd-solanki/virgo.git",
+    "url": "git+https://github.com/emuzex/virgo.git",
     "directory": "packages/virgo-vue"
   },
   "bugs": {
-    "url": "https://github.com/jd-solanki/virgo/issues"
+    "url": "https://github.com/emuzex/virgo/issues"
   },
   "keywords": [
     "component library",
