@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/ACard.json';
+import api from '@virgo/component-meta/ACard.json';
 </script>
 
 # Card
@@ -20,7 +20,7 @@ You can use `.card-spacer` helper class to add margin bottom to each of its chil
 ::::after-demo
 
 :::details Card text font size
-If you pass `text` prop directly on `ACard` then `ACard` will add `text-sm` class before passing down it to `ATypography`. Hence, when you don't use `text` prop and manually write text as show in second card, for small text you have to add `text-sm` class.
+If you pass `text` prop directly on `ACard` then `ACard` will add `text-sm` class before passing down it to `ATypography`. Hence, when you don't use `text` prop and mvirgoally write text as show in second card, for small text you have to add `text-sm` class.
 
 This way if you want 16px font for your card text instead of 14px you can omit adding `text-sm` to `p` tag;
 :::

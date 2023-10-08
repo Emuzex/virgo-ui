@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/ADrawer.json';
+import api from '@virgo/component-meta/ADrawer.json';
 </script>
 
 # Drawer

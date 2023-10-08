@@ -1,5 +1,5 @@
-import type { ADataTableItemsFunctionParams, typeSortBy } from 'anu-vue'
-import { useSearch, useSort } from 'anu-vue'
+import type { ADataTableItemsFunctionParams, typeSortBy } from 'virgo-vue'
+import { useSearch, useSort } from 'virgo-vue'
 
 export const rows = [
   {
@@ -31,7 +31,7 @@ export const rows = [
 
 // 👉 For Server side table
 
-export type User = {
+export interface User {
   id: number
   name: string
   username: string

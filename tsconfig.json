@@ -22,34 +22,34 @@
       "node"
     ],
     "paths": {
-      "anu-vue": [
-        "./packages/anu-vue/src/index.ts"
+      "virgo-vue": [
+        "./packages/virgo-vue/src/index.ts"
       ],
       "@/*": [
-        "./packages/anu-vue/src/*"
+        "./packages/virgo-vue/src/*"
       ],
-      "@anu-vue/core": [
-        "./packages/anu-vue/src/index.ts"
+      "@virgo-vue/core": [
+        "./packages/virgo-vue/src/index.ts"
       ],
-      "@anu-vue/core/*": [
-        "./packages/anu-vue/src/*"
+      "@virgo-vue/core/*": [
+        "./packages/virgo-vue/src/*"
       ],
-      "@anu-vue/preset-theme-default": [
+      "@virgo-vue/preset-theme-default": [
         "./packages/preset-theme-default/src/index.ts"
       ],
-      "@anu-vue/preset-theme-default/*": [
+      "@virgo-vue/preset-theme-default/*": [
         "./packages/preset-theme-default/src/*"
       ],
-      "@anu-vue/nuxt": [
-        "./packages/anu-nuxt/src/module.ts"
+      "@virgo-vue/nuxt": [
+        "./packages/virgo-nuxt/src/module.ts"
       ]
     }
   },
   "include": [
     "./packages/*/src/**/*",
-    "./packages/anu-vue/auto-imports.d.ts",
-    "./packages/anu-vue/shims.d.ts",
-    "./packages/anu-vue/volar.d.ts",
+    "./packages/virgo-vue/auto-imports.d.ts",
+    "./packages/virgo-vue/shims.d.ts",
+    "./packages/virgo-vue/volar.d.ts",
     "./docs/components/**/*",
     // "./docs/components/Playground.vue",
     "./docs/utils/*",

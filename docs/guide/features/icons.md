@@ -2,7 +2,7 @@
 
 Using icons from another library is just single line away <i class="i-fluent-emoji-face-with-open-mouth"></i>
 
-As Anu uses UnoCSS, You can use UnoCSS's [Icons preset](https://unocss.dev/presets/icons) to use icons from any supported library.
+As virgo uses UnoCSS, You can use UnoCSS's [Icons preset](https://unocss.dev/presets/icons) to use icons from any supported library.
 
 - Box Icons <i class="i-bx-home"></i> <i class="i-bx-crown"></i> <i class="i-bx-fingerprint"></i>
 - Fluent Emoji <i class="i-fluent-emoji-dollar-banknote"></i> <i class="i-fluent-emoji-face-with-tears-of-joy"></i> <i class="i-fluent-emoji-anxious-face-with-sweat"></i>
@@ -14,7 +14,7 @@ As Anu uses UnoCSS, You can use UnoCSS's [Icons preset](https://unocss.dev/prese
 
 <p class="p-1px"></p>
 
-Anu uses Box Icons by default.
+virgo uses Box Icons by default.
 
 ## Installation
 

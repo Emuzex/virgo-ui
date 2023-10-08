@@ -2,17 +2,17 @@
 
 :::card Installation
 
-1. Add `anu-vue` and its supporting libraries
+1. Add `virgo-vue` and its supporting libraries
 
     ```bash
     # pnpm
-    pnpm add anu-vue @anu-vue/preset-theme-default && pnpm add -D unocss @iconify-json/bx
+    pnpm add virgo-vue @virgo-vue/preset-theme-default && pnpm add -D unocss @iconify-json/bx
 
     # yarn
-    yarn add anu-vue @anu-vue/preset-theme-default && yarn add -D unocss @iconify-json/bx
+    yarn add virgo-vue @virgo-vue/preset-theme-default && yarn add -D unocss @iconify-json/bx
 
     # npm
-    npm i anu-vue @anu-vue/preset-theme-default && npm install -D unocss @iconify-json/bx
+    npm i virgo-vue @virgo-vue/preset-theme-default && npm install -D unocss @iconify-json/bx
     ```
 
 :::
@@ -34,8 +34,8 @@
 2. Create the UnoCSS Config file `uno.config.js` in the root of the project with the content below:
 
     ```ts
-    import { presetAnu, presetIconExtraProperties } from 'anu-vue'
-    import { presetThemeDefault } from '@anu-vue/preset-theme-default'
+    import { presetvirgo, presetIconExtraProperties } from 'virgo-vue'
+    import { presetThemeDefault } from '@virgo-vue/preset-theme-default'
     import {
       defineConfig,
       presetIcons,
@@ -50,13 +50,13 @@
           extraProperties: presetIconExtraProperties,
         }),
 
-        // anu-vue preset
-        presetAnu(),
+        // virgo-vue preset
+        presetvirgo(),
 
         // default theme preset
         presetThemeDefault(),
       ],
-      include: [/.*\/anu-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
     })
     ```
 
@@ -65,20 +65,20 @@
     ```js{3,5-6,8-9,13,11-12,15-16}
     import { createApp } from 'vue'
     import App from './App.vue'
-    import { anu } from 'anu-vue'
+    import { virgo } from 'virgo-vue'
 
     // UnoCSS import
     import 'uno.css'
 
-    // anu styles
-    import 'anu-vue/dist/style.css'
+    // virgo styles
+    import 'virgo-vue/dist/style.css'
 
     // default theme styles
-    import '@anu-vue/preset-theme-default/dist/style.css'
+    import '@virgo-vue/preset-theme-default/dist/style.css'
 
-    // Using `app.use(anu)` will register anu plugin
+    // Using `app.use(virgo)` will register virgo plugin
     createApp(App)
-      .use(anu)
+      .use(virgo)
       .mount('#app')
     ```
 
@@ -98,22 +98,22 @@ Now, Just refer to the component in your vue files:
 
 You can also follow À la carte fashion if you don't want to register all the components globally.
 
-1. Set `registerComponents` option to `false` while registering anu plugin.
+1. Set `registerComponents` option to `false` while registering virgo plugin.
 
     ```diff
-      import { anu } from 'anu-vue'
+      import { virgo } from 'virgo-vue'
 
       createApp(App)
-    -   .use(anu)
-    +   .use(anu, { registerComponents: false })
+    -   .use(virgo)
+    +   .use(virgo, { registerComponents: false })
         .mount('#app')
     ```
 
-2. Now import the components individually from `anu-vue`
+2. Now import the components individually from `virgo-vue`
 
     ```vue
     <script setup>
-    import { ABtn } from 'anu-vue'
+    import { ABtn } from 'virgo-vue'
     </script>
 
     <template>
@@ -128,11 +128,11 @@ You can also follow À la carte fashion if you don't want to register all the co
 1. Make sure to set `registerComponents` to `false` in the `main.js` file if you haven't
 
     ```diff
-      import { anu } from 'anu-vue'
+      import { virgo } from 'virgo-vue'
 
       createApp(App)
-    -   .use(anu)
-    +   .use(anu, { registerComponents: false })
+    -   .use(virgo)
+    +   .use(virgo, { registerComponents: false })
         .mount('#app')
     ```
 
@@ -154,14 +154,14 @@ You can also follow À la carte fashion if you don't want to register all the co
     ```js
     // other imports
     import Components from 'unplugin-vue-components/vite'
-    import { AnuComponentResolver } from 'anu-vue'
+    import { virgoComponentResolver } from 'virgo-vue'
 
     export default defineConfig({
       plugins: [
         // other plugins
         Components({
           resolvers: [
-            AnuComponentResolver()
+            virgoComponentResolver()
           ]
         }),
       ],
@@ -188,7 +188,7 @@ If you are using [Volar](https://marketplace.visualstudio.com/items?itemName=Vue
 {
   "compilerOptions": {
     // ...
-    "types": ["anu-vue/volar"]
+    "types": ["virgo-vue/volar"]
   }
 }
 ```

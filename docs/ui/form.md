@@ -12,7 +12,7 @@
 
 ::::after-demo
 :::tip
-We are not using `.a-card-spacer` class here because we get spacing between card body via Anu's grid system 😇
+We are not using `.a-card-spacer` class here because we get spacing between card body via virgo's grid system 😇
 :::
 ::::
 

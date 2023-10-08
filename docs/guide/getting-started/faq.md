@@ -9,7 +9,7 @@ Here's thumb rule:
 1. Use theme if you want theme based customization. For example, you want to change the color of the component based on the theme (light/dark/others). => ***Use theme***
 2. Use CSS variable if you want to customize the component regardless of theme. For example, you want to customize the list component spacing. => ***Use CSS variables***
 
-## How to change fonts in Anu?
+## How to change fonts in virgo?
 
 You can use "Web Fonts preset" from UnoCSS to change the fonts. Please refer to the [Web Fonts preset](https://unocss.dev/presets/web-fonts) for more details. Lastly, You have to update font-family:
 

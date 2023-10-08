@@ -41,7 +41,7 @@
         </ABtn>
       </header>
       <div>
-        Isn't Anu so dynamic? <i class="i-fluent-emoji-sparkles" />
+        Isn't virgo so dynamic? <i class="i-fluent-emoji-sparkles" />
       </div>
     </div>
   </ACard>

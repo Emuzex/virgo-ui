@@ -1,7 +1,7 @@
 {
-  "name": "@anu-vue/preset-theme-default",
+  "name": "@virgo-vue/preset-theme-default",
   "version": "0.15.2",
-  "description": "Default theme preset for Anu framework.",
+  "description": "Default theme preset for virgo framework.",
   "type": "module",
   "private": false,
   "exports": {
@@ -26,14 +26,14 @@
   "author": "JD Solanki <https://github.com/jd-solanki>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/jd-solanki",
-  "homepage": "https://anu-vue.netlify.app",
+  "homepage": "https://virgo-vue.netlify.app",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jd-solanki/anu.git",
+    "url": "git+https://github.com/jd-solanki/virgo.git",
     "directory": "packages/preset-theme-default"
   },
   "bugs": {
-    "url": "https://github.com/jd-solanki/anu/issues"
+    "url": "https://github.com/jd-solanki/virgo/issues"
   },
   "keywords": [
     "component library",

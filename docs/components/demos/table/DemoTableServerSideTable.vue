@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { ADataTableItemsFunctionParams, ATablePropColumn } from 'anu-vue';
-import type { User } from './data';
-import { fakeAPICall } from './data';
+import type { ADataTableItemsFunctionParams, ATablePropColumn } from 'virgo-vue'
+import type { User } from './data'
+import { fakeAPICall } from './data'
 
 // 👉 Columns
 const cols: ATablePropColumn<User>[] = [

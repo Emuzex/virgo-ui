@@ -1,9 +1,9 @@
 # Arbitrary Sizes
 
 ::::card
-Just like plain CSS or UnoCSS, Anu also provides flexibility with component sizing. You are not limited to sizes like `sm`, `lg`, `xl`, etc. With Anu you can have infinity <i class="i-fluent-emoji-infinity"></i> sizes that auto adjust the font as well.
+Just like plain CSS or UnoCSS, virgo also provides flexibility with component sizing. You are not limited to sizes like `sm`, `lg`, `xl`, etc. With virgo you can have infinity <i class="i-fluent-emoji-infinity"></i> sizes that auto adjust the font as well.
 
-Anu mostly uses `em` unit for applying padding, height, width, etc. You can leverage this to create custom sizes as you want by just using font size utilities.
+virgo mostly uses `em` unit for applying padding, height, width, etc. You can leverage this to create custom sizes as you want by just using font size utilities.
 
 <ABtn class="text-[0.95rem]" variant="outline">Button</ABtn>
 

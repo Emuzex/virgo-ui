@@ -28,7 +28,7 @@ To set the repository up:
 
 `nr dev`
 
-It will start development mode for Anu package. It will start the build process in watch mode.
+It will start development mode for virgo package. It will start the build process in watch mode.
 
 `nr docs:dev`
 
@@ -86,12 +86,12 @@ If you have Prettier installed in your editor, we recommend you disable it when 
 ::::card ⌨️ Writing code
 
 :::tip
-Anu uses [`@antfu/utils`](https://github.com/antfu/utils) for utilities. You can use it to avoid reinventing the wheel.
+virgo uses [`@antfu/utils`](https://github.com/antfu/utils) for utilities. You can use it to avoid reinventing the wheel.
 :::
 
 ### Required
 
-- Anu provides preset named "Theme Default" where all appearance related classes should be written. Idea is someone can create his own preset to totally customize the look & feel of Anu.
+- virgo provides preset named "Theme Default" where all appearance related classes should be written. Idea is someone can create his own preset to totally customize the look & feel of virgo.
 - For structural & functional styles, you better write them in component itself.
 - If you are creating new component please make sure to follow the pattern we used in other components. Additionally, Make sure to use `as const` for slots like below:
 
@@ -108,7 +108,7 @@ export const aTabsSlots = {
 
 ### Design
 
-At the moment, anu don't have any design system. Hence, we have full freedom to design the component we like. However anu's UI should follow some basic stuff:
+At the moment, virgo don't have any design system. Hence, we have full freedom to design the component we like. However virgo's UI should follow some basic stuff:
 
 - It should be minimal
 - Alignment matters
@@ -119,7 +119,7 @@ At the moment, anu don't have any design system. Hence, we have full freedom to 
 
 <!-- - [UntitledUI](https://www.figma.com/file/V8nKLCJemHJyuAN39W6iok/%E2%9D%96-PREVIEW-%E2%9D%96-Untitled-UI-%E2%80%93-PRO-(v3.1)) -->
 
-- [Anu](https://dribbble.com/jd_0001/collections/5754387-anu) dribble collection
+- [virgo](https://dribbble.com/jd_0001/collections/5754387-virgo) dribble collection
 - [Stratis UI](https://www.stratisui.com/)
 - [UntitledUI](https://www.figma.com/community/file/1020079203222518115)
 - [Daisy UI](https://www.figma.com/file/usqAh1FfAVsiGIbSKUKyQ7/Disy-%E2%80%94-Preview-1.1?node-id=654%3A4605)
@@ -148,26 +148,26 @@ Don't forget to follow this convention when defining any CSS var for color, incl
 
 ### [Template Refs](https://vuejs.org/guide/essentials/template-refs.html)
 
-In Anu, we follow below convention for template refs:
+In virgo, we follow below convention for template refs:
 
 - variable that holds template ref should be prefixed with `ref`. e.g. `refInput`, `refMenu`, etc.
 - Try to assign type for template ref variable. e.g. `refWrapper: Ref<HTMLDivElement | undefined> = ref()`
 
 ### Creating new component
 
-First of all, it is advisable to discuss the design & features of the component by opening the new [issue](https://github.com/jd-solanki/anu/issues/new). E.g. [New component: Menu](https://github.com/jd-solanki/anu/issues/26)
+First of all, it is advisable to discuss the design & features of the component by opening the new [issue](https://github.com/jd-solanki/virgo/issues/new). E.g. [New component: Menu](https://github.com/jd-solanki/virgo/issues/26)
 
 For creating new component,
 
-1. Create new folder with the name of the component in `packages/anu-vue/src/components`
+1. Create new folder with the name of the component in `packages/virgo-vue/src/components`
 2. Create component with `.vue` extension (we'll only use `.ts` or `.tsx` in special cases)
 3. Create `meta.ts` file and define props, slots & events for the component.
 4. Create `index.ts` file like other components and export stuff like meta, component, etc. (You can check other component's `index.ts` file and update accordingly.)
-5. Export newly created component in `packages/anu-vue/src/components/index.ts` file so it can be registered globally
+5. Export newly created component in `packages/virgo-vue/src/components/index.ts` file so it can be registered globally
 
 Once you have this setup, create docs page for this component in `packages/documentation/docs/guide/components`
 
-Add the newly created docs page to the sidebar of the docs in [`packages/documentation/docs/.vitepress/config.ts`](https://github.com/jd-solanki/anu/blob/337eeb676d52646ffeedc57daa540d7e7168a17a/packages/documentation/docs/.vitepress/config.js#L37)
+Add the newly created docs page to the sidebar of the docs in [`packages/documentation/docs/.vitepress/config.ts`](https://github.com/jd-solanki/virgo/blob/337eeb676d52646ffeedc57daa540d7e7168a17a/packages/documentation/docs/.vitepress/config.js#L37)
 
 For demo you need to create a new demo file in `packages/documentation/docs/demos/<component-name>`. **Make sure to follow the naming convention** (`Demo<component-name><demo-name>`) for creating demo so that it doesn't conflict with other demo file. This is because these files will be globally registered as components in VitePress so we can use them in markdown easily.
 
@@ -253,6 +253,6 @@ Happy coding 🙌🏻
 
 :::card 🦸 Heros
 
-<a href="https://github.com/jd-solanki/anu/graphs/contributors"><img src="https://contrib.rocks/image?repo=jd-solanki/anu" /></a>
+<a href="https://github.com/jd-solanki/virgo/graphs/contributors"><img src="https://contrib.rocks/image?repo=jd-solanki/virgo" /></a>
 
 :::

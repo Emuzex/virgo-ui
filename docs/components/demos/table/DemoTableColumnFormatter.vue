@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ATableProps } from 'anu-vue'
+import type { ATableProps } from 'virgo-vue'
 import { rows } from './data'
 
 const cols: ATableProps['cols'] = [

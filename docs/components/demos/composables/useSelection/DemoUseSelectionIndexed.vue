@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { numRange, useSelection } from 'anu-vue'
+import { numRange, useSelection } from 'virgo-vue'
 
 const { options, select, value } = useSelection({
   items: numRange(3),

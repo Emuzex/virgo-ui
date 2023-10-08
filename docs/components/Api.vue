@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { unrefElement } from '@vueuse/core'
-import { useSearch, useSelection } from 'anu-vue'
+import { useSearch, useSelection } from 'virgo-vue'
 import { computed, onMounted, ref } from 'vue'
 
 import type { ComponentApi } from '../../scripts/gen-component-meta'

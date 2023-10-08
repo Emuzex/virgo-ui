@@ -1,5 +1,5 @@
-import fs, { existsSync, mkdirSync } from 'fs'
-import { join, parse, resolve } from 'path'
+import fs, { existsSync, mkdirSync } from 'node:fs'
+import { join, parse, resolve } from 'node:path'
 
 import fg from 'fast-glob'
 import MarkdownIt from 'markdown-it'
@@ -48,11 +48,11 @@ const checkerOptions: MetaCheckerOptions = {
 }
 
 const tsconfigChecker = createComponentMetaChecker(
-  resolve(__dirname, '../packages/anu-vue/tsconfig.json'),
+  resolve(__dirname, '../packages/virgo-vue/tsconfig.json'),
   checkerOptions,
 )
 
-const filterMeta = (meta: ComponentMeta): ComponentApi => {
+function filterMeta(meta: ComponentMeta): ComponentApi {
   // const clonedMeta: ComponentMeta = JSON.parse(JSON.stringify(meta))
 
   // Exclude global props
@@ -83,7 +83,7 @@ const filterMeta = (meta: ComponentMeta): ComponentApi => {
 
 // Collect components
 const components = fg.sync(['src/components/**/*.vue'], {
-  cwd: resolve(__dirname, '../packages/anu-vue'),
+  cwd: resolve(__dirname, '../packages/virgo-vue'),
   absolute: true,
 })
 
@@ -94,7 +94,7 @@ components.forEach(componentPath => {
   // Thanks: https://futurestud.io/tutorials/node-js-get-a-file-name-with-or-without-extension
   const meta = filterMeta(tsconfigChecker.getComponentMeta(componentPath))
 
-  const metaDirPath = resolve(__dirname, '../packages/anu-vue/component-meta')
+  const metaDirPath = resolve(__dirname, '../packages/virgo-vue/component-meta')
 
   // if meta dir doesn't exist create
   if (!existsSync(metaDirPath))

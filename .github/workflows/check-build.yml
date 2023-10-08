@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node: ['lts/*']
+        node: ["lts/*"]
 
     timeout-minutes: 10
 
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Anu
+      - name: Build virgo
         run: pnpm build
 
       - name: Cache dist
@@ -63,7 +63,7 @@ jobs:
   #       run: pnpm install
 
   #     - name: Run unit tests
-  #       run: pnpm run --filter=anu-vue test --reporter=junit --outputFile=../../test-results.xml
+  #       run: pnpm run --filter=virgo-vue test --reporter=junit --outputFile=../../test-results.xml
 
   #     - name: Add tests results to artifacts
   #       uses: actions/upload-artifact@v2
@@ -78,7 +78,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: ['lts/*']
+        node: ["lts/*"]
 
     timeout-minutes: 10
 
@@ -115,7 +115,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: ['lts/*']
+        node: ["lts/*"]
 
     timeout-minutes: 20
 

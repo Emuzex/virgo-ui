@@ -24,7 +24,7 @@ hero:
   <div>
     <div class="i-fluent-emoji-crown text-primary text-3xl inline-flex shrink-0 p-2"></div>
     <p class="text-high-emphasis font-semibold text-xl">DX Matters</p>
-    <span class="text-sm">Anu is built with DX in mind. Throughout the docs you will notice bare minimum code to render great UI.</span>
+    <span class="text-sm">virgo is built with DX in mind. Throughout the docs you will notice bare minimum code to render great UI.</span>
   </div>
 
   <!-- Flexibility -->
@@ -38,28 +38,28 @@ hero:
   <div>
     <div class="i-fluent-emoji-sparkles text-primary text-3xl inline-flex shrink-0 p-2"></div>
     <p class="text-high-emphasis font-semibold text-xl">Configurable UI</p>
-    <span class="text-sm">This is the most exciting and beloved feature of Anu. Customize the rendered UI via configurable array.</span>
+    <span class="text-sm">This is the most exciting and beloved feature of virgo. Customize the rendered UI via configurable array.</span>
   </div>
 
   <!-- Design -->
   <div>
     <div class="i-fluent-emoji-rainbow text-primary text-3xl inline-flex shrink-0 p-2"></div>
     <p class="text-high-emphasis font-semibold text-xl">Design</p>
-    <span class="text-sm">Anu provides neat & carefully crafted UI components to build stunning & professional looking UIs.</span>
+    <span class="text-sm">virgo provides neat & carefully crafted UI components to build stunning & professional looking UIs.</span>
   </div>
 
   <!-- Powerful tools -->
   <div>
     <div class="i-fluent-emoji-high-voltage text-primary text-3xl inline-flex shrink-0 p-2"></div>
     <p class="text-high-emphasis font-semibold text-xl">Powerful tools</p>
-    <span class="text-sm">Anu is built on top of powerful tools like UnoCSS, VueUse, etc. - saving you lots of development time.</span>
+    <span class="text-sm">virgo is built on top of powerful tools like UnoCSS, VueUse, etc. - saving you lots of development time.</span>
   </div>
 
   <!-- Hackable -->
   <div>
     <div class="i-fluent-emoji-alembic text-primary text-3xl inline-flex shrink-0 p-2"></div>
     <p class="text-high-emphasis font-semibold text-xl">Hackable</p>
-    <span class="text-sm">Anu is configurable via UnoCSS shortcuts. Customize every aspect of the component however you like.</span>
+    <span class="text-sm">virgo is configurable via UnoCSS shortcuts. Customize every aspect of the component however you like.</span>
   </div>
 </div>
 </div>

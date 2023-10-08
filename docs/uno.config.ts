@@ -1,4 +1,3 @@
-import { presetAnu, presetIconExtraProperties } from 'anu-vue'
 import {
   defineConfig,
   presetIcons,
@@ -7,6 +6,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import { presetIconExtraProperties, presetvirgo } from 'virgo-vue'
 import { presetThemeDefault } from '../packages/preset-theme-default/src/index'
 
 export default defineConfig({
@@ -24,8 +24,8 @@ export default defineConfig({
       },
     }),
 
-    // anu-vue presets
-    presetAnu(),
+    // virgo-vue presets
+    presetvirgo(),
     presetThemeDefault(),
   ],
   transformers: [
@@ -38,5 +38,5 @@ export default defineConfig({
     '../packages/preset-theme-default/src/variants.ts',
     '../packages/preset-theme-default/src/index.ts',
   ],
-  include: [/.*\/anu-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+  include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
 })

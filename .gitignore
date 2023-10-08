@@ -6,4 +6,4 @@ dist
 .DS_Store
 .idea/
 
-packages/anu-vue/component-meta
+packages/virgo-vue/component-meta

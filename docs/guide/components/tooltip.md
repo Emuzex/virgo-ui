@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/ATooltip.json';
+import api from '@virgo/component-meta/ATooltip.json';
 </script>
 
 # Tooltip

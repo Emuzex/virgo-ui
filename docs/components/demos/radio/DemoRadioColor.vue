@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defaultThemeColors } from 'anu-vue'
+import { defaultThemeColors } from 'virgo-vue'
 import { ref } from 'vue'
 
 const favoriteFruit = ref()

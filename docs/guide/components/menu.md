@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/AMenu.json';
+import api from '@virgo/component-meta/AMenu.json';
 </script>
 
 # Menu

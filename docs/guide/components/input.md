@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/AInput.json';
+import api from '@virgo/component-meta/AInput.json';
 </script>
 
 # Input
@@ -128,7 +128,7 @@ Use `disabled` prop to make input disabled.
 <!-- 👉 Validation -->
 ::::card Validation
 
-Anu do not provide any validation mechanism at the moment as it assume it's better handled by third-party libraries like [VeeValidate](https://vee-validate.logaretm.com/)
+virgo do not provide any validation mechanism at the moment as it assume it's better handled by third-party libraries like [VeeValidate](https://vee-validate.logaretm.com/)
 
 :::code DemoInputValidation
 <<< @/components/demos/input/DemoInputValidation.vue{2,6,13-14}

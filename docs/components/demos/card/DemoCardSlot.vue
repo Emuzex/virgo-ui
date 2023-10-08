@@ -27,7 +27,7 @@
           <span>Card title</span>
           <a
             target="_blank"
-            href="https://github.com/jd-solanki/anu"
+            href="https://github.com/jd-solanki/virgo"
             class="!text-light-emphasis underline text-sm"
           >Link</a>
         </div>

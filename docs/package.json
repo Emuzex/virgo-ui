@@ -1,5 +1,5 @@
 {
-  "name": "@anu-vue/documentation",
+  "name": "@virgo-vue/documentation",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -28,9 +28,9 @@
     "zod": "3.21.4"
   },
   "dependencies": {
-    "@anu-vue/preset-theme-default": "workspace:*",
+    "@virgo-vue/preset-theme-default": "workspace:*",
     "@vueuse/core": "10.1.2",
-    "anu-vue": "workspace:*",
+    "virgo-vue": "workspace:*",
     "vee-validate": "^4.9.4",
     "vue": "3.3.4"
   }

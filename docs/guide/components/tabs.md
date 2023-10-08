@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import tabApi from '@anu/component-meta/ATab.json';
-import tabsApi from '@anu/component-meta/ATabs.json';
+import tabApi from '@virgo/component-meta/ATab.json';
+import tabsApi from '@virgo/component-meta/ATabs.json';
 </script>
 
 # Tabs
@@ -72,7 +72,7 @@ Use `vertical` prop to render the vertical tabs.
 
 If you have more tabs than the available space, `ATabs` will automatically add the arrows to navigate between tabs.
 
-If you noticed from below example, Anu added [scroll snapping](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) features to tab navigation so the tabs will snap to the nearest tab when you scroll via arrows.
+If you noticed from below example, virgo added [scroll snapping](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap/Basic_concepts) features to tab navigation so the tabs will snap to the nearest tab when you scroll via arrows.
 
 ::::code DemoTabsArrows
 <<< @/components/demos/tabs/DemoTabsArrows.vue
@@ -82,7 +82,7 @@ If you noticed from below example, Anu added [scroll snapping](https://developer
 :::tip Great UX
 As scroll snapping is enabled, users will no longer have to fight with the scroll to avoid cutting off the tab title.
 
-Anu might be the first UI library to implement scroll snapping in tabs. <i class="i-fluent-emoji-sparkles"></i>
+virgo might be the first UI library to implement scroll snapping in tabs. <i class="i-fluent-emoji-sparkles"></i>
 :::
 ::::
 

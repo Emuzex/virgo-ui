@@ -2,9 +2,9 @@
 
 ::::card
 
-There might be cases where using component libraries introduces several restrictions. Assume you want to reduce the overall spacing of the button but don't want to reduce the font size of it. With other frameworks, you have to manually adjust the padding, margin, height, etc to get the desired result.
+There might be cases where using component libraries introduces several restrictions. Assume you want to reduce the overall spacing of the button but don't want to reduce the font size of it. With other frameworks, you have to mvirgoally adjust the padding, margin, height, etc to get the desired result.
 
-However, Anu provides `--a-spacing` CSS variable to adjust the spacing of any component that supports this feature.
+However, virgo provides `--a-spacing` CSS variable to adjust the spacing of any component that supports this feature.
 
 You can use `spacing-<number>` class to add/update `--a-spacing` CSS variable.
 

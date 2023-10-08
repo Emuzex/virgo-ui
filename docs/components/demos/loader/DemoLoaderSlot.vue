@@ -8,7 +8,7 @@
     >
       <ALoader
         title="Heartbeat"
-        subtitle="Made with love with Anu"
+        subtitle="Made with love with virgo"
         class="[--a-loader-overlay-bg-c:var(--a-surface-c)]"
       >
         <i class="i-bx-bxs-heart text-red-500 text-4xl animate-heart-beat animate-count-infinite" />

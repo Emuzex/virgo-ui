@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defaultThemeColors } from 'anu-vue'
+import { defaultThemeColors } from 'virgo-vue'
 import { computed, ref } from 'vue'
 
 const chips = ref(defaultThemeColors.map(c => ({

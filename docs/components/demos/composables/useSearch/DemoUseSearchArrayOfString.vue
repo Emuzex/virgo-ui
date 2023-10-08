@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSearch } from 'anu-vue'
+import { useSearch } from 'virgo-vue'
 import { ref } from 'vue'
 
 const q = ref('')

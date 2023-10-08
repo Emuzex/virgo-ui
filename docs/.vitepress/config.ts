@@ -35,7 +35,7 @@ export default defineConfig({
       copyright: 'Copyright © 2023-present Futó Mirkó & Péli Ferenc',
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/emuzex/virgo-ui' },
+      { icon: 'github', link: 'https://github.com/emuzex/virgo-vue' },
 
       // { icon: 'discord', link: 'https://discord.gg/8MTQuasmZf' },
     ],
@@ -120,7 +120,7 @@ export default defineConfig({
           items: [
             // { text: 'useSearch', link: '/guide/composables/useSearch' },
             // { text: 'useSort', link: '/guide/composables/useSort' },
-            { text: 'useAnu', link: '/guide/composables/useAnu' },
+            { text: 'usevirgo', link: '/guide/composables/usevirgo' },
             { text: 'useSelection', link: '/guide/composables/useSelection' },
             { text: 'useIndeterminateCheckbox', link: '/guide/composables/useIndeterminateCheckbox' },
           ],
@@ -161,7 +161,7 @@ export default defineConfig({
     algolia: {
       appId: 'ZIRXGNDXKY',
       apiKey: '20424a4612bfde26fb4920f451c19cbc',
-      indexName: 'anu-vue',
+      indexName: 'virgo-vue',
     },
   },
   markdown: {
@@ -212,7 +212,7 @@ export default defineConfig({
     ],
     resolve: {
       alias: {
-        '@anu': fileURLToPath(new URL('../../packages/anu-vue', import.meta.url)),
+        '@virgo': fileURLToPath(new URL('../../packages/virgo-vue', import.meta.url)),
       },
     },
   },

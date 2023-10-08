@@ -2,24 +2,27 @@
 
 :::card Installation
 
-1. Instead of installing `anu-vue` package, install `@anu-vue/nuxt`.
+1. Instead of installing `virgo-vue` package, install `@virgo-vue/nuxt`.
+
     ```bash
-    pnpm add @anu-vue/nuxt && pnpm add -D @unocss/nuxt
-    ```
-    ```bash
-    yarn add @anu-vue/nuxt && yarn add -D @unocss/nuxt
-    ```
-    ```bash
-    npm install @anu-vue/nuxt && npm install -D @unocss/nuxt
+    pnpm add @virgo-vue/nuxt && pnpm add -D @unocss/nuxt
     ```
 
-2. Add Anu & UnoCSS in the nuxt modules array in the `nuxt.config.ts` file as shown below:
+    ```bash
+    yarn add @virgo-vue/nuxt && yarn add -D @unocss/nuxt
+    ```
+
+    ```bash
+    npm install @virgo-vue/nuxt && npm install -D @unocss/nuxt
+    ```
+
+2. Add virgo & UnoCSS in the nuxt modules array in the `nuxt.config.ts` file as shown below:
 
     ```ts
     import { defineNuxtConfig } from 'nuxt/config'
 
     export default defineNuxtConfig({
-      modules: ['@anu-vue/nuxt', '@unocss/nuxt'],
+      modules: ['@virgo-vue/nuxt', '@unocss/nuxt'],
     })
     ```
 
@@ -29,7 +32,7 @@
     import { defineConfig } from 'unocss'
 
     export default defineConfig({
-      include: [/.*\/anu-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
     })
     ```
 
@@ -45,14 +48,14 @@ It's done, Let's try the button component 🥳
 
 ::::card Configuration
 
-To configure Anu, You can use `anu` property in `nuxt.config.ts` file.
+To configure virgo, You can use `virgo` property in `nuxt.config.ts` file.
 
 ```ts{5-7}
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  modules: ['@anu-vue/nuxt', '@unocss/nuxt'],
-  anu: {
+  modules: ['@virgo-vue/nuxt', '@unocss/nuxt'],
+  virgo: {
     // options
   },
 })
@@ -61,18 +64,18 @@ export default defineNuxtConfig({
 You'll get autocompletion for all the available options.
 
 :::warning
-If you set `presets: []` in `uno.config.ts` then UnoCSS will disable all auto injected presets and you manually have to inject `anu-vue` preset & others mentioned in [vue integration](/guide/getting-started/integrations/vue.html#usage) guide.
+If you set `presets: []` in `uno.config.ts` then UnoCSS will disable all auto injected presets and you mvirgoally have to inject `virgo-vue` preset & others mentioned in [vue integration](/guide/getting-started/integrations/vue.html#usage) guide.
 :::
 
 :::info
-When you update icons preset options in `uno.config.ts`, You'll discard auto injected option by Anu. You have to manually add icons preset options as mentioned in [vue integration](/guide/getting-started/integrations/vue.html#usage) guide.
+When you update icons preset options in `uno.config.ts`, You'll discard auto injected option by virgo. You have to mvirgoally add icons preset options as mentioned in [vue integration](/guide/getting-started/integrations/vue.html#usage) guide.
 :::
 
 ::::
 
 :::card Volar Support
 
-If you are using nuxt, Anu's module auto inject types for you you don't need to do anything.
+If you are using nuxt, virgo's module auto inject types for you you don't need to do anything.
 
 Happy coding 🙌🏻
 

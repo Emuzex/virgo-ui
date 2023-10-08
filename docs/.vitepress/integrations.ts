@@ -11,5 +11,5 @@ export interface Integration {
 export const integrations: Integration[] = [
   { name: 'Vue', link: '/guide/getting-started/integrations/vue', icon: 'i-logos-vue' },
   { name: 'Nuxt', link: '/guide/getting-started/integrations/nuxt', icon: 'i-logos-nuxt-icon' },
-  { name: 'TailWind', secondary: 'Upvote Issue', target: '_blank', link: 'https://github.com/jd-solanki/anu/issues/128', icon: 'i-logos-tailwindcss-icon' },
+  { name: 'TailWind', secondary: 'Upvote Issue', target: '_blank', link: 'https://github.com/jd-solanki/virgo/issues/128', icon: 'i-logos-tailwindcss-icon' },
 ]

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { AFloatingMiddlewareFunc } from 'anu-vue'
+import type { AFloatingMiddlewareFunc } from 'virgo-vue'
 
 const items = [
   { text: 'Donut jujubes' },

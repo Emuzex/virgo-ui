@@ -1,19 +1,19 @@
 # Edge releases
 
-If you ever want to try the latest commits instead of waiting for the new release, You can use edge release of Anu.
+If you ever want to try the latest commits instead of waiting for the new release, You can use edge release of virgo.
 
 We recommend using official releases always and only use this if you know what you are doing.
 
 ::::card Using edge release
 
-Use below values for anu packages in your project's `package.json` and run the installation again.
+Use below values for virgo packages in your project's `package.json` and run the installation again.
 
 ```json
 {
   "dependencies": {
-    "anu-vue": "npm:anu-vue-edge@latest",
-    "@anu-vue/nuxt": "npm:@anu-vue/nuxt-edge@latest",
-    "@anu-vue/preset-theme-default": "npm:@anu-vue/preset-theme-default-edge@latest"
+    "virgo-vue": "npm:virgo-vue-edge@latest",
+    "@virgo-vue/nuxt": "npm:@virgo-vue/nuxt-edge@latest",
+    "@virgo-vue/preset-theme-default": "npm:@virgo-vue/preset-theme-default-edge@latest"
   },
 }
 ```

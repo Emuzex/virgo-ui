@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { ATablePropColumn } from 'anu-vue';
-import { rows } from './data';
+import type { ATablePropColumn } from 'virgo-vue'
+import { rows } from './data'
 
 const cols: ATablePropColumn<typeof rows[number]>[] = [
   { name: 'name' },

@@ -1,25 +1,25 @@
-# Anu
+# virgo
 
-> Anu means [Atom](https://en.wikipedia.org/wiki/Atom) in [Sanskrit](https://en.wikipedia.org/wiki/Sanskrit) ⚛️
+> virgo means [Atom](https://en.wikipedia.org/wiki/Atom) in [Sanskrit](https://en.wikipedia.org/wiki/Sanskrit) ⚛️
 
-:::card What is Anu?
-Anu is Vue framework build using UnoCSS & VueUse. It provides ready to use components with great DX & flexibility. It is built with customization in mind.
+:::card What is virgo?
+virgo is Vue framework build using UnoCSS & VueUse. It provides ready to use components with great DX & flexibility. It is built with customization in mind.
 
-Anu provides component styles using UnoCSS preset so components are completely unstyled. This allows you to create the UI however you like and shape components according to your design.
+virgo provides component styles using UnoCSS preset so components are completely unstyled. This allows you to create the UI however you like and shape components according to your design.
 
 Don't forget to checkout the <a href="/guide/features/presets" target="_blank">features</a> section.
 
 :::
 
-:::card Why anu?
+:::card Why virgo?
 
 - Yes, there's UnoCSS, TailwindCSS, etc but they don't provide ready to use components
 - DX Focused. You will enjoy writing code 💯
 - [Configure UI](/guide/base-components/typography.html#config-array) using array instead of writing component's markup again to override
 - It is for lazy people by a lazy person
-- I co-authored premium templates such as [Vuexy](https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599), [Materio](https://themeselection.com/item/materio-vuetify-vuejs-admin-template), etc so you can expect neat & lovable UI from Anu.
+- I co-authored premium templates such as [Vuexy](https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599), [Materio](https://themeselection.com/item/materio-vuetify-vuejs-admin-template), etc so you can expect neat & lovable UI from virgo.
 - Thanks to UnoCSS, VueUse, etc You can now build your desired UI  & functionalities in no time using battle tested features.
-- Customization is a piece of cake with Anu. It is as simple as overriding object 🤯
+- Customization is a piece of cake with virgo. It is as simple as overriding object 🤯
 
 :::
 
@@ -37,6 +37,6 @@ You probably didn't read the UnoCSS [README](https://github.com/unocss/unocss#re
 
 ### Why dependencies
 
-Anu is based on [UnoCSS](https://github.com/unocss/unocss), [VueUse](https://vueuse.org/) & [Floating UI](https://floating-ui.com/). Anu is dependent on these dependencies because there is a saying that goes, "_Don't reinvent the wheel_."
+virgo is based on [UnoCSS](https://github.com/unocss/unocss), [VueUse](https://vueuse.org/) & [Floating UI](https://floating-ui.com/). virgo is dependent on these dependencies because there is a saying that goes, "_Don't reinvent the wheel_."
 
 :::

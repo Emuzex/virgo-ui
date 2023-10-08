@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/AList.json';
-import listItemApi from '@anu/component-meta/AListItem.json';
+import api from '@virgo/component-meta/AList.json';
+import listItemApi from '@virgo/component-meta/AListItem.json';
 </script>
 
 # List

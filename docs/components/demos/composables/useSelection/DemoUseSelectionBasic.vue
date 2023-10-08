@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSelection } from 'anu-vue'
+import { useSelection } from 'virgo-vue'
 import { ref } from 'vue'
 
 const isMultiEnabled = ref(false)

@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
 jobs:
   release:
@@ -18,10 +18,10 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
+          node-version: "lts/*"
           check-latest: true
           cache: pnpm
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
 
       - run: npx changelogithub # or changelogithub@0.12 if ensure the stable result
         env:
@@ -43,7 +43,7 @@ jobs:
         env:
           DISCORD_EMBEDS: |
             [{
-                "title": "✨ Anu ${{ github.event.release.tag_name }} has been released!",
+                "title": "✨ virgo ${{ github.event.release.tag_name }} has been released!",
                 "author": {
                     "name": "${{ github.actor }}",
                     "url": "https://github.com/${{github.actor}}",
@@ -53,5 +53,5 @@ jobs:
                 "description": "Please refer to the release notes for the changes",
                 "color": 0
             }]
-          DISCORD_AVATAR: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
+          DISCORD_AVATAR: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOKS_RELEASE }}

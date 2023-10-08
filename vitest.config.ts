@@ -1,6 +1,6 @@
 import { join } from 'node:path'
 import { defineConfig } from 'vitest/config'
-import { anuVuePkgRoot } from './scripts/paths'
+import { virgoVuePkgRoot } from './scripts/paths'
 
 function noop() {}
 
@@ -20,6 +20,6 @@ export default defineConfig({
       onServerRestart: noop,
       onUserConsoleLog: noop,
     }, 'default'],
-    setupFiles: [join(anuVuePkgRoot, 'test', 'setup.vitest.ts')],
+    setupFiles: [join(virgoVuePkgRoot, 'test', 'setup.vitest.ts')],
   },
 })
