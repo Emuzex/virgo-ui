@@ -1,7 +1,10 @@
+<p align="center">
+  <img src="./docs/public/logo.svg" style="width:100px;" />
+</p>
 <h1 align="center">
-   <a href="https://virgo-ui.dev/" target="_blank" align="center">
-      Virgo
-   </a>
+  <a href="https://virgo-ui.dev/" target="_blank" align="center">
+    Virgo
+  </a>
 </h1>
 <p align="center"><b>Offering a collection of reusable components and a unique headless mode for enhanced customization.</b></p>
 
