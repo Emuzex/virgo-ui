@@ -9,11 +9,10 @@
 <template>
 	<!-- Thanks: // Thanks: https://github.com/unocss/unocss/blob/main/docs/.vitepress/theme/components/LinkGrid.vue -->
 	<div class="flex flex-wrap gap-4">
-		<a v-for="item of items" :key="item.name" :href="item.link" :target="item.target" class="Link w-30 h-30 text-center text-inherit flex flex-col items-center justify-center">
+		<a v-for="item of items" :key="item.name" :href="item.link" class="Link w-30 h-30 text-center text-inherit flex flex-col items-center justify-center">
 			<div v-if="item.icon.startsWith('i')" :class="item.icon" class="w-10 h-10 mb2" />
 			<img v-else :src="item.icon" class="w-10 h-10 mb-2" />
 			<span class="text-sm">{{ item.name }}</span>
-			<span class="text-xs opacity-50">{{ item.secondary }}</span>
 		</a>
 	</div>
 </template>
