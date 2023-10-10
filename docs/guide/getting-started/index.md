@@ -1,9 +1,7 @@
-# virgo
-
-> virgo means [Atom](https://en.wikipedia.org/wiki/Atom) in [Sanskrit](https://en.wikipedia.org/wiki/Sanskrit) ⚛️
+# Virgo
 
 :::card What is virgo?
-virgo is Vue framework build using UnoCSS & VueUse. It provides ready to use components with great DX & flexibility. It is built with customization in mind.
+Virgo is Vue framework build using UnoCSS & VueUse. It provides ready to use components with great DX & flexibility. It is built with customization in mind.
 
 virgo provides component styles using UnoCSS preset so components are completely unstyled. This allows you to create the UI however you like and shape components according to your design.
 
