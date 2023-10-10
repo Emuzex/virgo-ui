@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useCssVar } from '@vueuse/core';
-import { usevirgo } from 'virgo-vue';
+import { useVirgo } from 'virgo-vue';
 import { computed } from 'vue';
 
-const { activeTheme, themes } = usevirgo()
+const { activeTheme, themes } = useVirgo()
 const vpBrandHue = useCssVar('--vp-brand-hue')
 const isPrimaryChanged = computed(() => activeTheme.value.theme?.colors.primary?.startsWith('235'))
 
@@ -20,6 +20,8 @@ const updatePrimaryColor = () => {
     theme.colors.primary = `${primaryHue}, 97.7%, 66.3%`
   }
 }
+
+const currentButtonClass = computed(() => isPrimaryChanged ? 'bg-[hsl(265,97.7%,66.3%)]' : 'bg-[hsl(235,97.7%,66.3%)]');
 </script>
 
 # Customization
@@ -31,21 +33,18 @@ virgo uses [HSL](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hs
 Below is the list of default colors. You can also [add new colors](/guide/features/theme.html#how-to-add-new-color) to the palette.
 
 <div class="flex gap-6 flex-wrap">
-    <ACard variant="fill" color="primary" class="rounded-2xl shadow-2xl shadow-primary shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Primary</ACard>
-    <ACard variant="fill" color="success" class="rounded-2xl shadow-2xl shadow-success shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Success</ACard>
-    <ACard variant="fill" color="info" class="rounded-2xl shadow-2xl shadow-info shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Info</ACard>
-    <ACard variant="fill" color="warning" class="rounded-2xl shadow-2xl shadow-warning shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Warning</ACard>
-    <ACard variant="fill" color="danger" class="rounded-2xl shadow-2xl shadow-danger shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Danger</ACard>
+    <div class="rounded-2xl shadow-2xl shadow-primary shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Primary</div>
+    <div class="rounded-2xl shadow-2xl shadow-success shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Success</div>
+    <div class="rounded-2xl shadow-2xl shadow-info shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Info</div>
+    <div class="rounded-2xl shadow-2xl shadow-warning shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Warning</div>
+    <div class="rounded-2xl shadow-2xl shadow-danger shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Danger</div>
 </div>
 
-<ABtn class="mt-8" :class="isPrimaryChanged ? 'bg-[hsl(265,97.7%,66.3%)]' : 'bg-[hsl(235,97.7%,66.3%)]'" @click="updatePrimaryColor">{{ isPrimaryChanged ? 'Reset' : 'Change' }} primary</ABtn>
-
-<br />
-<br />
+<ABtn class="mt-8" :class="currentButtonClass" @click="updatePrimaryColor">{{ isPrimaryChanged ? 'Reset' : 'Change' }} primary </ABtn>
 
 Also checkout related documentation:
 
-- [`usevirgo` composable](/guide/composables/usevirgo.md)
+- [`useVirgo` composable](/guide/composables/useVirgo.md)
 
 :::
 

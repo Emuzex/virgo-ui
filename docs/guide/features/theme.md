@@ -4,7 +4,7 @@
 
 virgo officially supports light & dark theme. virgo also allows users to customize the appearance of their application by providing a custom theme or modifying the existing.
 
-This is achieved through the use of CSS variables, which can be defined and modified at runtime (via `usevirgo` composable). This means that users can change the theme of their application on the fly. This allows for a more flexible and dynamic user experience, as users can tailor the appearance of their application to their personal preferences or to match the branding of their organization.
+This is achieved through the use of CSS variables, which can be defined and modified at runtime (via `useVirgo` composable). This means that users can change the theme of their application on the fly. This allows for a more flexible and dynamic user experience, as users can tailor the appearance of their application to their personal preferences or to match the branding of their organization.
 
 Light theme is enabled by default. If you want to switch to dark mode use `initialTheme` option while registering virgo.
 
@@ -191,7 +191,7 @@ Adding CSS vars will result in `--a-body-bg-c` & `--a-surface-c` being added to 
 
 Related documentation:
 
-- [`usevirgo` composable](/guide/composables/usevirgo.md)
+- [`useVirgo` composable](/guide/composables/useVirgo.md)
 - [Colors](/guide/getting-started/customization.html#color)
 
 :::
