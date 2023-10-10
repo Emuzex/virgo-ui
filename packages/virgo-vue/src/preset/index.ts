@@ -7,9 +7,9 @@ export const presetDefaults = {
   colors: virgoDefaultThemeColors,
 }
 
-export type PresetvirgoOptions = typeof presetDefaults
+export type PresetVirgoOptions = typeof presetDefaults
 
-export function presetvirgo(options: Partial<PresetvirgoOptions> = {}): Preset {
+export function presetvirgo(options: Partial<PresetVirgoOptions> = {}): Preset {
   const _options: typeof presetDefaults = defu(options, presetDefaults)
 
   return {

@@ -8,13 +8,6 @@ const isDev = process.env.NODE_ENV !== 'production'
 
 const nav: DefaultTheme.Config['nav'] = [
   { text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },
-  { text: 'Virgo UI', link: '/ui/introduction', activeMatch: '/ui/' },
-  {
-    text: 'Development',
-    items: [
-      { text: 'Contributing', link: '/development/contributing' },
-    ],
-  },
 ]
 
 if (isDev)
@@ -81,87 +74,21 @@ export default defineConfig({
           text: '📦&nbsp;&nbsp; Components',
           collapsed: false,
           items: [
-            { text: 'Alert', link: '/guide/components/alert' },
-            { text: 'Avatar', link: '/guide/components/avatar' },
-            { text: 'Badge', link: '/guide/components/badge' },
             { text: 'Button', link: '/guide/components/button' },
-            { text: 'Card', link: '/guide/components/card' },
-            { text: 'Checkbox', link: '/guide/components/checkbox' },
-            { text: 'Chip', link: '/guide/components/chip' },
-            { text: 'Config', link: '/guide/components/config' },
-            { text: 'Dialog', link: '/guide/components/dialog' },
-            { text: 'Drawer', link: '/guide/components/drawer' },
-            { text: 'Input', link: '/guide/components/input' },
-            { text: 'List', link: '/guide/components/list' },
-            { text: 'Loader', link: '/guide/components/loader' },
-            { text: 'Menu', link: '/guide/components/menu' },
-            { text: 'Radio', link: '/guide/components/radio' },
-            { text: 'Rating', link: '/guide/components/rating' },
-            { text: 'Select', link: '/guide/components/select' },
-            { text: 'Switch', link: '/guide/components/switch' },
-            { text: 'Table', link: '/guide/components/table' },
-            { text: 'Tabs', link: '/guide/components/tabs' },
-            { text: 'Textarea', link: '/guide/components/textarea' },
-            { text: 'Tooltip', link: '/guide/components/tooltip' },
-          ],
-        },
-        {
-          text: '🌱&nbsp;&nbsp; Base Components',
-          collapsed: false,
-          items: [
-            // { text: 'Base Input', link: '/guide/base-components/base-input' },
-            { text: 'Typography', link: '/guide/base-components/typography' },
-            { text: 'Views', link: '/guide/base-components/views' },
           ],
         },
         {
           text: '🎛&nbsp;&nbsp; Composables',
           collapsed: false,
           items: [
-            // { text: 'useSearch', link: '/guide/composables/useSearch' },
-            // { text: 'useSort', link: '/guide/composables/useSort' },
-            { text: 'usevirgo', link: '/guide/composables/usevirgo' },
+            { text: 'useSearch', link: '/guide/composables/useSearch' },
+            { text: 'useSort', link: '/guide/composables/useSort' },
+            { text: 'useVirgo', link: '/guide/composables/useVirgo' },
             { text: 'useSelection', link: '/guide/composables/useSelection' },
             { text: 'useIndeterminateCheckbox', link: '/guide/composables/useIndeterminateCheckbox' },
           ],
         },
       ],
-      '/ui/': [
-        {
-          text: '🎨&nbsp;&nbsp; UI',
-          items: [
-            {
-              text: 'Introduction',
-              link: '/ui/introduction',
-            },
-            {
-              text: 'Clones',
-              link: '/ui/clones',
-            },
-            {
-              text: 'User',
-              link: '/ui/user',
-            },
-            {
-              text: 'Cards',
-              link: '/ui/cards',
-            },
-            {
-              text: 'Form',
-              link: '/ui/form',
-            },
-            {
-              text: 'Misc',
-              link: '/ui/misc',
-            },
-          ],
-        },
-      ],
-    },
-    algolia: {
-      appId: 'ZIRXGNDXKY',
-      apiKey: '20424a4612bfde26fb4920f451c19cbc',
-      indexName: 'virgo-vue',
     },
   },
   markdown: {

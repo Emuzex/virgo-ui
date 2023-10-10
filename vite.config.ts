@@ -5,7 +5,6 @@ import { virgoVueSrc } from './scripts/paths'
 
 const externals = [
   'vue',
-  '@floating-ui/vue',
   'colord',
   'defu',
 ]

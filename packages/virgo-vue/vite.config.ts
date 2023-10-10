@@ -5,7 +5,6 @@ import viteBaseConfig from '../../vite.config'
 
 const externals = [
   'vue',
-  '@floating-ui/vue',
   'colord',
   'defu',
 ]
@@ -29,7 +28,6 @@ export default mergeConfig(viteBaseConfig, defineConfig({
         // for externalized deps
         globals: {
           'vue': 'Vue',
-          '@floating-ui/vue': 'FloatingVue',
           'colord': 'Colord',
           'defu': 'Defu',
         },

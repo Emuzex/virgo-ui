@@ -12,7 +12,7 @@ import presetUno from '@unocss/preset-uno'
 import type { PresetOptions as PresetThemeDefaultOptions } from '@virgo-vue/preset-theme-default'
 import { presetThemeDefault } from '@virgo-vue/preset-theme-default'
 import type { PartialDeep } from 'type-fest'
-import type { PluginOptions, PresetvirgoOptions } from 'virgo-vue'
+import type { PluginOptions, PresetVirgoOptions } from 'virgo-vue'
 import { presetIconExtraProperties, presetvirgo, components as virgoComponents, composables as virgoComposables } from 'virgo-vue'
 
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
@@ -36,7 +36,7 @@ export interface ModuleOptions {
   /**
    * Options for virgo Preset
    */
-  presetvirgoOptions?: PresetvirgoOptions
+  presetVirgoOptions?: PresetVirgoOptions
 
   /**
    * virgo Vue Initial Theme | Source npm pkg: `virgo-vue`
@@ -134,7 +134,7 @@ export default defineNuxtModule<ModuleOptions>({
       presetUno(),
 
       // virgo Preset
-      presetvirgo(opts.presetvirgoOptions),
+      presetvirgo(opts.presetVirgoOptions),
     ]
 
     /*

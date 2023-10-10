@@ -15,9 +15,10 @@ export type { PluginOptions, ThemeColors, ThemeOptions as ThemeOption } from './
 
 // Preset
 export { virgoDefaultThemeColors as defaultThemeColors, presetvirgo } from './preset'
-export type { PresetvirgoOptions } from './preset'
+export type { PresetVirgoOptions } from './preset'
 export { presetIconExtraProperties } from './preset/icons'
 
 // Other
 export * from './symbols'
 export { numRange } from './utils/helpers'
+

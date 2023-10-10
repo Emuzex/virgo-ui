@@ -40,17 +40,16 @@
   },
   "dependencies": {
     "@virgo-vue/preset-theme-default": "workspace:*",
-    "@floating-ui/dom": "^1.2.8",
     "@iconify-json/bx": "latest",
-    "@nuxt/kit": "^3.5.0",
+    "@nuxt/kit": "3.5.0",
     "virgo-vue": "workspace:*"
   },
   "devDependencies": {
     "@nuxt/devtools": "0.5.0",
     "@nuxt/devtools-ui-kit": "0.5.0",
-    "@nuxt/module-builder": "^0.3.1",
-    "@nuxt/schema": "^3.5.0",
-    "@unocss/nuxt": "^0.51.13",
-    "nuxt": "^3.5.0"
+    "@nuxt/module-builder": "0.3.1",
+    "@nuxt/schema": "3.5.0",
+    "@unocss/nuxt": "0.51.13",
+    "nuxt": "3.5.0"
   }
 }
