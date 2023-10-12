@@ -62,7 +62,6 @@ export default defineConfig({
 						{ text: 'DX Focused', link: '/guide/features/dx-focused' },
 						{ text: 'Arbitrary Sizes', link: '/guide/features/arbitrary-sizes' },
 						{ text: 'Spacing', link: '/guide/features/spacing' },
-						{ text: 'Transitions', link: '/guide/features/transitions' },
 						{ text: 'Icons', link: '/guide/features/icons' }
 					]
 				},
@@ -133,7 +132,7 @@ export default defineConfig({
 		],
 		resolve: {
 			alias: {
-				'@virgo': fileURLToPath(new URL('../../packages/virgo-vue', import.meta.url))
+				'@virgo-ui/vue': fileURLToPath(new URL('../../packages/virgo-vue', import.meta.url))
 			}
 		}
 	}

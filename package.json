@@ -5,10 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter @virgo-vue/preset-theme-default stub && pnpm --filter virgo-vue dev",
+    "dev": "pnpm --filter @virgo-ui/preset-theme-default stub && pnpm --filter @virgo-ui/vue dev",
     "build": "tsx ./scripts/build.ts",
-    "docs:dev": "pnpm --filter @virgo-vue/documentation dev",
-    "docs:build": "pnpm --filter virgo-vue build && pnpm --filter @virgo-vue/preset-theme-default build && pnpm --filter @virgo-vue/documentation build",
+    "docs:dev": "pnpm --filter @virgo-ui/documentation dev",
+    "docs:build": "pnpm --filter @virgo-ui/vue build && pnpm --filter @virgo-ui/preset-theme-default build && pnpm --filter @virgo-ui/documentation build",
     "clean": "rimraf packages/virgo-vue/dist && rimraf packages/virgo-vue/component-meta && rimraf packages/virgo-nuxt/dist && rimraf packages/virgo-nuxt/playground/.nuxt && rimraf packages/preset-theme-default/dist && rimraf docs/.vitepress/dist && rimraf packages/.vitepress/cache",
     "release": "bumpp package.json packages/**/package.json",
     "lint": "pnpm --filter virgo-vue lint",

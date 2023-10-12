@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@virgo/component-meta/ABtn.json';
+import api from '@virgo-ui/vue/component-meta/ABtn.json';
 </script>
 
 # Button
