@@ -13,7 +13,7 @@ export default mergeConfig(
 			lib: {
 				entry: resolve(__dirname, 'src/index.ts'),
 				name: '@virgo-ui/vue',
-				fileName: '@virgo-ui/vue'
+				fileName: 'vue'
 			},
 			emptyOutDir: false,
 			outDir: 'dist',

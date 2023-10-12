@@ -110,7 +110,7 @@ export default defineNuxtModule<ModuleOptions>({
 
 		// Disable module if '@unocss/nuxt' is not installed.
 		if (nuxt.options.modules.includes('@unocss/nuxt') === false) {
-			logger.warn('You need to install "@unocss/nuxt" to use virgo Vue. Disabling @virgo-ui/vue module.')
+			logger.warn('You need to install "@unocss/nuxt" to use Virgo UI - Vue. Disabling @virgo-ui/vue module.')
 
 			return
 		}
