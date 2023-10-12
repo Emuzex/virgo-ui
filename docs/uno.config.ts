@@ -1,5 +1,5 @@
 import { defineConfig, presetIcons, presetUno, presetWebFonts, transformerDirectives, transformerVariantGroup } from 'unocss'
-import { presetIconExtraProperties, presetVirgo } from 'virgo-vue'
+import { presetIconExtraProperties, presetVirgo } from '@virgo-ui/vue'
 import { presetThemeDefault } from '../packages/preset-theme-default/src/index'
 
 export default defineConfig({
@@ -17,7 +17,7 @@ export default defineConfig({
 			}
 		}),
 
-		// virgo-vue presets
+		// @virgo-ui/vue presets
 		presetVirgo(),
 		presetThemeDefault()
 	],
@@ -28,5 +28,5 @@ export default defineConfig({
 		'../packages/preset-theme-default/src/variants.ts',
 		'../packages/preset-theme-default/src/index.ts'
 	],
-	include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+	include: [/.*\/@virgo-ui\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
 })

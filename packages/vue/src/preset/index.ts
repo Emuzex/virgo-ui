@@ -13,7 +13,7 @@ export function presetVirgo(options: Partial<PresetVirgoOptions> = {}): Preset {
 	const _options: typeof presetDefaults = defu(options, presetDefaults)
 
 	return {
-		name: '@virgo-vue/preset-core',
+		name: '@virgo-ui/preset-core',
 		theme: {
 			colors: Object.fromEntries(_options.colors.map((c) => [c, `hsl(var(--a-${c}))`]))
 		},

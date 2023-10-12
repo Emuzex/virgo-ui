@@ -29,11 +29,11 @@ const vitestConfig = mergeConfig(
 						}
 					}),
 
-					// virgo-vue presets
+					// @virgo-ui/vue presets
 					presetVirgo(),
 					presetThemeDefault()
 				],
-				include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+				include: [/.*\/@virgo-ui\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
 			})
 		],
 		test: {

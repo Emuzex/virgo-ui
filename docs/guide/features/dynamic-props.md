@@ -184,7 +184,7 @@ Later in your component use `useDefaults` composable:
 ```vue
 <script lang="ts" setup>
 // other imports
-import { useDefaults } from 'virgo-vue'
+import { useDefaults } from '@virgo-ui/vue'
 
 // ❗ Make sure to use `_props` as name
 const _props = defineProps<{}>() // or `withDefaults`

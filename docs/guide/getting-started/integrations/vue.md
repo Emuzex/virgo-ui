@@ -2,17 +2,17 @@
 
 :::card Installation
 
-1. Add `virgo-vue` and its supporting libraries
+1. Add `@virgo-ui/vue` and its supporting libraries
 
     ```bash
     # pnpm
-    pnpm add virgo-vue @virgo-vue/preset-theme-default && pnpm add -D unocss @iconify-json/bx
+    pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
 
     # yarn
-    yarn add virgo-vue @virgo-vue/preset-theme-default && yarn add -D unocss @iconify-json/bx
+    yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
 
     # npm
-    npm i virgo-vue @virgo-vue/preset-theme-default && npm install -D unocss @iconify-json/bx
+    npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx
     ```
 
 :::
@@ -34,8 +34,8 @@
 2. Create the UnoCSS Config file `uno.config.js` in the root of the project with the content below:
 
     ```ts
-    import { presetVirgo, presetIconExtraProperties } from 'virgo-vue'
-    import { presetThemeDefault } from '@virgo-vue/preset-theme-default'
+    import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
+    import { presetThemeDefault } from '@virgo-ui/preset-theme-default'
     import {
       defineConfig,
       presetIcons,
@@ -50,13 +50,13 @@
           extraProperties: presetIconExtraProperties,
         }),
 
-        // virgo-vue preset
+        // @virgo-ui/vue preset
         presetVirgo(),
 
         // default theme preset
         presetThemeDefault(),
       ],
-      include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/@virgo-ui\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
     })
     ```
 
@@ -65,16 +65,16 @@
     ```js{3,5-6,8-9,13,11-12,15-16}
     import { createApp } from 'vue'
     import App from './App.vue'
-    import { virgo } from 'virgo-vue'
+    import { virgo } from '@virgo-ui/vue'
 
     // UnoCSS import
     import 'uno.css'
 
     // virgo styles
-    import 'virgo-vue/dist/style.css'
+    import '@virgo-ui/vue/dist/style.css'
 
     // default theme styles
-    import '@virgo-vue/preset-theme-default/dist/style.css'
+    import '@virgo-ui/preset-theme-default/dist/style.css'
 
     // Using `app.use(virgo)` will register virgo plugin
     createApp(App)
@@ -101,7 +101,7 @@ You can also follow À la carte fashion if you don't want to register all the co
 1. Set `registerComponents` option to `false` while registering virgo plugin.
 
     ```diff
-      import { virgo } from 'virgo-vue'
+      import { virgo } from '@virgo-ui/vue'
 
       createApp(App)
     -   .use(virgo)
@@ -109,11 +109,11 @@ You can also follow À la carte fashion if you don't want to register all the co
         .mount('#app')
     ```
 
-2. Now import the components individually from `virgo-vue`
+2. Now import the components individually from `@virgo-ui/vue`
 
     ```vue
     <script setup>
-    import { ABtn } from 'virgo-vue'
+    import { ABtn } from '@virgo-ui/vue'
     </script>
 
     <template>
@@ -128,7 +128,7 @@ You can also follow À la carte fashion if you don't want to register all the co
 1. Make sure to set `registerComponents` to `false` in the `main.js` file if you haven't
 
     ```diff
-      import { virgo } from 'virgo-vue'
+      import { virgo } from '@virgo-ui/vue'
 
       createApp(App)
     -   .use(virgo)
@@ -154,7 +154,7 @@ You can also follow À la carte fashion if you don't want to register all the co
     ```js
     // other imports
     import Components from 'unplugin-vue-components/vite'
-    import { virgoComponentResolver } from 'virgo-vue'
+    import { virgoComponentResolver } from '@virgo-ui/vue'
 
     export default defineConfig({
       plugins: [
@@ -188,7 +188,7 @@ If you are using [Volar](https://marketplace.visualstudio.com/items?itemName=Vue
 {
   "compilerOptions": {
     // ...
-    "types": ["virgo-vue/volar"]
+    "types": ["@virgo-ui/vue/volar"]
   }
 }
 ```

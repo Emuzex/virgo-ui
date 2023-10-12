@@ -11,9 +11,9 @@ Use below values for virgo packages in your project's `package.json` and run the
 ```json
 {
   "dependencies": {
-    "virgo-vue": "npm:virgo-vue-edge@latest",
-    "@virgo-vue/nuxt": "npm:@virgo-vue/nuxt-edge@latest",
-    "@virgo-vue/preset-theme-default": "npm:@virgo-vue/preset-theme-default-edge@latest"
+    "@virgo-ui/vue": "npm:@virgo-ui/vue-edge@latest",
+    "@virgo-ui/nuxt": "npm:@virgo-ui/nuxt-edge@latest",
+    "@virgo-ui/preset-theme-default": "npm:@virgo-ui/preset-theme-default-edge@latest"
   },
 }
 ```

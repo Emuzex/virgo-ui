@@ -132,7 +132,7 @@ export default defineConfig({
 		],
 		resolve: {
 			alias: {
-				'@virgo-ui/vue': fileURLToPath(new URL('../../packages/virgo-vue', import.meta.url))
+				'@virgo-ui/vue': fileURLToPath(new URL('../../packages/vue', import.meta.url))
 			}
 		}
 	}

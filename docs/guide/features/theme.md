@@ -11,7 +11,7 @@ Light theme is enabled by default. If you want to switch to dark mode use `initi
 ```ts{9-11}
 import { createApp } from 'vue'
 import App from './App.vue'
-import { virgo } from 'virgo-vue'
+import { virgo } from '@virgo-ui/vue'
 
 // other stuff
 
@@ -27,7 +27,7 @@ In rare case if you ever want to retrieve the configured options, you can use [`
 
 ```vue
 <script lang="ts" setup>
-import { virgo_CONFIG, PluginOptions } from 'virgo-vue';
+import { virgo_CONFIG, PluginOptions } from '@virgo-ui/vue';
 import { inject } from 'vue';
 
 const config = inject<PluginOptions>(virgo_CONFIG)
@@ -119,7 +119,7 @@ Additionally, You also have to add this new color in virgo's UnoCSS preset optio
 ```ts
 // file: uno.config.ts
 
-import { presetVirgo } from 'virgo-vue'
+import { presetVirgo } from '@virgo-ui/vue'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
@@ -151,7 +151,7 @@ Finally let's use new color 😍
 You can get array of default colors provide by virgo from `defaultThemeColors` export.
 
 ```ts
-import { defaultThemeColors } from 'virgo-vue'
+import { defaultThemeColors } from '@virgo-ui/vue'
 ```
 
 :::

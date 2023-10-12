@@ -110,18 +110,18 @@ importers:
 
   docs:
     dependencies:
-      '@virgo-vue/preset-theme-default':
+      '@virgo-ui/preset-theme-default':
         specifier: workspace:*
         version: link:../packages/preset-theme-default
+      '@virgo-ui/vue':
+        specifier: workspace:*
+        version: link:../packages/vue
       '@vueuse/core':
         specifier: 10.1.2
         version: 10.1.2(vue@3.3.4)
       vee-validate:
         specifier: 4.9.4
         version: 4.9.4(vue@3.3.4)
-      virgo-vue:
-        specifier: workspace:*
-        version: link:../packages/virgo-vue
       vue:
         specifier: 3.3.4
         version: 3.3.4
@@ -166,6 +166,42 @@ importers:
         specifier: 3.21.4
         version: 3.21.4
 
+  packages/nuxt:
+    dependencies:
+      '@iconify-json/bx':
+        specifier: latest
+        version: 1.1.7
+      '@nuxt/kit':
+        specifier: 3.5.0
+        version: 3.5.0(rollup@3.29.4)
+      '@virgo-ui/preset-theme-default':
+        specifier: workspace:*
+        version: link:../preset-theme-default
+      '@virgo-ui/vue':
+        specifier: workspace:*
+        version: link:../vue
+    devDependencies:
+      '@nuxt/devtools':
+        specifier: 0.5.0
+        version: 0.5.0(nuxt@3.5.0)(rollup@3.29.4)(vite@4.3.9)
+      '@nuxt/devtools-ui-kit':
+        specifier: 0.5.0
+        version: 0.5.0(@nuxt/devtools@0.5.0)(nuxt@3.5.0)(postcss@8.4.31)(rollup@3.29.4)(vite@4.3.9)(vue@3.3.4)(webpack@5.88.2)
+      '@nuxt/module-builder':
+        specifier: 0.3.1
+        version: 0.3.1
+      '@nuxt/schema':
+        specifier: 3.5.0
+        version: 3.5.0(rollup@3.29.4)
+      '@unocss/nuxt':
+        specifier: 0.51.13
+        version: 0.51.13(postcss@8.4.31)(rollup@3.29.4)(vite@4.3.9)(webpack@5.88.2)
+      nuxt:
+        specifier: 3.5.0
+        version: 3.5.0(@types/node@20.2.5)(eslint@8.42.0)(rollup@3.29.4)(typescript@5.1.3)
+
+  packages/nuxt/playground: {}
+
   packages/preset-theme-default:
     devDependencies:
       '@types/fs-extra':
@@ -187,43 +223,7 @@ importers:
         specifier: 1.62.1
         version: 1.62.1
 
-  packages/virgo-nuxt:
-    dependencies:
-      '@iconify-json/bx':
-        specifier: latest
-        version: 1.1.7
-      '@nuxt/kit':
-        specifier: 3.5.0
-        version: 3.5.0(rollup@3.29.4)
-      '@virgo-vue/preset-theme-default':
-        specifier: workspace:*
-        version: link:../preset-theme-default
-      virgo-vue:
-        specifier: workspace:*
-        version: link:../virgo-vue
-    devDependencies:
-      '@nuxt/devtools':
-        specifier: 0.5.0
-        version: 0.5.0(nuxt@3.5.0)(rollup@3.29.4)(vite@4.3.9)
-      '@nuxt/devtools-ui-kit':
-        specifier: 0.5.0
-        version: 0.5.0(@nuxt/devtools@0.5.0)(nuxt@3.5.0)(postcss@8.4.31)(rollup@3.29.4)(vite@4.3.9)(vue@3.3.4)(webpack@5.88.2)
-      '@nuxt/module-builder':
-        specifier: 0.3.1
-        version: 0.3.1
-      '@nuxt/schema':
-        specifier: 3.5.0
-        version: 3.5.0(rollup@3.29.4)
-      '@unocss/nuxt':
-        specifier: 0.51.13
-        version: 0.51.13(postcss@8.4.31)(rollup@3.29.4)(vite@4.3.9)(webpack@5.88.2)
-      nuxt:
-        specifier: 3.5.0
-        version: 3.5.0(@types/node@20.2.5)(eslint@8.42.0)(rollup@3.29.4)(typescript@5.1.3)
-
-  packages/virgo-nuxt/playground: {}
-
-  packages/virgo-vue:
+  packages/vue:
     dependencies:
       colord:
         specifier: 2.9.3
@@ -2357,6 +2357,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -8556,6 +8557,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /natural-compare-lite@1.4.0:

@@ -159,11 +159,11 @@ First of all, it is advisable to discuss the design & features of the component 
 
 For creating new component,
 
-1. Create new folder with the name of the component in `packages/virgo-vue/src/components`
+1. Create new folder with the name of the component in `packages/vue/src/components`
 2. Create component with `.vue` extension (we'll only use `.ts` or `.tsx` in special cases)
 3. Create `meta.ts` file and define props, slots & events for the component.
 4. Create `index.ts` file like other components and export stuff like meta, component, etc. (You can check other component's `index.ts` file and update accordingly.)
-5. Export newly created component in `packages/virgo-vue/src/components/index.ts` file so it can be registered globally
+5. Export newly created component in `packages/vue/src/components/index.ts` file so it can be registered globally
 
 Once you have this setup, create docs page for this component in `packages/documentation/docs/guide/components`
 

@@ -2,11 +2,11 @@ import { addCustomTab } from '@nuxt/devtools-kit'
 import { addComponent, addImports, addPluginTemplate, defineNuxtModule, extendViteConfig, useLogger } from '@nuxt/kit'
 import presetIcons from '@unocss/preset-icons'
 import presetUno from '@unocss/preset-uno'
-import type { PresetOptions as PresetThemeDefaultOptions } from '@virgo-vue/preset-theme-default'
-import { presetThemeDefault } from '@virgo-vue/preset-theme-default'
+import type { PresetOptions as PresetThemeDefaultOptions } from '@virgo-ui/preset-theme-default'
+import { presetThemeDefault } from '@virgo-ui/preset-theme-default'
 import type { PartialDeep } from 'type-fest'
-import type { PluginOptions, PresetVirgoOptions } from 'virgo-vue'
-import { presetIconExtraProperties, presetVirgo, components as virgoComponents, composables as virgoComposables } from 'virgo-vue'
+import type { PluginOptions, PresetVirgoOptions } from '@virgo-ui/vue'
+import { presetIconExtraProperties, presetVirgo, components as virgoComponents, composables as virgoComposables } from '@virgo-ui/vue'
 
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
 
@@ -31,7 +31,7 @@ export interface ModuleOptions {
 	presetVirgoOptions?: PresetVirgoOptions
 
 	/**
-	 * virgo Vue Initial Theme | Source npm pkg: `virgo-vue`
+	 * virgo Vue Initial Theme | Source npm pkg: `@virgo-ui/vue`
 	 * You can pass in your own initial theme to override the default theme.
 	 *
 	 * @remarks
@@ -42,7 +42,7 @@ export interface ModuleOptions {
 	initialTheme?: PluginOptions['initialTheme']
 
 	/**
-	 * virgo Vue Themes | Source npm pkg: `virgo-vue`
+	 * virgo Vue Themes | Source npm pkg: `@virgo-ui/vue`
 	 * You can pass in your own themes to override the default themes.
 	 *
 	 * @remarks
@@ -99,18 +99,18 @@ export default defineNuxtModule<ModuleOptions>({
 			tsConfig.compilerOptions ||= {}
 			tsConfig.compilerOptions.types ||= []
 			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			tsConfig.compilerOptions!.types.push('virgo-vue/volar')
+			tsConfig.compilerOptions!.types.push('@virgo-ui/vue/volar')
 			references.push({
-				types: 'virgo-vue/volar'
+				types: '@virgo-ui/vue/volar'
 			})
 		}
 	},
 	setup(opts, nuxt) {
-		const logger = useLogger('virgo-vue')
+		const logger = useLogger('@virgo-ui/vue')
 
 		// Disable module if '@unocss/nuxt' is not installed.
 		if (nuxt.options.modules.includes('@unocss/nuxt') === false) {
-			logger.warn('You need to install "@unocss/nuxt" to use virgo Vue. Disabling virgo-vue module.')
+			logger.warn('You need to install "@unocss/nuxt" to use virgo Vue. Disabling @virgo-ui/vue module.')
 
 			return
 		}
@@ -157,7 +157,7 @@ export default defineNuxtModule<ModuleOptions>({
 			)
 		}
 
-		nuxt.options.unocss.include = [/.*\/virgo-vue\.js(.*)?$/, '**/*.vue', '**/*.md']
+		nuxt.options.unocss.include = [/.*\/@virgo-ui\/vue\.js(.*)?$/, '**/*.vue', '**/*.md']
 
 		// Add inline plugin template for virgo
 		const pluginOptions = {
@@ -169,7 +169,7 @@ export default defineNuxtModule<ModuleOptions>({
 		}
 
 		addPluginTemplate({
-			filename: 'virgo-vue-plugin.mjs',
+			filename: 'vue-plugin.mjs',
 			getContents: () => {
 				let stringifiedPluginOptions = JSON.stringify(pluginOptions)
 				let componentAliasesImportStatement = ''
@@ -203,20 +203,20 @@ export default defineNuxtModule<ModuleOptions>({
 					stringifiedPluginOptions = stringifiedPluginOptions.replace(/}$/g, replaceStr)
 
 					// Generate import statement for component aliases
-					componentAliasesImportStatement = `import { ${aliasedvirgoComponentsNames.join(',')} } from 'virgo-vue'`
+					componentAliasesImportStatement = `import { ${aliasedvirgoComponentsNames.join(',')} } from '@virgo-ui/vue'`
 				}
 
 				const lines = [
-					'import { virgo } from "virgo-vue"',
+					'import { virgo } from "@virgo-ui/vue"',
 					componentAliasesImportStatement,
 					`export default defineNuxtPlugin(nuxtApp => {
             nuxtApp.vueApp.use(virgo, ${stringifiedPluginOptions})
           })`
 				]
 
-				if (isPresetThemeDefaultEnabled) lines.unshift("import '@virgo-vue/preset-theme-default/dist/style.css'")
+				if (isPresetThemeDefaultEnabled) lines.unshift("import '@virgo-ui/preset-theme-default/dist/style.css'")
 
-				lines.unshift("import 'virgo-vue/dist/style.css'")
+				lines.unshift("import '@virgo-ui/vue/dist/style.css'")
 
 				return lines.join('\n')
 			}
@@ -226,7 +226,7 @@ export default defineNuxtModule<ModuleOptions>({
 			addComponent({
 				name,
 				export: name,
-				filePath: 'virgo-vue'
+				filePath: '@virgo-ui/vue'
 			})
 		})
 
@@ -238,13 +238,13 @@ export default defineNuxtModule<ModuleOptions>({
 			.forEach((name) => {
 				addImports({
 					name,
-					from: 'virgo-vue'
+					from: '@virgo-ui/vue'
 				})
 			})
 
 		// Add devtools tab for virgo
 		addCustomTab({
-			name: 'virgo-vue',
+			name: '@virgo-ui/vue',
 			title: 'virgo',
 			icon: 'bx:atom',
 			view: {
@@ -257,7 +257,7 @@ export default defineNuxtModule<ModuleOptions>({
 		extendViteConfig((config) => {
 			config.optimizeDeps = config.optimizeDeps || {}
 			config.optimizeDeps.include = config.optimizeDeps.include || []
-			config.optimizeDeps.include.push('virgo-vue')
+			config.optimizeDeps.include.push('@virgo-ui/vue')
 		})
 	}
 })

@@ -1,21 +1,21 @@
 {
   "name": "@virgo-ui/nuxt",
   "version": "0.0.1",
-  "description": "virgo-vue - Nuxt 3 Module",
+  "description": "Virgo UI Vue - Nuxt 3 Module",
   "license": "MIT",
   "private": false,
   "homepage": "https://virgo-ui.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emuzex/virgo-ui.git",
-    "directory": "packages/virgo-nuxt"
+    "directory": "packages/nuxt"
   },
   "bugs": {
     "url": "https://github.com/emuzex/virgo-ui/issues"
   },
   "keywords": [
     "nuxt 3",
-    "virgo-nuxt",
+    "virgo-ui-nuxt",
     "vue 3"
   ],
   "type": "module",
@@ -39,10 +39,10 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@virgo-vue/preset-theme-default": "workspace:*",
+    "@virgo-ui/preset-theme-default": "workspace:*",
+    "@virgo-ui/vue": "workspace:*",
     "@iconify-json/bx": "latest",
-    "@nuxt/kit": "3.5.0",
-    "virgo-vue": "workspace:*"
+    "@nuxt/kit": "3.5.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "0.5.0",

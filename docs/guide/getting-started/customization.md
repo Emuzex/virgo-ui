@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCssVar } from '@vueuse/core';
-import { useVirgo } from 'virgo-vue';
+import { useVirgo } from '@virgo-ui/vue';
 import { computed } from 'vue';
 
 const { activeTheme, themes } = useVirgo()

@@ -29,7 +29,7 @@ In this type of cases, You can't use `propsDefaults` because you are using the s
 
 ```ts{6-16}
 // Import the component you want to set alias for
-import { ABtn } from 'virgo-vue'
+import { ABtn } from '@virgo-ui/vue'
 
 createApp(App)
   .use(virgo, {

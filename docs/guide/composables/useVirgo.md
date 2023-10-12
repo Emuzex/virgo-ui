@@ -11,7 +11,7 @@
 - `activeTheme: ({ name: string, theme: ThemeOptions })` => Convenient computed property to get details of active theme. Don't modify it 🙅🏻‍♂️
 
 ```ts
-import { useVirgo } from 'virgo-vue';
+import { useVirgo } from '@virgo-ui/vue';
 
 const { themes, activeThemeName, activeTheme } = useVirgo()
 ```
@@ -23,7 +23,7 @@ const { themes, activeThemeName, activeTheme } = useVirgo()
 You can change the active theme at runtime by modifying the `activeThemeName` ref.
 
 ```ts{5}
-import { useVirgo } from 'virgo-vue';
+import { useVirgo } from '@virgo-ui/vue';
 
 const { activeThemeName } = useVirgo()
 
@@ -38,7 +38,7 @@ Use `activeTheme` computed property to get the details of active theme.
 
 ```ts{6-7}
 import { computed } from 'vue';
-import { useVirgo } from 'virgo-vue';
+import { useVirgo } from '@virgo-ui/vue';
 
 const { activeTheme } = useVirgo()
 
@@ -60,7 +60,7 @@ Modifying `activeTheme` computed property won't do anything so never mutate this
 You can modify any theme at runtime via `theme` ref.
 
 ```ts{8,12}
-import { useVirgo } from 'virgo-vue';
+import { useVirgo } from '@virgo-ui/vue';
 
 const { themes } = useVirgo()
 
