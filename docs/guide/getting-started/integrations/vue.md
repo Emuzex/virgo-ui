@@ -56,7 +56,7 @@
         // default theme preset
         presetThemeDefault(),
       ],
-      include: [/.*\/@virgo-ui\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
     })
     ```
 

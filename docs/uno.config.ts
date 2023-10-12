@@ -28,5 +28,5 @@ export default defineConfig({
 		'../packages/preset-theme-default/src/variants.ts',
 		'../packages/preset-theme-default/src/index.ts'
 	],
-	include: [/.*\/@virgo-ui\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+	include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
 })

@@ -32,7 +32,7 @@
     import { defineConfig } from 'unocss'
 
     export default defineConfig({
-      include: [/.*\/@virgo-ui\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
     })
     ```
 
