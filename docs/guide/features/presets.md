@@ -12,10 +12,10 @@ Below is an example of buttons customized using preset feature to look like Boot
 
 If you had noticed in the installation section, to use virgo you need to use two presets.
 
-1. virgo (`presetvirgo`)
+1. virgo (`presetVirgo`)
 2. Theme Default (`presetThemeDefault` )
 
-`presetvirgo` provides core styles for virgo. These styles have nothing to do with visuals of any component.
+`presetVirgo` provides core styles for virgo. These styles have nothing to do with visuals of any component.
 
 `presetThemeDefault` is where all the styling magic happens.
 

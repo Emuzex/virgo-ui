@@ -34,7 +34,7 @@
 2. Create the UnoCSS Config file `uno.config.js` in the root of the project with the content below:
 
     ```ts
-    import { presetvirgo, presetIconExtraProperties } from 'virgo-vue'
+    import { presetVirgo, presetIconExtraProperties } from 'virgo-vue'
     import { presetThemeDefault } from '@virgo-vue/preset-theme-default'
     import {
       defineConfig,
@@ -51,7 +51,7 @@
         }),
 
         // virgo-vue preset
-        presetvirgo(),
+        presetVirgo(),
 
         // default theme preset
         presetThemeDefault(),

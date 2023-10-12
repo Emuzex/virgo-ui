@@ -119,13 +119,13 @@ Additionally, You also have to add this new color in virgo's UnoCSS preset optio
 ```ts
 // file: uno.config.ts
 
-import { presetvirgo } from 'virgo-vue'
+import { presetVirgo } from 'virgo-vue'
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
   presets: [
     // other presets
-    presetvirgo({
+    presetVirgo({
       // Add new color, It will get merged with existing colors
       colors: ['secondary'],
     }),
