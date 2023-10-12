@@ -1,6 +1,6 @@
 {
-  "name": "@virgo-vue/preset-theme-default",
-  "version": "0.15.2",
+  "name": "@virgo-ui/preset-theme-default",
+  "version": "0.0.1",
   "description": "Default theme preset for virgo framework.",
   "type": "module",
   "private": false,
@@ -23,17 +23,17 @@
     "build": "unbuild",
     "stub": "unbuild --stub"
   },
-  "author": "JD Solanki <https://github.com/emuzex>",
+  "author": "Virgo UI <https://github.com/emuzex>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/emuzex",
   "homepage": "https://virgo-ui.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emuzex/virgo.git",
+    "url": "git+https://github.com/emuzex/virgo-ui.git",
     "directory": "packages/preset-theme-default"
   },
   "bugs": {
-    "url": "https://github.com/emuzex/virgo/issues"
+    "url": "https://github.com/emuzex/virgo-ui/issues"
   },
   "keywords": [
     "component library",

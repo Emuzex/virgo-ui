@@ -1,17 +1,17 @@
 {
-  "name": "@virgo-vue/nuxt",
-  "version": "0.15.2",
+  "name": "@virgo-ui/nuxt",
+  "version": "0.0.1",
   "description": "virgo-vue - Nuxt 3 Module",
   "license": "MIT",
   "private": false,
   "homepage": "https://virgo-ui.dev",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emuzex/virgo.git",
+    "url": "git+https://github.com/emuzex/virgo-ui.git",
     "directory": "packages/virgo-nuxt"
   },
   "bugs": {
-    "url": "https://github.com/emuzex/virgo/issues"
+    "url": "https://github.com/emuzex/virgo-ui/issues"
   },
   "keywords": [
     "nuxt 3",
