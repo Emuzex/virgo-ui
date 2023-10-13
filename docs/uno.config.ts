@@ -28,5 +28,9 @@ export default defineConfig({
 		'../packages/preset-theme-default/src/variants.ts',
 		'../packages/preset-theme-default/src/index.ts'
 	],
-	include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+	content: {
+		pipeline: {
+			include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+		}
+	}
 })
