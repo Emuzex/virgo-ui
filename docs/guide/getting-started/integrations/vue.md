@@ -56,7 +56,11 @@
         // default theme preset
         presetThemeDefault(),
       ],
-      include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+      content:{
+        pipeline:{
+            include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+        }
+      }
     })
     ```
 

@@ -32,7 +32,11 @@
     import { defineConfig } from 'unocss'
 
     export default defineConfig({
-      include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+         content:{
+            pipeline:{
+                include: [/.*\/vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+            }
+        }
     })
     ```
 
