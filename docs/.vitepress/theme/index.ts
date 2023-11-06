@@ -1,11 +1,11 @@
-import '@virgo-vue/preset-theme-default/dist/style.css'
-import { virgo } from 'virgo-vue'
+import '@virgo-ui/preset-theme-default/dist/style.css'
+import { anu } from '@virgo-ui/vue'
 import DefaultTheme from 'vitepress/theme'
 import type { App } from 'vue'
 
 import 'uno.css'
 
-import 'virgo-vue/dist/style.css'
+import '@virgo-ui/vue/dist/style.css'
 
 import Api from '../../components/Api.vue'
 import Demo from '../../components/Demo.vue'
@@ -16,7 +16,7 @@ import './style.css'
 export default {
   ...DefaultTheme,
   enhanceApp({ app }: { app: App }) {
-    app.use(virgo)
+    app.use(anu)
 
     // Register demos as components
     const demos = import.meta.glob('../../components/demos/**/*.vue', { eager: true })

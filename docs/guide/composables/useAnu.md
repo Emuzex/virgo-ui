@@ -1,19 +1,19 @@
-# `useVirgo`
+# `useAnu`
 
-`useVirgo` composable provides API for interactive with virgo.
+`useAnu` composable provides API for interactive with Anu.
 
 :::card Basic
 
-`useVirgo` provides following reactive variables:
+`useAnu` provides following reactive variables:
 
 - `themes: ConfigThemes` => Registered themes. You can modify colors & CSS variables at runtime 😍
 - `activeThemeName: string` => Name of the active theme in your app
 - `activeTheme: ({ name: string, theme: ThemeOptions })` => Convenient computed property to get details of active theme. Don't modify it 🙅🏻‍♂️
 
 ```ts
-import { useVirgo } from 'virgo-vue';
+import { useAnu } from '@virgo-ui/vue';
 
-const { themes, activeThemeName, activeTheme } = useVirgo()
+const { themes, activeThemeName, activeTheme } = useAnu()
 ```
 
 :::
@@ -23,9 +23,9 @@ const { themes, activeThemeName, activeTheme } = useVirgo()
 You can change the active theme at runtime by modifying the `activeThemeName` ref.
 
 ```ts{5}
-import { useVirgo } from 'virgo-vue';
+import { useAnu } from '@virgo-ui/vue';
 
-const { activeThemeName } = useVirgo()
+const { activeThemeName } = useAnu()
 
 activeThemeName.value = 'dark'
 ```
@@ -38,9 +38,9 @@ Use `activeTheme` computed property to get the details of active theme.
 
 ```ts{6-7}
 import { computed } from 'vue';
-import { useVirgo } from 'virgo-vue';
+import { useAnu } from '@virgo-ui/vue';
 
-const { activeTheme } = useVirgo()
+const { activeTheme } = useAnu()
 
 const activeThemeName = computed(() => activeTheme.value.name)
 const primaryColor = computed(() => activeTheme.value.theme.colors.primary)
@@ -60,9 +60,9 @@ Modifying `activeTheme` computed property won't do anything so never mutate this
 You can modify any theme at runtime via `theme` ref.
 
 ```ts{8,12}
-import { useVirgo } from 'virgo-vue';
+import { useAnu } from '@virgo-ui/vue';
 
-const { themes } = useVirgo()
+const { themes } = useAnu()
 
 // Change primary color for all themes
 for (const themeName in themes.value) {

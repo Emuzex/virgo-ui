@@ -9,7 +9,7 @@ export interface PresetOptions {
 
 export function presetThemeDefault(options: PresetOptions = {}): Preset {
   return {
-    name: '@virgo-vue/preset-theme-default',
+    name: '@virgo-ui/preset-theme-default',
     theme: {
       colors: {
         a: { border: 'hsla(var(--a-base-c),var(--a-border-opacity))' },

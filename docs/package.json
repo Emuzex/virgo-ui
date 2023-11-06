@@ -28,9 +28,9 @@
     "zod": "3.21.4"
   },
   "dependencies": {
-    "@virgo-vue/preset-theme-default": "workspace:*",
+    "@virgo-ui/preset-theme-default": "workspace:*",
     "@vueuse/core": "10.1.2",
-    "virgo-vue": "workspace:*",
+    "@virgo-ui/vue": "workspace:*",
     "vee-validate": "4.9.4",
     "vue": "3.3.4"
   }

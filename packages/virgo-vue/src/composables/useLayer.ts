@@ -96,7 +96,7 @@ export function useLayer() {
         - Easy to read
         - Quicker to update
 
-      We also have colord as dependency for now. We might remove this in future once virgo is more popular and mature.
+      We also have colord as dependency for now. We might remove this in future once Anu is more popular and mature.
     */
 
     if (_isThemeColor.value) {

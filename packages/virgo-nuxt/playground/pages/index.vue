@@ -6,7 +6,7 @@ const isDialogShown = ref(false)
   <div class="max-w-2xl mx-auto space-y-10 my-8">
     <ATypography
       class="text-2xl font-semibold"
-      title="virgo Playground"
+      title="Anu Playground"
     />
     <div class="grid-row items-center grid-cols-[auto_1fr_auto]">
       <!-- 👉 PayPal -->

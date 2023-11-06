@@ -52,7 +52,7 @@ const tsconfigChecker = createComponentMetaChecker(
   checkerOptions,
 )
 
-function filterMeta(meta: ComponentMeta): ComponentApi {
+const filterMeta = (meta: ComponentMeta): ComponentApi => {
   // const clonedMeta: ComponentMeta = JSON.parse(JSON.stringify(meta))
 
   // Exclude global props

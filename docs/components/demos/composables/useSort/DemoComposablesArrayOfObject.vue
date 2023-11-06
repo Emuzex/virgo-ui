@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useSort } from 'virgo-vue'
-import { ref } from 'vue'
+import { useSort } from '@virgo-ui/vue';
+import { ref } from 'vue';
 
 const data = [
   {

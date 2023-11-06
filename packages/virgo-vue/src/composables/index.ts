@@ -1,4 +1,4 @@
-export * from './useVirgo'
+export * from './useAnu'
 export * from './useCheckbox'
 export * from './useColor'
 export * from './useConfigurable'

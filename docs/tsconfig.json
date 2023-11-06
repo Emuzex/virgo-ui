@@ -4,7 +4,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "types": [
-      "virgo-vue/volar"
+      "@virgo-ui/vue/volar"
     ],
     "lib": [
       "esnext",

@@ -1,10 +1,11 @@
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
-import { virgoVueSrc } from './scripts/paths'
+import { anuVueSrc } from './scripts/paths'
 
 const externals = [
   'vue',
+  '@floating-ui/vue',
   'colord',
   'defu',
 ]
@@ -19,7 +20,7 @@ export default defineConfig({
     dedupe: ['vue'],
     alias: {
       // TODO: This should be `repoRoot`. We will update it in internal refactor task.
-      '@': virgoVueSrc,
+      '@': anuVueSrc,
     },
   },
   optimizeDeps: {

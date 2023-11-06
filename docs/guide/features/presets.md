@@ -2,25 +2,25 @@
 
 ::::card Introduction
 
-Apart from theming just colors, virgo also gives full flexibility on customizing the components. virgo allows defining your own preset that changes how components should look.
+Apart from theming just colors, Anu also gives full flexibility on customizing the components. Anu allows defining your own preset that changes how components should look.
 
 With presets feature, You can even replicate Bootstrap or Material design <i class="i-fluent-emoji-exploding-head"></i>
 
 Below is an example of buttons customized using preset feature to look like Bootstrap buttons:
 
-![Bootstrap buttons using virgo](/images/guide/virgo-bootstrap-btns.png)
+![Bootstrap buttons using anu](/images/guide/anu-bootstrap-btns.png)
 
-If you had noticed in the installation section, to use virgo you need to use two presets.
+If you had noticed in the installation section, to use Anu you need to use two presets.
 
-1. virgo (`presetVirgo`)
+1. Anu (`presetAnu`)
 2. Theme Default (`presetThemeDefault` )
 
-`presetVirgo` provides core styles for virgo. These styles have nothing to do with visuals of any component.
+`presetAnu` provides core styles for Anu. These styles have nothing to do with visuals of any component.
 
 `presetThemeDefault` is where all the styling magic happens.
 
 :::info
-Actually, [presets](https://unocss.dev/config/presets) feature is from UnoCSS. virgo leverages this to provide component styles in separate preset so you can customize the framework however you like.
+Actually, [presets](https://unocss.dev/config/presets) feature is from UnoCSS. Anu leverages this to provide component styles in separate preset so you can customize the framework however you like.
 :::
 
 ::::

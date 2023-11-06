@@ -1,7 +1,7 @@
 import '@/scss/index.scss'
 
 // Components
-export { virgoComponentResolver } from './componentResolver'
+export { AnuComponentResolver } from './componentResolver'
 export * from './components'
 export * as components from './components'
 
@@ -10,12 +10,12 @@ export * from './composables'
 export * as composables from './composables'
 
 // Plugin
-export { plugin as virgo } from './plugin'
+export { plugin as anu } from './plugin'
 export type { PluginOptions, ThemeColors, ThemeOptions as ThemeOption } from './plugin'
 
 // Preset
-export { virgoDefaultThemeColors as defaultThemeColors, presetVirgo } from './preset'
-export type { PresetVirgoOptions } from './preset'
+export { anuDefaultThemeColors as defaultThemeColors, presetAnu } from './preset'
+export type { PresetAnuOptions } from './preset'
 export { presetIconExtraProperties } from './preset/icons'
 
 // Other

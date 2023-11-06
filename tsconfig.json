@@ -22,25 +22,25 @@
       "node"
     ],
     "paths": {
-      "virgo-vue": [
+      "@virgo-ui/vue": [
         "./packages/virgo-vue/src/index.ts"
       ],
       "@/*": [
         "./packages/virgo-vue/src/*"
       ],
-      "@virgo-vue/core": [
+      "@virgo-ui/core": [
         "./packages/virgo-vue/src/index.ts"
       ],
-      "@virgo-vue/core/*": [
+      "@virgo-ui/core/*": [
         "./packages/virgo-vue/src/*"
       ],
-      "@virgo-vue/preset-theme-default": [
+      "@virgo-ui/preset-theme-default": [
         "./packages/preset-theme-default/src/index.ts"
       ],
-      "@virgo-vue/preset-theme-default/*": [
+      "@virgo-ui/preset-theme-default/*": [
         "./packages/preset-theme-default/src/*"
       ],
-      "@virgo-vue/nuxt": [
+      "@virgo-ui/nuxt": [
         "./packages/virgo-nuxt/src/module.ts"
       ]
     }

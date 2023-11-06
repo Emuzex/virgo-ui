@@ -1,7 +1,7 @@
 {
   "name": "@virgo-ui/preset-theme-default",
   "version": "0.0.1",
-  "description": "Default theme preset for virgo framework.",
+  "description": "Default theme preset for Virgo",
   "type": "module",
   "private": false,
   "exports": {

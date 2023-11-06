@@ -5,6 +5,7 @@ import viteBaseConfig from '../../vite.config'
 
 const externals = [
   'vue',
+  '@floating-ui/vue',
   'colord',
   'defu',
 ]
@@ -14,7 +15,7 @@ export default mergeConfig(viteBaseConfig, defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'virgo-vue',
+      name: '@virgo-ui/vue',
       fileName: 'virgo-vue',
     },
     emptyOutDir: false,
@@ -28,6 +29,7 @@ export default mergeConfig(viteBaseConfig, defineConfig({
         // for externalized deps
         globals: {
           'vue': 'Vue',
+          '@floating-ui/vue': 'FloatingVue',
           'colord': 'Colord',
           'defu': 'Defu',
         },

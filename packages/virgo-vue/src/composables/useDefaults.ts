@@ -2,7 +2,7 @@ import { objectKeys, objectPick } from '@antfu/utils'
 import { deepmergeCustom } from 'deepmerge-ts'
 import type { Ref, StyleValue } from 'vue'
 import { toValue } from 'vue'
-import { virgo_PROPS_DEFAULTS } from '@/symbols'
+import { ANU_PROPS_DEFAULTS } from '@/symbols'
 import type { PluginOptionDefaults } from '@/pluginDefaults'
 import type { PluginOptions } from '@/plugin'
 
@@ -26,13 +26,13 @@ export function useDefaults<Props extends Record<string, unknown>>(definitionPro
     throw new Error('Unable to identify the component name. Please define component name or use the `componentName` parameter while using `useDefaults` composable.')
 
   // Get defaults
-  const propsDefaults = inject(virgo_PROPS_DEFAULTS, {})
+  const propsDefaults = inject(ANU_PROPS_DEFAULTS, {})
 
   // New defaults
   const newPropsDefaults = ref({}) as Ref<PluginOptions['propsDefaults']>
 
   // ℹ️ Pass new reactive value to avoid updates in upward tree
-  provide(virgo_PROPS_DEFAULTS, newPropsDefaults)
+  provide(ANU_PROPS_DEFAULTS, newPropsDefaults)
 
   // Return Values
   const propsRef = ref() as Ref<ReturnType<Props>['props']>

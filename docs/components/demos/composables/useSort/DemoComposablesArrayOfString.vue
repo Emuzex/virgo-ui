@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSort } from 'virgo-vue'
+import { useSort } from '@virgo-ui/vue'
 import { ref } from 'vue'
 
 const isAsc = ref(false)
@@ -9,7 +9,7 @@ const fruits = ref(['banana', 'apple', 'watermelon', 'orange'])
 // Filter by is not required for array of string so we are passing undefined
 const { results } = useSort(fruits, undefined, isAsc)
 
-function toggleMango() {
+const toggleMango = () => {
   const mangoIndex = fruits.value.findIndex(f => f === 'mango')
   if (mangoIndex < 0)
     fruits.value.push('mango')

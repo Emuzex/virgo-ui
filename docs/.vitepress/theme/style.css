@@ -41,6 +41,21 @@
 }
 
 /* ==========================
+👉 Algolia search
+========================== */
+
+.VPNavBarSearch.search {
+  flex-grow: unset;
+  margin-inline-end: 2rem;
+}
+
+@media (min-width: 768px) {
+  .VPNavBarSearch .DocSearch.DocSearch-Button {
+    background-color: hsla(var(--a-base-c), 0.045) !important;
+  }
+}
+
+/* ==========================
 👉 Navbar
 ========================== */
 

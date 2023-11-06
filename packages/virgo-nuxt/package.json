@@ -1,7 +1,7 @@
 {
   "name": "@virgo-ui/nuxt",
   "version": "0.0.1",
-  "description": "virgo-vue - Nuxt 3 Module",
+  "description": "Nuxt 3 Module for Virgo",
   "license": "MIT",
   "private": false,
   "homepage": "https://virgo-ui.dev",
@@ -39,10 +39,11 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@virgo-vue/preset-theme-default": "workspace:*",
+    "@virgo-ui/preset-theme-default": "workspace:*",
+    "@floating-ui/dom": "1.2.8",
     "@iconify-json/bx": "latest",
     "@nuxt/kit": "3.5.0",
-    "virgo-vue": "workspace:*"
+    "@virgo-ui/vue": "workspace:*"
   },
   "devDependencies": {
     "@nuxt/devtools": "0.5.0",

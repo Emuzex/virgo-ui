@@ -5,7 +5,7 @@ import type { ComponentPublicInstance } from 'vue'
 import { defineComponent, nextTick, ref } from 'vue'
 import { useZIndex } from '../../src/composables/useZIndex'
 import { defaultBaseZIndex } from '../../src/plugin'
-import { virgo_Z_INDEX } from '../../src/symbols'
+import { ANU_Z_INDEX } from '../../src/symbols'
 
 describe('useZIndex', () => {
   let wrapper: VueWrapper<ComponentPublicInstance>
@@ -22,7 +22,7 @@ describe('useZIndex', () => {
     {
       global: {
         provide: {
-          [virgo_Z_INDEX as symbol]: ref(provideZIndex),
+          [ANU_Z_INDEX as symbol]: ref(provideZIndex),
         },
       },
     },

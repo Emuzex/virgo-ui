@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useSelection } from 'virgo-vue'
+import { useSelection } from '@virgo-ui/vue'
 
 const { options, select, value } = useSelection({
   items: [

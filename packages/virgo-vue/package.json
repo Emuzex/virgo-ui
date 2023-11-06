@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.0.1",
   "type": "module",
-  "description": "DX focused utility based component library",
+  "description": "Vue component collection for Virgo",
   "author": "Virgo UI <https://github.com/emuzex>",
   "funding": "https://github.com/sponsors/emuzex",
   "homepage": "https://virgo-ui.dev",
@@ -48,6 +48,7 @@
     "test-ui": "vitest"
   },
   "dependencies": {
+    "@floating-ui/vue": "1.0.0",
     "colord": "2.9.3",
     "deepmerge-ts": "5.1.0",
     "defu": "6.1.2",

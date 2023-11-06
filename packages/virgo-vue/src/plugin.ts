@@ -4,10 +4,10 @@ import type { App } from 'vue'
 import { defineComponent } from 'vue'
 import type { PluginOptionDefaults } from './pluginDefaults'
 import * as components from '@/components'
-import { useVirgo } from '@/composables/useVirgo'
+import { useAnu } from '@/composables/useAnu'
 import { useDefaults } from '@/composables/useDefaults'
 import { useZIndex } from '@/composables/useZIndex'
-import { virgo_CONFIG, virgo_PROPS_DEFAULTS } from '@/symbols'
+import { ANU_CONFIG, ANU_PROPS_DEFAULTS } from '@/symbols'
 
 export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 export type DefaultThemes = 'light' | 'dark'
@@ -104,11 +104,11 @@ export const plugin = {
       }))
     }
 
-    app.provide(virgo_CONFIG, config)
-    app.provide(virgo_PROPS_DEFAULTS, config.propsDefaults)
+    app.provide(ANU_CONFIG, config)
+    app.provide(ANU_PROPS_DEFAULTS, config.propsDefaults)
 
-    // Initialize virgo instance with config values
-    useVirgo({
+    // Initialize Anu instance with config values
+    useAnu({
       initialTheme: config.initialTheme,
       themes: config.themes,
     })

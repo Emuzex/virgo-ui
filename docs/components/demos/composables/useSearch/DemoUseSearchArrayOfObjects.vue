@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useSearch } from 'virgo-vue'
-import { ref } from 'vue'
+import { useSearch } from '@virgo-ui/vue';
+import { ref } from 'vue';
 
 const data = [
   {

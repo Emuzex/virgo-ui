@@ -20,13 +20,13 @@ export function onClickSameTarget(elRef: MaybeElementRef, handler: (e: MouseEven
     isMouseUpOnTarget = e.target === e.currentTarget
   }
 
-  const clevirgop = [
+  const cleanup = [
     useEventListener(elRef as Element, 'click', onClick),
     useEventListener(elRef as Element, 'mousedown', onMousedown),
     useEventListener(elRef as Element, 'mouseup', onMouseup),
   ]
 
-  const stop = () => clevirgop.forEach(fn => fn())
+  const stop = () => cleanup.forEach(fn => fn())
 
   return stop
 }

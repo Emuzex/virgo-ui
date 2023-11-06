@@ -1,13 +1,13 @@
 import type { MaybeRef } from '@vueuse/core'
 import type { ComputedRef, StyleValue } from 'vue'
-import { useVirgo } from '@/composables/useVirgo'
+import { useAnu } from '@/composables/useAnu'
 import type { ColorProp } from '@/composables/useProps'
 
 export function isThemeColor(color: ColorProp | null): ComputedRef<boolean> {
   return computed(() => {
     let activeThemeColors: string[] = []
 
-    const { activeTheme } = useVirgo()
+    const { activeTheme } = useAnu()
     activeThemeColors = Object.keys(activeTheme.value.theme.colors)
 
     return !!(color && (activeThemeColors as ColorProp[]).includes(color))

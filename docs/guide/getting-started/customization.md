@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useCssVar } from '@vueuse/core';
-import { useVirgo } from 'virgo-vue';
+import { useAnu } from '@virgo-ui/vue';
 import { computed } from 'vue';
 
-const { activeTheme, themes } = useVirgo()
+const { activeTheme, themes } = useAnu()
 const vpBrandHue = useCssVar('--vp-brand-hue')
 const isPrimaryChanged = computed(() => activeTheme.value.theme?.colors.primary?.startsWith('235'))
 
@@ -20,37 +20,38 @@ const updatePrimaryColor = () => {
     theme.colors.primary = `${primaryHue}, 97.7%, 66.3%`
   }
 }
-
-const currentButtonClass = computed(() => isPrimaryChanged ? 'bg-[hsl(265,97.7%,66.3%)]' : 'bg-[hsl(235,97.7%,66.3%)]');
 </script>
 
 # Customization
 
 :::card Color
 
-virgo uses [HSL](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) color format to define and use colors. You can update theme colors via [themes](/guide/features/theme.md) configurations.
+Anu uses [HSL](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) color format to define and use colors. You can update theme colors via [themes](/guide/features/theme.md) configurations.
 
 Below is the list of default colors. You can also [add new colors](/guide/features/theme.html#how-to-add-new-color) to the palette.
 
 <div class="flex gap-6 flex-wrap">
-    <div class="rounded-2xl shadow-2xl shadow-primary shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Primary</div>
-    <div class="rounded-2xl shadow-2xl shadow-success shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Success</div>
-    <div class="rounded-2xl shadow-2xl shadow-info shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Info</div>
-    <div class="rounded-2xl shadow-2xl shadow-warning shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Warning</div>
-    <div class="rounded-2xl shadow-2xl shadow-danger shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Danger</div>
+    <ACard variant="fill" color="primary" class="rounded-2xl shadow-2xl shadow-primary shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Primary</ACard>
+    <ACard variant="fill" color="success" class="rounded-2xl shadow-2xl shadow-success shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Success</ACard>
+    <ACard variant="fill" color="info" class="rounded-2xl shadow-2xl shadow-info shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Info</ACard>
+    <ACard variant="fill" color="warning" class="rounded-2xl shadow-2xl shadow-warning shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Warning</ACard>
+    <ACard variant="fill" color="danger" class="rounded-2xl shadow-2xl shadow-danger shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Danger</ACard>
 </div>
 
-<ABtn class="mt-8" :class="currentButtonClass" @click="updatePrimaryColor">{{ isPrimaryChanged ? 'Reset' : 'Change' }} primary </ABtn>
+<ABtn class="mt-8" :class="isPrimaryChanged ? 'bg-[hsl(265,97.7%,66.3%)]' : 'bg-[hsl(235,97.7%,66.3%)]'" @click="updatePrimaryColor">{{ isPrimaryChanged ? 'Reset' : 'Change' }} primary</ABtn>
+
+<br />
+<br />
 
 Also checkout related documentation:
 
-- [`useVirgo` composable](/guide/composables/useVirgo.md)
+- [`useAnu` composable](/guide/composables/useAnu.md)
 
 :::
 
 ::::card CSS variables
 
-For the most part, virgo uses CSS variables for other stuff to providing maximum flexibility and customization on the fly. All virgo's CSS variables are prefixed with `a-`.
+For the most part, Anu uses CSS variables for other stuff to providing maximum flexibility and customization on the fly. All anu's CSS variables are prefixed with `a-`.
 
 :::details View all CSS vars
 Below is CSS vars defined for preset theme default's light theme:
@@ -85,15 +86,15 @@ Guess, how our button will look like?
 It's a bootstrap button 🤯
 
 Just change the colors to Bootstrap's color and see the magic 😍
-![Bootstrap buttons using virgo](/images/guide/virgo-bootstrap-btns.png)
+![Bootstrap buttons using anu](/images/guide/anu-bootstrap-btns.png)
 :::
 
-You can refer to available shortcuts in [this](https://github.com/emuzex/virgo/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
+You can refer to available shortcuts in [this](https://github.com/jd-solanki/anu/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
 
 If you like this simple customization don't forget to give a **star on Github**. If you don't like it give a triple star 😉.
 
-<a class="!hover:opacity-100 !no-underline" href="https://github.com/emuzex/virgo" rel="noopener noreferrer" target="_blank">
-    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/emuzex/virgo" tag="a">
+<a class="!hover:opacity-100 !no-underline" href="https://github.com/jd-solanki/anu" rel="noopener noreferrer" target="_blank">
+    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/jd-solanki/anu" tag="a">
         Give a star
     </ABtn>
 </a>

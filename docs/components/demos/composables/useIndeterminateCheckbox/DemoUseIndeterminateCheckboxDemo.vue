@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useIndeterminateCheckbox } from 'virgo-vue'
+import { useIndeterminateCheckbox } from '@virgo-ui/vue'
 import { ref } from 'vue'
 
 const options = [

@@ -1,10 +1,10 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
-import virgo from '../src/module'
+import anu from '../src/module'
 
 export default defineNuxtConfig({
-  modules: [virgo, '@unocss/nuxt', '@nuxt/devtools'],
-  virgo: {
+  modules: [anu, '@unocss/nuxt', '@nuxt/devtools'],
+  anu: {
     themes: {
       light: {
         colors: {

@@ -1,18 +1,18 @@
 import { isNumber } from '@antfu/utils'
 import { type App, computed, inject, ref } from 'vue'
 
-import { virgo_Z_INDEX } from '@/symbols'
+import { ANU_Z_INDEX } from '@/symbols'
 
 const zIndexCounter = ref(0)
 
 export const useZIndex = createGlobalState((defaultBaseZIndex?: number, app?: App) => {
   if (!defaultBaseZIndex || !app)
-    throw new Error('[virgo] `useZIndex` composable must be initialized before usage.')
+    throw new Error('[Anu] `useZIndex` composable must be initialized before usage.')
 
   let injectedZIndex: Ref<number | undefined> | undefined
 
   app.runWithContext(() => {
-    injectedZIndex = inject(virgo_Z_INDEX, undefined)
+    injectedZIndex = inject(ANU_Z_INDEX, undefined)
   })
 
   const baseZIndex = computed(() => {
