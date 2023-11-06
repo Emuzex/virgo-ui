@@ -5,15 +5,19 @@
 1. Add `virgo-vue` and its supporting libraries
 
 ::: code-group
+
   ```bash [pnpm]
   pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
   ```
+
   ```bash [yarn]
     yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
   ```
+
   ```bash [npm]
     npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx  ```
    ```
+
 :::
 
 :::card Usage
@@ -55,7 +59,7 @@
         // default theme preset
         presetThemeDefault(),
       ],
-      include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/@virgo-ui_vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
     })
     ```
 

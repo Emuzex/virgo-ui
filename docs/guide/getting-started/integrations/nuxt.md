@@ -3,12 +3,15 @@
 :::card Installation
 
 1. Instead of installing `@virgo-ui/vue` package, install `@virgo-ui/nuxt`.
+
     ```bash
     pnpm add @virgo-ui/nuxt && pnpm add -D @unocss/nuxt
     ```
+
     ```bash
     yarn add @virgo-ui/nuxt && yarn add -D @unocss/nuxt
     ```
+
     ```bash
     npm install @virgo-ui/nuxt && npm install -D @unocss/nuxt
     ```
@@ -29,7 +32,7 @@
     import { defineConfig } from 'unocss'
 
     export default defineConfig({
-      include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: [/.*\/@virgo-ui_vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
     })
     ```
 
