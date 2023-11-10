@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useCssVar } from '@vueuse/core';
-import { useAnu } from '@virgo-ui/vue';
+import { useVirgo } from '@virgo-ui/vue';
 import { computed } from 'vue';
 
-const { activeTheme, themes } = useAnu()
+const { activeTheme, themes } = useVirgo()
 const vpBrandHue = useCssVar('--vp-brand-hue')
 const isPrimaryChanged = computed(() => activeTheme.value.theme?.colors.primary?.startsWith('235'))
 
@@ -26,7 +26,7 @@ const updatePrimaryColor = () => {
 
 :::card Color
 
-Anu uses [HSL](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) color format to define and use colors. You can update theme colors via [themes](/guide/features/theme.md) configurations.
+Virgo uses [HSL](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) color format to define and use colors. You can update theme colors via [themes](/guide/features/theme.md) configurations.
 
 Below is the list of default colors. You can also [add new colors](/guide/features/theme.html#how-to-add-new-color) to the palette.
 
@@ -45,13 +45,13 @@ Below is the list of default colors. You can also [add new colors](/guide/featur
 
 Also checkout related documentation:
 
-- [`useAnu` composable](/guide/composables/useAnu.md)
+- [`useVirgo` composable](/guide/composables/useVirgo.md)
 
 :::
 
 ::::card CSS variables
 
-For the most part, Anu uses CSS variables for other stuff to providing maximum flexibility and customization on the fly. All anu's CSS variables are prefixed with `a-`.
+For the most part, Virgo uses CSS variables for other stuff to providing maximum flexibility and customization on the fly. All virgo's CSS variables are prefixed with `a-`.
 
 :::details View all CSS vars
 Below is CSS vars defined for preset theme default's light theme:
@@ -86,15 +86,15 @@ Guess, how our button will look like?
 It's a bootstrap button 🤯
 
 Just change the colors to Bootstrap's color and see the magic 😍
-![Bootstrap buttons using anu](/images/guide/anu-bootstrap-btns.png)
+![Bootstrap buttons using virgo](/images/guide/virgo-bootstrap-btns.png)
 :::
 
-You can refer to available shortcuts in [this](https://github.com/jd-solanki/anu/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
+You can refer to available shortcuts in [this](https://github.com/emuzex/virgo-ui/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
 
 If you like this simple customization don't forget to give a **star on Github**. If you don't like it give a triple star 😉.
 
-<a class="!hover:opacity-100 !no-underline" href="https://github.com/jd-solanki/anu" rel="noopener noreferrer" target="_blank">
-    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/jd-solanki/anu" tag="a">
+<a class="!hover:opacity-100 !no-underline" href="https://github.com/emuzex/virgo-ui" rel="noopener noreferrer" target="_blank">
+    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/emuzex/virgo-ui" tag="a">
         Give a star
     </ABtn>
 </a>

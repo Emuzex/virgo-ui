@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import dataTableApi from '@anu/component-meta/ADataTable.json';
-import api from '@anu/component-meta/ATable.json';
+import dataTableApi from '@virgo-ui/vue/component-meta/ADataTable.json';
+import api from '@virgo-ui/vue/component-meta/ATable.json';
 </script>
 
 # Table
 
 :::card Variations
-Anu provides two variations for table component:
+Virgo provides two variations for table component:
 
 1. `ATable` - Use this lightweight table for simply rendering rows & columns. This also support rending custom column content via slot & allow adding extra columns.
 2. `ADataTable` - This table provide advanced features like sorting, searching & pagination. You can use this table to render the data from API. This component is build on top of `ATable` component.

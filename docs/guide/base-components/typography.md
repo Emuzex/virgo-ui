@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/ATypography.json';
+import api from '@virgo-ui/vue/component-meta/ATypography.json';
 </script>
 
 # Typography
@@ -7,7 +7,7 @@ import api from '@anu/component-meta/ATypography.json';
 <!-- 👉 Classes -->
 ::::card Classes
 
-Anu provides useful classes like `.a-title` & `.a-subtitle` for rendering typography with consistency.
+Virgo provides useful classes like `.a-title` & `.a-subtitle` for rendering typography with consistency.
 
 :::code DemoTypographyClasses
 <<< @/components/demos/typography/DemoTypographyClasses.vue

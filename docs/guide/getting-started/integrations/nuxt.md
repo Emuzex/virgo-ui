@@ -16,7 +16,7 @@
     npm install @virgo-ui/nuxt && npm install -D @unocss/nuxt
     ```
 
-2. Add Anu & UnoCSS in the nuxt modules array in the `nuxt.config.ts` file as shown below:
+2. Add Virgo & UnoCSS in the nuxt modules array in the `nuxt.config.ts` file as shown below:
 
     ```ts
     import { defineNuxtConfig } from 'nuxt/config'
@@ -48,14 +48,14 @@ It's done, Let's try the button component 🥳
 
 ::::card Configuration
 
-To configure Anu, You can use `anu` property in `nuxt.config.ts` file.
+To configure Virgo, You can use `virgo` property in `nuxt.config.ts` file.
 
 ```ts{5-7}
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   modules: ['@virgo-ui/nuxt', '@unocss/nuxt'],
-  anu: {
+  virgo: {
     // options
   },
 })
@@ -68,14 +68,14 @@ If you set `presets: []` in `uno.config.ts` then UnoCSS will disable all auto in
 :::
 
 :::info
-When you update icons preset options in `uno.config.ts`, You'll discard auto injected option by Anu. You have to manually add icons preset options as mentioned in [vue integration](/guide/getting-started/integrations/vue.html#usage) guide.
+When you update icons preset options in `uno.config.ts`, You'll discard auto injected option by Virgo. You have to manually add icons preset options as mentioned in [vue integration](/guide/getting-started/integrations/vue.html#usage) guide.
 :::
 
 ::::
 
 :::card Volar Support
 
-If you are using nuxt, Anu's module auto inject types for you you don't need to do anything.
+If you are using nuxt, Virgo's module auto inject types for you you don't need to do anything.
 
 Happy coding 🙌🏻
 

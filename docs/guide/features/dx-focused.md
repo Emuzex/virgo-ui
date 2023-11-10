@@ -79,7 +79,7 @@ const items = [
 </template>
 ```
 
-**With Anu it is so simple <i class="i-fluent-emoji-smiling-face-with-sunglasses"></i>**
+**With Virgo it is so simple <i class="i-fluent-emoji-smiling-face-with-sunglasses"></i>**
 
 ```diff
 - icon: 'i-bx-football'
@@ -127,7 +127,7 @@ const items = [
 
 :::card Atomic
 
-With Anu's atomic behavior, you can pass the existing props like `title`, `subtitle`, etc to certain components creating UI quickly without extra hassle.
+With Virgo's atomic behavior, you can pass the existing props like `title`, `subtitle`, etc to certain components creating UI quickly without extra hassle.
 
 The code below will create a drawer with title & subtitle. This is because `ADrawer` uses `ACard` component that in turns uses `ATypography` component.
 
@@ -145,7 +145,7 @@ The code below will create a drawer with title & subtitle. This is because `ADra
 
 :::card Easy Customization On The Fly
 
-As Anu is built on top of utility classes, it has edge over the frameworks that uses SCSS or don't have utility classes.
+As Virgo is built on top of utility classes, it has edge over the frameworks that uses SCSS or don't have utility classes.
 
 Thanks to utility classes at some point if you want to change anything regarding the component once, only then can utility classes easily let you perform changes.
 

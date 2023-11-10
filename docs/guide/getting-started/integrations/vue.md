@@ -37,7 +37,7 @@
 2. Create the UnoCSS Config file `uno.config.js` in the root of the project with the content below:
 
     ```ts
-    import { presetAnu, presetIconExtraProperties } from '@virgo-ui/vue'
+    import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
     import { presetThemeDefault } from '@virgo-ui/preset-theme-default'
     import {
       defineConfig,
@@ -54,7 +54,7 @@
         }),
 
         // @virgo-ui/vue preset
-        presetAnu(),
+        presetVirgo(),
 
         // default theme preset
         presetThemeDefault(),
@@ -68,20 +68,20 @@
     ```js{3,5-6,8-9,13,11-12,15-16}
     import { createApp } from 'vue'
     import App from './App.vue'
-    import { anu } from '@virgo-ui/vue'
+    import { virgo } from '@virgo-ui/vue'
 
     // UnoCSS import
     import 'uno.css'
 
-    // anu styles
+    // virgo styles
     import '@virgo-ui/vue/dist/style.css'
 
     // default theme styles
     import '@virgo-ui/preset-theme-default/dist/style.css'
 
-    // Using `app.use(anu)` will register anu plugin
+    // Using `app.use(virgo)` will register virgo plugin
     createApp(App)
-      .use(anu)
+      .use(virgo)
       .mount('#app')
     ```
 
@@ -101,14 +101,14 @@ Now, Just refer to the component in your vue files:
 
 You can also follow À la carte fashion if you don't want to register all the components globally.
 
-1. Set `registerComponents` option to `false` while registering anu plugin.
+1. Set `registerComponents` option to `false` while registering virgo plugin.
 
     ```diff
-      import { anu } from '@virgo-ui/vue'
+      import { virgo } from '@virgo-ui/vue'
 
       createApp(App)
-    -   .use(anu)
-    +   .use(anu, { registerComponents: false })
+    -   .use(virgo)
+    +   .use(virgo, { registerComponents: false })
         .mount('#app')
     ```
 
@@ -131,11 +131,11 @@ You can also follow À la carte fashion if you don't want to register all the co
 1. Make sure to set `registerComponents` to `false` in the `main.js` file if you haven't
 
     ```diff
-      import { anu } from '@virgo-ui/vue'
+      import { virgo } from '@virgo-ui/vue'
 
       createApp(App)
-    -   .use(anu)
-    +   .use(anu, { registerComponents: false })
+    -   .use(virgo)
+    +   .use(virgo, { registerComponents: false })
         .mount('#app')
     ```
 
@@ -157,14 +157,14 @@ You can also follow À la carte fashion if you don't want to register all the co
     ```js
     // other imports
     import Components from 'unplugin-vue-components/vite'
-    import { AnuComponentResolver } from '@virgo-ui/vue'
+    import { VirgoComponentResolver } from '@virgo-ui/vue'
 
     export default defineConfig({
       plugins: [
         // other plugins
         Components({
           resolvers: [
-            AnuComponentResolver()
+            VirgoComponentResolver()
           ]
         }),
       ],

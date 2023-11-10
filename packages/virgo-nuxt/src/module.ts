@@ -4,34 +4,34 @@ import { addCustomTab } from '@nuxt/devtools-kit'
 import { addComponent, addImports, addPluginTemplate, defineNuxtModule, extendViteConfig, useLogger } from '@nuxt/kit'
 import presetIcons from '@unocss/preset-icons'
 import presetUno from '@unocss/preset-uno'
-import type { PluginOptions, PresetAnuOptions } from '@virgo-ui/vue'
-import { components as AnuComponents, composables as AnuComposables, presetAnu, presetIconExtraProperties } from '@virgo-ui/vue'
+import type { PluginOptions, PresetVirgoOptions } from '@virgo-ui/vue'
+import { components as VirgoComponents, composables as VirgoComposables, presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
 import type { PartialDeep } from 'type-fest'
 
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
 
 import { name, version } from '../package.json'
 
-const configKey = 'anu'
+const configKey = 'virgo'
 
 /** Nuxt Module Options */
 // TODO: (types) We don't get nested autocompletion for options
 export interface ModuleOptions {
 	/**
-	 * Import Anu Preset Theme Default
-	 * When enabled, it will automatically set up the default theme preset for Anu and Uno.
+	 * Import Virgo Preset Theme Default
+	 * When enabled, it will automatically set up the default theme preset for Virgo and Uno.
 	 *
 	 * @default true
 	 */
 	presetThemeDefault?: PresetThemeDefaultOptions | boolean
 
 	/**
-	 * Options for Anu Preset
+	 * Options for Virgo Preset
 	 */
-	presetAnuOptions?: PresetAnuOptions
+	presetVirgoOptions?: PresetVirgoOptions
 
 	/**
-	 * Anu Vue Initial Theme | Source npm pkg: `@virgo-ui/vue
+	 * Virgo Vue Initial Theme | Source npm pkg: `@virgo-ui/vue
 	 * You can pass in your own initial theme to override the default theme.
 	 *
 	 * @remarks
@@ -42,7 +42,7 @@ export interface ModuleOptions {
 	initialTheme?: PluginOptions['initialTheme']
 
 	/**
-	 * Anu Vue Themes | Source npm pkg: `@virgo-vue/ui`
+	 * Virgo Vue Themes | Source npm pkg: `@virgo-vue/ui`
 	 * You can pass in your own themes to override the default themes.
 	 *
 	 * @remarks
@@ -110,7 +110,7 @@ export default defineNuxtModule<ModuleOptions>({
 
 		// Disable module if '@unocss/nuxt' is not installed.
 		if (nuxt.options.modules.includes('@unocss/nuxt') === false) {
-			logger.warn('You need to install "@unocss/nuxt" to use Anu Vue. Disabling @virgo-ui/vue module.')
+			logger.warn('You need to install "@unocss/nuxt" to use Virgo Vue. Disabling @virgo-ui/vue module.')
 
 			return
 		}
@@ -120,13 +120,13 @@ export default defineNuxtModule<ModuleOptions>({
 		// Disable unocss preflight by default.
 		nuxt.options.unocss.preflight = false
 
-		// Add default presets for Anu into the unocss options.
+		// Add default presets for Virgo into the unocss options.
 		nuxt.options.unocss.presets = [
 			...(nuxt.options.unocss.presets || []), // Don't override existing presets.
 			presetUno(),
 
-			// Anu Preset
-			presetAnu(opts.presetAnuOptions)
+			// Virgo Preset
+			presetVirgo(opts.presetVirgoOptions)
 		]
 
 		/*
@@ -159,7 +159,7 @@ export default defineNuxtModule<ModuleOptions>({
 
 		nuxt.options.unocss.include = [/.*\/@virgo-ui_vue\.js(.*)?$/, '**/*.vue', '**/*.md']
 
-		// Add inline plugin template for Anu
+		// Add inline plugin template for Virgo
 		const pluginOptions = {
 			initialTheme: opts.initialTheme,
 			themes: opts.themes,
@@ -177,15 +177,15 @@ export default defineNuxtModule<ModuleOptions>({
 				// ℹ️ Component aliases
 				if (opts.componentAliases) {
 					const componentAliases = opts.componentAliases || {}
-					const aliasedAnuComponentsNames = [] /* We need this adding imports */
+					const aliasedVirgoComponentsNames = [] /* We need this adding imports */
 
 					for (const aliasComponentName in componentAliases) {
 						const sourceComponent = componentAliases[aliasComponentName]
 						const sourceComponentName = sourceComponent.name || sourceComponent.__name
 
-						if (!name) throw new Error(`[Anu] Component you want to create alias of must have name. Unable to resolve component ${sourceComponentName}`)
+						if (!name) throw new Error(`[Virgo] Component you want to create alias of must have name. Unable to resolve component ${sourceComponentName}`)
 
-						aliasedAnuComponentsNames.push(sourceComponentName)
+						aliasedVirgoComponentsNames.push(sourceComponentName)
 						componentAliases[aliasComponentName] = sourceComponentName
 					}
 
@@ -203,14 +203,14 @@ export default defineNuxtModule<ModuleOptions>({
 					stringifiedPluginOptions = stringifiedPluginOptions.replace(/}$/g, replaceStr)
 
 					// Generate import statement for component aliases
-					componentAliasesImportStatement = `import { ${aliasedAnuComponentsNames.join(',')} } from '@virgo-ui/vue'`
+					componentAliasesImportStatement = `import { ${aliasedVirgoComponentsNames.join(',')} } from '@virgo-ui/vue'`
 				}
 
 				const lines = [
-					'import { anu } from "@virgo-ui/vue"',
+					'import { virgo } from "@virgo-ui/vue"',
 					componentAliasesImportStatement,
 					`export default defineNuxtPlugin(nuxtApp => {
-            nuxtApp.vueApp.use(anu, ${stringifiedPluginOptions})
+            nuxtApp.vueApp.use(virgo, ${stringifiedPluginOptions})
           })`
 				]
 
@@ -222,7 +222,7 @@ export default defineNuxtModule<ModuleOptions>({
 			}
 		})
 
-		Object.keys(AnuComponents).forEach((name) => {
+		Object.keys(VirgoComponents).forEach((name) => {
 			addComponent({
 				name,
 				export: name,
@@ -230,10 +230,10 @@ export default defineNuxtModule<ModuleOptions>({
 			})
 		})
 
-		// Add Auto Completions for Anu Composables
+		// Add Auto Completions for Virgo Composables
 		const composablesToExclude = ['useProp']
 
-		Object.keys(AnuComposables)
+		Object.keys(VirgoComposables)
 			.filter((key) => key.includes('use') && !composablesToExclude.includes(key))
 			.forEach((name) => {
 				addImports({
@@ -242,18 +242,18 @@ export default defineNuxtModule<ModuleOptions>({
 				})
 			})
 
-		// Add devtools tab for Anu
+		// Add devtools tab for Virgo
 		addCustomTab({
 			name: 'virgo',
 			title: 'Virgo',
 			icon: 'bx:atom',
 			view: {
 				type: 'iframe',
-				src: 'https://anu-vue.netlify.app/'
+				src: 'https://virgoui.dev/'
 			}
 		})
 
-		// Fixes auto-imports for Anu Composables
+		// Fixes auto-imports for Virgo Composables
 		extendViteConfig((config) => {
 			config.optimizeDeps = config.optimizeDeps || {}
 			config.optimizeDeps.include = config.optimizeDeps.include || []
@@ -264,9 +264,9 @@ export default defineNuxtModule<ModuleOptions>({
 
 declare module '@nuxt/schema' {
 	interface NuxtConfig {
-		anu?: ModuleOptions
+		virgo?: ModuleOptions
 	}
 	interface NuxtOptions {
-		anu?: ModuleOptions
+		virgo?: ModuleOptions
 	}
 }

@@ -8,11 +8,11 @@ const showFade = ref(false)
 
 :::card Introduction
 
-Anu provides useful transitions for your application and it also uses it internally. You can transition of most of the components to any of the transitions provided by Anu.
+Virgo provides useful transitions for your application and it also uses it internally. You can transition of most of the components to any of the transitions provided by Virgo.
 
-Additionally, you can also create your own transitions via `createTransition` function provided by Anu.
+Additionally, you can also create your own transitions via `createTransition` function provided by Virgo.
 
-Transitions components in Anu has pattern `A<transition-name>Transition` (_e.g. `AFadeTransition`_) and transition name will be used as the name of the transition. For example, If you create a transition component for bounce `createTransition('bounce')` then name it `ABounceTransition` and you can use it as `<SomeComponent transition="bounce">`. Don't forget to write the styles for this transition. <i class="i-fluent-emoji-grinning-face-with-sweat"></i>
+Transitions components in Virgo has pattern `A<transition-name>Transition` (_e.g. `AFadeTransition`_) and transition name will be used as the name of the transition. For example, If you create a transition component for bounce `createTransition('bounce')` then name it `ABounceTransition` and you can use it as `<SomeComponent transition="bounce">`. Don't forget to write the styles for this transition. <i class="i-fluent-emoji-grinning-face-with-sweat"></i>
 
 :::
 
@@ -68,7 +68,7 @@ Go hack the transitions and make them your own. <i class="i-fluent-emoji-smiling
 <!-- 👉 Creating Custom Transition Components -->
 ::::card Creating Custom Transition Components
 
-Anu provides `createTransition` composable to create your own transition components that you can reuse. This composable takes a transition name as an argument and returns a transition component.
+Virgo provides `createTransition` composable to create your own transition components that you can reuse. This composable takes a transition name as an argument and returns a transition component.
 
 ```ts
 import { createTransition } from '@virgo-ui/vue'
@@ -78,7 +78,7 @@ export const AFadeTransition = createTransition('fade')
 
 You have transition component now, but you have to write the styles for it. You can write the styles for your transition component in the same way as you write for any other transition.
 
-Here's example of fade transition styles used in anu.
+Here's example of fade transition styles used in Virgo.
 
 <<< @/../packages/virgo-vue/src/scss/index.scss#fade-transition
 

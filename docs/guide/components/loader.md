@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/ALoader.json';
+import api from '@virgo-ui/vue/component-meta/ALoader.json';
 </script>
 
 # Loader
@@ -18,7 +18,7 @@ Use `ASpinner` component to render a spinner. For adjusting size of the spinner 
 <!-- 👉 Components -->
 :::::card Components {bordered}
 
-Anu already integrated loading for components that requires loading.
+Virgo already integrated loading for components that requires loading.
 
 ::::code DemoLoaderComponents
 <<< @/components/demos/loader/DemoLoaderComponents.vue{20-24,37-44,58-62,75-79,90,99,110,118}
@@ -26,7 +26,7 @@ Anu already integrated loading for components that requires loading.
 
 ::::after-demo
 :::tip Performance 🚀
-If you don't use loading prop then `loading` prop for these component will be `undefined`. Anu will only render loader if `loading` prop is other than `undefined`. Hence, You won't get unwanted loader DOM if you aren't using loader.
+If you don't use loading prop then `loading` prop for these component will be `undefined`. Virgo will only render loader if `loading` prop is other than `undefined`. Hence, You won't get unwanted loader DOM if you aren't using loader.
 :::
 ::::
 
@@ -54,7 +54,7 @@ As `ADrawer` & `ADialog` is built on top of `ACard`, you can pass `loading` prop
 <!-- 👉 Spinner Icon -->
 ::::card Spinner Icon
 
-Anu also provides convenient component `ALoadingIcon` for satisfying your custom needs 😇
+Virgo also provides convenient component `ALoadingIcon` for satisfying your custom needs 😇
 
 :::code DemoLoaderSpinnerIcon
 <<< @/components/demos/loader/DemoLoaderSpinnerIcon.vue

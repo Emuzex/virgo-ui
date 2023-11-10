@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import viewApi from '@anu/component-meta/AView.json';
-import viewsApi from '@anu/component-meta/AViews.json';
+import viewApi from '@virgo-ui/vue/component-meta/AView.json';
+import viewsApi from '@virgo-ui/vue/component-meta/AViews.json';
 </script>
 
 # Views

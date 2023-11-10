@@ -1,6 +1,6 @@
 # Dynamic Props
 
-Inspired from [Vuetify](https://vuetifyjs.com/), anu provides a way to configure the component props dynamically.
+Inspired from [Vuetify](https://vuetifyjs.com/), Virgo provides a way to configure the component props dynamically.
 
 ## Why Dynamic Props?
 
@@ -24,12 +24,12 @@ You have to repeat `size` prop everywhere which is super inconvenient <i class="
 
 But what if we have a way to configure the props defaults for all the components provided by component libraries? That would be super convenient <i class="i-fluent-emoji-grinning-face"></i> and we don't have to repeat the same props everywhere.
 
-With anu, you can configure the props defaults for all the components while registering the plugin.
+With Virgo, you can configure the props defaults for all the components while registering the plugin.
 
 ```ts{4-8}
-// ℹ️ Anu don't have `size` prop. This is just an example.
+// ℹ️ Virgo don't have `size` prop. This is just an example.
 createApp(App)
-  .use(anu, {
+  .use(virgo, {
     propsDefaults: {
       ABtn: {
         size: 'sm',
@@ -50,7 +50,7 @@ Now, You can write your components without repeating the `size` prop and keep yo
 </template>
 ```
 
-Using `propsDefaults` you can set props defaults for any Anu component.
+Using `propsDefaults` you can set props defaults for any Virgo component.
 
 ## Nested Props Defaults
 
@@ -75,11 +75,11 @@ Life is not always simple and your client might need visually different componen
 </template>
 ```
 
-Anu also provides support for nested props defaults. You can set props defaults for a component inside another component.
+Virgo also provides support for nested props defaults. You can set props defaults for a component inside another component.
 
 ```ts{4-8}
 createApp(App)
-  .use(anu, {
+  .use(virgo, {
     propsDefaults: {
       AAlert: {
         ABtn: {
@@ -119,11 +119,11 @@ Hold on, there is more. We're still repeating the `class` attribute. <i class="i
 
 ## Class, Style & Attrs Defaults
 
-Apart from props, Anu also supports setting defaults for `class`, `style` and `attrs` for all the components.
+Apart from props, Virgo also supports setting defaults for `class`, `style` and `attrs` for all the components.
 
 ```ts
 createApp(App)
-  .use(anu, {
+  .use(virgo, {
     propsDefaults: {
       AAlert: {
         ABtn: {
@@ -165,7 +165,7 @@ You can also set defaults for your own components. For example, you can set defa
 
 ```ts{4-11}
 createApp(App)
-  .use(anu, {
+  .use(virgo, {
     propsDefaults: {
       AppBtn: {
         class: 'uppercase',
@@ -210,7 +210,7 @@ const { props, defaultsClass, defaultsStyle, defaultsAttrs } = useDefaults(_prop
 </template>
 ```
 
-Whoa! Anu also added DX magic to your custom components <i class="i-fluent-emoji-man-mage-light"></i>
+Whoa! Virgo also added DX magic to your custom components <i class="i-fluent-emoji-man-mage-light"></i>
 
 :::warning
 When you use `useDefaults` composable, you have to use `props.propName` while accessing the props to get props configured by defaults.

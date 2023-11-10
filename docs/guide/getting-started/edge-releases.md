@@ -1,12 +1,12 @@
 # Edge releases
 
-If you ever want to try the latest commits instead of waiting for the new release, You can use edge release of Anu.
+If you ever want to try the latest commits instead of waiting for the new release, You can use edge release of Virgo.
 
 We recommend using official releases always and only use this if you know what you are doing.
 
 ::::card Using edge release
 
-Use below values for anu packages in your project's `package.json` and run the installation again.
+Use below values for virgo packages in your project's `package.json` and run the installation again.
 
 ```json
 {

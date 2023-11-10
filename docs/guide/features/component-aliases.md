@@ -32,7 +32,7 @@ In this type of cases, You can't use `propsDefaults` because you are using the s
 import { ABtn } from '@virgo-ui/vue'
 
 createApp(App)
-  .use(anu, {
+  .use(virgo, {
     componentAliases: {
       // Set alias for ABtn component
       IconBtn: ABtn,
@@ -59,7 +59,7 @@ Now, you can use `IconBtn` component everywhere in your app and it will have the
 </template>
 ```
 
-I guess, You're now convinced that Anu is the best way to use component libraries in Vue. So, what are you waiting for? Go ahead and try it out.
+I guess, You're now convinced that Virgo is the best way to use component libraries in Vue. So, what are you waiting for? Go ahead and try it out.
 
 :::info
 Component aliases are registered globally so you don't have to import them.

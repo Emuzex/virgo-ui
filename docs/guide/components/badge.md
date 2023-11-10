@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@anu/component-meta/ABadge.json';
+import api from '@virgo-ui/vue/component-meta/ABadge.json';
 </script>
 
 # Badge
