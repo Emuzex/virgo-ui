@@ -1,7 +1,7 @@
 {
   "name": "@virgo-ui/vue",
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.10",
   "type": "module",
   "description": "Vue component collection for Virgo",
   "author": "Virgo UI <https://github.com/emuzex>",
