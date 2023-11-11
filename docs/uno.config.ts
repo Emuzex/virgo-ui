@@ -19,7 +19,9 @@ export default defineConfig({
 
 		// @virgo-ui/vue presets
 		presetVirgo(),
-		presetThemeDefault()
+		presetThemeDefault({
+
+		})
 	],
 	transformers: [transformerVariantGroup(), transformerDirectives()],
 	configDeps: [

@@ -150,11 +150,6 @@ export default defineConfig({
 					]
 				}
 			]
-		},
-		algolia: {
-			appId: 'ZIRXGNDXKY',
-			apiKey: '20424a4612bfde26fb4920f451c19cbc',
-			indexName: 'virgo-vue'
 		}
 	},
 	markdown: {
