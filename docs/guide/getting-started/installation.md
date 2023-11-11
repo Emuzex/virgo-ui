@@ -2,27 +2,24 @@
 
 :::card Install packages
 
-1. Add `virgo-vue` and its supporting libraries
+1. Add `@virgo-ui/vue` and its supporting libraries
 
 ::: code-group
-
   ```bash [pnpm]
   pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
   ```
-
   ```bash [yarn]
     yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
   ```
-
   ```bash [npm]
     npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx  ```
    ```
-
 :::
+
 
 :::card Usage
 
-1. Add UnoCSS to `vite.config.js`
+1. Add UnoCSS to `vite.config.ts`
 
     ```ts
     import Unocss from 'unocss/vite'
@@ -34,7 +31,7 @@
     }
     ```
 
-2. Create the UnoCSS Config file `uno.config.js` in the root of the project with the content below:
+2. Create the UnoCSS Config file `uno.config.ts` in the root of the project with the content below:
 
     ```ts
     import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
@@ -63,7 +60,7 @@
     })
     ```
 
-3. Update your `main.js` file as shown below:
+3. Update your `main.ts` file as shown below:
 
     ```js{3,5-6,8-9,13,11-12,15-16}
     import { createApp } from 'vue'
@@ -128,7 +125,7 @@ You can also follow À la carte fashion if you don't want to register all the co
 
 [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) lets you auto import components on demand. With this you can omit import statement and still get benefits of tree shaking.
 
-1. Make sure to set `registerComponents` to `false` in the `main.js` file if you haven't
+1. Make sure to set `registerComponents` to `false` in the `main.ts` file if you haven't
 
     ```diff
       import { virgo } from '@virgo-ui/vue'
@@ -152,7 +149,7 @@ You can also follow À la carte fashion if you don't want to register all the co
     npm i -D unplugin-vue-components
     ```
 
-3. Add the following in `vite.config.js`:
+3. Add the following in `vite.config.ts`:
 
     ```js
     // other imports

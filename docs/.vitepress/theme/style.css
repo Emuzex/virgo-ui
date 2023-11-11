@@ -200,7 +200,13 @@
 ========================== */
 
 .vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
-	border-radius: 8px !important;
+	border-radius: 8px;
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+}
+
+.vp-doc .vp-code-group div[class*='language-']:not(:where(.vp-raw *)) {
+	border-radius: 0 0 8px 8px;
 	margin-right: 0 !important;
 	margin-left: 0 !important;
 }
