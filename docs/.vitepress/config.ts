@@ -44,7 +44,7 @@ export default defineConfig({
 						{ text: 'Customization', link: '/guide/getting-started/customization' },
 						{ text: 'Grid', link: '/guide/getting-started/grid' },
 						{ text: 'FAQ', link: '/guide/getting-started/faq' },
-						{ text: 'Edge Releases', link: '/guide/getting-started/edge-releases' }
+						/*{ text: 'Edge Releases', link: '/guide/getting-started/edge-releases' }*/
 					]
 				},
 				/*{
@@ -71,14 +71,34 @@ export default defineConfig({
 					]
 				},
 				{
+					text: '🎛&nbsp;&nbsp; Composables',
+					collapsed: false,
+					items: [
+						// { text: 'useSearch', link: '/guide/composables/useSearch' },
+						// { text: 'useSort', link: '/guide/composables/useSort' },
+						{ text: 'useVirgo', link: '/guide/composables/useVirgo' },
+						{ text: 'useSelection', link: '/guide/composables/useSelection' },
+						{ text: 'useIndeterminateCheckbox', link: '/guide/composables/useIndeterminateCheckbox' }
+					]
+				},
+				{
+					text: '🌱&nbsp;&nbsp; Base Components',
+					collapsed: false,
+					items: [
+						// { text: 'Base Input', link: '/guide/base-components/base-input' },
+						{ text: 'Typography', link: '/guide/base-components/typography' },
+						{ text: 'Views', link: '/guide/base-components/views' }
+					]
+				},
+				{
 					text: '📦&nbsp;&nbsp; Components',
 					collapsed: false,
 					items: [
-						{ text: 'Alert', link: '/guide/components/alert' },
+					/*	{ text: 'Alert', link: '/guide/components/alert' },
 						{ text: 'Avatar', link: '/guide/components/avatar' },
-						{ text: 'Badge', link: '/guide/components/badge' },
+						{ text: 'Badge', link: '/guide/components/badge' },*/
 						{ text: 'Button', link: '/guide/components/button' },
-						{ text: 'Card', link: '/guide/components/card' },
+						/*{ text: 'Card', link: '/guide/components/card' },
 						{ text: 'Checkbox', link: '/guide/components/checkbox' },
 						{ text: 'Chip', link: '/guide/components/chip' },
 						{ text: 'Config', link: '/guide/components/config' },
@@ -95,27 +115,7 @@ export default defineConfig({
 						{ text: 'Table', link: '/guide/components/table' },
 						{ text: 'Tabs', link: '/guide/components/tabs' },
 						{ text: 'Textarea', link: '/guide/components/textarea' },
-						{ text: 'Tooltip', link: '/guide/components/tooltip' }
-					]
-				},
-				{
-					text: '🌱&nbsp;&nbsp; Base Components',
-					collapsed: false,
-					items: [
-						// { text: 'Base Input', link: '/guide/base-components/base-input' },
-						{ text: 'Typography', link: '/guide/base-components/typography' },
-						{ text: 'Views', link: '/guide/base-components/views' }
-					]
-				},
-				{
-					text: '🎛&nbsp;&nbsp; Composables',
-					collapsed: false,
-					items: [
-						// { text: 'useSearch', link: '/guide/composables/useSearch' },
-						// { text: 'useSort', link: '/guide/composables/useSort' },
-						{ text: 'useVirgo', link: '/guide/composables/useVirgo' },
-						{ text: 'useSelection', link: '/guide/composables/useSelection' },
-						{ text: 'useIndeterminateCheckbox', link: '/guide/composables/useIndeterminateCheckbox' }
+						{ text: 'Tooltip', link: '/guide/components/tooltip' }*/
 					]
 				}
 			],
@@ -160,7 +160,7 @@ export default defineConfig({
 	markdown: {
 		// ℹ️ We only enabled this in development so that we can highlight code lines by seeing line number without calculating it in our editor.
 		lineNumbers: isDev,
-		theme: 'dracula',
+		theme: 'one-dark-pro',
 		config: (md) => {
 			md.use(Container, 'card', {
 				render: (tokens, idx) => {
