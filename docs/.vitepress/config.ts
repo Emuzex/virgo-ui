@@ -9,17 +9,14 @@ const isDev = process.env.NODE_ENV !== 'production'
 const nav: DefaultTheme.Config['nav'] = [
 	{ text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },
 	{ text: 'Virgo UI', link: '/ui/introduction', activeMatch: '/ui/' },
-	{
-		text: 'Development',
-		items: [{ text: 'Contributing', link: '/development/contributing' }]
-	}
+	{ text: 'Development', link: '/development/contributing', activeMatch: '/ui/' },
 ]
 
 if (isDev) nav.push({ text: 'Playground', link: '/playground' })
 
 export default defineConfig({
 	title: 'Virgo',
-	description: 'DX focused utility based vue component library',
+	description: 'Better, than yesterday.',
 	head: [
 		['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
 		['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap' }],
@@ -50,14 +47,14 @@ export default defineConfig({
 						{ text: 'Edge Releases', link: '/guide/getting-started/edge-releases' }
 					]
 				},
-				{
+				/*{
 					text: '🛠️&nbsp;&nbsp; Integrations',
 					collapsed: true,
 					items: [
 						{ text: 'Vue', link: '/guide/getting-started/integrations/vue' },
 						{ text: 'Nuxt', link: '/guide/getting-started/integrations/nuxt' }
 					]
-				},
+				},*/
 				{
 					text: '✨&nbsp;&nbsp; Features',
 					collapsed: false,

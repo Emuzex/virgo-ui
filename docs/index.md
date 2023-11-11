@@ -4,8 +4,8 @@ layout: home
 hero:
   name: Virgo
   image: /logo.svg
-  text: Build better interfaces faster
-  tagline: DX focused utility based Vue component library
+  text: Better than yesterday
+  tagline: Intuitive, highly customizable and powerful component collection for Vue 3
   actions:
     - theme: brand
       text: Get Started
