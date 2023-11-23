@@ -1,13 +1,13 @@
 import { flip, offset, shift } from '@floating-ui/vue'
 import type { ExtractPublicPropTypes } from 'vue'
-import type { AFloatingMiddlewareFunc } from '@/components/floating'
-import { aFloatingProps } from '@/components/floating'
+import type { FloatingMiddlewareFunc } from '@/components/floating'
+import { floatingProps } from '@/components/floating'
 
 // ℹ️ Make sure to checkout meta definition rules
 
 // 👉 Props
-const { referenceEl: _, ...floatingRestProps } = aFloatingProps
-export const middlewareFunc: AFloatingMiddlewareFunc = () => [
+const { referenceEl: _, ...floatingRestProps } = floatingProps
+export const middlewareFunc: FloatingMiddlewareFunc = () => [
   offset(10),
   flip(),
   shift({ padding: 10 }),
@@ -17,7 +17,7 @@ export const middlewareFunc: AFloatingMiddlewareFunc = () => [
   // }),
 ]
 
-export const aTooltipProps = {
+export const tooltipProps = {
   ...{
     ...floatingRestProps,
     trigger: {
@@ -39,10 +39,10 @@ export const aTooltipProps = {
    */
   text: String,
 } as const
-export type ATooltipProps = ExtractPublicPropTypes<typeof aTooltipProps>
+export type TooltipProps = ExtractPublicPropTypes<typeof tooltipProps>
 
 // 👉 Slots
-export const aTooltipSlots = {
+export const tooltipSlots = {
 
   /**
    * Default slot for rendering tooltip content. If default slot is used `text` prop will be discarded.

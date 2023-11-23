@@ -6,16 +6,14 @@
 At present, the component library still needs a large number of components. You are welcome to contribute components, and you are also welcome to make comments and suggestions!
 :::
 
-:::card What is Virgo?
+## What is Virgo?
 Virgo is Vue framework build using UnoCSS & VueUse. It provides ready to use components with great DX & flexibility. It is built with customization in mind.
 
 Virgo provides component styles using UnoCSS preset so components are completely unstyled. This allows you to create the UI however you like and shape components according to your design.
 
 Don't forget to checkout the <a href="/guide/features/presets" target="_blank">features</a> section.
 
-:::
-
-:::card Why virgo?
+## Why virgo?
 
 - Yes, there's UnoCSS, TailwindCSS, etc but they don't provide ready to use components
 - DX Focused. You will enjoy writing code 💯
@@ -25,9 +23,8 @@ Don't forget to checkout the <a href="/guide/features/presets" target="_blank">f
 - Thanks to UnoCSS, VueUse, etc You can now build your desired UI  & functionalities in no time using battle tested features.
 - Customization is a piece of cake with Virgo. It is as simple as overriding object 🤯
 
-:::
 
-:::card Motivation
+## Motivation
 
 I work at [ThemeSelection](https://themeselection.com) and for a couple of times I had to build small Vue projects that required UI flexibility. I couldn't use Bootstrap because customization is not straight forward compared to frameworks like UnoCSS, WindiCSS & TailwindCSS.
 
@@ -43,51 +40,6 @@ You probably didn't read the UnoCSS [README](https://github.com/unocss/unocss#re
 
 Virgo is based on [UnoCSS](https://github.com/unocss/unocss), [VueUse](https://vueuse.org/) & [Floating UI](https://floating-ui.com/). Virgo is dependent on these dependencies because there is a saying that goes, "_Don't reinvent the wheel_."
 
-:::
-
-# Onu UI
-
-
-
-## Introduction
-
-Onu UI is a Vue.js based [UnoCSS](https://github.com/unocss/unocss) UI library that allows you to make beautiful websites.
-
-It includes a comprehensive collection of prebuilt components that are ready for use in production right out of the box.
-
-Onu UI is beautiful by design and features a suite of customization options that make it easy to implement your own custom design system on top of our components.
-
-The component library is written with the latest [Vue3 setup script](https://vuejs.org/guide/typescript/composition-api.html), full of [Typescript](https://www.typescriptlang.org/), and uses [Vite](https://vitejs.dev/) and [Tsup](https://github.com/egoist/tsup) to package and build the component library. In addition, we also embrace the latest front-end ecological cutting-edge technology, thanks to [VueUse](https://vueuse.org/), and the huge Vite plugin ecosystem.
-
-To install, please see [Installation](./install.md).
-
-
-## Features
-
-- 🌈 **Components Design** - Onu provides neat & beautiful crafted UI components.
-- 🔥 **On demand Import**  - Provide resolver to automatically import only used components.
-- 🎉 **Typescript Supported** - Support TypeScript & type checked & type inference.
-- 💎 **[Iconify Icons](https://icones.js.org/)** - Use any icon from the library you love.
-- 🍬 **[CSS Preset](https://github.com/onu-ui/onu-ui/tree/main/packages/preset)** - Has UnoCSS preset package to use, rendered UI easily.
-- ⚙️ **Theme Config** - Use attribute mode like unocss to design. Support theme config to customize theme.
-
-
-## Online Playground
-
-<a target="_blank" href="https://codesandbox.io/p/github/yzh990918/onu-starter/main">
-<img src="https://img.shields.io/badge/Try%20On-CodeSandbox-hsl(265%2C97%25%2C66%25)?style=for-the-badge&logo=codesandbox" height="35" />
-</a><br/>
-
-<a target="_blank"  href="https://stackblitz.com/edit/onu-starter">
-<img src="https://img.shields.io/badge/Try%20on%20Stackblitz-1877F2?style=for-the-badge&logo=stackblitz&logoColor=white" height="35" />
-</a>
-
-## Best Practice
-
-- [onu-starter](https://github.com/yzh990918/onu-starter)
-
-More coming soon... welcome PR.
-
 ## Environment
 
 All components supported in modern browsers, support of neerly two or three versions.
@@ -99,23 +51,14 @@ All components supported in modern browsers, support of neerly two or three vers
 
 ## Latest Version
 
-[![npm version](https://img.shields.io/github/package-json/v/onu-ui/onu-ui)](https://www.npmjs.com/package/onu-ui)
+[![Emuzex - virgo-ui](https://img.shields.io/static/v1?label=Emuzex&message=virgo-ui&color=blue&logo=github)](https://github.com/Emuzex/virgo-ui "Go to GitHub repo")
 
-You can subscribe to this feed for new version notifications: https://github.com/onu-ui/onu-ui/releases
+[![stars - virgo-ui](https://img.shields.io/github/stars/Emuzex/virgo-ui?style=social)](https://github.com/Emuzex/virgo-ui)
 
-## Discussions
+[![forks - virgo-ui](https://img.shields.io/github/forks/Emuzex/virgo-ui?style=social)](https://github.com/Emuzex/virgo-ui)
 
-Since `OnuUI` is under intensive development, we need your valuable comments and feature requirements of the component
+[![GitHub tag](https://img.shields.io/github/tag/Emuzex/virgo-ui?include_prereleases=&sort=semver&color=blue)](https://github.com/Emuzex/virgo-ui/releases/)
 
-Welcome to contact us at [Discussions](https://github.com/onu-ui/onu-ui/discussions) or [Issues](https://github.com/onu-ui/onu-ui/issues/new/choose), we will be more than happy to reply to your message.
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 
-If you submit any bugs, please use the [OnuUI Playground](https://onu.zyob.top/play/) to provide a minimal reproduction.
-
-
-## Contributing
-
-Developers interested in contributing should read the [Code of Conduct](https://github.com/onu-ui/onu-ui/blob/main/CODE_OF_CONDUCT.md) and the [Contributing Guide](https://github.com/onu-ui/onu-ui/blob/main/CONTRIBUTING.md).
-
-Thank you to all the people who already contributed to Onu UI!
-
-<a href="https://github.com/onu-ui/onu-ui/graphs/contributors"><img src="https://contributors.nn.ci/api?repo=onu-ui/onu-ui" /></a>
+[![issues - virgo-ui](https://img.shields.io/github/issues/Emuzex/virgo-ui)](https://github.com/Emuzex/virgo-ui/issues)

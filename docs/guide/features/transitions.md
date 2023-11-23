@@ -6,17 +6,16 @@ const showFade = ref(false)
 
 # Transitions
 
-:::card Introduction
+## Introduction
 
-Virgo provides useful transitions for your application and it also uses it internally. You can transition of most of the components to any of the transitions provided by Virgo.
+Virgo provides useful transitions for your application, and it also uses it internally. You can transition of most of the components to any of the transitions provided by Virgo.
 
 Additionally, you can also create your own transitions via `createTransition` function provided by Virgo.
 
 Transitions components in Virgo has pattern `A<transition-name>Transition` (_e.g. `AFadeTransition`_) and transition name will be used as the name of the transition. For example, If you create a transition component for bounce `createTransition('bounce')` then name it `ABounceTransition` and you can use it as `<SomeComponent transition="bounce">`. Don't forget to write the styles for this transition. <i class="i-fluent-emoji-grinning-face-with-sweat"></i>
 
-:::
 
-::::card Naming Convention
+## Naming Convention
 
 Transition names are adopted from [Vuetify](https://vuetifyjs.com/en/styles/transitions/) as it has perfect names because these names are even compatible with [logical directions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties).
 
@@ -34,14 +33,11 @@ In above graph, if we go in Y direction, then we have to move up so our Slide Y 
 
 <br>
 
-:::code DemoFeaturesTransitionDemo
-<<< @/components/demos/features/transition/DemoFeaturesTransitionDemo.vue
-:::
+<demo src="../../components/demos/features/transition/DemoFeaturesTransitionDemo.vue" ></demo>
 
-::::
 
 <!-- 👉 Customizing Transitions -->
-::::card Customizing Transitions
+## Customizing Transitions
 
 You can also customize the transition duration and timing via CSS variables.
 
@@ -53,20 +49,15 @@ Apart from this, You can even change the transitioning value in case of transiti
 
 <br>
 
-:::code DemoFeaturesTransitionCustomizingTransition
-<<< @/components/demos/features/transition/DemoFeaturesTransitionCustomizingTransition.vue{5}
-:::
+<demo src="../../components/demos/features/transition/DemoFeaturesTransitionCustomizingTransition.vue"></demo>
 
-:::after-demo
 If you noticed, Tooltip now starts animating from bottom 14px (_increased_) instead of default 8px via `[--slide-y-translateY:14px]` class.
 
 Go hack the transitions and make them your own. <i class="i-fluent-emoji-smiling-face-with-sunglasses"></i>
-:::
 
-::::
 
 <!-- 👉 Creating Custom Transition Components -->
-::::card Creating Custom Transition Components
+## Creating Custom Transition Components
 
 Virgo provides `createTransition` composable to create your own transition components that you can reuse. This composable takes a transition name as an argument and returns a transition component.
 
@@ -81,5 +72,3 @@ You have transition component now, but you have to write the styles for it. You 
 Here's example of fade transition styles used in Virgo.
 
 <<< @/../packages/virgo-vue/src/scss/index.scss#fade-transition
-
-::::

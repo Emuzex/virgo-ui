@@ -1,23 +1,23 @@
 # Installation
 
-:::card Install packages
+## Install packages
 
 1. Add `@virgo-ui/vue` and its supporting libraries
 
-::: code-group
-  ```bash [pnpm]
-  pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
-  ```
-  ```bash [yarn]
-    yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
-  ```
-  ```bash [npm]
-    npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx  ```
-   ```
-:::
+    ::: code-group
+      ```bash [pnpm]
+      pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
+      ```
+      ```bash [yarn]
+        yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
+      ```
+      ```bash [npm]
+        npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx
+      ```
+    :::
 
 
-:::card Usage
+## Usage
 
 1. Add UnoCSS to `vite.config.ts`
 
@@ -88,7 +88,10 @@ Now, Just refer to the component in your vue files:
 
 ```vue
 <template>
-  <ABtn>Button</ABtn>
+    <button>
+        <tooltip text="Hello!" />
+        Hover Over Me
+    </button>
 </template>
 ```
 
@@ -113,11 +116,14 @@ You can also follow À la carte fashion if you don't want to register all the co
 
     ```vue
     <script setup>
-    import { ABtn } from '@virgo-ui/vue'
+    import { Tooltip } from '@virgo-ui/vue'
     </script>
 
     <template>
-      <ABtn>Primary</ABtn>
+      <button>
+         <tooltip text="Hello!" />
+         Hover Over Me
+      </button>
     </template>
     ```
 
@@ -138,16 +144,17 @@ You can also follow À la carte fashion if you don't want to register all the co
 
 2. Install unplugin-vue-components:
 
-    ```shell
-    # pnpm
-    pnpm add -D unplugin-vue-components
-
-    # yarn
-    pnpm add -D unplugin-vue-components
-
-    # npm
-    npm i -D unplugin-vue-components
-    ```
+    ::: code-group
+      ```bash [pnpm]
+      pnpm add -D unplugin-vue-components
+      ```
+      ```bash [yarn]
+         yarn add -D unplugin-vue-components
+      ```
+      ```bash [npm]
+       npm i -D unplugin-vue-components
+     ```
+    :::
 
 3. Add the following in `vite.config.ts`:
 
@@ -174,13 +181,14 @@ You can also follow À la carte fashion if you don't want to register all the co
 
     ```vue
     <template>
-      <ABtn>Primary</ABtn>
+      <button>
+         <tooltip text="Hello!" />
+      Hover Over Me
+      </button>
     </template>
     ```
 
-:::
-
-:::card Volar Support
+## Volar Support
 
 If you are using [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar), you can specify global component types by adding the configuration below in your [`jsconfig.json`](https://code.visualstudio.com/docs/languages/jsconfig).
 
@@ -197,4 +205,3 @@ If you have a typescript project, you will have to configure the above in the `t
 
 That's it, enjoy the autocompletion 🥳
 
-:::

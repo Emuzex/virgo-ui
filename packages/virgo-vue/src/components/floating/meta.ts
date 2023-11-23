@@ -6,11 +6,11 @@ import { transition as transitionProp } from '@/composables/useProps'
 
 // ℹ️ Make sure to checkout meta definition rules
 
-export type AFloatingReferenceEl = HTMLElement | null | undefined
+export type FloatingReferenceEl = HTMLElement | null | undefined
 
 // 👉 Props
-export type AFloatingMiddlewareFunc = (referenceEl: Ref<AFloatingReferenceEl>, refFloating: Ref<HTMLElement>) => Middleware[]
-export const middlewareFunc: AFloatingMiddlewareFunc = (referenceEl, refFloating) => [
+export type FloatingMiddlewareFunc = (referenceEl: Ref<FloatingReferenceEl>, refFloating: Ref<HTMLElement>) => Middleware[]
+export const middlewareFunc: FloatingMiddlewareFunc = (referenceEl, refFloating) => [
   // ℹ️ For this we need need bridge to handle keep menu content open
   // offset(6),
 
@@ -19,9 +19,9 @@ export const middlewareFunc: AFloatingMiddlewareFunc = (referenceEl, refFloating
   shift({ padding: 10 }),
 ]
 
-export const aFloatingProps = {
+export const floatingProps = {
   referenceEl: {
-    type: Object as PropType<AFloatingReferenceEl>,
+    type: Object as PropType<FloatingReferenceEl>,
   },
 
   /**
@@ -97,19 +97,19 @@ export const aFloatingProps = {
    * Middleware option from Floating UI
    */
   middleware: {
-    type: Function as PropType<AFloatingMiddlewareFunc>,
+    type: Function as PropType<FloatingMiddlewareFunc>,
     default: middlewareFunc,
   },
 } as const
-export type AFloatingProps = ExtractPublicPropTypes<typeof aFloatingProps>
+export type FloatingProps = ExtractPublicPropTypes<typeof floatingProps>
 
 // 👉 Slots
-export const aFloatingSlots = {
+export const floatingSlots = {
   default: (_: any) => null as any,
 } as const
 
 // 👉 Events
-export interface AFloatingEvents {
+export interface FloatingEvents {
   (e: 'update:modelValue', value: boolean): void
   (e: 'show'): void
   (e: 'hide'): void

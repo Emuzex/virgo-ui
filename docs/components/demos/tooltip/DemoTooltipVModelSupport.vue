@@ -6,28 +6,28 @@ const isTooltipVisible = ref(false)
 
 <template>
   <div class="flex flex-wrap gap-12">
-    <ABtn>
-      <ATooltip
+    <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
+      <tooltip
         v-model="isTooltipVisible"
         text="Cotton candy"
       />
 
       Button
-    </ABtn>
+    </button>
 
     <div class="flex flex-wrap gap-4">
-      <ABtn
-        variant="light"
-        @click="isTooltipVisible = true"
+      <button
+		  class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2"
+		  @click="isTooltipVisible = true"
       >
         Show tooltip
-      </ABtn>
-      <ABtn
-        variant="light"
-        @click="isTooltipVisible = false"
+      </button>
+      <button
+		  class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2"
+		  @click="isTooltipVisible = false"
       >
         Hide tooltip
-      </ABtn>
+      </button>
     </div>
   </div>
 </template>

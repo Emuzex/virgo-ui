@@ -24,7 +24,7 @@ const updatePrimaryColor = () => {
 
 # Customization
 
-:::card Color
+## Color
 
 Virgo uses [HSL](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl) color format to define and use colors. You can update theme colors via [themes](/guide/features/theme.md) configurations.
 
@@ -38,7 +38,7 @@ Below is the list of default colors. You can also [add new colors](/guide/featur
     <ACard variant="fill" color="danger" class="rounded-2xl shadow-2xl shadow-danger shadow-opacity-40 w-26 h-26 font-semibold grid place-items-center">Danger</ACard>
 </div>
 
-<ABtn class="mt-8" :class="isPrimaryChanged ? 'bg-[hsl(265,97.7%,66.3%)]' : 'bg-[hsl(235,97.7%,66.3%)]'" @click="updatePrimaryColor">{{ isPrimaryChanged ? 'Reset' : 'Change' }} primary</ABtn>
+<button class="mt-8 bg-purple-600 em:spacing:px-4 text-white font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2" :class="isPrimaryChanged ? 'bg-[hsl(265,97.7%,66.3%)]' : 'bg-[hsl(235,97.7%,66.3%)]'" @click="updatePrimaryColor">{{ isPrimaryChanged ? 'Reset' : 'Change' }} primary</button>
 
 <br />
 <br />
@@ -47,9 +47,7 @@ Also checkout related documentation:
 
 - [`useVirgo` composable](/guide/composables/useVirgo.md)
 
-:::
-
-::::card CSS variables
+## CSS variables
 
 For the most part, Virgo uses CSS variables for other stuff to providing maximum flexibility and customization on the fly. All virgo's CSS variables are prefixed with `a-`.
 
@@ -62,9 +60,9 @@ Below is CSS vars defined for preset theme default's light theme:
 Moreover, It's recommended that you [learn](/development/contributing.html#css-vars) CSS vars naming convention for color to know when you should wrap `hsl()` or use CSS var directly.
 
 Additionally, theme can also [add](/guide/features/theme.html#adding-theme-based-css-variables) CSS variables based on the theme.
-::::
 
-::::card Component customization
+
+## Component customization
 
 All the UI configurable styles are applied using theme preset. If you have noticed in installation section there's a preset called `presetThemeDefault`.
 
@@ -79,27 +77,6 @@ presetThemeDefault({
   },
 })
 ```
-
-Guess, how our button will look like?
-
-:::details View answer
-It's a bootstrap button 🤯
-
-Just change the colors to Bootstrap's color and see the magic 😍
-![Bootstrap buttons using virgo](/images/guide/virgo-bootstrap-btns.png)
-:::
-
-You can refer to available shortcuts in [this](https://github.com/emuzex/virgo-ui/blob/main/packages/preset-theme-default/src/shortcuts.ts) file.
-
-If you like this simple customization don't forget to give a **star on Github**. If you don't like it give a triple star 😉.
-
-<a class="!hover:opacity-100 !no-underline" href="https://github.com/emuzex/virgo-ui" rel="noopener noreferrer" target="_blank">
-    <ABtn class="text-sm my-2" icon="i-bx-star" variant="light" href="https://github.com/emuzex/virgo-ui" tag="a">
-        Give a star
-    </ABtn>
-</a>
-
-::::
 
 :::info
 Don't forget to checkout [theme](/guide/features/theme.md) documentation to learn more about theme customization.

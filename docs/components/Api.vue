@@ -56,39 +56,35 @@ onMounted(() => {
 </script>
 
 <template>
-  <ACard
+  <div
     ref="apiCard"
-    class="vp-api-card"
+		class="vp-api-card p-3 a-card relative overflow-hidden bg-[hsla(var(--a-surface-c),var(--un-bg-opacity,1))]"
     :style="{
       minHeight: apiCardMinHeight,
     }"
   >
-    <template #title>
-      <div class="flex flex-wrap items-center justify-between">
-        <span class="a-title">{{ props.title }}</span>
-        <AInput
-          v-model="q"
-          prepend-inner-icon="i-bx-search"
-          class="text-sm max-w-200px"
-          placeholder="Search API..."
-        />
-      </div>
-    </template>
-
+	  <div class="a-card-padding next:pt-0 em:spacing:not-last:pb-4">
+		  <div class="flex flex-wrap items-center justify-between">
+			  <span class="a-title">{{ props.title }}</span>
+			  <input
+				  v-model="q"
+				  class="text-sm max-w-200px border border-solid border-gray-600/20 p-2 rounded-md"
+				  placeholder="Search API..."
+			  />
+		  </div>
+	  </div>
     <div class="a-card-body">
       <div class="flex gap-4 mb-4">
-        <ABtn
+        <button
           v-for="tab in apiTabs"
           :key="tab.value"
-          class="capitalize"
+          class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2"
           :class="[!tab.isSelected && 'opacity-50']"
-          color="hsl(0,0%,50%)"
-          :variant="tab.isSelected ? 'light' : 'text'"
           @click="select(tab.value)"
         >
           <span>{{ tab.value }}</span>
           <span class="text-sm">({{ foundNumbers[tab.value as keyof typeof api] }})</span>
-        </ABtn>
+        </button>
       </div>
 
       <!-- Props -->
@@ -143,5 +139,5 @@ onMounted(() => {
         </div>
       </div>
     </div>
-  </ACard>
+  </div>
 </template>

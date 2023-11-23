@@ -28,14 +28,5 @@ Once installed you can use icons in your templates like this:
 
 ```html
 <!-- <div class="i-<collection-name>-<icon-name>" /> -->
-
 <div class="i-logos-vue" />
-
-<ABtn
-  icon="i-logos-vue" // [!code hl]
-  variant="outline"
-  color="#42b883"
->
-  Vue
-</ABtn>
 ```

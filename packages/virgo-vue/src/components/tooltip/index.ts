@@ -1,7 +1,7 @@
-import ATooltip from './ATooltip.vue'
+import Tooltip from './Tooltip.vue'
 
 export * from './meta'
-export { ATooltip }
+export { Tooltip }
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
-export type ATooltip = InstanceType<typeof ATooltip>
+export type Tooltip = InstanceType<typeof Tooltip>

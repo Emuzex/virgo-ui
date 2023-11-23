@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import type { AFloatingMiddlewareFunc } from '@virgo-ui/vue'
+import type { FloatingMiddlewareFunc } from '@virgo-ui/vue'
 
-const middleware: AFloatingMiddlewareFunc = (referenceEl, floatingEl) => {
+const middleware: FloatingMiddlewareFunc = (referenceEl, floatingEl) => {
   // console.log('referenceEl :>> ', referenceEl)
   // console.log('floatingEl :>> ', floatingEl)
 
@@ -11,12 +11,12 @@ const middleware: AFloatingMiddlewareFunc = (referenceEl, floatingEl) => {
 </script>
 
 <template>
-  <ABtn>
-    <ATooltip
+  <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
+    <tooltip
       :middleware="middleware"
       text="Cotton candy"
     />
 
     Button
-  </ABtn>
+  </button>
 </template>

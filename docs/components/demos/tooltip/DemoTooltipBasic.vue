@@ -1,18 +1,18 @@
 <template>
   <div class="flex flex-wrap gap-4">
-    <ABtn>
-      <ATooltip text="Hello!" />
+    <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
+      <tooltip text="Hello!" />
       Hover Over Me
-    </ABtn>
-    <ABtn>
+    </button>
+    <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
       <!-- ℹ️ You can also customize `--a-tooltip-bg-c` CSS var for changing tooltip background -->
-      <ATooltip class="[&_.a-tooltip]-bg-danger">
+      <tooltip class="[&_.a-tooltip]-bg-danger">
         <span class="a-tooltip-text">
           <i class="i-bx-shield-x me-1" />
           <span>Protection is disabled</span>
         </span>
-      </ATooltip>
+      </tooltip>
       Scan Skipped
-    </ABtn>
+    </button>
   </div>
 </template>

@@ -6,7 +6,7 @@
 <div class="pt-1"></div>
 
 :::tip
-You can checkout volunteer tasks in [GitHub Projects](https://github.com/users/emuzex/projects/2?query=is%3Aopen+sort%3Aupdated-desc) if you don't know where to start.
+You can checkout volunteer tasks in [GitHub Projects](https://github.com/users/Emuzex/projects/3/views/1) if you don't know where to start.
 :::
 
 :::card 🏗 Repository Setup
@@ -248,11 +248,5 @@ It's ok to have multiple commits in a single PR, you don't need to rebase or for
 Thanks for reading and your contribution 😇
 
 Happy coding 🙌🏻
-
-:::
-
-:::card 🦸 Heros
-
-<a href="https://github.com/emuzex/virgo/graphs/contributors"><img src="https://contrib.rocks/image?repo=emuzex/virgo" /></a>
 
 :::

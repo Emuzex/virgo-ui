@@ -1,112 +1,84 @@
 <script lang="ts" setup>
-import api from '@virgo-ui/vue/component-meta/ATooltip.json';
+import api from '@virgo-ui/vue/component-meta/Tooltip.json';
 </script>
 
-# Tooltip
+# Tooltip <new-badge/>
 
 <!-- 👉 Basic -->
-:::::card Basic
+## Basic
 
-Use `ATooltip` component's `text` prop to show passed text in tooltip.
+Use `tooltip` component's `text` prop to show passed text in tooltip.
 
 You can also use `default` slot to render custom content.
 
-::::code DemoTooltipBasic
-<<< @/components/demos/tooltip/DemoTooltipBasic.vue{3,9-14}
-::::
+<demo src="../../components/demos/tooltip/DemoTooltipBasic.vue"></demo>
 
-::::after-demo
 :::tip
 While rendering custom content, You can use `.a-tooltip-text` class to add default styles of tooltip text.
 :::
-::::
 
-:::::
 
 <!-- 👉 Trigger -->
-::::card Trigger
+## Trigger
 
 To open menu on click use set `trigger` prop to `click`.
 
-:::code DemoTooltipTrigger
-<<< @/components/demos/tooltip/DemoTooltipTrigger.vue{12}
-:::
+<demo src="../../components/demos/tooltip/DemoTooltipTrigger.vue"></demo>
 
-::::
 
 <!-- 👉 v-model support -->
-::::card v-model support
+## v-model support
 
-`ATooltip` also support `v-model` to show/hide tooltip.
+`tooltip` also support `v-model` to show/hide tooltip.
 
-:::code DemoTooltipVModelSupport
-<<< @/components/demos/tooltip/DemoTooltipVModelSupport.vue{11,17}
-:::
-
-::::
+<demo src="../../components/demos/tooltip/DemoTooltipVModelSupport.vue"></demo>
 
 <!-- 👉 Delay -->
-:::::card Delay
+## Delay
 
 You can delay showing and hiding of tooltip by setting `delay` (_show delay_) and `hideDelay` props.
 
-::::code DemoTooltipDelay
-<<< @/components/demos/tooltip/DemoTooltipDelay.vue{5-6}
-::::
+<demo src="../../components/demos/tooltip/DemoTooltipDelay.vue"></demo>
 
-::::after-demo
 :::tip `delay` - DX focused prop name
 As we regularly configure delay for showing tooltip only and not for hiding, we named prop for delaying tooltip `delay` instead of `showDelay`.
 :::
-::::
-
-:::::
 
 <!-- 👉 Transition -->
-::::card Transition
+## Transition
 
-`ATooltip` also support transition. Default transition is `slide-y`. Set it to available transition to use different transition. e.g. `transition="fade"`.
+`tooltip` also support transition. Default transition is `slide-y`. Set it to available transition to use different transition. e.g. `transition="fade"`.
 
 To disable the transition you can set `transition` prop to `null`.
 
-:::code DemoTooltipTransition
-<<< @/components/demos/tooltip/DemoTooltipTransition.vue{4}
-:::
-
-::::
+<demo src="../../components/demos/tooltip/DemoTooltipTransition.vue"></demo>
 
 <!-- 👉 Placement -->
-::::card Placement
+## Placement
 
-As `ATooltip` uses [Floating UI](https://floating-ui.com/), you can configure how tooltip is rendered.
+As `tooltip` uses [Floating UI](https://floating-ui.com/), you can configure how tooltip is rendered.
 
 To adjust the placement of tooltip, use `placement` prop. This will get directly passed to Floating UI as show in their [docs](https://floating-ui.com/docs/computePosition#placement).
 
-:::code DemoTooltipPlacement
-<<< @/components/demos/tooltip/DemoTooltipPlacement.vue{4,26,35}
-:::
+<demo src="../../components/demos/tooltip/DemoTooltipPlacement.vue"></demo>
 
 :::tip ✨ Auto Placement
 If there's not enough space to render the tooltip on given position then it will update the position according to available space.
 :::
 
-::::
 
 <!-- 👉 Strategy -->
-::::card Strategy
+## Strategy
 
 Set which positioning strategy to use to render the tooltip. This is also Floating UI option, for more details please read the official docs [here](https://floating-ui.com/docs/computeposition#strategy).
 
-:::code DemoTooltipStrategy
-<<< @/components/demos/tooltip/DemoTooltipStrategy.vue{5}
-:::
+<demo src="../../components/demos/tooltip/DemoTooltipStrategy.vue"></demo>
 
-::::
 
 <!-- 👉 Middleware -->
-::::card Middleware
+## Middleware
 
-`ATooltip` has some middleware as default to render the tooltip content correctly. You can also customize the middleware you want.
+`tooltip` has some middleware as default to render the tooltip content correctly. You can also customize the middleware you want.
 
 In below demo we are not using any middleware so tooltip component won't behave like above tooltip contents. e.g. Flipping tooltip content if there's not enough space won't work.
 
@@ -114,11 +86,7 @@ In below demo we are not using any middleware so tooltip component won't behave 
 
 You can read more about middleware on their official [docs](https://floating-ui.com/docs/computePosition#middleware).
 
-:::code DemoTooltipMiddleware
-<<< @/components/demos/tooltip/DemoTooltipMiddleware.vue{2-8,14}
-:::
-
-::::
+<demo src="../../components/demos/tooltip/DemoTooltipMiddleware.vue"></demo>
 
 <!-- 👉 API -->
 ## API

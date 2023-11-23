@@ -32,7 +32,6 @@ export function useDefaults<Props extends Record<string, unknown>>(definitionPro
 
 	// ℹ️ Pass new reactive value to avoid updates in upward tree
 	provide(VIRGO_PROPS_DEFAULTS, newPropsDefaults)
-
 	// Return Values
 	const propsRef = ref() as Ref<ReturnType<Props>['props']>
 	const defaultsClass = ref() as ReturnType<Props>['defaultsClass']

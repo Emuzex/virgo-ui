@@ -19,14 +19,15 @@ const transitions = [
       v-for="{ title, name, icon } in transitions"
       :key="name"
     >
-      <ABtn :icon="icon">
-        <ATooltip
+		<button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
+        <tooltip
           class="capitalize"
           :transition="name"
           :text="`${title} Transition`"
         />
+			<i :class="icon"/>
         {{ title }}
-      </ABtn>
+      </button>
     </template>
   </div>
 </template>

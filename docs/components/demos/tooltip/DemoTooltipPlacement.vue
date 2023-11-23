@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import type { Placement } from '@floating-ui/vue'
-import { useCycleList } from '@vueuse/core'
-
+import { ref } from 'vue'
 const placementOptions: Placement[] = [
   'top',
   'top-start',
@@ -17,31 +16,26 @@ const placementOptions: Placement[] = [
   'left-end',
 ]
 
-const { state: tooltipPlacement, next: selectNext } = useCycleList(placementOptions)
+const tooltipPlacement = ref<Placement>('top')
 </script>
 
 <template>
-  <div class="flex items-center flex-wrap gap-4 mb-38">
-    <ABtn>
-      <ATooltip
+  <div class="flex items-center justify-between flex-wrap gap-4 w-full">
+    <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
+      <tooltip
         :model-value="true"
         :placement="tooltipPlacement"
         text="Cotton candy"
       />
       Button
-    </ABtn>
+    </button>
 
     <!-- 👉 Options -->
-    <ASelect
+    <select
       v-model="tooltipPlacement"
-      :options="placementOptions"
       class="w-24 grow-0 ms-auto"
-    />
-    <ABtn
-      variant="text"
-      @click="selectNext"
-    >
-      Next
-    </ABtn>
+	>
+		<option v-for="option in placementOptions" :value="option">{{ option }}</option>
+	</select>
   </div>
 </template>
