@@ -54,7 +54,7 @@ const [value, toggle] = useToggle()
               Edit on GitHub
             </div>
           </a>
-          <a class="o-demo_action_item" group @click="copy()">
+          <a class="o-demo_action_item group"  @click="copy()">
             <div class="o-demo_action_icon i-carbon:copy" />
             <div class="o-demo_tooltip group-hover:opacity-100" >
               {{ copied ? 'Copied' : 'Copy code' }}

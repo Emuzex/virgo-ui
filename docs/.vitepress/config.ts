@@ -65,10 +65,10 @@ export default defineConfig({
 					text: 'Composables',
 					collapsed: false,
 					items: [
+						{ text: 'useVirgo', link: '/guide/composables/useVirgo' },
 						// { text: 'useSearch', link: '/guide/composables/useSearch' },
 						// { text: 'useSort', link: '/guide/composables/useSort' },
-						{ text: 'useVirgo', link: '/guide/composables/useVirgo' },
-						{ text: 'useSelection', link: '/guide/composables/useSelection' },
+						// { text: 'useSelection', link: '/guide/composables/useSelection' },
 					]
 				},
 			],

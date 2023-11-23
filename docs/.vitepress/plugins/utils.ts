@@ -17,7 +17,7 @@ export function getDemoComponent(
 ) {
   const componentName = `DemoComponent${index++}`
   path = normalizePath(path)
-  const github = `https://github.com/emuzex/virgo-ui/tree/main/${path.split('/').slice(-4).join('/')}`
+  const github = `https://github.com/emuzex/virgo-ui/tree/main/docs/${path.split('/').slice(-4).join('/')}`
 
   injectImportStatement(env, componentName, path)
 
