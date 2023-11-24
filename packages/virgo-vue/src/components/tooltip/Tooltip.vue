@@ -27,19 +27,19 @@ const parentEl = useParent()
   <floating
     v-bind="{ ...props, ...defaultsAttrs }"
     :reference-el="parentEl"
-    class="a-tooltip-wrapper"
+    class="virgo-tooltip-wrapper"
     :class="defaultsClass"
     :style="defaultsStyle"
   >
-    <div class="a-tooltip">
-      <span class="a-tooltip-text">
+    <div class="virgo-tooltip">
+      <span class="virgo-tooltip-text">
         <slot>
           {{ props.text }}
         </slot>
       </span>
       <!-- <div
         ref="arrowEl"
-        class="a-tooltip-arrow absolute"
+        class="virgo-tooltip-arrow absolute"
       /> -->
     </div>
   </floating>

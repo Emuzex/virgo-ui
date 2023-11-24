@@ -9,7 +9,7 @@
 You can checkout volunteer tasks in [GitHub Projects](https://github.com/users/Emuzex/projects/3/views/1) if you don't know where to start.
 :::
 
-:::card 🏗 Repository Setup
+## Repository Setup
 
 I use `pnpm` for my OpenSource projects. I also use [yarn](https://classic.yarnpkg.com/) & npm as well, just like you. So, I highly recommend using [ni](https://github.com/antfu/ni).
 
@@ -22,9 +22,7 @@ To set the repository up:
 |1. Install [Node.js](https://nodejs.org/), using the latest [LTS](https://nodejs.org/en/about/releases/)|-|
 |2. Install [@antfu/ni](https://github.com/antfu/ni)| `npm i -g @antfu/ni` |
 
-:::
-
-:::card 🎮 Commands
+## 🎮 Commands
 
 `nr dev`
 
@@ -37,12 +35,10 @@ It will start VitePress development server for documentation. Within few seconds
 `nr clean`
 
 It will remove the node_modules directory from workspace root and all the packages.
-:::
 
-:::card 🧑🏻‍💻 Editor Setup
+## 🧑🏻‍💻 Editor Setup
 
 [VS Code](https://code.visualstudio.com/) is recommended editor for this project. There's nice configurations in `.vscode` along with other editor related config files which will setup your editor according to project.
-
 ### Recommended Extensions
 
 Install & enable recommended extensions by following [this](https://code.visualstudio.com/docs/editor/extension-marketplace#_recommended-extensions) guide.
@@ -81,9 +77,7 @@ Since ESLint is already configured to format the code, there is no need to dupli
 
 If you have Prettier installed in your editor, we recommend you disable it when working on the project to avoid conflict.
 
-:::
-
-::::card ⌨️ Writing code
+## ⌨️ Writing code
 
 :::tip
 virgo uses [`@antfu/utils`](https://github.com/antfu/utils) for utilities. You can use it to avoid reinventing the wheel.
@@ -128,7 +122,6 @@ At the moment, virgo don't have any design system. Hence, we have full freedom t
 - [Preline UI](https://preline.co/)
 - [Popups & Modals](https://www.figma.com/community/file/1160004185821594377)
 - Search [dribbble](https://dribbble.com/)
-:::
 
 ### CSS vars
 
@@ -169,33 +162,45 @@ Once you have this setup, create docs page for this component in `packages/docum
 
 Add the newly created docs page to the sidebar of the docs in [`packages/documentation/docs/.vitepress/config.ts`](https://github.com/emuzex/virgo/blob/337eeb676d52646ffeedc57daa540d7e7168a17a/packages/documentation/docs/.vitepress/config.js#L37)
 
-For demo you need to create a new demo file in `packages/documentation/docs/demos/<component-name>`. **Make sure to follow the naming convention** (`Demo<component-name><demo-name>`) for creating demo so that it doesn't conflict with other demo file. This is because these files will be globally registered as components in VitePress so we can use them in markdown easily.
+For demo, you need to create a new demo file in `packages/documentation/docs/demos/<component-name>`. **Make sure to follow the naming convention** (`Demo<component-name><demo-name>`) for creating demo so that it doesn't conflict with other demo file. This is because these files will be globally registered as components in VitePress so we can use them in markdown easily.
 
-Now, we have component, its documentation page and single demo.
+## DemoBlock
 
-For creating a demo use `card` container (You can refer to other component docs).
+### Insert code snippets in markdown,
 
-```md
-::::card <demo-title> <!-- This is title of demo -->
-
-:::code <demo-file> <!-- This will render the demo -->
-<<< <path-to-demo-file> <!-- This will add code snippet for the demo -->
-:::
+```markdown
+<demo src="./demo/helloWorld.vue">
 ```
+
+### Specify Github
+Automatically generate a link from 'src' path, but you can specify a custom link to Github.
+```markdown
+<demo src="./demo/helloWorld.vue" github="https://github.com/emuzex/virgo-ui">
+
+```
+
+### Specify language
+
+```markdown
+<demo src="./demo/helloWorld.vue" github="https://github.com/emuzex/virgo-ui" lang="ts">
+```
+
+### Expand default
+
+```markdown
+<demo src="./demo/helloWorld.vue" github="https://github.com/emuzex/virgo-ui" lang="ts" expand>
+```
+
 
 Make sure you are add snippet of the same demo you rendered.
 
 For better UX you can [highlight the lines](https://vitepress.vuejs.org/guide/markdown#line-highlighting-in-code-blocks) in demo snippet as we done in other components.
 
-:::tip
-If you want to insert additional content after demo is shown in the above snippet, you can use `:::after-demo` container. However, if you use this container you have to increase number of `:` (_marker_) in above snippet by 1. Please refer to this related [issue](https://github.com/vuejs/vitepress/issues/764#issuecomment-1151195457).
-:::
 
-:::details Inspirations
+## Inspirations
 
 - [GUI challenges](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAaV1wwI9540OC_3XoIzMjQ)
 - [Quasar](https://quasar.dev/) & [Vuetify](https://vuetifyjs.com/) component API
-:::
 
 <br>
 
@@ -209,9 +214,7 @@ Please refer to its [README](https://github.com/vuejs/language-tools/blob/master
 You can write markdown in prop description
 :::
 
-::::
-
-:::card 😍 Pull request
+## 😍 Pull request
 
 ### Discuss first
 

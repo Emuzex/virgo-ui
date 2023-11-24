@@ -11,7 +11,7 @@ export type FloatingReferenceEl = HTMLElement | null | undefined
 // 👉 Props
 export type FloatingMiddlewareFunc = (referenceEl: Ref<FloatingReferenceEl>, refFloating: Ref<HTMLElement>) => Middleware[]
 export const middlewareFunc: FloatingMiddlewareFunc = (referenceEl, refFloating) => [
-  // ℹ️ For this we need need bridge to handle keep menu content open
+  // ℹ️ For this we need bridge to handle keep menu content open
   // offset(6),
 
   sameWidthMiddleware(refFloating),

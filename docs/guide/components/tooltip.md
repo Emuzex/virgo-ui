@@ -14,7 +14,7 @@ You can also use `default` slot to render custom content.
 <demo src="../../components/demos/tooltip/DemoTooltipBasic.vue"></demo>
 
 :::tip
-While rendering custom content, You can use `.a-tooltip-text` class to add default styles of tooltip text.
+While rendering custom content, You can use `.virgo-tooltip-text` class to add default styles of tooltip text.
 :::
 
 
