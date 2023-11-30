@@ -5,8 +5,8 @@ import type { CSSProperties } from 'vue'
 import { ref } from 'vue'
 import type { FloatingEvents, floatingSlots } from './meta'
 import { floatingProps } from './meta'
-import { useZIndex } from '@/composables/useZIndex'
-import { useTeleport } from '@/composables/useTeleport'
+import { useZIndex } from '@/composables/use-z-index'
+import { useTeleport } from '@/composables/use-teleport'
 
 const props = defineProps(floatingProps)
 const emit = defineEmits<FloatingEvents>()

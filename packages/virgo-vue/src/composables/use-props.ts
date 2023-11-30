@@ -1,4 +1,4 @@
-import type { ConfigurableValue } from '@/composables/useConfigurable'
+import type { ConfigurableValue } from '@/composables/use-configurable'
 import type { ThemeColors } from '@/plugin'
 import type { Transitions } from '@/transitions'
 import type { NamedColors } from '@/utils/color'

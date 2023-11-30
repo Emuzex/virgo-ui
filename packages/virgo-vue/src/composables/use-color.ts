@@ -1,7 +1,7 @@
 import type { MaybeRef } from '@vueuse/core'
 import type { ComputedRef, StyleValue } from 'vue'
-import { useVirgo } from '@/composables/useVirgo'
-import type { ColorProp } from '@/composables/useProps'
+import { useVirgo } from '@/composables/use-virgo'
+import type { ColorProp } from '@/composables/use-props'
 
 export function isThemeColor(color: ColorProp | null): ComputedRef<boolean> {
 	return computed(() => {

@@ -1,4 +1,4 @@
-import { createTransition } from '@/composables/createTransition'
+import { createTransition } from '@/composables/create-transition'
 
 export const transitions = [
   'fade',

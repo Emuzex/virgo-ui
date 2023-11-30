@@ -1,4 +1,4 @@
-import Floating from './Floating.vue'
+import Floating from './floating.vue'
 
 export * from './meta'
 export { sameWidth as sameWidthFloatingUIMiddleware } from './middlewares'

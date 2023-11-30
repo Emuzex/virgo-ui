@@ -1,7 +1,7 @@
 import '@/scss/index.scss'
 
 // Components
-export { VirgoComponentResolver } from './componentResolver'
+export { VirgoComponentResolver } from './component-resolver'
 export * from './components'
 export * as components from './components'
 

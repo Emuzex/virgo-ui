@@ -2,7 +2,7 @@ import type { Middleware, Placement, Strategy } from '@floating-ui/vue'
 import { flip, shift } from '@floating-ui/vue'
 import type { ExtractPublicPropTypes, Ref } from 'vue'
 import { sameWidth as sameWidthMiddleware } from './middlewares'
-import { transition as transitionProp } from '@/composables/useProps'
+import { transition as transitionProp } from '@/composables/use-props'
 
 // ℹ️ Make sure to checkout meta definition rules
 

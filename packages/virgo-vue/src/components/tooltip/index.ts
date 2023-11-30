@@ -1,4 +1,4 @@
-import Tooltip from './Tooltip.vue'
+import Tooltip from './tooltip.vue'
 
 export * from './meta'
 export { Tooltip }

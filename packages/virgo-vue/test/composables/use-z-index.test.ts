@@ -3,7 +3,7 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import type { ComponentPublicInstance } from 'vue'
 import { defineComponent, nextTick, ref } from 'vue'
-import { useZIndex } from '../../src/composables/useZIndex'
+import { useZIndex } from '../../src/composables/use-z-index'
 import { defaultBaseZIndex } from '../../src/plugin'
 import { VIRGO_Z_INDEX } from '../../src/symbols'
 

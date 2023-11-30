@@ -3,7 +3,7 @@ import type { tooltipSlots } from './meta'
 import { tooltipProps } from './meta'
 import { Floating } from '@/components/floating'
 import { useParent } from '@/composables'
-import { useDefaults } from '@/composables/useDefaults'
+import { useDefaults } from '@/composables/use-defaults'
 
 // import { arrow } from '@floating-ui/vue'
 
@@ -16,6 +16,10 @@ defineOptions({
 })
 const { props, defaultsClass, defaultsStyle, defaultsAttrs } = useDefaults(_props)
 
+console.log('props', props)
+console.log('defaultsClass', defaultsClass)
+console.log('defaultsStyle', defaultsStyle)
+console.log('defaultsAttrs', defaultsAttrs)
 // !SECTION
 
 const parentEl = useParent()

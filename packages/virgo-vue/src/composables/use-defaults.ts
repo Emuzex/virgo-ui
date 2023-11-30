@@ -3,7 +3,7 @@ import { deepmergeCustom } from 'deepmerge-ts'
 import type { Ref, StyleValue } from 'vue'
 import { toValue } from 'vue'
 import { VIRGO_PROPS_DEFAULTS } from '@/symbols'
-import type { PluginOptionDefaults } from '@/pluginDefaults'
+import type { PluginOptionDefaults } from '@/plugin-defaults'
 import type { PluginOptions } from '@/plugin'
 
 export const mergePropsDefaults = deepmergeCustom({
@@ -26,7 +26,6 @@ export function useDefaults<Props extends Record<string, unknown>>(definitionPro
 
 	// Get defaults
 	const propsDefaults = inject(VIRGO_PROPS_DEFAULTS, {})
-
 	// New defaults
 	const newPropsDefaults = ref({}) as Ref<PluginOptions['propsDefaults']>
 

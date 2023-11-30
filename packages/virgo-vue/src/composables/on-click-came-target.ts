@@ -1,6 +1,6 @@
 import type { MaybeElementRef } from '@vueuse/core'
 
-export function onClickSameTarget(elRef: MaybeElementRef, handler: (e: MouseEvent) => void) {
+export function onClickCameTarget(elRef: MaybeElementRef, handler: (e: MouseEvent) => void) {
   let isMouseDownOnTarget = false
   let isMouseUpOnTarget = false
 
