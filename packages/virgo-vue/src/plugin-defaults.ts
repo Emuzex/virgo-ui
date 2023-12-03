@@ -5,8 +5,8 @@ import type { FloatingProps } from '@/components/floating'
 import type { TooltipProps } from '@/components/tooltip'
 
 interface ComponentProps {
-  Floating: FloatingProps
-  Tooltip: TooltipProps
+  floating: FloatingProps
+  tooltip: TooltipProps
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

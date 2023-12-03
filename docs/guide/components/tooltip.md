@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@virgo-ui/vue/component-meta/Tooltip.json';
+import api from '@virgo-ui/vue/component-meta/tooltip.json';
 </script>
 
 # Tooltip <new-badge/>

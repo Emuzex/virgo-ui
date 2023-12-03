@@ -2,7 +2,7 @@ import { objectKeys, objectPick } from '@antfu/utils'
 import { deepmergeCustom } from 'deepmerge-ts'
 import type { Ref, StyleValue } from 'vue'
 import { toValue } from 'vue'
-import { VIRGO_PROPS_DEFAULTS } from '@/symbols'
+import { VIRGO_CLASSES, VIRGO_PROPS_DEFAULTS } from '@/symbols'
 import type { PluginOptionDefaults } from '@/plugin-defaults'
 import type { PluginOptions } from '@/plugin'
 
@@ -12,15 +12,17 @@ export const mergePropsDefaults = deepmergeCustom({
 
 interface ReturnType<Props> {
 	props: Props
+	classList: Ref<Record<string, string> | undefined | any>
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	defaultsClass: Ref<any>
 	defaultsStyle: Ref<StyleValue | undefined>
 	defaultsAttrs: Ref<Record<string, unknown> | undefined>
 }
 
-export function useDefaults<Props extends Record<string, unknown>>(definitionProps: Props, componentName?: keyof PluginOptionDefaults): ReturnType<Props> {
+export function useConfiguration<Props extends Record<string, unknown>>(definitionProps: Props, componentName?: keyof PluginOptionDefaults): ReturnType<Props> {
 	const vm = getCurrentInstance()
 	const _componentName = (componentName ?? vm?.type.name ?? vm?.type.__name) as keyof PluginOptionDefaults | undefined
+	const _componentNameLowerCase = _componentName ? _componentName.toLowerCase() : undefined
 
 	if (!_componentName) throw new Error('Unable to identify the component name. Please define component name or use the `componentName` parameter while using `useDefaults` composable.')
 
@@ -37,6 +39,9 @@ export function useDefaults<Props extends Record<string, unknown>>(definitionPro
 	const defaultsStyle = ref() as ReturnType<Props>['defaultsStyle']
 	const defaultsAttrs = ref() as ReturnType<Props>['defaultsAttrs']
 
+	const virgoClasses = toValue(inject(VIRGO_CLASSES, {}))
+	const classList = ref() as ReturnType<Props>['classList']
+	classList.value = virgoClasses[_componentName]
 	const calculateProps = () => {
 		const _propsDefaults = toValue(propsDefaults)
 		const { class: _class, style, attrs, ...restProps } = _propsDefaults[_componentName] || {}
@@ -77,6 +82,7 @@ export function useDefaults<Props extends Record<string, unknown>>(definitionPro
 
 	return {
 		props: toReactive(propsRef),
+		classList,
 		defaultsClass,
 		defaultsStyle,
 		defaultsAttrs

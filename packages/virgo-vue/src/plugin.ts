@@ -5,12 +5,21 @@ import { defineComponent } from 'vue'
 import type { PluginOptionDefaults } from './plugin-defaults'
 import * as components from '@/components'
 import { useVirgo } from '@/composables/use-virgo'
-import { useDefaults } from '@/composables/use-defaults'
-import { useZIndex } from '@/composables/use-z-index'
-import { VIRGO_CONFIG, VIRGO_PROPS_DEFAULTS } from '@/symbols'
+import { useConfiguration } from '@/composables/use-configuration'
+import { useZIndex } from '@/composables'
+import { VIRGO_CLASSES, VIRGO_CONFIG, VIRGO_PROPS_DEFAULTS } from '@/symbols'
+import * as ComponentsConfig from '@/components/configs'
 
 export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 export type DefaultThemes = 'light' | 'dark'
+export interface ComponentsClasses {
+	tooltip: ComponentsConfig.tooltipClasses
+	floating: ComponentsConfig.floatingClasses
+}
+export const defaultClasses = {
+	tooltip: ComponentsConfig.tooltipConfig.classes,
+	floating: ComponentsConfig.floatingConfig.classes
+}
 
 export interface ThemeOptions {
 	class: string
@@ -23,6 +32,7 @@ export type ConfigThemes = Record<DefaultThemes, ThemeOptions>
 export interface PluginOptions {
 	registerComponents: boolean
 	initialTheme: keyof ConfigThemes
+	classes: PartialDeep<ComponentsClasses>
 	themes: ConfigThemes
 	componentAliases: Record<string, any>
 	propsDefaults: PartialDeep<PluginOptionDefaults>
@@ -69,6 +79,7 @@ const configDefaults: PluginOptions = {
 			}
 		}
 	},
+	classes: defaultClasses,
 	componentAliases: {},
 	propsDefaults: {},
 	baseZIndex: defaultBaseZIndex
@@ -76,8 +87,9 @@ const configDefaults: PluginOptions = {
 
 export const plugin = {
 	install(app: App, options: PartialDeep<PluginOptions> = {}) {
+		console.log({ options })
 		const config: PluginOptions = defu(options, configDefaults)
-
+		console.log({config})
 		if (config.registerComponents) {
 			for (const prop in components) {
 				// @ts-expect-error: I want to index import using string
@@ -99,7 +111,7 @@ export const plugin = {
 					// TODO: (types) Why we have to use ts-expect-error here?
 					// @ts-expect-error: TS/Vue unable to get types correctly
 					setup(props, ctx) {
-						const { props: modifiedProps, defaultsClass, defaultsStyle, defaultsAttrs } = useDefaults(props)
+						const { props: modifiedProps, defaultsClass, defaultsStyle, defaultsAttrs } = useConfiguration(props)
 
 						return () => h(baseComponent, { ...modifiedProps, defaultsClass, defaultsStyle, defaultsAttrs }, ctx.slots)
 					}
@@ -109,6 +121,7 @@ export const plugin = {
 
 		app.provide(VIRGO_CONFIG, config)
 		app.provide(VIRGO_PROPS_DEFAULTS, config.propsDefaults)
+		app.provide(VIRGO_CLASSES, config.classes)
 
 		// Initialize Virgo instance with config values
 		useVirgo({

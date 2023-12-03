@@ -79,6 +79,8 @@ export interface ModuleOptions {
 
 	componentAliases?: PluginOptions['componentAliases']
 
+	classes?: PluginOptions['classes']
+
 	propsDefaults?: PluginOptions['propsDefaults']
 }
 
@@ -157,7 +159,7 @@ export default defineNuxtModule<ModuleOptions>({
 			)
 		}
 
-		nuxt.options.unocss.include = [/.*\/@virgo-ui_vue\.js(.*)?$/, '**/*.vue', '**/*.md']
+		nuxt.options.unocss.include = [/.*\/@virgo-ui_vue\.js(.*)?$/, '**/*.vue', '**/*.md', './**/*.ts', './**/*.js']
 
 		// Add inline plugin template for Virgo
 		const pluginOptions = {

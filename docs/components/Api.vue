@@ -58,7 +58,7 @@ onMounted(() => {
 <template>
   <div
     ref="apiCard"
-		class="vp-api-card p-3 a-card relative overflow-hidden bg-[hsla(var(--a-surface-c),var(--un-bg-opacity,1))]"
+		class="rounded-lg p-5 a-card relative overflow-hidden bg-[hsla(var(--a-surface-c),var(--un-bg-opacity,1))]"
     :style="{
       minHeight: apiCardMinHeight,
     }"
