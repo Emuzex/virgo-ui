@@ -87,9 +87,7 @@ const configDefaults: PluginOptions = {
 
 export const plugin = {
 	install(app: App, options: PartialDeep<PluginOptions> = {}) {
-		console.log({ options })
 		const config: PluginOptions = defu(options, configDefaults)
-		console.log({config})
 		if (config.registerComponents) {
 			for (const prop in components) {
 				// @ts-expect-error: I want to index import using string

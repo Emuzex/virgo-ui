@@ -1,6 +1,6 @@
 # Presets
 
-::::card Introduction
+## Introduction
 
 Apart from theming just colors, Virgo also gives full flexibility on customizing the components. Virgo allows defining your own preset that changes how components should look.
 
@@ -23,9 +23,7 @@ If you had noticed in the installation section, to use Virgo you need to use two
 Actually, [presets](https://unocss.dev/config/presets) feature is from UnoCSS. Virgo leverages this to provide component styles in separate preset so you can customize the framework however you like.
 :::
 
-::::
-
-:::card How to customize the theme default preset?
+## How to customize the theme default preset?
 
 To change the look of a single component, you don't have to create the preset from scratch or copy-paste the existing preset.
 
@@ -39,14 +37,10 @@ presetThemeDefault({
 })
 ```
 
-:::
-
-:::card How to create your own preset?
+## How to create your own preset?
 
 Creating your own UnoCSS preset is really simple. We recommend you first checkout the UnoCSS documentation on [presets](https://unocss.dev/config/presets).
 
 Next, you can refer to our `presetThemeDefault` preset to create you own preset.
 
 > _If you want more details, feel free to let us know that you are building your own preset so we can focus more on this part of documentation._
-
-:::

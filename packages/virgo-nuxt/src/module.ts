@@ -159,7 +159,7 @@ export default defineNuxtModule<ModuleOptions>({
 			)
 		}
 
-		nuxt.options.unocss.include = [/.*\/@virgo-ui_vue\.js(.*)?$/, '**/*.vue', '**/*.md', './**/*.ts', './**/*.js']
+		nuxt.options.unocss.include = [/.*\/@virgo-ui_vue\.js(.*)?$/, './**/*.{vue,md,ts,tsx,jsx}']
 
 		// Add inline plugin template for Virgo
 		const pluginOptions = {

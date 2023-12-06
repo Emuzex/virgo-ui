@@ -33,7 +33,7 @@ const vitestConfig = mergeConfig(
 					presetVirgo(),
 					presetThemeDefault()
 				],
-				include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.vue', './**/*.md']
+				include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.{vue,md,ts}']
 			})
 		],
 		test: {
