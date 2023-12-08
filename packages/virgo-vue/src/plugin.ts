@@ -12,10 +12,12 @@ import * as ComponentsConfig from '@/components/configs'
 
 export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 export type DefaultThemes = 'light' | 'dark'
+
 export interface ComponentsClasses {
 	tooltip: ComponentsConfig.tooltipClasses
 	floating: ComponentsConfig.floatingClasses
 }
+
 export const defaultClasses = {
 	tooltip: ComponentsConfig.tooltipConfig.classes,
 	floating: ComponentsConfig.floatingConfig.classes
@@ -85,49 +87,56 @@ const configDefaults: PluginOptions = {
 	baseZIndex: defaultBaseZIndex
 }
 
+const registerComponents = (app: App, config: PluginOptions, components: Record<string, any>) => {
+	for (const prop in components) {
+		const component = components[prop]
+		app.component(component?.name, component)
+	}
+}
+
+const handleComponentAliases = (app: App, config: PluginOptions) => {
+	for (const aliasComponentName in config.componentAliases) {
+		const baseComponent = config.componentAliases[aliasComponentName]
+		app.component(
+			aliasComponentName,
+			defineComponent({
+				...baseComponent,
+				name: aliasComponentName,
+				// TODO: (types) Why we have to use ts-expect-error here?
+				// @ts-expect-error: TS/Vue unable to get types correctly
+				setup(props, ctx) {
+					const {
+						props: modifiedProps,
+						defaultsClass,
+						defaultsStyle,
+						defaultsAttrs
+					} = useConfiguration(props)
+					return () => h(baseComponent, {
+						...modifiedProps,
+						defaultsClass,
+						defaultsStyle,
+						defaultsAttrs
+					}, ctx.slots)
+				}
+			})
+		)
+	}
+}
+
 export const plugin = {
 	install(app: App, options: PartialDeep<PluginOptions> = {}) {
 		const config: PluginOptions = defu(options, configDefaults)
+
 		if (config.registerComponents) {
-			for (const prop in components) {
-				// @ts-expect-error: I want to index import using string
-				// eslint-disable-next-line import/namespace
-				const component = components[prop]
-				app.component(component.name, component)
-			}
+			registerComponents(app, config, components)
 		}
-
-		for (const aliasComponentName in config.componentAliases) {
-			const baseComponent = config.componentAliases[aliasComponentName]
-
-			app.component(
-				aliasComponentName,
-				defineComponent({
-					...baseComponent,
-					name: aliasComponentName,
-
-					// TODO: (types) Why we have to use ts-expect-error here?
-					// @ts-expect-error: TS/Vue unable to get types correctly
-					setup(props, ctx) {
-						const { props: modifiedProps, defaultsClass, defaultsStyle, defaultsAttrs } = useConfiguration(props)
-
-						return () => h(baseComponent, { ...modifiedProps, defaultsClass, defaultsStyle, defaultsAttrs }, ctx.slots)
-					}
-				})
-			)
-		}
+		handleComponentAliases(app, config)
 
 		app.provide(VIRGO_CONFIG, config)
 		app.provide(VIRGO_PROPS_DEFAULTS, config.propsDefaults)
 		app.provide(VIRGO_CLASSES, config.classes)
 
-		// Initialize Virgo instance with config values
-		useVirgo({
-			initialTheme: config.initialTheme,
-			themes: config.themes
-		})
-
-		// Initialize useZIndex composable
+		useVirgo({ initialTheme: config.initialTheme, themes: config.themes })
 		useZIndex(config.baseZIndex, app)
 	}
 }
