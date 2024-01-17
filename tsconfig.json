@@ -1,23 +1,65 @@
 {
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "target": "esnext",
-    "useDefineForClassFields": true,
     "module": "esnext",
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
     "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationDir": "./dist/types",
-    "isolatedModules": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "preserve",
     "types": [
-      "vite/client"
-    ]
+      "node"
+    ],
+    "paths": {
+      "@virgo-ui/vue": [
+        "./packages/virgo-vue/src/index.ts"
+      ],
+      "@/*": [
+        "./packages/virgo-vue/src/*"
+      ],
+      "@virgo-ui/core": [
+        "./packages/virgo-vue/src/index.ts"
+      ],
+      "@virgo-ui/core/*": [
+        "./packages/virgo-vue/src/*"
+      ],
+      "@virgo-ui/preset-theme-default": [
+        "./packages/preset-theme-default/src/index.ts"
+      ],
+      "@virgo-ui/preset-theme-default/*": [
+        "./packages/preset-theme-default/src/*"
+      ],
+      "@virgo-ui/nuxt": [
+        "./packages/virgo-nuxt/src/module.ts"
+      ]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/index.js"]
+  "include": [
+    "./packages/*/src/**/*",
+    "./packages/virgo-vue/auto-imports.d.ts",
+    "./packages/virgo-vue/shims.d.ts",
+    "./packages/virgo-vue/volar.d.ts",
+    "./docs/components/**/*",
+    // "./docs/components/Playground.vue",
+    "./docs/utils/*",
+    "./docs/.vitepress/shims.d.ts",
+    "./docs/.vitepress/theme/index.ts"
+  ],
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/playground/**"
+  ]
 }

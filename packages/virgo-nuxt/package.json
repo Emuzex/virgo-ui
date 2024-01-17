@@ -1,0 +1,56 @@
+{
+  "name": "@virgo-ui/nuxt",
+  "version": "0.0.10",
+  "description": "Nuxt 3 Module for Virgo",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://virgo-ui.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emuzex/virgo-ui.git",
+    "directory": "packages/virgo-nuxt"
+  },
+  "bugs": {
+    "url": "https://github.com/emuzex/virgo-ui/issues"
+  },
+  "keywords": [
+    "nuxt 3",
+    "virgo-nuxt",
+    "vue 3"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm dev:prepare && nuxt-module-build",
+    "dev": "pnpm dev:prepare && nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@virgo-ui/preset-theme-default": "workspace:*",
+    "@floating-ui/dom": "1.2.8",
+    "@iconify-json/bx": "latest",
+    "@nuxt/kit": "3.5.0",
+    "@virgo-ui/vue": "workspace:*"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "0.5.0",
+    "@nuxt/devtools-ui-kit": "0.5.0",
+    "@nuxt/module-builder": "0.3.1",
+    "@nuxt/schema": "3.5.0",
+    "@unocss/nuxt": "0.51.13",
+    "nuxt": "3.5.0"
+  }
+}

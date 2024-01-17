@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "vue.volar",
+        "usernamehw.errorlens",
+        "antfu.unocss",
+        "antfu.iconify",
+        "davidanson.vscode-markdownlint",
+        "yzhang.markdown-all-in-one",
+        "matijao.vue-nuxt-snippets",
+        "antfu.smart-clicks",
+        "meganrogge.template-string-converter",
+        "esbenp.prettier-vscode"
+    ]
+}
