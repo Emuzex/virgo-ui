@@ -22,7 +22,8 @@ module.exports = {
 	},
 	plugins: [
 		'vue',
-		'@typescript-eslint'
+		'@typescript-eslint',
+		'tree-shaking'
 	],
 	ignorePatterns: ['node_modules/*', 'dist/*', '*.yaml', '*.yml', '*.json', '*.md'],
 	rules: {
@@ -78,7 +79,7 @@ module.exports = {
 			'ignores': []
 		}],
 		'vue/require-name-property': 'error',
-		'vue/component-definition-name-casing': ['error', 'camel-case'],
+		'vue/component-definition-name-casing': ['error', 'PascalCase'],
 		'vue/no-duplicate-attr-inheritance': 'error',
 		'vue/match-component-file-name': ['error', {
 			extensions: ['vue', 'tsx']

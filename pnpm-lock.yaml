@@ -59,6 +59,9 @@ importers:
       eslint-plugin-react:
         specifier: 7.32.2
         version: 7.32.2(eslint@8.42.0)
+      eslint-plugin-tree-shaking:
+        specifier: ^1.12.1
+        version: 1.12.1
       eslint-plugin-unicorn:
         specifier: 47.0.0
         version: 47.0.0(eslint@8.42.0)
@@ -5500,6 +5503,11 @@ packages:
       resolve: 2.0.0-next.4
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
+    dev: true
+
+  /eslint-plugin-tree-shaking@1.12.1:
+    resolution: {integrity: sha512-nq2wZd2APlS+Fsk/1/iYVwpByMH2+x69+dB5wMrZuvu9PqKI1lyfu/gk2xvzihmDUeF23aeZZ0/WyqJSp4EG3A==}
+    engines: {node: '>=6.0.0'}
     dev: true
 
   /eslint-plugin-unicorn@47.0.0(eslint@8.42.0):
