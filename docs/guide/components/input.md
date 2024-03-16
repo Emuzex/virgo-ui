@@ -29,6 +29,10 @@ For maximum flexibility you can use `label` slot.
 When you use **label slot**, Note that label's `for` attribute needs to prefix the `virgo-input-` when binding it to input's `id` attribute.
 :::
 
+:::tip
+`virgo-input` built on top of `base-input` base component. Hence, This demo also applies to all other inherited component.
+:::
+
 ## Hint
 
 You can use `hint` prop to add hint to the input.
@@ -41,25 +45,6 @@ You can use various icon location prop to add icon to the input.
 
 <demo src="../../components/demos/input/DemoInputIcons.vue"/>
 
-## Sizing
-
-You can use font-size utility to adjust the size of input.
-
-<demo src="../../components/demos/input/DemoInputSizing.vue"/>
-
-:::tip
-Like `input`, `ASelect` & `ATextarea` also built on top of `ABaseInput` base component. Hence, This demo also applies to `ASelect` & `ATextarea`.
-:::
-
-## Roundness
-
-You can adjust input roundness by providing border-radius utilities to `input-wrapper-classes` prop.
-
-<demo src="../../components/demos/input/DemoInputRoundness.vue"/>
-
-:::tip
-Like `input`, `ASelect` & `ATextarea` also built on top of `ABaseInput` base component. Hence, This demo also applies to `ASelect` & `ATextarea`.
-:::
 
 ## Types
 
