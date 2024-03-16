@@ -15,7 +15,7 @@ defineEmits<BaseInputEvents>()
 defineSlots<typeof baseInputSlots>()
 
 defineOptions({
-  name: 'baseInput',
+  name: 'BaseInput',
 })
 
 const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)

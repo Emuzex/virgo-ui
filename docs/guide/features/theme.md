@@ -8,33 +8,39 @@ can customize to your liking by configuring the plugin.
 <br>
 
 #### Default configs
+:::details Base-Input
+<<< @/../packages/virgo-vue/src/components/base-input/config.ts
+:::
 :::details Button
 <<< @/../packages/virgo-vue/src/components/button/config.ts
 :::
 :::details Tooltip
 <<< @/../packages/virgo-vue/src/components/tooltip/config.ts
 :::
+:::details Input
+<<< @/../packages/virgo-vue/src/components/input/config.ts
+:::
 
 <br>
 
 Since we are big fan
-of UnoCSS, these base settings are written with it in mind, and a preset has
-been created for Virgo to support these (`@virgo-ui/theme-glassmorphism`).
+of UnoCSS, these base settings are written with it in mind, and a default theme has
+been created for Virgo to support these.
 
 Here are the steps to use Virgo with UnoCSS, according to our vision.
 
 ## UnoCSS
 
-1. Add `@virgo-ui/theme-glassmorphism` and optionally your loved icons
+1. Add 'unocss' and optionally your loved icons
    ::: code-group
       ```bash [pnpm]
-      pnpm add @virgo-ui/theme-glassmorphism && pnpm add -D unocss @iconify-json/bx
+       pnpm add -D unocss @iconify-json/bx
       ```
       ```bash [yarn]
-        yarn add @virgo-ui/theme-glassmorphism && yarn add -D unocss @iconify-json/bx
+        yarn add -D unocss @iconify-json/bx
       ```
       ```bash [npm]
-        npm i @virgo-ui/theme-glassmorphism && npm install -D unocss @iconify-json/bx
+        npm install -D unocss @iconify-json/bx
       ```
    :::
 
@@ -54,7 +60,6 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
 
     ```ts
     import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
-    import { presetThemeDefault } from '@virgo-ui/theme-glassmorphism'
     import {
       defineConfig,
       presetIcons,
@@ -70,10 +75,7 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
         }),
 
         // @virgo-ui/vue preset
-        presetVirgo(),
-
-        // default theme preset
-        presetThemeDefault(),
+        presetVirgo()
       ],
       include: [/.*\/@virgo-ui_vue\.js(.*)?$/, './**/*.{vue,md,ts}'],
     })
@@ -92,13 +94,12 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
     // virgo styles
     import '@virgo-ui/vue/dist/style.css'
 
-    // default theme styles
-    import '@virgo-ui/theme-glassmorphism/dist/style.css'
-
     // Using `app.use(virgo)` will register virgo plugin
     createApp(App)
       .use(virgo)
       .mount('#app')
     ```
 
-It's done! Enjoy! 🥳
+## Craft your theme
+
+See in the [Customization](/guide/getting-started/customization.html) section how to craft your own theme.

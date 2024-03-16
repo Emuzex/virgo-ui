@@ -5,10 +5,10 @@ import { defu } from 'defu'
 const configDefaults: PartialDeep<PluginOptions> = {
 	registerComponents: true,
 	classes: {
-		baseInput: {
+		BaseInput: {
 			root: 'glassmorphism'
 		},
-		virgoButton: {}
+		VirgoButton: {}
 	}
 }
 

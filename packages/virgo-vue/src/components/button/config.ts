@@ -13,4 +13,3 @@ export const virgoButtonConfig = {
 export type virgoButtonClassesValidKeys = keyof typeof virgoButtonConfig.classes
 
 export type virgoButtonClasses = Record<virgoButtonClassesValidKeys, string>
-0

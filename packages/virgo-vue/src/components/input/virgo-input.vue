@@ -10,7 +10,7 @@ const _props = defineProps(virgoInputProps)
 defineEmits<VirgoInputEvents>()
 
 defineOptions({
-  name: 'virgoInput',
+  name: 'VirgoInput',
   inheritAttrs: false,
 })
 const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList} = useDefaults(_props)

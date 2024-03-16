@@ -10,7 +10,7 @@ const _props = defineProps(tooltipProps)
 defineSlots<typeof tooltipSlots>()
 
 defineOptions({
-  name: 'tooltip',
+  name: 'Tooltip',
 })
 const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useConfiguration(_props)
 

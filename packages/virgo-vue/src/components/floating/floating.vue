@@ -13,7 +13,7 @@ const emit = defineEmits<FloatingEvents>()
 defineSlots<typeof floatingSlots>()
 
 defineOptions({
-  name: 'floating',
+  name: 'Floating',
   inheritAttrs: false,
 })
 

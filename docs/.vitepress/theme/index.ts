@@ -23,10 +23,9 @@ export default {
 	enhanceApp({ app }: { app: App }) {
 		app.use(virgo, {
 			classes: {
-				tooltip:{
-					wrapper: 'z-[54]',
-					content: 'bg-[hsl(var(--virgo-tooltip-bg-color))] em:px-2 em:py-1 em:rounded-lg',
-					contentText: 'em:text-sm text-white text-center'
+				VirgoButton: {
+					buttonBase: 'bg-white',
+					content: 'text-red-900'
 				}
 			}
 		})

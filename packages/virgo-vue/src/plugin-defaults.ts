@@ -8,11 +8,11 @@ import type { baseInputProps } from '@/components/base-input'
 import type { virgoInputProps } from '@/components/input'
 
 interface ComponentProps {
-	baseInput: typeof baseInputProps
-	virgoButton: typeof virgoButtonProps
-	floating: typeof floatingProps
-	tooltip: typeof tooltipProps
-	virgoInput: typeof virgoInputProps
+	BaseInput: typeof baseInputProps
+	VirgoButton: typeof virgoButtonProps
+	Floating: typeof floatingProps
+	Tooltip: typeof tooltipProps
+	VirgoInput: typeof virgoInputProps
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

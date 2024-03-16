@@ -14,19 +14,19 @@ export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 export type DefaultThemes = 'light' | 'dark'
 
 export interface ComponentsClasses {
-	baseInput: ComponentsConfig.baseInputClasses
-	virgoButton: ComponentsConfig.virgoButtonClasses
-	tooltip: ComponentsConfig.tooltipClasses
-	floating: ComponentsConfig.floatingClasses
-	virgoInput: ComponentsConfig.virgoInputClasses
+	BaseInput: ComponentsConfig.baseInputClasses
+	VirgoButton: ComponentsConfig.virgoButtonClasses
+	Tooltip: ComponentsConfig.tooltipClasses
+	Floating: ComponentsConfig.floatingClasses
+	VirgoInput: ComponentsConfig.virgoInputClasses
 }
 
 export const defaultClasses = {
-	baseInput: ComponentsConfig.baseInputConfig.classes,
-	virgoButton: ComponentsConfig.virgoButtonConfig.classes,
-	tooltip: ComponentsConfig.tooltipConfig.classes,
-	floating: ComponentsConfig.floatingConfig.classes,
-	virgoInput: ComponentsConfig.virgoInputConfig.classes
+	BaseInput: ComponentsConfig.baseInputConfig.classes,
+	VirgoButton: ComponentsConfig.virgoButtonConfig.classes,
+	Tooltip: ComponentsConfig.tooltipConfig.classes,
+	Floating: ComponentsConfig.floatingConfig.classes,
+	VirgoInput: ComponentsConfig.virgoInputConfig.classes
 }
 
 export interface ThemeOptions {

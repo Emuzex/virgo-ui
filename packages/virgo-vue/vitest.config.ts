@@ -3,11 +3,9 @@ import Unocss from 'unocss/vite'
 import { defineConfig, mergeConfig } from 'vitest/config'
 import vitestBaseConfig from '../../vitest.config'
 
-import { presetThemeDefault } from '../preset-theme-default/src/index'
+import { presetIconExtraProperties } from './src'
 
-import { presetIconExtraProperties } from './src/preset/icons'
-
-import { presetVirgo } from './src/preset'
+import { presetVirgo } from './src'
 import viteConfig from './vite.config'
 
 const vitestConfig = mergeConfig(
@@ -30,8 +28,7 @@ const vitestConfig = mergeConfig(
 					}),
 
 					// @virgo-ui/vue presets
-					presetVirgo(),
-					presetThemeDefault()
+					presetVirgo()
 				],
 				include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.{vue,md,ts}']
 			})

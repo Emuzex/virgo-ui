@@ -8,7 +8,7 @@ const _props = defineProps(virgoButtonProps)
 defineSlots<typeof virgoButtonSlots>()
 
 defineOptions({
-  name: 'virgoButton',
+  name: 'VirgoButton',
 })
 
 const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
