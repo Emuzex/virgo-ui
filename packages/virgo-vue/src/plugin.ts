@@ -14,13 +14,19 @@ export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
 export type DefaultThemes = 'light' | 'dark'
 
 export interface ComponentsClasses {
+	baseInput: ComponentsConfig.baseInputClasses
+	virgoButton: ComponentsConfig.virgoButtonClasses
 	tooltip: ComponentsConfig.tooltipClasses
 	floating: ComponentsConfig.floatingClasses
+	virgoInput: ComponentsConfig.virgoInputClasses
 }
 
 export const defaultClasses = {
+	baseInput: ComponentsConfig.baseInputConfig.classes,
+	virgoButton: ComponentsConfig.virgoButtonConfig.classes,
 	tooltip: ComponentsConfig.tooltipConfig.classes,
-	floating: ComponentsConfig.floatingConfig.classes
+	floating: ComponentsConfig.floatingConfig.classes,
+	virgoInput: ComponentsConfig.virgoInputConfig.classes
 }
 
 export interface ThemeOptions {
@@ -58,11 +64,11 @@ const configDefaults: PluginOptions = {
 				danger: '358.3, 100%, 64.9%'
 			},
 			cssVars: {
-				'body-color': 'hsla(var(--a-base-c), 0.68)',
-				'body-bg-c': '0,4.8%,95.9%',
+				'body-color': 'hsla(var(--virgo-base-c), 0.68)',
+				'body-bg-color': '0,4.8%,95.9%',
 
 				// ℹ️ Used for background on body like select options, card, etc
-				'surface-c': '0, 0%, 100%'
+				'surface-color': '0, 0%, 100%'
 			}
 		},
 		dark: {
@@ -75,9 +81,9 @@ const configDefaults: PluginOptions = {
 				danger: '358.3, 73%, 64.9%'
 			},
 			cssVars: {
-				'body-color': 'hsla(var(--a-base-c), 0.68)',
-				'body-bg-c': 'var(--a-primary-hue), 15%, 5%',
-				'surface-c': 'var(--a-primary-hue), 7%, 10%'
+				'body-color': 'hsla(var(--virgo-base-c), 0.68)',
+				'body-bg-color': 'var(--virgo-primary-hue), 15%, 5%',
+				'surface-color': 'var(--virgo-primary-hue), 7%, 10%'
 			}
 		}
 	},
@@ -102,6 +108,7 @@ const handleComponentAliases = (app: App, config: PluginOptions) => {
 			defineComponent({
 				...baseComponent,
 				name: aliasComponentName,
+
 				// TODO: (types) Why we have to use ts-expect-error here?
 				// @ts-expect-error: TS/Vue unable to get types correctly
 				setup(props, ctx) {
@@ -111,7 +118,8 @@ const handleComponentAliases = (app: App, config: PluginOptions) => {
 						defaultsStyle,
 						defaultsAttrs
 					} = useConfiguration(props)
-					return () => h(baseComponent, {
+
+return () => h(baseComponent, {
 						...modifiedProps,
 						defaultsClass,
 						defaultsStyle,

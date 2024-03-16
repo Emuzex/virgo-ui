@@ -1,2 +1,5 @@
+export * from './base-input/config'
+export * from './button/config'
 export * from './tooltip/config'
 export * from './floating/config'
+export * from './input/config'

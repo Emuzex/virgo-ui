@@ -1,7 +1,7 @@
 {
-  "name": "@virgo-ui/preset-theme-default",
+  "name": "@virgo-ui/theme-glassmorphism",
   "version": "0.0.10",
-  "description": "Default theme preset for Virgo",
+  "description": "Official glassmorphism theme config for Virgo",
   "type": "module",
   "private": false,
   "exports": {
@@ -26,11 +26,11 @@
   "author": "Virgo UI <https://github.com/emuzex>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/emuzex",
-  "homepage": "https://virgo-ui.dev",
+  "homepage": "https://virgoui.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emuzex/virgo-ui.git",
-    "directory": "packages/preset-theme-default"
+    "directory": "packages/theme-glassmorphism"
   },
   "bugs": {
     "url": "https://github.com/emuzex/virgo-ui/issues"

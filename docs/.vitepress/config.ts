@@ -1,5 +1,4 @@
 import { fileURLToPath } from 'node:url'
-import Container from 'markdown-it-container'
 import Unocss from 'unocss/vite'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
@@ -58,7 +57,10 @@ export default defineConfig({
 					text: 'Components',
 					collapsed: false,
 					items: [
-						{ text: 'Tooltip', link: '/guide/components/tooltip' }
+						{ text: 'Base Input', link: '/guide/components/base-input'},
+						{ text: 'Button', link: '/guide/components/button' },
+						{ text: 'Tooltip', link: '/guide/components/tooltip' },
+						{ text: 'Input', link: '/guide/components/input'}
 					]
 				},
 				{

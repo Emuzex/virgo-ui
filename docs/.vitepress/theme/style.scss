@@ -1,14 +1,93 @@
+//@use '@unocss/reset/tailwind.css';
+
+// 👉 Global CSS Resets
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeSpeed;
+	background-color: hsl(var(--virgo-body-bg-color));
+	color: var(--virgo-body-color);
+
+	// Disable mobile tap blue color
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+
+:root {
+	--virgo-base-color: var(--virgo-primary-hue), 10%, 20%;
+	--virgo-spacing: 1;
+	--virgo-theme-color: 0, 0%, 100%;
+	--virgo-border-opacity: 0.12;
+	--virgo-tooltip-bg-ccolor: 0,0%,8%;
+}
+
+:root.dark {
+	--virgo-base-color: var(--virgo-primary-hue), 0%, 94%;
+	--virgo-theme-color: 0, 0%, 0%;
+	--virgo-tooltip-bg-color: 0,0%,25%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: hsla(var(--virgo-base-color), 0.87);
+}
+
+// 👉 Misc
+
+@keyframes shake {
+	0%   {transform: translateX(0);}
+	25%  {transform: translateX(1px);}
+	50%  {transform: translateX(-1px);}
+	100% {transform: translateX(0);}
+}
+
+.virgo-base-input-label.text-danger {
+	animation-name: shake;
+	animation-duration: 0.35s;
+}
+
+// Set default border-color for `hr` element for color scheme compatibility
+hr {
+	border-color: hsla(var(--virgo-base-color),var(--virgo-border-opacity))
+}
+
+// Remove outline
+button,
+input,
+select,
+textarea {
+	&:focus {
+		outline: none;
+	}
+}
+
+// ℹ️ Remove autocomplete styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: var(--virgo-body-color);
+	transition: background-color 5000s ease-in-out 0s;
+}
+
 /* Styles adjusting VitePress according to theme */
 :root {
 
 	/* Background colors */
-	--vp-background: hsl(var(--a-body-bg-c));
+	--vp-background: hsl(var(--virgo-body-bg-color));
 	--vp-c-bg: var(--vp-background);
 	--vp-c-bg-alt: var(--vp-background);
 	--vp-sidebar-bg-color: var(--vp-background);
 
 	/* Text color */
-	--vp-c-text-1: hsla(var(--a-base-c), var(--a-text-emphasis-medium-opacity));
+	--vp-c-text-1: hsla(var(--virgo-base-color), var(--virgo-text-emphasis-medium-opacity));
 
 	/* Font family */
 	--vp-font-family-base: var(--vp-font-family-mono), 'Inter', sans-serif;
@@ -16,11 +95,11 @@
 	monospace;;
 
 	/* Branding */
-	--vp-c-brand-lighter: hsl(var(--a-primary-hue), 97%, 75%);
-	--vp-c-brand-light: hsl(var(--a-primary-hue), 97%, 70%);
-	--vp-c-brand: hsl(var(--a-primary-hue), 97%, 66%);
-	--vp-c-brand-dark: hsl(var(--a-primary-hue), 97%, 60%);
-	--vp-c-brand-darker: hsl(var(--a-primary-hue), 97%, 55%);
+	--vp-c-brand-lighter: hsl(var(--virgo-primary-hue), 97%, 75%);
+	--vp-c-brand-light: hsl(var(--virgo-primary-hue), 97%, 70%);
+	--vp-c-brand: hsl(var(--virgo-primary-hue), 97%, 66%);
+	--vp-c-brand-dark: hsl(var(--virgo-primary-hue), 97%, 60%);
+	--vp-c-brand-darker: hsl(var(--virgo-primary-hue), 97%, 55%);
 
 	/* We need this because menu component has 51 index which overlaps on navbar on scroll */
 	/* --vp-z-index-nav: 52; */
@@ -39,12 +118,12 @@
 
 :root.dark {
 	/* Branding */
-	--a-primary-hue: 297;
-	--vp-c-brand-lighter: hsl(var(--a-primary-hue), 73%, 75%);
-	--vp-c-brand-light: hsl(var(--a-primary-hue), 73%, 70%);
-	--vp-c-brand: hsl(var(--a-primary-hue), 73%, 66%);
-	--vp-c-brand-dark: hsl(var(--a-primary-hue), 73%, 60%);
-	--vp-c-brand-darker: hsl(var(--a-primary-hue), 73%, 55%);
+	--virgo-primary-hue: 297;
+	--vp-c-brand-lighter: hsl(var(--virgo-primary-hue), 73%, 75%);
+	--vp-c-brand-light: hsl(var(--virgo-primary-hue), 73%, 70%);
+	--vp-c-brand: hsl(var(--virgo-primary-hue), 73%, 66%);
+	--vp-c-brand-dark: hsl(var(--virgo-primary-hue), 73%, 60%);
+	--vp-c-brand-darker: hsl(var(--virgo-primary-hue), 73%, 55%);
 
 	--vp-code-scrollbar-thumb-bg: hsl(0, 0%, 25%);
 }
@@ -160,7 +239,7 @@
 
 /* Add border bottom instead of shadow */
 .VPNav {
-	border-bottom: thin solid hsla(var(--a-base-c), var(--a-border-opacity));
+	border-bottom: thin solid hsla(var(--virgo-base-color), var(--virgo-border-opacity));
 }
 
 /* Remove shadow effect on scroll */
@@ -189,7 +268,7 @@
 
 /* Custom scrollbar */
 .VPSidebar::-webkit-scrollbar {
-	background: rgb(var(--a-layer-c));
+	background: rgb(var(--virgo-layer-color));
 	block-size: 8px;
 	border-end-end-radius: 14px;
 	border-start-end-radius: 14px;
@@ -213,7 +292,7 @@
 
 /* Add border on right */
 .VPSidebar {
-	border-right: thin solid hsla(var(--a-base-c), var(--a-border-opacity));
+	border-right: thin solid hsla(var(--virgo-base-color), var(--virgo-border-opacity));
 }
 
 /* Make sidebar starts from bottom of navbar */
@@ -263,7 +342,7 @@
 }
 
 .dark .vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
-	border: 1px solid hsla(var(--a-base-c), var(--a-border-opacity));
+	border: 1px solid hsla(var(--virgo-base-color), var(--virgo-border-opacity));
 	opacity: 0.85;
 	font-weight: 500;
 }
@@ -273,9 +352,9 @@
 ========================== */
 
 .cards-demo-container {
-	/* rounded-lg border-dashed border border-a-border p-8 bg-[hsla(var(--a-base-c), .05)] */
+	/* rounded-lg border-dashed border border-a-border p-8 bg-[hsla(var(--virgo-base-color), .05)] */
 	@apply rounded-lg border-dashed border border-a-border p-8;
-	background: hsla(var(--a-body-bg-c));
+	background: hsla(var(--virgo-body-bg-color));
 }
 
 /* ==========================
@@ -348,11 +427,11 @@ samp {
 }
 
 html:not(.dark) .VPContent.is-home {
-	background: hsl(var(--a-surface-c));
+	background: hsl(var(--virgo-surface-color));
 }
 
 html:not(.dark) .VPContent.is-home+.VPFooter {
-	background: hsl(var(--a-surface-c));
+	background: hsl(var(--virgo-surface-color));
 }
 
 .VPHome {
@@ -360,11 +439,11 @@ html:not(.dark) .VPContent.is-home+.VPFooter {
 }
 
 .VPHero.VPHomeHero .text {
-	color: hsla(var(--a-base-c), 0.87)
+	color: hsla(var(--virgo-base-color), 0.87)
 }
 
 .VPFooter {
-	border-top: thin solid hsla(var(--a-base-c), var(--a-border-opacity)) !important;
+	border-top: thin solid hsla(var(--virgo-base-color), var(--virgo-border-opacity)) !important;
 }
 
 .VPHero .image-bg {

@@ -1,0 +1,61 @@
+/*@use '@unocss/reset/tailwind.css'; // Do some issues in buttons */
+
+// 👉 Global CSS Resets
+body {
+  	-webkit-font-smoothing: antialiased;
+  	text-rendering: optimizeSpeed;
+	background-color: hsl(var(--virgo-body-bg-color));
+	color: var(--virgo-body-color);
+
+	// Disable mobile tap blue color
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+
+:root {
+    --virgo-base-color: var(--virgo-primary-hue), 10%, 20%;
+    --virgo-spacing: 1;
+    --virgo-tooltip-bg-color: 0,0%,8%;
+}
+
+:root.dark {
+  	--virgo-base-color: var(--virgo-primary-hue), 0%, 94%;
+	--virgo-tooltip-bg-color: 0,0%,25%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsla(var(--virgo-base-c), 0.87);
+}
+
+// Set default border-color for `hr` element for color scheme compatibility
+hr {
+  border-color: hsla(var(--virgo-base-c),var(--virgo-border-opacity))
+}
+
+// Remove outline
+button,
+input,
+select,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+// ℹ️ Remove autocomplete styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--virgo-body-color);
+  transition: background-color 5000s ease-in-out 0s;
+}

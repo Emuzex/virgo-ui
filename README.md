@@ -2,7 +2,7 @@
   <img src="./docs/public/logo.svg" style="width:100px;" />
 </p>
 <h1 align="center">
-  <a href="https://virgo-ui.dev/" target="_blank" align="center">
+  <a href="https://virgoui.dev/" target="_blank" align="center">
     Virgo
   </a>
 </h1>
@@ -12,7 +12,7 @@
 Coming soon..
 ## Installation 🛠️
 
-Please refer to the [docs](https://virgo-ui.dev/guide/getting-started/installation.html)
+Please refer to the [docs](https://virgoui.dev/guide/getting-started/installation.html)
 
 ## Credits
 

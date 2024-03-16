@@ -1,5 +1,5 @@
-import type { MaybeRef } from '@vueuse/core'
-import type { ComputedRef, StyleValue } from 'vue'
+
+import type { ComputedRef } from 'vue'
 import { useVirgo } from '@/composables/use-virgo'
 import type { ColorProp } from '@/composables/use-props'
 
@@ -14,16 +14,16 @@ export function isThemeColor(color: ColorProp | null): ComputedRef<boolean> {
 	})
 }
 
-export function useColor(color: MaybeRef<ColorProp>, cssVarName: MaybeRef<string>, as: 'text' | 'bg' = 'text') {
+/*export function useColor(color: MaybeRef<ColorProp>, cssVarName: MaybeRef<string>, as: 'text' | 'bg' = 'text') {
 	const styles = computed(() => {
 		const _color = unref(color)
-		const cssVar = computed(() => `--a-${unref(cssVarName)}`)
+		const cssVar = computed(() => `--virgo-${unref(cssVarName)}`)
 
 		const property = as === 'bg' ? 'background-color' : 'color'
 		const _isThemeColor = isThemeColor(_color)
 
 		const _styles = {
-			[cssVar.value]: _isThemeColor.value ? `var(--a-${_color})` : _color,
+			[cssVar.value]: _isThemeColor.value ? `var(--virgo-${_color})` : _color,
 			[property]: `hsla(var(${cssVar.value}), var(${cssVar.value}-opacity, 1))`
 		} as StyleValue
 
@@ -33,4 +33,4 @@ export function useColor(color: MaybeRef<ColorProp>, cssVarName: MaybeRef<string
 	return {
 		styles
 	}
-}
+}*/

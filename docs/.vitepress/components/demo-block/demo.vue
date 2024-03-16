@@ -43,26 +43,26 @@ const [value, toggle] = useToggle()
 
 <template>
     <div v-bind="$attrs" class="mt-6">
-      <div class="o-demo_wrapper vp-raw bg">
+      <div class="virgo-demo_wrapper vp-raw bg">
         <slot />
       </div>
       <div class="relative">
-        <div class="o-demo_actions">
-          <a class="o-demo_action_item group" :href="github" target="_blank">
-            <div class="o-demo_action_icon i-carbon-logo-github" />
-            <div class="o-demo_tooltip group-hover:opacity-100">
+        <div class="virgo-demo_actions">
+          <a class="virgo-demo_action_item group" :href="github" target="_blank">
+            <div class="virgo-demo_action_icon i-carbon-logo-github" />
+            <div class="virgo-demo_tooltip group-hover:opacity-100">
               Edit on GitHub
             </div>
           </a>
-          <a class="o-demo_action_item group"  @click="copy()">
-            <div class="o-demo_action_icon i-carbon:copy" />
-            <div class="o-demo_tooltip group-hover:opacity-100" >
+          <a class="virgo-demo_action_item group"  @click="copy()">
+            <div class="virgo-demo_action_icon i-carbon:copy" />
+            <div class="virgo-demo_tooltip group-hover:opacity-100" >
               {{ copied ? 'Copied' : 'Copy code' }}
             </div>
           </a>
-          <a class="o-demo_action_item group"  @click="toggle()">
-            <div class="o-demo_action_icon i-carbon:fit-to-width" />
-            <div class="o-demo_tooltip group-hover:opacity-100">
+          <a class="virgo-demo_action_item group"  @click="toggle()">
+            <div class="virgo-demo_action_icon i-carbon:fit-to-width" />
+            <div class="virgo-demo_tooltip group-hover:opacity-100">
               {{ value ? 'Hidden code' : 'Show code' }}
             </div>
           </a>

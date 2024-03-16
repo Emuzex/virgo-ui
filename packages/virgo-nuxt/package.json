@@ -4,7 +4,7 @@
   "description": "Nuxt 3 Module for Virgo",
   "license": "MIT",
   "private": false,
-  "homepage": "https://virgo-ui.dev",
+  "homepage": "https://virgoui.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emuzex/virgo-ui.git",
@@ -39,7 +39,7 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@virgo-ui/preset-theme-default": "workspace:*",
+    "@virgo-ui/theme-glassmorphism": "workspace:*",
     "@floating-ui/dom": "1.2.8",
     "@iconify-json/bx": "latest",
     "@nuxt/kit": "3.5.0",

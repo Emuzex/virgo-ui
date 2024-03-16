@@ -6,75 +6,25 @@
 
     ::: code-group
       ```bash [pnpm]
-      pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
+   pnpm add @virgo-ui/vue
       ```
       ```bash [yarn]
-        yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
+   yarn add @virgo-ui/vue
       ```
       ```bash [npm]
-        npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx
+   npm i @virgo-ui/vue
       ```
     :::
 
+2. Update your `main.ts` file as shown below:
 
-## Usage
-
-1. Add UnoCSS to `vite.config.ts`
-
-    ```ts
-    import Unocss from 'unocss/vite'
-
-    export default {
-      plugins: [
-        Unocss(),
-      ],
-    }
-    ```
-
-2. Create the UnoCSS Config file `uno.config.ts` in the root of the project with the content below:
-
-    ```ts
-    import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
-    import { presetThemeDefault } from '@virgo-ui/preset-theme-default'
-    import {
-      defineConfig,
-      presetIcons,
-      presetUno,
-    } from 'unocss'
-
-    export default defineConfig({
-      presets: [
-        presetUno(),
-        presetIcons({
-          scale: 1.2,
-          extraProperties: presetIconExtraProperties,
-        }),
-
-        // @virgo-ui/vue preset
-        presetVirgo(),
-
-        // default theme preset
-        presetThemeDefault(),
-      ],
-      include: [/.*\/@virgo-ui_vue\.js(.*)?$/, './**/*.{vue,md,ts}'],
-    })
-    ```
-
-3. Update your `main.ts` file as shown below:
-
-    ```js{3,5-6,8-9,13,11-12,15-16}
+    ```js{3,5-6,8,10}
     import { createApp } from 'vue'
     import App from './App.vue'
     import { virgo } from '@virgo-ui/vue'
 
-    // UnoCSS import
-    import 'uno.css'
-
     // virgo styles
     import '@virgo-ui/vue/dist/style.css'
-
-    // default theme styles
-    import '@virgo-ui/preset-theme-default/dist/style.css'
 
     // Using `app.use(virgo)` will register virgo plugin
     createApp(App)

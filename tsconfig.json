@@ -35,11 +35,11 @@
       "@virgo-ui/core/*": [
         "./packages/virgo-vue/src/*"
       ],
-      "@virgo-ui/preset-theme-default": [
-        "./packages/preset-theme-default/src/index.ts"
+      "@virgo-ui/theme-glassmorphism": [
+        "./packages/theme-glassmorphism/src/index.ts"
       ],
-      "@virgo-ui/preset-theme-default/*": [
-        "./packages/preset-theme-default/src/*"
+      "@virgo-ui/theme-glassmorphism/*": [
+        "./packages/theme-glassmorphism/src/*"
       ],
       "@virgo-ui/nuxt": [
         "./packages/virgo-nuxt/src/module.ts"

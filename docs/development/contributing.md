@@ -125,18 +125,17 @@ At the moment, virgo don't have any design system. Hence, we have full freedom t
 
 ### CSS vars
 
-We follow naming convention for CSS color vars. As we have theme colors CSS vars that has just HSL value and not full color (e.g. `--a-primary: 265, 97.7%, 66.3%`) and some other colors that are full color (e.g. `--a-switch-icon-color: hsla(0, 10%, 20%, 0.68)`), it's confusing while using the CSS var to identify if it's full color or just HSL value.
+We follow naming convention for CSS color vars. As we have theme colors CSS vars that has just HSL value and not full color (e.g. `--virgo-primary: 265, 97.7%, 66.3%`) and some other colors that are full color (e.g. `--virgo-switch-icon-color: hsla(0, 10%, 20%, 0.68)`), it's confusing while using the CSS var to identify if it's full color or just HSL value.
 
 Due to this reason we follow below convention when deciding the name of CSS var that is color:
 
-- suffix `-c` => For just HSL value (`--a-base-c: 0, 10%, 20%;`)
-- suffix `-color` => For full color (`--a-switch-icon-color: hsla(0, 10%, 20%, 0.68)`)
-- Don't suffix anything => For theme color (`--a-primary: 265, 97.7%, 66.3%`)
+- suffix `-color` => For full color (`--virgo-switch-icon-color: hsla(0, 10%, 20%, 0.68)`)
+- Don't suffix anything => For theme color (`--virgo-primary: 265, 97.7%, 66.3%`)
 
 With above naming convention, we can clearly know if we should wrap the CSS var in `hsl()` or directly use it like a color value.
 
 :::warning
-Don't forget to follow this convention when defining any CSS var for color, including background (`--a-something-bg-color: hsl(var(--a-surface-c))`)
+Don't forget to follow this convention when defining any CSS var for color, including background (`--virgo-something-bg-color: hsl(var(--virgo-surface-c))`)
 :::
 
 ### [Template Refs](https://vuejs.org/guide/essentials/template-refs.html)

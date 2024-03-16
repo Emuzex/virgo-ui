@@ -58,14 +58,14 @@ onMounted(() => {
 <template>
   <div
     ref="apiCard"
-		class="rounded-lg p-5 a-card relative overflow-hidden bg-[hsla(var(--a-surface-c),var(--un-bg-opacity,1))]"
+		class="rounded-lg p-5 relative overflow-hidden bg-[hsla(var(--virgo-surface-color),var(--un-bg-opacity,1))]"
     :style="{
       minHeight: apiCardMinHeight,
     }"
   >
-	  <div class="a-card-padding next:pt-0 em:spacing:not-last:pb-4">
+	  <div class="next:pt-0 em:spacing:not-last:pb-4">
 		  <div class="flex flex-wrap items-center justify-between">
-			  <span class="a-title">{{ props.title }}</span>
+			  <span class="v-title">{{ props.title }}</span>
 			  <input
 				  v-model="q"
 				  class="text-sm max-w-200px border border-solid border-gray-600/20 p-2 rounded-md"
@@ -73,7 +73,7 @@ onMounted(() => {
 			  />
 		  </div>
 	  </div>
-    <div class="a-card-body">
+    <div>
       <div class="flex gap-4 mb-4">
         <button
           v-for="tab in apiTabs"
@@ -94,14 +94,14 @@ onMounted(() => {
           :key="prop.name"
           class="not-last-mb-4"
         >
-          <span class="font-semibold text-[hsla(var(--a-title-c),var(--a-title-opacity))]">{{ prop.name.replace('?', '') }}</span>
-          <span class="text-[hsla(var(--a-base-c),var(--a-text-emphasis-light-opacity))]"> : {{ prop.type.replace(/\s*\| (undefined)$/, '') }}</span>
+          <span class="font-semibold text-white">{{ prop.name.replace('?', '') }}</span>
+          <span class="text-gray-200/30"> : {{ prop.type.replace(/\s*\| (undefined)$/, '') }}</span>
           <span
             v-if="prop.default !== 'unknown'"
-            class="text-[hsla(var(--a-base-c),var(--a-text-emphasis-light-opacity))]"
+            class="text-gray-200/30"
           > = {{ prop.default }}</span>
           <div
-            class="!children-[p]-m-0"
+            class="!children-[p]-m-0 text-white/70"
             v-html="prop.description"
           />
         </div>
@@ -114,10 +114,10 @@ onMounted(() => {
           :key="slot.name"
           class="not-last-mb-4"
         >
-          <span class="font-semibold text-[hsla(var(--a-title-c),var(--a-title-opacity))]">{{ slot.name }}</span>
-          <span class="text-[hsla(var(--a-base-c),var(--a-text-emphasis-light-opacity))]"> : {{ slot.type }}</span>
+          <span class="font-semibold text-white">{{ slot.name }}</span>
+          <span class="text-gray-200/30"> : {{ slot.type }}</span>
           <div
-            class="!children-[p]-m-0"
+            class="!children-[p]-m-0 text-white/70"
             v-html="slot.description"
           />
         </div>
@@ -130,10 +130,10 @@ onMounted(() => {
           :key="event.name"
           class="not-last-mb-4"
         >
-          <span class="font-semibold text-[hsla(var(--a-title-c),var(--a-title-opacity))]">{{ event.name }}</span>
-          <span class="text-[hsla(var(--a-base-c),var(--a-text-emphasis-light-opacity))]"> => {{ event.type }}</span>
+          <span class="font-semibold text-white">{{ event.name }}</span>
+          <span class="text-gray-200/30"> => {{ event.type }}</span>
           <!-- <div
-            class="!children-[p]-m-0"
+            class="!children-[p]-m-0 text-white/70"
             v-text="event.signature"
           /> -->
         </div>

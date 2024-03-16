@@ -3,11 +3,11 @@ import type { ConfigThemes, PluginOptions } from '../plugin'
 function getThemeColorsCss(themes: ConfigThemes) {
 	return Object.values(themes)
 		.map(
-			(theme) =>
+			theme =>
 				`${theme.class ? `.${theme.class}` : ':root'}{${Object.entries(theme.colors)
 					.concat(Object.entries(theme.cssVars))
 					.concat([['primary-hue', theme.colors.primary.split(',')[0] as string]])
-					.map(([varName, val]) => `--a-${varName}:${val};`)
+					.map(([varName, val]) => `--virgo-${varName}:${val};`)
 					.join('')}}`
 		)
 		.join('')
@@ -40,7 +40,7 @@ export const useVirgo = createGlobalState((options?: VirgoComposableOptions) => 
 	watch(
 		() =>
 			Object.values(themes.value)
-				.map((theme) => [theme.colors, theme.cssVars])
+				.map(theme => [theme.colors, theme.cssVars])
 				.flat(),
 		() => {
 			themeColorsCss.value = getThemeColorsCss(themes.value)

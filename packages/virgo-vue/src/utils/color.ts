@@ -166,60 +166,10 @@ export const namedColors = Object.freeze({
 
 export type NamedColors = keyof typeof namedColors
 
-// export const getContrastColor = (color: string): string => {
-//   const darkContrastColor = 'var(--a-contrast-dark)'
-//   const lightContrastColor = 'var(--a-contrast-light)'
-//   const threshold = 128
-
-//   // Check if the color is a named color
-//   if (color in namedColors)
-//     color = namedColors[color as keyof typeof namedColors]
-
-//   // Check if the color is a hex string
-//   if (color[0] === '#') {
-//     if (color.length === 7) {
-//       // #RRGGBB
-//       return (parseInt(color.substring(1, 3), 16) > threshold
-//               || parseInt(color.substring(3, 5), 16) > threshold
-//               || parseInt(color.substring(5, 7), 16) > threshold)
-//         ? darkContrastColor
-//         : lightContrastColor
-//     }
-//     else if (color.length === 4) {
-//       // #RGB
-//       return (parseInt(color[1], 16) * 0x11 > threshold
-//               || parseInt(color[2], 16) * 0x11 > threshold
-//               || parseInt(color[3], 16) * 0x11 > threshold)
-//         ? darkContrastColor
-//         : lightContrastColor
-//     }
-//   }
-
-//   // Check if the color is an RGB or RGBA string
-//   if (color.substring(0, 3) === 'rgb' || color.substring(0, 4) === 'rgba') {
-//     const parts = color.substring(color[3] === 'a' ? 5 : 4).split(',')
-
-//     return (parseInt(parts[0]) > threshold || parseInt(parts[1]) > threshold || parseInt(parts[2]) > threshold)
-//       ? darkContrastColor
-//       : lightContrastColor
-//   }
-
-//   // Check if the color is an HSL or HSLA string
-//   if (color.substring(0, 3) === 'hsl' || color.substring(0, 4) === 'hsla') {
-//     const parts = color.substring(color[3] === 'a' ? 5 : 4).split(',')
-
-//     return parseInt(parts[2].substring(0, parts[2].length - 1)) > 50
-//       ? darkContrastColor
-//       : lightContrastColor
-//   }
-
-//   // If the color could not be parsed, return black as the contrast color
-//   return darkContrastColor
-// }
-
+/*
 export function getContrastColor(color: string): string {
-  const darkContrastColor = 'var(--a-contrast-dark)'
-  const lightContrastColor = 'var(--a-contrast-light)'
+  const darkContrastColor = 'var(--virgo-contrast-dark)'
+  const lightContrastColor = 'var(--virgo-contrast-light)'
 
   // Check if the color is a named color
   if (color in namedColors)
@@ -270,3 +220,4 @@ export function getContrastColor(color: string): string {
   // If the color could not be parsed, return black as the contrast color
   return darkContrastColor
 }
+*/

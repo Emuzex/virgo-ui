@@ -28,11 +28,13 @@ export function useConfiguration<Props extends Record<string, unknown>>(definiti
 
 	// Get defaults
 	const propsDefaults = inject(VIRGO_PROPS_DEFAULTS, {})
+
 	// New defaults
 	const newPropsDefaults = ref({}) as Ref<PluginOptions['propsDefaults']>
 
 	// ℹ️ Pass new reactive value to avoid updates in upward tree
 	provide(VIRGO_PROPS_DEFAULTS, newPropsDefaults)
+
 	// Return Values
 	const propsRef = ref() as Ref<ReturnType<Props>['props']>
 	const defaultsClass = ref() as ReturnType<Props>['defaultsClass']
@@ -64,7 +66,7 @@ export function useConfiguration<Props extends Record<string, unknown>>(definiti
 		// newDefaults.value = mergePropsDefaults(_propsDefaults, otherProps)
 		/**
 		 * ℹ️ This line optimizes object by removing nested component's defaults from the current component tree
-		 * Assume we have { AAlert: { ABtn: { color: 'info' } } } then below line will move ABtn on top and remove it from children of AAlert
+		 * Assume we have { card: { button: { color: 'info' } } } then below line will move 'button' on top and remove it from children of 'card'
 		 * To see the difference log the result of `mergePropsDefaults(...)` of below line and comment line above
 		 */
 		newPropsDefaults.value = mergePropsDefaults({ ..._propsDefaults, [_componentName]: componentProps }, otherProps)

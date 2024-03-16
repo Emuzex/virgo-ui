@@ -6,7 +6,7 @@
   "description": "Vue component collection for Virgo",
   "author": "Virgo UI <https://github.com/emuzex>",
   "funding": "https://github.com/sponsors/emuzex",
-  "homepage": "https://virgo-ui.dev",
+  "homepage": "https://virgoui.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emuzex/virgo-ui.git",

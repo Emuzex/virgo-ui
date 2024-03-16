@@ -110,9 +110,6 @@ importers:
 
   docs:
     dependencies:
-      '@virgo-ui/preset-theme-default':
-        specifier: workspace:*
-        version: link:../packages/preset-theme-default
       '@virgo-ui/vue':
         specifier: workspace:*
         version: link:../packages/virgo-vue
@@ -160,7 +157,7 @@ importers:
         specifier: 3.21.4
         version: 3.21.4
 
-  packages/preset-theme-default:
+  packages/theme-glassmorphism:
     devDependencies:
       '@types/fs-extra':
         specifier: 11.0.1
@@ -192,9 +189,9 @@ importers:
       '@nuxt/kit':
         specifier: 3.5.0
         version: 3.5.0(rollup@3.24.1)
-      '@virgo-ui/preset-theme-default':
+      '@virgo-ui/theme-glassmorphism':
         specifier: workspace:*
-        version: link:../preset-theme-default
+        version: link:../theme-glassmorphism
       '@virgo-ui/vue':
         specifier: workspace:*
         version: link:../virgo-vue
@@ -217,8 +214,6 @@ importers:
       nuxt:
         specifier: 3.5.0
         version: 3.5.0(@types/node@20.2.5)(eslint@8.42.0)(rollup@3.24.1)(typescript@5.1.3)
-
-  packages/virgo-nuxt/playground: {}
 
   packages/virgo-vue:
     dependencies:

@@ -1,5 +1,9 @@
 import type { Preset } from '@unocss/core'
 import { defu } from 'defu'
+import { rules } from './rules'
+import { shortcuts } from './shortcuts'
+import { variants } from './variants'
+import './scss/index.scss'
 
 export const virgoDefaultThemeColors = ['primary', 'success', 'info', 'warning', 'danger']
 
@@ -15,29 +19,28 @@ export function presetVirgo(options: Partial<PresetVirgoOptions> = {}): Preset {
 	return {
 		name: '@virgo-ui/preset-core',
 		theme: {
-			colors: Object.fromEntries(_options.colors.map((c) => [c, `hsl(var(--a-${c}))`]))
+			colors: {
+				a: { border: 'hsla(var(--virgo-base-color),var(--virgo-border-opacity))' },
+				...Object.fromEntries(_options.colors.map(c => [c, `hsl(var(--virgo-${c}))`]))
+			},
+			boxShadow: {
+				'sm': '0 1px 2px 0 hsla(0, 0%, 0%, 0.1)',
+				'DEFAULT': '0 4px 24px 0 hsla(0, 0%, 0%, 0.1)',
+				'md': '0 8px 16px 0 hsla(0, 0%, 0%, 0.1)',
+				'lg': '0 16px 32px 0 hsla(0, 0%, 0%, 0.1)',
+				'xl': '0 24px 48px 0 hsla(0, 0%, 0%, 0.1)',
+				'2xl': '0 40px 64px 0 hsla(0, 0%, 0%, 0.1)'
+			}
 		},
 		safelist: [
-			..._options.colors.map((c) => `bg-${c}`),
-			..._options.colors.map((c) => `border-${c}`),
-			..._options.colors.map((c) => `text-${c}`),
-			..._options.colors.map((c) => `after:bg-${c}`),
-
-			// Typography
-			..._options.colors.map((c) => `a-title-${c}`),
-			..._options.colors.map((c) => `a-subtitle-${c}`),
-			...['top', 'right', 'bottom', 'left'].map((dir) => `a-drawer-anchor-${dir}`)
+			..._options.colors.map(c => `bg-${c}`),
+			..._options.colors.map(c => `border-${c}`),
+			..._options.colors.map(c => `text-${c}`),
+			..._options.colors.map(c => `after:bg-${c}`),
+			..._options.colors.map(c => `before:bg-${c}`)
 		],
-		variants: [
-			(matcher: string) => {
-				if (!matcher.startsWith('i:')) return matcher
-
-				return {
-					// slice `i:` prefix and passed to the next variants and rules
-					matcher: matcher.slice(2),
-					selector: (s: string) => `${s} > i`
-				}
-			}
-		]
+		rules,
+		shortcuts,
+		variants
 	}
 }
