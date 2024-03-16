@@ -13,6 +13,7 @@ import WarnBadge from '../components/warn-badge'
 import ComingBadge from '../components/coming-badge'
 import UpdateBadge from '../components/update-badge'
 import NewBadge from '../components/new-badge'
+import KeyboardTable from '../components/keyboard-table'
 
 import { extractFileNameFromPath } from '../../utils'
 import './style.scss'
@@ -45,6 +46,7 @@ export default {
 		app.component('ComingBadge', ComingBadge)
 		app.component('UpdateBadge', UpdateBadge)
 		app.component('NewBadge', NewBadge)
+		app.component('KeyboardTable', KeyboardTable)
 		/* eslint-enable */
 	}
 }

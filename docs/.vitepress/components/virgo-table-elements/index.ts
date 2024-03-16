@@ -1,0 +1,6 @@
+export { default as VirgoTh } from './virgo-th.vue'
+export { default as VirgoTd } from './virgo-td.vue'
+export { default as VirgoTr } from './virgo-tr.vue'
+export { default as VirgoTable } from './virgo-table.vue'
+export { default as VirgoThead } from './virgo-thead.vue'
+export { default as VirgoTbody } from './virgo-tbody.vue'
