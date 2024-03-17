@@ -11,12 +11,11 @@ const middleware: FloatingMiddlewareFunc = (referenceEl, floatingEl) => {
 </script>
 
 <template>
-  <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
-    <tooltip
-      :middleware="middleware"
-      text="Cotton candy"
-    />
-
-    Button
-  </button>
+	<virgo-button>
+		<tooltip
+			:middleware="middleware"
+			text="Cotton candy"
+		/>
+		Button
+	</virgo-button>
 </template>

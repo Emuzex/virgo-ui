@@ -1,12 +1,12 @@
 export const virgoButtonConfig = {
 	classes:{
-		buttonBase: 'inline-flex whitespace-nowrap justify-center items-center relative text-white bg-purple-500',
-		buttonIconOnly: 'em:spacing:px-2 font-medium em:spacing:rounded-lg aspect-square em:spacing:min-w-10 uno-layer-base-i:em:[&_.virgo-button-content]-text-lg focus-visible:ring-2 ring-offset-2',
-		button: 'em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2 ',
-		disabled: 'opacity-50 pointer-events-none',
+		buttonBase: 'inline-flex whitespace-nowrap justify-center items-center relative text-white bg-purple-500 shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none',
+		buttonIconOnly: 'px-2 font-medium rounded-lg aspect-square min-w-10 focus-visible:ring-2 ring-offset-2 uno-layer-base-i:em:[&_.virgo-buttonn-content]-text-lg',
+		button: 'px-6 font-medium rounded-lg h-10 focus-visible:ring-2 ring-offset-2 ',
+		disabled: 'opacity-50 pointer-events-none shadow-none',
 		loader: 'absolute',
 		loading: 'opacity-0',
-		content: 'virgo-button-content text-white flex items-center justify-center em:spacing:gap-x-2'
+		content: 'virgo-button-content flex items-center justify-center gap-x-2'
 	}
 }
 

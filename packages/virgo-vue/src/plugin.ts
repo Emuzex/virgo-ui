@@ -93,7 +93,7 @@ const configDefaults: PluginOptions = {
 	baseZIndex: defaultBaseZIndex
 }
 
-const registerComponents = (app: App, config: PluginOptions, components: Record<string, any>) => {
+const registerComponents = (app: App, components: Record<string, any>) => {
 	for (const prop in components) {
 		const component = components[prop]
 		app.component(component?.name, component)
@@ -136,7 +136,7 @@ export const plugin = {
 		const config: PluginOptions = defu(options, configDefaults)
 
 		if (config.registerComponents) {
-			registerComponents(app, config, components)
+			registerComponents(app, components)
 		}
 		handleComponentAliases(app, config)
 

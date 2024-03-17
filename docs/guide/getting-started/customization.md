@@ -16,11 +16,11 @@ However, what about not so obvious props like `size` prop. Your design system mi
 
 ```vue
 <template>
-  <button size="sm">Submit</button>
+  <virgo-button size="sm">Submit</virgo-button>
 
-  <button size="sm">Preview</button>
+  <virgo-button size="sm">Preview</virgo-button>
 
-  <button size="sm">Download</button>
+  <virgo-button size="sm">Download</virgo-button>
 </template>
 ```
 
@@ -37,7 +37,7 @@ With Virgo, you can configure the props defaults for all the components while re
 createApp(App)
   .use(virgo, {
     propsDefaults: {
-      button: {
+      virgo-button: {
         size: 'sm',
       },
     }
@@ -48,11 +48,11 @@ Now, You can write your components without repeating the `size` prop and keep yo
 
 ```vue
 <template>
-  <button>Submit</button>
+  <virgo-button>Submit</virgo-button>
 
-  <button>Preview</button>
+  <virgo-button>Preview</virgo-button>
 
-  <button>Download</button>
+  <virgo-button>Download</virgo-button>
 </template>
 ```
 
@@ -60,23 +60,23 @@ Using `propsDefaults` you can set props defaults for any Virgo component.
 
 ### Nested Props Defaults
 
-Life is not always simple and your client might need visually different component based on context. For example, you might need a text variant button inside alert and normal (fill variant) button elsewhere. Then we are back to square one. We have to repeat the `variant` prop in every alert <i class="i-fluent-emoji-expressionless-face"></i>
+Life is not always simple and your client might need visually different component based on context. For example, you might need a text variant virgo-button inside alert and normal (fill variant) virgo-button elsewhere. Then we are back to square one. We have to repeat the `variant` prop in every alert <i class="i-fluent-emoji-expressionless-face"></i>
 
 ```vue
 <template>
   <card>
     <p>You're running out of storage!</p>
-    <button size="sm" class="ms-auto">Upgrade</button>
+    <virgo-button size="sm" class="ms-auto">Upgrade</virgo-button>
   </card>
 
   <card>
     <p>Critical error occurred!</p>
-    <button size="sm" class="ms-auto">Check</button>
+    <virgo-button size="sm" class="ms-auto">Check</virgo-button>
   </card>
 
   <card>
     <p>Payment failed!</p>
-    <button size="sm" class="ms-auto">Retry</button>
+    <virgo-button size="sm" class="ms-auto">Retry</virgo-button>
   </card>
 </template>
 ```
@@ -87,8 +87,8 @@ Virgo also provides support for nested props defaults. You can set props default
 createApp(App)
   .use(virgo, {
     propsDefaults: {
-      card: {
-        button: {
+      Card: {
+        VirgoButton: {
           size: 'sm',
         },
       },
@@ -102,17 +102,17 @@ Now, with new props defaults, you can write your components without repeating th
 <template>
 	<card>
 		<p>You're running out of storage!</p>
-		<button class="ms-auto">Upgrade</button>
+		<virgo-button class="ms-auto">Upgrade</virgo-button>
 	</card>
 
 	<card>
 		<p>Critical error occurred!</p>
-		<button class="ms-auto">Check</button>
+		<virgo-button class="ms-auto">Check</virgo-button>
 	</card>
 
 	<card>
 		<p>Payment failed!</p>
-		<button class="ms-auto">Retry</button>
+		<virgo-button class="ms-auto">Retry</virgo-button>
 	</card>
 </template>
 ```
@@ -131,8 +131,8 @@ Apart from props, Virgo also supports setting defaults for `class`, `style` and 
 createApp(App)
   .use(virgo, {
     propsDefaults: {
-      card: {
-        button: {
+      Card: {
+        VirgoButton: {
           size: 'sm',
           class: 'ms-auto',
           // style: {}, /* You can also set default styles */
@@ -147,20 +147,20 @@ Finally, we have a way to write our components without repeating the code and ke
 
 ```vue
 <template>
-  <!-- All buttons will have "ms-auto" class "light" variant -->
+  <!-- All virgo-buttons will have "ms-auto" class "light" variant -->
   <card>
     <p>You're running out of storage!</p>
-    <button>Upgrade</button>
+    <virgo-button>Upgrade</virgo-button>
   </card>
 
   <card>
     <p>Critical error occurred!</p>
-    <button>Check</button>
+    <virgo-button>Check</virgo-button>
   </card>
 
   <card>
     <p>Payment failed!</p>
-    <button>Retry</button>
+    <virgo-button>Retry</virgo-button>
   </card>
 </template>
 ```
@@ -195,15 +195,15 @@ import { useDefaults } from '@virgo-ui/vue'
 // ❗ Make sure to use `_props` as name
 const _props = defineProps<{}>() // or `withDefaults`
 
-const { props, defaultsClass, defaultsStyle, defaultsAttrs } = useDefaults(_props)
-
+const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
+// classList comes from plugin config 'classes'
 // other code
 </script>
 
 <template>
   <div
     class="my-class"
-    :class="defaultsClass"
+    :class="[classList.componentRoot, defaultsClass]"
     :style="[
       { color: 'red' },
       defaultsStyle,

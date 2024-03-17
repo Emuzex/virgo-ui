@@ -56,88 +56,87 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="apiCard"
+	<div
+		ref="apiCard"
 		class="rounded-lg p-5 relative overflow-hidden bg-[hsla(var(--virgo-surface-color),var(--un-bg-opacity,1))]"
-    :style="{
-      minHeight: apiCardMinHeight,
-    }"
-  >
-	  <div class="next:pt-0 em:spacing:not-last:pb-4">
-		  <div class="flex flex-wrap items-center justify-between">
-			  <span class="v-title">{{ props.title }}</span>
-			  <input
-				  v-model="q"
-				  class="text-sm max-w-200px border border-solid border-gray-600/20 p-2 rounded-md"
-				  placeholder="Search API..."
-			  />
-		  </div>
-	  </div>
-    <div>
-      <div class="flex gap-4 mb-4">
-        <button
-          v-for="tab in apiTabs"
-          :key="tab.value"
-          class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2"
-          :class="[!tab.isSelected && 'opacity-50']"
-          @click="select(tab.value)"
-        >
-          <span>{{ tab.value }}</span>
-          <span class="text-sm">({{ foundNumbers[tab.value as keyof typeof api] }})</span>
-        </button>
-      </div>
+		:style="{
+			minHeight: apiCardMinHeight,
+		}"
+	>
+		<div class="next:pt-0 em:spacing:not-last:pb-4">
+			<div class="flex flex-wrap items-center justify-between">
+				<span class="v-title">{{ props.title }}</span>
+				<input
+					v-model="q"
+					class="text-sm max-w-200px border border-solid border-gray-600/20 p-2 rounded-md"
+					placeholder="Search API..."
+				>
+			</div>
+		</div>
+		<div>
+			<div class="flex gap-4 mb-4">
+				<virgo-button
+					v-for="tab in apiTabs"
+					:key="tab.value"
+					:class="[!tab.isSelected && 'opacity-50']"
+					@click="select(tab.value)"
+				>
+					<span>{{ tab.value }}</span>
+					<span class="text-sm">({{ foundNumbers[tab.value as keyof typeof api] }})</span>
+				</virgo-button>
+			</div>
 
-      <!-- Props -->
-      <div v-show="apiActiveTab === 'props'">
-        <div
-          v-for="prop in filteredProps"
-          :key="prop.name"
-          class="not-last-mb-4"
-        >
-          <span class="font-semibold text-white">{{ prop.name.replace('?', '') }}</span>
-          <span class="text-gray-200/30"> : {{ prop.type.replace(/\s*\| (undefined)$/, '') }}</span>
-          <span
-            v-if="prop.default !== 'unknown'"
-            class="text-gray-200/30"
-          > = {{ prop.default }}</span>
-          <div
-            class="!children-[p]-m-0 text-white/70"
-            v-html="prop.description"
-          />
-        </div>
-      </div>
+			<!-- Props -->
+			<div v-show="apiActiveTab === 'props'">
+				<div
+					v-for="prop in filteredProps"
+					:key="prop.name"
+					class="not-last-mb-4"
+				>
+					<span class="font-semibold text-gray-900 dark:text-white">{{ prop.name.replace('?', '') }}</span>
+					<span class="text-gray-900/30 dark:text-gray-200/30"> : {{ prop.type.replace(/\s*\| (undefined)$/, '') }}</span>
+					<span
+						v-if="prop.default !== 'unknown'"
+						class="text-gray-900/30 dark:text-gray-200/30"
+					> = {{ prop.default }}</span>
+					<div
+						class="!children-[p]-m-0 text-gray-900/70 dark:text-white/70"
+						v-html="prop.description"
+					/>
+				</div>
+			</div>
 
-      <!-- Slots -->
-      <div v-show="apiActiveTab === 'slots'">
-        <div
-          v-for="slot in filteredSlots"
-          :key="slot.name"
-          class="not-last-mb-4"
-        >
-          <span class="font-semibold text-white">{{ slot.name }}</span>
-          <span class="text-gray-200/30"> : {{ slot.type }}</span>
-          <div
-            class="!children-[p]-m-0 text-white/70"
-            v-html="slot.description"
-          />
-        </div>
-      </div>
+			<!-- Slots -->
+			<div v-show="apiActiveTab === 'slots'">
+				<div
+					v-for="slot in filteredSlots"
+					:key="slot.name"
+					class="not-last-mb-4"
+				>
+					<span class="font-semibold text-gray-900 dark:text-white">{{ slot.name }}</span>
+					<span class="text-gray-900/30 dark:text-gray-200/30"> : {{ slot.type }}</span>
+					<div
+						class="!children-[p]-m-0 text-gray-900/70 dark:text-white/70"
+						v-html="slot.description"
+					/>
+				</div>
+			</div>
 
-      <!-- Events -->
-      <div v-show="apiActiveTab === 'events'">
-        <div
-          v-for="event in filteredEvents"
-          :key="event.name"
-          class="not-last-mb-4"
-        >
-          <span class="font-semibold text-white">{{ event.name }}</span>
-          <span class="text-gray-200/30"> => {{ event.type }}</span>
-          <!-- <div
-            class="!children-[p]-m-0 text-white/70"
-            v-text="event.signature"
-          /> -->
-        </div>
-      </div>
-    </div>
-  </div>
+			<!-- Events -->
+			<div v-show="apiActiveTab === 'events'">
+				<div
+					v-for="event in filteredEvents"
+					:key="event.name"
+					class="not-last-mb-4"
+				>
+					<span class="font-semibold text-gray-900 dark:text-white">{{ event.name }}</span>
+					<span class="text-gray-900/30 dark:text-gray-200/30"> => {{ event.type }}</span>
+					<!--<div
+						class="!children-[p]-m-0 text-gray-900/70 dark:text-white/70"
+						v-text="event.signature"
+					/>-->
+				</div>
+			</div>
+		</div>
+	</div>
 </template>

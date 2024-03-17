@@ -9,15 +9,15 @@ const increment = () => {
 </script>
 
 <template>
-  <div class="container mx-auto min-h-screen">
-	  <span>
-		  <tooltip>
-			  <div class="flex flex-col justify-center items-center space-y-3 p-3">
-				  <div>count: {{ count }}</div>
-				  <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2" @click="increment">Increment</button>
-			  </div>
-		  </tooltip>
-		  Play here...
-	  </span>
-  </div>
+	<div class="container mx-auto min-h-screen">
+		<span>
+			<tooltip>
+				<div class="flex flex-col justify-center items-center space-y-3 p-3">
+					<div>count: {{ count }}</div>
+					<virgo-button @click="increment">Increment</virgo-button>
+				</div>
+			</tooltip>
+			Play here...
+		</span>
+	</div>
 </template>

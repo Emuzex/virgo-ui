@@ -20,22 +20,25 @@ const tooltipPlacement = ref<Placement>('top')
 </script>
 
 <template>
-  <div class="flex items-center justify-between flex-wrap gap-4 w-full">
-    <button class="capitalize text-white bg-purple-600 em:spacing:px-4 font-medium em:spacing:rounded-lg em:spacing:h-10 focus-visible:ring-2 ring-offset-2">
-      <tooltip
-        :model-value="true"
-        :placement="tooltipPlacement"
-        text="Cotton candy"
-      />
-      Button
-    </button>
-
-    <!-- 👉 Options -->
-    <select
-      v-model="tooltipPlacement"
-      class="w-24 grow-0 ms-auto"
-	>
-		<option v-for="option in placementOptions" :value="option">{{ option }}</option>
-	</select>
-  </div>
+	<div class="flex items-center justify-between flex-wrap gap-4 w-full">
+		<virgo-button>
+			<tooltip
+				:model-value="true"
+				:placement="tooltipPlacement"
+				text="Cotton candy"
+			/>
+			Button
+		</virgo-button>
+		<select
+			v-model="tooltipPlacement"
+			class="w-24 grow-0 ms-auto"
+		>
+			<option
+				v-for="option in placementOptions"
+				:value="option"
+			>
+				{{ option }}
+			</option>
+		</select>
+	</div>
 </template>

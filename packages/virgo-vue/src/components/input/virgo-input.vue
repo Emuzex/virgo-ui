@@ -31,30 +31,30 @@ function handleInputWrapperClick() {
 </script>
 
 <template>
-  <base-input
-    v-bind="{ ..._baseInputProps, ...defaultsAttrs, class: $attrs.class }"
-    :class="[classList.root, defaultsClass, isInputTypeFile && classList.fileType]"
-    :style="defaultsStyle"
-    @click:inputWrapper="handleInputWrapperClick"
-  >
-    <!-- ℹ️ Recursively pass down slots to child -->
-    <template
-      v-for="name in filterUsedSlots(textareaBaseInputSlots)"
-      #[name]="slotProps"
-    >
-      <slot
-        :name="name"
-        v-bind="slotProps"
-      />
-    </template>
-    <template #default="slotProps">
-      <input
-        v-bind="{ ...$attrs, ...slotProps }"
-        ref="input"
-        class="virgo-input-input"
-        :value="props.modelValue"
-        @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-      >
-    </template>
-  </base-input>
+	<base-input
+		v-bind="{ ..._baseInputProps, ...defaultsAttrs, class: $attrs.class }"
+		:class="[classList.root, defaultsClass, isInputTypeFile && classList.fileType]"
+		:style="defaultsStyle"
+		@click:inputWrapper="handleInputWrapperClick"
+	>
+		<!-- ℹ️ Recursively pass down slots to child -->
+		<template
+			v-for="name in filterUsedSlots(textareaBaseInputSlots)"
+			#[name]="slotProps"
+		>
+			<slot
+				:name="name"
+				v-bind="slotProps"
+			/>
+		</template>
+		<template #default="slotProps">
+			<input
+				v-bind="{ ...$attrs, ...slotProps }"
+				ref="input"
+				class="virgo-input-input"
+				:value="props.modelValue"
+				@input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
+			>
+		</template>
+	</base-input>
 </template>

@@ -1,7 +1,7 @@
 import type { CSSEntries, Preset } from '@unocss/core'
 
 const variants: Preset['variants'] = [
-  // `em:` variant converts rem unit into em
+
 	(matcher: string) => {
 		if (!matcher.startsWith('i:')) return matcher
 
@@ -11,6 +11,8 @@ const variants: Preset['variants'] = [
 			selector: (s: string) => `${s} > i`
 		}
 	},
+
+	// `em:` variant converts rem unit into em
 	(matcher: string) => {
 		if (!matcher.startsWith('em:'))
 			return matcher

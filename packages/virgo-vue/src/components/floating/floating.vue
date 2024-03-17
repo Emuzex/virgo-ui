@@ -121,22 +121,22 @@ defineExpose({
 </script>
 
 <template>
-  <teleport
-    v-if="isMounted"
-    :to="teleportTarget"
-  >
-    <!-- ℹ️ Transition component don't accept null as value of name prop so we need `props.transition || undefined` -->
-    <transition :name="props.transition || undefined">
-      <div
-        v-show="isFloatingElVisibleDebounced"
-        v-bind="$attrs"
-        ref="refFloating"
-        class="a-floating transform"
-        :style="contentStyle"
-        :class="strategy"
-      >
-        <slot />
-      </div>
-    </transition>
-  </teleport>
+	<teleport
+		v-if="isMounted"
+		:to="teleportTarget"
+	>
+		<!-- ℹ️ Transition component don't accept null as value of name prop so we need `props.transition || undefined` -->
+		<transition :name="props.transition || undefined">
+			<div
+				v-show="isFloatingElVisibleDebounced"
+				v-bind="$attrs"
+				ref="refFloating"
+				class="a-floating transform"
+				:style="contentStyle"
+				:class="strategy"
+			>
+				<slot />
+			</div>
+		</transition>
+	</teleport>
 </template>

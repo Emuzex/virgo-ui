@@ -15,17 +15,17 @@ export const transitions = [
   'view-previous',
 ] as const
 
-export const AFadeTransition = createTransition('fade')
-export const AScaleTransition = createTransition('scale')
-export const ASlideYTransition = createTransition('slide-y')
-export const ASlideYReverseTransition = createTransition('slide-y-reverse')
-export const AScrollYTransition = createTransition('scroll-y')
-export const AScrollYReverseTransition = createTransition('scroll-y-reverse')
-export const ASlideXTransition = createTransition('slide-x')
-export const ASlideXReverseTransition = createTransition('slide-x-reverse')
-export const AScrollXTransition = createTransition('scroll-x')
-export const AScrollXReverseTransition = createTransition('scroll-x-reverse')
-export const AViewNextTransition = createTransition('view-next')
-export const AViewPreviousTransition = createTransition('view-previous')
+export const VirgoFadeTransition = createTransition('fade')
+export const VirgoScaleTransition = createTransition('scale')
+export const VirgoSlideYTransition = createTransition('slide-y')
+export const VirgoSlideYReverseTransition = createTransition('slide-y-reverse')
+export const VirgoScrollYTransition = createTransition('scroll-y')
+export const VirgoScrollYReverseTransition = createTransition('scroll-y-reverse')
+export const VirgoSlideXTransition = createTransition('slide-x')
+export const VirgoSlideXReverseTransition = createTransition('slide-x-reverse')
+export const VirgoScrollXTransition = createTransition('scroll-x')
+export const VirgoScrollXReverseTransition = createTransition('scroll-x-reverse')
+export const VirgoViewNextTransition = createTransition('view-next')
+export const VirgoViewPreviousTransition = createTransition('view-previous')
 
 export type Transitions = typeof transitions[number]

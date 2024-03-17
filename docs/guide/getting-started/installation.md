@@ -38,10 +38,10 @@ Now, Just refer to the component in your vue files:
 
 ```vue
 <template>
-    <button>
+    <virgo-button>
         <tooltip text="Hello!" />
         Hover Over Me
-    </button>
+    </virgo-button>
 </template>
 ```
 
@@ -70,10 +70,10 @@ You can also follow À la carte fashion if you don't want to register all the co
     </script>
 
     <template>
-      <button>
+      <virgo-button>
          <tooltip text="Hello!" />
          Hover Over Me
-      </button>
+      </virgo-button>
     </template>
     ```
 
@@ -131,10 +131,10 @@ You can also follow À la carte fashion if you don't want to register all the co
 
     ```vue
     <template>
-      <button>
+      <virgo-button>
          <tooltip text="Hello!" />
-      Hover Over Me
-      </button>
+     	 Hover Over Me
+      </virgo-button>
     </template>
     ```
 
