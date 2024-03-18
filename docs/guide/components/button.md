@@ -40,7 +40,7 @@ Use `icon-only` prop to render icon with icon only button.
 ## Loading
 
 You can use the `loading` prop to inform about a background process or asynchronous operation.
-This property will display a `ALoading` component (by default) instead of the icon and/or label of the button.
+This property will display a `Loading` component (by default) instead of the icon and/or label of the button.
 
 <demo src="../../components/demos/button/DemoButtonLoading.vue"/>
 

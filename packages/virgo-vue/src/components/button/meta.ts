@@ -1,22 +1,22 @@
 import type { ExtractPublicPropTypes } from 'vue'
 import { configurable as configurableProp, disabled as disabledProp } from '@/composables/use-props'
 
-// ℹ️ Make sure to checkout meta definition rules
+// ℹ️ Make sure to check out meta definition rules
 
 // 👉 Props
 export const virgoButtonProps = {
   /**
-   * Render icon before virgoButton text
+   * Render icon before virgo-button text
    */
   icon: configurableProp,
 
   /**
-   * Append icon after virgoButton text
+   * Append icon after virgo-button text
    */
   appendIcon: configurableProp,
 
   /**
-   * Mark virgoButton as icon only virgoButton to apply square styling
+   * Mark virgo-button as icon only virgo-button to apply square styling
    */
   iconOnly: Boolean,
 
@@ -26,9 +26,9 @@ export const virgoButtonProps = {
   disabled: disabledProp,
 
   /**
-   * Set virgoButton loading state.
-   * Although, `loading` prop accepts boolean value, we set default value to `undefined` to indicate virgoButton won't ever use loading (show/hide) and won't render `ASpinner` component.
-   * However, if `loading` prop is set to any boolean value (`false`/`true`) it will always render `ASpinner` component.
+   * Set virgo-button loading state.
+   * Although, `loading` prop accepts boolean value, we set default value to `undefined` to indicate virgo-button won't ever use loading (show/hide) and won't render `Loading` component.
+   * However, if `loading` prop is set to any boolean value (`false`/`true`) it will always render `Loading` component.
    */
   loading: {
     type: Boolean,
