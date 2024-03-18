@@ -8,7 +8,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 
 const nav: DefaultTheme.Config['nav'] = [
 	{ text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },
-	{ text: 'Development', link: '/development/contributing', activeMatch: '/development/' },
+	/*{ text: 'Development', link: '/development/contributing', activeMatch: '/development/' },*/
 ]
 
 if (isDev) nav.push({ text: 'Playground', link: '/playground' })

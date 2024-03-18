@@ -116,14 +116,16 @@ const handleComponentAliases = (app: App, config: PluginOptions) => {
 						props: modifiedProps,
 						defaultsClass,
 						defaultsStyle,
-						defaultsAttrs
+						defaultsAttrs,
+						classList
 					} = useConfiguration(props)
 
 return () => h(baseComponent, {
 						...modifiedProps,
 						defaultsClass,
 						defaultsStyle,
-						defaultsAttrs
+						defaultsAttrs,
+						classList
 					}, ctx.slots)
 				}
 			})

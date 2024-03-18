@@ -22,7 +22,6 @@ export default defineConfig({
 	include: [/.*\/virgo-vue\.js(.*)?$/, './**/*.{vue,md,ts}'],
 	shortcuts: [
 		{
-			'fscw': 'flex justify-start items-center flex-wrap w-full',
 			'virgo-demo_wrapper':
 				'p-8 c-#282f38  border border-light-700 rounded-sm dark:bg-dark-700 dark:border-#4C4D4F flex',
 			'virgo-demo_actions': 'flex justify-end pt-3 gap-2',

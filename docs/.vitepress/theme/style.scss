@@ -101,6 +101,10 @@ select:-webkit-autofill:focus {
 	--vp-c-brand-dark: hsl(var(--virgo-primary-hue), 97%, 60%);
 	--vp-c-brand-darker: hsl(var(--virgo-primary-hue), 97%, 55%);
 
+	--vp-c-brand-info: hsl(207, 90%, 54%);
+	--vp-c-brand-success: hsl(141, 71%, 48%);
+	--vp-c-brand-warning: hsl(41, 80%, 65%);
+	--vp-c-brand-error: hsl(335, 75%, 55%);
 	/* We need this because menu component has 51 index which overlaps on navbar on scroll */
 	/* --vp-z-index-nav: 52; */
 	--vp-home-hero-name-color: transparent;
@@ -133,9 +137,6 @@ select:-webkit-autofill:focus {
  * -------------------------------------------------------------------------- */
 :root {
 	--vp-code-block-bg: rgba(125, 125, 125, 0.04);
-	--vp-custom-block-tip-text: rgb(12, 124, 108);
-	--vp-custom-block-tip-border: rgba(12, 124, 108, 0.5);
-	--vp-custom-block-tip-bg: rgba(18, 181, 157, 0.1);
 	--vp-custom-title-text: #606266;
 	--vp-layout-max-width: 1580px;
 	--vp-sidebar-width: 252px;
@@ -198,9 +199,6 @@ select:-webkit-autofill:focus {
 .dark {
 	--vp-code-block-bg: rgba(0, 0, 0, 0.2);
 	--vp-c-text-code: #c0cec0;
-	--vp-custom-block-tip-text: rgb(18, 181, 157);
-	--vp-custom-block-tip-border: rgba(18, 181, 157, 0.5);
-	--vp-custom-block-tip-bg: rgba(18, 181, 157, 0.1);
 	--vp-c-text-dark-2: rgba(235, 235, 235, 0.6);
 	--vp-custom-title-text: #cfd3dc;
 
@@ -540,12 +538,42 @@ h2[id="api"] {
 	--vp-custom-block-tip-border: var(--vp-c-brand);
 	--vp-custom-block-tip-text: var(--vp-c-brand-darker);
 	--vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-warning-border: var(--vp-c-brand-warning);
+	--vp-custom-block-warning-text: var(--vp-c-brand-darker);
+	--vp-custom-block-warning-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-info-border: var(--vp-c-brand-info);
+	--vp-custom-block-info-text: var(--vp-c-brand-darker);
+	--vp-custom-block-info-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-error-border: var(--vp-c-brand-error);
+	--vp-custom-block-error-text: var(--vp-c-brand-darker);
+	--vp-custom-block-erro-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-details-border: var(--vp-c-brand);
+	--vp-custom-block-details-text: var(--vp-c-brand-darker);
 }
 
 .dark {
 	--vp-custom-block-tip-border: var(--vp-c-brand);
 	--vp-custom-block-tip-text: var(--vp-c-brand-lightest);
 	--vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-warning-border: var(--vp-c-brand-warning);
+	--vp-custom-block-warning-text: var(--vp-c-brand-lightest);
+	--vp-custom-block-warning-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-info-border: var(--vp-c-brand-info);
+	--vp-custom-block-info-text: var(--vp-c-brand-lightestr);
+	--vp-custom-block-info-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-error-border: var(--vp-c-brand-error);
+	--vp-custom-block-error-text: var(--vp-c-brand-lightest);
+	--vp-custom-block-erro-bg: var(--vp-c-brand-dimm);
+
+	--vp-custom-block-details-border: var(--vp-c-brand);
+	--vp-custom-block-details-text: var(--vp-c-brand-lightest);
 }
 
 .dark [img-light] {
@@ -690,6 +718,17 @@ table {
 	color: var(--vp-c-brand);
 }
 
+.custom-block.warning .custom-block-title {
+	color: var(--vp-c-brand-warning);
+}
+
+.custom-block.info .custom-block-title {
+	color: var(--vp-c-brand-info);
+}
+
+.custom-block.error .custom-block-title {
+	color: var(--vp-c-brand-error);
+}
 
 /**
  * VitePress: Custom fix
