@@ -31,10 +31,7 @@
       .use(virgo)
       .mount('#app')
     ```
-
-It's done! 🥳
-
-Now, Just refer to the component in your vue files:
+Now, you can use the components in your vue files:
 
 ```vue
 <template>
@@ -45,7 +42,7 @@ Now, Just refer to the component in your vue files:
 </template>
 ```
 
-<em class="block mt-12 mb-10">Probably you might not want to globally register the components. You can also follow the approaches below:</em>
+<em class="block mt-12 mb-10">It's understandable if you prefer not to register the components globally. Consider these alternative methods instead:</em>
 
 ### Tree Shaking
 
@@ -92,7 +89,7 @@ You can also follow À la carte fashion if you don't want to register all the co
         .mount('#app')
     ```
 
-2. Install unplugin-vue-components:
+2. Install `unplugin-vue-components`:
 
     ::: code-group
       ```bash [pnpm]
@@ -127,7 +124,7 @@ You can also follow À la carte fashion if you don't want to register all the co
     })
     ```
 
-4. Now just use the component and it will be auto imported on demand 🤯
+4. Now just use the component and it will be auto imported on the fly.
 
     ```vue
     <template>
@@ -152,6 +149,3 @@ If you are using [Volar](https://marketplace.visualstudio.com/items?itemName=Vue
 ```
 
 If you have a typescript project, you will have to configure the above in the `tsconfig.json` file.
-
-That's it, enjoy the autocompletion 🥳
-
