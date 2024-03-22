@@ -7,10 +7,10 @@ hero:
   text: Better than yesterday
   tagline: Intuitive, highly customizable and powerful component collection for Vue 3
   actions:
-    - theme: brand
+    - theme: virgo
       text: Get Started
       link: /guide/getting-started/
-    - theme: alt
+    - theme: virgo-alt
       text: Components
       link: /guide/components/tooltip
 ---
