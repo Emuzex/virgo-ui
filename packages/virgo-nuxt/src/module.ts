@@ -2,9 +2,11 @@ import { addCustomTab } from '@nuxt/devtools-kit'
 import { addComponent, addImports, addPluginTemplate, defineNuxtModule, extendViteConfig, useLogger } from '@nuxt/kit'
 import presetIcons from '@unocss/preset-icons'
 import presetUno from '@unocss/preset-uno'
-import type { PluginOptions, PresetVirgoOptions } from '@virgo-ui/vue'
-import { components as VirgoComponents, composables as VirgoComposables, presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
-import type { PartialDeep } from 'type-fest'
+import type { PluginOptions } from '@virgo-ui/vue'
+import { components as VirgoComponents, composables as VirgoComposables } from '@virgo-ui/vue'
+import type { PresetVirgoOptions } from '@virgo-ui/theme-base'
+import {presetVirgo,presetIconExtraProperties} from '@virgo-ui/theme-base'
+/*import type { PartialDeep } from 'type-fest'*/
 
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
 
@@ -30,7 +32,7 @@ export interface ModuleOptions {
 	 */
 	presetVirgoOptions?: PresetVirgoOptions
 
-	/**
+	/*/!**
 	 * Virgo Vue Initial Theme | Source npm pkg: `@virgo-ui/vue
 	 * You can pass in your own initial theme to override the default theme.
 	 *
@@ -38,10 +40,10 @@ export interface ModuleOptions {
 	 * The default theme for `initialTheme` is `light`. You can also make it `dark` by setting it to `dark`.
 	 *
 	 * @default 'light'
-	 */
+	 *!/
 	initialTheme?: PluginOptions['initialTheme']
 
-	/**
+	/!**
 	 * Virgo Vue Themes | Source npm pkg: `@virgo-vue/ui`
 	 * You can pass in your own themes to override the default themes.
 	 *
@@ -74,8 +76,8 @@ export interface ModuleOptions {
 	 *   },
 	 * }
 	 * ```
-	 */
-	themes?: PartialDeep<PluginOptions['themes']>
+	 *!/
+	themes?: PartialDeep<PluginOptions['themes']>*/
 
 	componentAliases?: PluginOptions['componentAliases']
 
@@ -160,11 +162,12 @@ export default defineNuxtModule<ModuleOptions>({
 
 		// Add inline plugin template for Virgo
 		const pluginOptions = {
-			initialTheme: opts.initialTheme,
-			themes: opts.themes,
+			/*initialTheme: opts.initialTheme,
+			themes: opts.themes,*/
 
 			// componentAliases: opts.componentAliases || {},
-			propsDefaults: opts.propsDefaults
+			propsDefaults: opts.propsDefaults,
+			classes: opts.classes
 		}
 
 		addPluginTemplate({

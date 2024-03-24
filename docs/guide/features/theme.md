@@ -31,16 +31,16 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
 
 ## UnoCSS
 
-1. Add 'unocss' and optionally your loved icons
+1. Add 'unocss', '@virgo-ui/theme-base' and optionally your loved icons
    ::: code-group
       ```bash [pnpm]
-       pnpm add -D unocss @iconify-json/bx
+       pnpm add -D unocss @virgo-ui/theme-base @iconify-json/bx
       ```
       ```bash [yarn]
-        yarn add -D unocss @iconify-json/bx
+        yarn add -D unocss @virgo-ui/theme-base @iconify-json/bx
       ```
       ```bash [npm]
-        npm install -D unocss @iconify-json/bx
+        npm install -D unocss @virgo-ui/theme-base @iconify-json/bx
       ```
    :::
 
@@ -59,7 +59,7 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
 3. Create the UnoCSS Config file `uno.config.ts` in the root of the project with the content below:
 
     ```ts
-    import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
+    import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/theme-base'
     import {
       defineConfig,
       presetIcons,
@@ -87,16 +87,20 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
     import { createApp } from 'vue'
     import App from './App.vue'
     import { virgo } from '@virgo-ui/vue'
+    import { themeBase } from '@virgo-ui/theme-base'
 
     // UnoCSS import
     import 'uno.css'
 
-    // virgo styles
+    // virgo styles, only includes transitions and a scroll-lock style
     import '@virgo-ui/vue/dist/style.css'
+
+   	// virgo default theme style
+    import '@virgo-ui/theme-base/dist/style.css'
 
     // Using `app.use(virgo)` will register virgo plugin
     createApp(App)
-      .use(virgo)
+      .use(virgo, themeBase())
       .mount('#app')
     ```
 

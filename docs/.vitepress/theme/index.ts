@@ -1,13 +1,14 @@
-//import '@virgo-ui/preset-theme-default/dist/style.css'
 import { virgo } from '@virgo-ui/vue'
+
 import DefaultTheme from 'vitepress/theme'
 import type { App } from 'vue'
 
 import 'uno.css'
 
 import '@virgo-ui/vue/dist/style.css'
+import '@virgo-ui/theme-base/dist/style.css'
 
-import Api from '../../components/Api.vue'
+import Api from '../../components/api.vue'
 import DemoBlock from '../components/demo-block'
 import WarnBadge from '../components/warn-badge'
 import ComingBadge from '../components/coming-badge'
@@ -33,13 +34,13 @@ export default {
 
 		// Other component registration
 		/* eslint-disable vue/multi-word-component-names */
-		app.component('Api', Api)
-		app.component('Demo', DemoBlock)
-		app.component('WarnBadge', WarnBadge)
-		app.component('ComingBadge', ComingBadge)
-		app.component('UpdateBadge', UpdateBadge)
-		app.component('NewBadge', NewBadge)
-		app.component('KeyboardTable', KeyboardTable)
+		app.component('api', Api)
+		app.component('demo', DemoBlock)
+		app.component('warn-badge', WarnBadge)
+		app.component('coming-badge', ComingBadge)
+		app.component('update-badge', UpdateBadge)
+		app.component('new-badge', NewBadge)
+		app.component('keyboard-table', KeyboardTable)
 		/* eslint-enable */
 	}
 }

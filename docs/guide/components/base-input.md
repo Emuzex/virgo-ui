@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@virgo-ui/vue/component-meta/base-input.json';
+import baseInputApi from '@virgo-ui/vue/component-meta/base-input.json';
 </script>
 
 # Base Input
@@ -234,3 +234,5 @@ file
 <input type="file" v-bind="props" class="file:rounded-lg file:border-none file:mr-4 file:px-4 file:py-3 file:text-gray-500 file:rounded-r-none file:bg-gray-100" />
 </template>
 </base-input>
+
+<api "Base Input" :api="baseInputApi"></api>

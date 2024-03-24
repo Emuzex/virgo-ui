@@ -1,7 +1,7 @@
 {
-  "name": "@virgo-ui/theme-glassmorphism",
+  "name": "@virgo-ui/theme-base",
   "version": "0.0.10",
-  "description": "Official glassmorphism theme config for Virgo",
+  "description": "Official theme config for Virgo",
   "type": "module",
   "private": false,
   "exports": {
@@ -30,7 +30,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emuzex/virgo-ui.git",
-    "directory": "packages/theme-glassmorphism"
+    "directory": "packages/theme-base"
   },
   "bugs": {
     "url": "https://github.com/emuzex/virgo-ui/issues"

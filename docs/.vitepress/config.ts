@@ -7,9 +7,7 @@ import { applyPlugins } from './plugins'
 const isDev = process.env.NODE_ENV !== 'production'
 
 const nav: DefaultTheme.Config['nav'] = [
-	{ text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },
-	/*{ text: 'Development', link: '/development/contributing', activeMatch: '/development/' },*/
-]
+	{ text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },]
 
 if (isDev) nav.push({ text: 'Playground', link: '/playground' })
 
@@ -67,10 +65,10 @@ export default defineConfig({
 					text: 'Composables',
 					collapsed: false,
 					items: [
-						{ text: 'useVirgo', link: '/guide/composables/useVirgo' },
-						// { text: 'useSearch', link: '/guide/composables/useSearch' },
-						// { text: 'useSort', link: '/guide/composables/useSort' },
-						// { text: 'useSelection', link: '/guide/composables/useSelection' },
+						{ text: 'useVirgo', link: '/guide/composables/use-virgo' },
+						// { text: 'useSearch', link: '/guide/composables/use-search' },
+						// { text: 'useSort', link: '/guide/composables/use-sort' },
+						// { text: 'useSelection', link: '/guide/composables/use-selection' },
 					]
 				},
 			],

@@ -1,9 +1,6 @@
 import type { Preset } from '@unocss/core'
 import { defu } from 'defu'
-import { rules } from './rules'
-import { shortcuts } from './shortcuts'
 import { variants } from './variants'
-import './scss/index.scss'
 
 export const virgoDefaultThemeColors = ['primary', 'success', 'info', 'warning', 'danger']
 
@@ -39,8 +36,6 @@ export function presetVirgo(options: Partial<PresetVirgoOptions> = {}): Preset {
 			..._options.colors.map(c => `after:bg-${c}`),
 			..._options.colors.map(c => `before:bg-${c}`)
 		],
-		rules,
-		shortcuts,
 		variants
 	}
 }

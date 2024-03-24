@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-	import type { virgoButtonSlots } from './meta'
-	import { virgoButtonProps } from './meta'
-	import { useDefaults } from '@/composables/use-defaults'
+import type { virgoButtonSlots } from './meta'
+import { virgoButtonProps } from './meta'
+import { useDefaults } from '@/composables/use-defaults'
 
-	const _props = defineProps(virgoButtonProps)
+const _props = defineProps(virgoButtonProps)
 
-	defineSlots<typeof virgoButtonSlots>()
+defineSlots<typeof virgoButtonSlots>()
 
-	defineOptions({
-		name: 'VirgoButton'
-	})
+defineOptions({
+	name: 'VirgoButton'
+})
 
-	const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
+const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
 </script>
 
 <template>

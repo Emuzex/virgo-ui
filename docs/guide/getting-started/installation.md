@@ -23,7 +23,7 @@
     import App from './App.vue'
     import { virgo } from '@virgo-ui/vue'
 
-    // virgo styles
+    // virgo styles, only includes transitions and a scroll-lock style
     import '@virgo-ui/vue/dist/style.css'
 
     // Using `app.use(virgo)` will register virgo plugin
@@ -41,6 +41,12 @@ Now, you can use the components in your vue files:
     </virgo-button>
 </template>
 ```
+
+::: info NOTE
+You can view the default design on the Themes page.
+Don't forget to check out the [theme](/guide/features/theme.md) documentation to learn more about themes.
+This installation does not include the configuration and design that you can see in the documentation. The components are all unstyled
+:::
 
 <em class="block mt-12 mb-10">It's understandable if you prefer not to register the components globally. Consider these alternative methods instead:</em>
 

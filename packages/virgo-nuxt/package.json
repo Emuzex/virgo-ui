@@ -39,7 +39,7 @@
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
-    "@virgo-ui/theme-glassmorphism": "workspace:*",
+    "@virgo-ui/theme-base": "workspace:*",
     "@floating-ui/dom": "1.2.8",
     "@iconify-json/bx": "latest",
     "@nuxt/kit": "3.5.0",

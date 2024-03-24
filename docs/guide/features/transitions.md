@@ -33,7 +33,7 @@ In above graph, if we go in Y direction, then we have to move up so our Slide Y 
 
 <br>
 
-<demo src="../../components/demos/features/transition/DemoFeaturesTransitionDemo.vue" ></demo>
+<demo src="../../components/demos/features/transition/demo-features-transition-demo.vue" ></demo>
 
 
 <!-- 👉 Customizing Transitions -->
@@ -49,7 +49,7 @@ Apart from this, You can even change the transitioning value in case of transiti
 
 <br>
 
-<demo src="../../components/demos/features/transition/DemoFeaturesTransitionCustomizingTransition.vue"></demo>
+<demo src="../../components/demos/features/transition/demo-features-transition-customizing-transition.vue"></demo>
 
 If you noticed, Tooltip now starts animating from bottom 14px (_increased_) instead of default 8px via `[--slide-y-translateY:14px]` class.
 

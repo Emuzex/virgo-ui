@@ -1,3 +1,4 @@
+/*
 import type { ConfigThemes, PluginOptions } from '../plugin'
 
 function getThemeColorsCss(themes: ConfigThemes) {
@@ -12,14 +13,21 @@ function getThemeColorsCss(themes: ConfigThemes) {
 		)
 		.join('')
 }
+*/
 
 export interface VirgoComposableOptions {
-	themes: PluginOptions['themes']
-	initialTheme: PluginOptions['initialTheme']
+	theme: object
+
+	/*themes: PluginOptions['themes']
+	initialTheme: PluginOptions['initialTheme']*/
 }
 
 export const useVirgo = createGlobalState((options?: VirgoComposableOptions) => {
-	if (!options) throw new Error('Virgo: useVirgo composable must be initialized with options first time!')
+	console.log('Options', {options})
+	throw new Error('useVirgo composable is empty')
+
+	return 'useVirgo'
+	/*if (!options) throw new Error('Virgo: useVirgo composable must be initialized with options first time!')
 
 	const themes = ref(options.themes)
 	const activeThemeName = ref(options.initialTheme)
@@ -30,13 +38,13 @@ export const useVirgo = createGlobalState((options?: VirgoComposableOptions) => 
 	const themeColorsCss = ref('')
 	useStyleTag(themeColorsCss)
 
-	/*
+	/!*
     ℹ️ `Object.values(themes.value).map(theme => [theme.colors, theme.cssVars]).flat()` will allow watching for colors & css vars of all themes 😮
 
     Object.values(themes.value) => [<lightThemeConfig>, <darkThemeConfig>] => Each theme's theme value/config
     Object.values(themes.value).map(theme => [theme.colors, theme.cssVars]) => [[<lightThemeColors>, <lightThemeCssVars>], [<darkThemeColors>, <darkThemeCssVars>]] => Will return nested array with colors & css variables
     Finally flat the array to get list of each theme's color & css var [<lightThemeColor>, <lightThemeCssVars>, <darkThemeColors>, <darkThemeCssVars>] ✨
-  */
+  *!/
 	watch(
 		() =>
 			Object.values(themes.value)
@@ -69,5 +77,5 @@ export const useVirgo = createGlobalState((options?: VirgoComposableOptions) => 
 		themes,
 		activeThemeName,
 		activeTheme
-	}
+	}*/
 })

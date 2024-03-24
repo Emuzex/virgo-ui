@@ -37,7 +37,7 @@ With Virgo, you can configure the props defaults for all the components while re
 createApp(App)
   .use(virgo, {
     propsDefaults: {
-      virgo-button: {
+      VirgoButton: {
         size: 'sm',
       },
     }
@@ -60,8 +60,10 @@ Using `propsDefaults` you can set props defaults for any Virgo component.
 
 ### Nested Props Defaults
 
-Life is not always simple and your client might need visually different component based on context. For example, you might need a text variant virgo-button inside alert and normal (fill variant) virgo-button elsewhere. Then we are back to square one. We have to repeat the `variant` prop in every alert <i class="i-fluent-emoji-expressionless-face"></i>
-
+Life's complexities often extend to the need for varying visual components depending on the situation.
+For instance, within a `card` component, a `size` variant of a `virgo-button` may be necessary, whereas in other contexts,
+a standard (fill variant) `virgo-button` is more suitable. This scenario leads us to a familiar challenge. We find ourselves
+needing to specify the `size` property within every `card` component repeatedly.
 ```vue
 <template>
   <card>

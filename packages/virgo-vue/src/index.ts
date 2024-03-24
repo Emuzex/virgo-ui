@@ -11,12 +11,7 @@ export * as composables from './composables'
 
 // Plugin
 export { plugin as virgo } from './plugin'
-export type { PluginOptions, ThemeColors, ThemeOptions as ThemeOption } from './plugin'
-
-// Preset
-export { virgoDefaultThemeColors as defaultThemeColors, presetVirgo } from './preset'
-export type { PresetVirgoOptions } from './preset'
-export { presetIconExtraProperties } from './preset/icons'
+export type { PluginOptions/*, ThemeColors, ThemeOptions as ThemeOption */} from './plugin'
 
 // Other
 export * from './symbols'

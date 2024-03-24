@@ -137,6 +137,7 @@ select:-webkit-autofill:focus {
  * -------------------------------------------------------------------------- */
 :root {
 	--vp-code-block-bg: rgba(125, 125, 125, 0.04);
+	--vp-code-block-highlight-bg: rgba(125, 125, 125, 0.04);
 	--vp-custom-title-text: #606266;
 	--vp-layout-max-width: 1580px;
 	--vp-sidebar-width: 252px;
@@ -171,7 +172,7 @@ select:-webkit-autofill:focus {
 	monospace;
 	--virgo-code-border-radius: 2px;
 	--virgo-code-text-color: rgb(51, 54, 57);
-	--virgo-code-color: rgb(244, 244, 248);
+	--virgo-code-color: rgb(203, 203, 203);
 	--virgo-code-border: 1px solid #0000;
 
 	--vp-home-hero-image-filter: blur(40px);
@@ -337,10 +338,10 @@ select:-webkit-autofill:focus {
 /* code blocks */
 .vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
 	border: 1px solid transparent;
+	background: hsl(0, 0%, 10%);
 }
 
 .dark .vp-doc div[class*='language-']:not(:where(.vp-raw *)) {
-	border: 1px solid hsla(var(--virgo-base-color), var(--virgo-border-opacity));
 	opacity: 0.85;
 	font-weight: 500;
 }
@@ -405,6 +406,10 @@ select:-webkit-autofill:focus {
 
 .vp-doc [class*=language-] code:not(:where(.vp-raw *)) span {
 	font-style: initial !important;
+}
+
+.vp-doc [class*='language-'] code .highlighted:not(:where(.vp-raw *)) {
+	background-color: var(--vp-code-block-highlight-bg);
 }
 
 /* Fix: Below style gets overridden by another style in production */
@@ -675,6 +680,7 @@ html:not(.dark) [img-dark] {
 	border: var(--virgo-code-border) !important;
 }
 
+
 .vp-doc h1,
 h2,
 h3,
@@ -706,7 +712,15 @@ b {
 }
 
 .vp-code-group .tabs label {
-	background-color: transparent;
+	color: hsla(0, 0%, 80%, 0.7);
+}
+
+.vp-code-group input:checked + label{
+	color: hsl(0, 0%, 100%);
+}
+
+.vp-code-group .tabs {
+	background-color: hsl(0, 0%, 10%);
 }
 
 table {
@@ -767,11 +781,11 @@ table {
 	@apply inline-flex whitespace-nowrap justify-center items-center relative focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none px-6 font-medium rounded-lg h-10 focus-visible:ring-2 ring-offset-2  virgo-button-content flex items-center justify-center gap-x-2
 }
 .VPButton.virgo {
-	@apply flex gap-x-4 flex-wrap gap-y-2 inline-flex whitespace-nowrap justify-center items-center relative text-white bg-purple-500 shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none px-6 font-medium important:rounded-lg h-10 focus-visible:ring-2 ring-offset-2 text-white bg-purple-500 shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40
+	@apply flex gap-x-4 flex-wrap gap-y-2 inline-flex whitespace-nowrap justify-center items-center relative text-white bg-purple-500 shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none px-6 font-medium important:rounded-lg h-10 focus-visible:ring-2 ring-offset-2
 }
 
 .VPButton.virgo-alt{
-	@apply flex gap-x-4 flex-wrap gap-y-2 inline-flex whitespace-nowrap justify-center items-center relative text-white bg-white/20 backdrop-blur-sm shadow-sm shadow-gray-100/10 transition-all hover:shadow-md focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none px-6 font-medium important:rounded-lg h-10 focus-visible:ring-2 ring-offset-2
+	@apply flex gap-x-4 flex-wrap gap-y-2 inline-flex whitespace-nowrap justify-center items-center relative dark:text-white dark:bg-gray-800 text-gray-100 bg-gray-600 backdrop-blur-sm shadow-sm shadow-gray-100/10 transition-all hover:shadow-md focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none px-6 font-medium important:rounded-lg h-10 focus-visible:ring-2 ring-offset-2
 }
 
 .VPButton.virgo-white{

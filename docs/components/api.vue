@@ -63,7 +63,7 @@ onMounted(() => {
 			minHeight: apiCardMinHeight,
 		}"
 	>
-		<div class="next:pt-0 em:spacing:not-last:pb-4">
+		<div class="next:pt-0 not-last:pb-4">
 			<div class="flex flex-wrap items-center justify-between">
 				<span class="v-title">{{ props.title }}</span>
 				<input

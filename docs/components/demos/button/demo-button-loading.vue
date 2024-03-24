@@ -15,7 +15,10 @@
 			Click to load
 		</virgo-button>
 		<virgo-button @click="iconOnlyLoading = !iconOnlyLoading">
-			<i class="i-bx-cloud-upload" v-if="iconOnlyLoading" />
+			<i
+				v-if="iconOnlyLoading"
+				class="i-bx-cloud-upload"
+			/>
 			<span>Upload</span>
 		</virgo-button>
 		<virgo-button

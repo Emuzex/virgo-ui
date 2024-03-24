@@ -113,6 +113,9 @@ importers:
 
   docs:
     dependencies:
+      '@virgo-ui/theme-base':
+        specifier: workspace:*
+        version: link:../packages/theme-base
       '@virgo-ui/vue':
         specifier: workspace:*
         version: link:../packages/virgo-vue
@@ -160,7 +163,7 @@ importers:
         specifier: 3.21.4
         version: 3.21.4
 
-  packages/theme-glassmorphism:
+  packages/theme-base:
     devDependencies:
       '@types/fs-extra':
         specifier: 11.0.1
@@ -192,9 +195,9 @@ importers:
       '@nuxt/kit':
         specifier: 3.5.0
         version: 3.5.0(rollup@3.24.1)
-      '@virgo-ui/theme-glassmorphism':
+      '@virgo-ui/theme-base':
         specifier: workspace:*
-        version: link:../theme-glassmorphism
+        version: link:../theme-base
       '@virgo-ui/vue':
         specifier: workspace:*
         version: link:../virgo-vue

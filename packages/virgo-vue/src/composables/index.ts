@@ -1,5 +1,4 @@
 export * from './use-virgo'
-export * from './use-color'
 export * from './use-configurable'
 export * from './use-dom-scroll-lock'
 export * from './use-parent'

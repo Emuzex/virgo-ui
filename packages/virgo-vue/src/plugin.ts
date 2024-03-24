@@ -4,14 +4,15 @@ import type { App } from 'vue'
 import { defineComponent } from 'vue'
 import type { PluginOptionDefaults } from './plugin-defaults'
 import * as components from '@/components'
-import { useVirgo } from '@/composables/use-virgo'
 import { useConfiguration } from '@/composables/use-configuration'
 import { useZIndex } from '@/composables'
 import { VIRGO_CLASSES, VIRGO_CONFIG, VIRGO_PROPS_DEFAULTS } from '@/symbols'
 import * as ComponentsConfig from '@/components/configs'
 
-export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
-export type DefaultThemes = 'light' | 'dark'
+/*import { useVirgo } from '@/composables/use-virgo'*/
+
+/*export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
+export type DefaultThemes = 'light' | 'dark'*/
 
 export interface ComponentsClasses {
 	BaseInput: ComponentsConfig.baseInputClasses
@@ -29,19 +30,23 @@ export const defaultClasses = {
 	VirgoInput: ComponentsConfig.virgoInputConfig.classes
 }
 
-export interface ThemeOptions {
+/*export interface ThemeOptions {
 	class: string
 	colors: Record<ThemeColors, string>
 	cssVars: Record<string, string>
-}
+}*/
 
+/*
 export type ConfigThemes = Record<DefaultThemes, ThemeOptions>
+*/
 
 export interface PluginOptions {
 	registerComponents: boolean
-	initialTheme: keyof ConfigThemes
+
+	// initialTheme: keyof ConfigThemes
 	classes: PartialDeep<ComponentsClasses>
-	themes: ConfigThemes
+
+	// themes: ConfigThemes
 	componentAliases: Record<string, any>
 	propsDefaults: PartialDeep<PluginOptionDefaults>
 	baseZIndex: number
@@ -52,8 +57,9 @@ export const defaultBaseZIndex = 2000
 
 const configDefaults: PluginOptions = {
 	registerComponents: true,
-	initialTheme: 'light',
-	themes: {
+
+	// initialTheme: 'light',
+	/* themes: {
 		light: {
 			class: '',
 			colors: {
@@ -86,7 +92,7 @@ const configDefaults: PluginOptions = {
 				'surface-color': 'var(--virgo-primary-hue), 7%, 10%'
 			}
 		}
-	},
+	},*/
 	classes: defaultClasses,
 	componentAliases: {},
 	propsDefaults: {},
@@ -146,7 +152,10 @@ export const plugin = {
 		app.provide(VIRGO_PROPS_DEFAULTS, config.propsDefaults)
 		app.provide(VIRGO_CLASSES, config.classes)
 
-		useVirgo({ initialTheme: config.initialTheme, themes: config.themes })
+		/*useVirgo(/!*{
+			initialTheme: config.initialTheme,
+			themes: config.themes
+		}*!/)*/
 		useZIndex(config.baseZIndex, app)
 	}
 }

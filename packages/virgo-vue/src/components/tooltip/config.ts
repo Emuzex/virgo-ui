@@ -1,8 +1,8 @@
 export const tooltipConfig = {
 	classes:{
 		wrapper: 'z-[54]',
-		content: 'bg-[hsl(var(--virgo-tooltip-bg-color))] em:px-2 em:py-1 em:rounded-lg',
-		contentText: 'em:text-sm text-white text-center'
+		content: 'bg-[hsl(var(--virgo-tooltip-bg-color))] px-2 py-1 rounded-lg',
+		contentText: 'text-sm text-white text-center'
 	}
 }
 

@@ -114,7 +114,6 @@ if (props.modelValue === undefined) {
   }
 }
 
-// Expose: https://vuejs.org/api/sfc-script-setup.html#defineexpose
 defineExpose({
   refFloating,
 })
