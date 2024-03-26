@@ -4,8 +4,6 @@ import type { ExtractPublicPropTypes, Ref } from 'vue'
 import { sameWidth as sameWidthMiddleware } from './middlewares'
 import { transition as transitionProp } from '@/composables/use-props'
 
-// ℹ️ Make sure to checkout meta definition rules
-
 export type FloatingReferenceEl = HTMLElement | null | undefined
 
 // 👉 Props

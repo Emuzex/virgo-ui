@@ -45,17 +45,15 @@ export default defineConfig({
 					text: 'Features',
 					collapsed: false,
 					items: [
-						{ text: 'Presets', link: '/guide/features/presets' },
 						{ text: 'Theme', link: '/guide/features/theme' },
-						{ text: 'Transitions', link: '/guide/features/transitions' },
-						{ text: 'Icons', link: '/guide/features/icons' }
+						{ text: 'Transitions', link: '/guide/features/transitions' }
 					]
 				},
 				{
 					text: 'Components',
 					collapsed: false,
 					items: [
-						{ text: 'Base Input', link: '/guide/components/base-input'},
+						/*{ text: 'Base Input', link: '/guide/components/base-input'},*/
 						{ text: 'Button', link: '/guide/components/button' },
 						{ text: 'Tooltip', link: '/guide/components/tooltip' },
 						{ text: 'Input', link: '/guide/components/input'}

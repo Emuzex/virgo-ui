@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import api from '@virgo-ui/vue/component-meta/tooltip.json';
+import tooltipApi from '@virgo-ui/vue/component-meta/tooltip.json';
 </script>
 
 # Component name <new-badge/> <coming-badge/> <update-badge/> <warn-badge/>
@@ -8,7 +8,7 @@ import api from '@virgo-ui/vue/component-meta/tooltip.json';
 ## Second level heading
 
 Demo of a component with some description.
-<demo src="../../components/demos/tooltip/DemoTooltipBasic.vue"/>
+<demo src="../../components/demos/tooltip/demo-tooltip-basic.vue"/>
 
 :::tip
 Some tip to be shown here
@@ -20,7 +20,7 @@ This is a detail
 
 ## API
 
-<Api title="Tooltip" :api="api"></Api>
+<api title="Tooltip" :api="tooltipApi"></api>
 
 ## Accessibility
 

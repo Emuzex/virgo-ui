@@ -3,7 +3,7 @@ import type { tooltipSlots } from './meta'
 import { tooltipProps } from './meta'
 import { Floating } from '@/components/floating'
 import { useParent } from '@/composables'
-import { useConfiguration } from '@/composables/use-configuration'
+import { useVirgo } from '@/composables/use-virgo'
 
 // import { arrow } from '@floating-ui/vue'
 
@@ -13,7 +13,7 @@ defineSlots<typeof tooltipSlots>()
 defineOptions({
   name: 'Tooltip',
 })
-const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useConfiguration(_props)
+const { props, inlineStyle, attributes, classList } = useVirgo(_props)
 
 const parentEl = useParent()
 
@@ -22,10 +22,10 @@ const parentEl = useParent()
 
 <template>
 	<floating
-		v-bind="{ ...props, ...defaultsAttrs }"
+		v-bind="{ ...props, ...attributes }"
 		:reference-el="parentEl"
-		:class="[defaultsClass,classList.wrapper]"
-		:style="defaultsStyle"
+		:class="classList.wrapper"
+		:style="inlineStyle"
 	>
 		<div :class="classList.content">
 			<span :class="classList.contentText">

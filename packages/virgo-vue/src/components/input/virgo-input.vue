@@ -2,7 +2,7 @@
 import type { VirgoInputEvents } from './meta'
 import { virgoInputProps, textareaBaseInputSlots } from './meta'
 import { BaseInput, baseInputProps } from '@/components/base-input'
-import { useDefaults } from '@/composables/use-defaults'
+import { useVirgo } from '@/composables/use-virgo'
 import { filterUsedSlots } from '@/utils/vue'
 
 // SECTION Meta
@@ -13,7 +13,7 @@ defineOptions({
   name: 'VirgoInput',
   inheritAttrs: false,
 })
-const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList} = useDefaults(_props)
+const { props, inlineStyle, attributes, classList} = useVirgo(_props)
 
 // !SECTION
 
@@ -32,9 +32,9 @@ function handleInputWrapperClick() {
 
 <template>
 	<base-input
-		v-bind="{ ..._baseInputProps, ...defaultsAttrs, class: $attrs.class }"
-		:class="[classList.root, defaultsClass, isInputTypeFile && classList.fileType]"
-		:style="defaultsStyle"
+		v-bind="{ ..._baseInputProps, ...attributes, class: $attrs.class }"
+		:class="[classList.root, isInputTypeFile && classList.fileType]"
+		:style="inlineStyle"
 		@click:inputWrapper="handleInputWrapperClick"
 	>
 		<!-- ℹ️ Recursively pass down slots to child -->

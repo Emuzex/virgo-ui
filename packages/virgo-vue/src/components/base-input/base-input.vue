@@ -2,7 +2,7 @@
 import type { BaseInputEvents, baseInputSlots } from './meta'
 import { baseInputProps } from './meta'
 import { useConfigurable } from '@/composables/use-configurable'
-import { useDefaults } from '@/composables/use-defaults'
+import { useVirgo } from '@/composables/use-virgo'
 import TransitionExpand from '@/transitions/transition-expand.vue'
 
 // SECTION Meta
@@ -18,7 +18,7 @@ defineOptions({
   name: 'BaseInput',
 })
 
-const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
+const { props, inlineStyle, attributes, classList } = useVirgo(_props)
 
 // !SECTION
 
@@ -50,10 +50,9 @@ defineExpose({
 			props.disabled && classList.disabled,
 			(props.disabled || props.readonly) && classList.disabledOrReadonly,
 			!(props.disabled || props.readonly) && classList.interactive,
-			defaultsClass
 		]"
-		:style="defaultsStyle"
-		v-bind="defaultsAttrs"
+		:style="inlineStyle"
+		v-bind="attributes"
 	>
 		<!-- 👉 Label -->
 		<slot name="label">
@@ -85,7 +84,7 @@ defineExpose({
 			<div
 				ref="refInputWrapper"
 				v-bind="props.inputWrapperAttrs"
-				:class="[classList.inputWrapper, props.inputWrapperClasses, props.error ? classList.inputWrapperError : classList.inputWrapperValid]"
+				:class="[classList.inputWrapper, props.error ? classList.inputWrapperError : classList.inputWrapperValid]"
 				@click="$emit('click:inputWrapper')"
 			>
 				<!-- 👉 Slot: Prepend Inner -->
@@ -104,7 +103,6 @@ defineExpose({
 					:disabled="props.disabled"
 					:class="[
 						classList.inputChild,
-						props.inputClasses,
 						$slots['prepend-inner'] || props.prependInnerIcon
 							? classList.inputChildWithPrependInner
 							: classList.inputChildWithoutPrependInner,

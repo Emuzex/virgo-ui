@@ -1,23 +1,8 @@
 import type { ExtractPublicPropTypes, HTMLAttributes, PropType } from 'vue'
 import { configurable, disabled, readonly } from '@/composables/use-props'
 
-// ℹ️ Make sure to checkout prop definition rules
-
 // 👉 Props
 export const baseInputProps = ({
-
-  // ℹ️ If we want any type need to set `propName: { type: null }`. Using `propName: null` will omit (disable) the prop.
-  /**
-   * Input wrapper classes
-   */
-  inputWrapperClasses: { type: null },
-
-  // ℹ️ If we want any type need to set `propName: { type: null }`. Using `propName: null` will omit (disable) the prop.
-  /**
-   * Input classes
-   */
-  inputClasses: { type: null },
-
   /**
    * Input wrapper attributes
    */

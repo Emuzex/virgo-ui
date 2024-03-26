@@ -187,17 +187,17 @@ createApp(App)
   })
 ```
 
-Later in your component use `useDefaults` composable:
+Later in your component use `useVirgo` composable:
 
 ```vue
 <script lang="ts" setup>
 // other imports
-import { useDefaults } from '@virgo-ui/vue'
+import { useVirgo } from '@virgo-ui/vue'
 
 // ❗ Make sure to use `_props` as name
 const _props = defineProps<{}>() // or `withDefaults`
 
-const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
+const { props, inlineStyle, attributes, classList } = useVirgo(_props)
 // classList comes from plugin config 'classes'
 // other code
 </script>
@@ -205,12 +205,12 @@ const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDef
 <template>
   <div
     class="my-class"
-    :class="[classList.componentRoot, defaultsClass]"
+    :class="classList.componentRoot"
     :style="[
       { color: 'red' },
-      defaultsStyle,
+      inlineStyle,
     ]"
-    v-bind="defaultsAttrs"
+    v-bind="attributes"
   >
     <!-- Your component content -->
     <!-- ❗ If you want to access props use `props.propName` -->
@@ -219,7 +219,7 @@ const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDef
 ```
 
 :::warning
-When you use `useDefaults` composable, you have to use `props.propName` while accessing the props to get props configured by defaults.
+When you use `useVirgo` composable, you have to use `props.propName` while accessing the props to get props configured by defaults.
 
 Even in your template, use `props.propName` to access the props.
 :::
@@ -258,7 +258,7 @@ import { VirgoButton } from '@virgo-ui/vue'
 createApp(App)
   .use(virgo, {
     componentAliases: {
-      // Set alias for ABtn component
+      // Set alias for VirgoButton component
       MyIconButton: VirgoButton,
     },
     propsDefaults: {
@@ -282,7 +282,7 @@ Now, you can use `MyIconButton` component everywhere in your app and it will hav
 </template>
 ```
 
-I guess, You're now convinced that Anu is the best way to use component libraries in Vue. So, what are you waiting for? Go ahead and try it out.
+I guess, You're now convinced that Virgo is the best way to use component libraries in Vue. So, what are you waiting for? Go ahead and try it out.
 
 :::info
 Component aliases are registered globally so you don't have to import them.

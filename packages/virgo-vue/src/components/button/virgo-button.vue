@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { virgoButtonSlots } from './meta'
 import { virgoButtonProps } from './meta'
-import { useDefaults } from '@/composables/use-defaults'
+import { useVirgo } from '@/composables/use-virgo'
 
 const _props = defineProps(virgoButtonProps)
 
@@ -11,20 +11,20 @@ defineOptions({
 	name: 'VirgoButton'
 })
 
-const { props, defaultsClass, defaultsStyle, defaultsAttrs, classList } = useDefaults(_props)
+const { props, inlineStyle, attributes, classList } = useVirgo(_props)
+console.log('VirgoButton', { props, inlineStyle, attributes, classList })
 </script>
 
 <template>
 	<button
-		v-bind="defaultsAttrs"
+		v-bind="attributes"
 		:tabindex="props.disabled ? -1 : 0"
-		:style="defaultsStyle"
+		:style="inlineStyle"
 		type="button"
 		:class="[
 			classList.buttonBase,
 			props.iconOnly ? classList.buttonIconOnly : classList.button,
 			props.disabled && classList.disabled,
-			defaultsClass
 		]"
 		:disabled="props.disabled ? true : undefined"
 	>

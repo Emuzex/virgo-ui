@@ -1,8 +1,6 @@
 import type { ExtractPublicPropTypes } from 'vue'
 import { baseInputProps, baseInputSlots } from '@/components/base-input'
 
-// ℹ️ Make sure to checkout meta definition rules
-
 // 👉 Props
 export const virgoInputProps = {
   ...baseInputProps,

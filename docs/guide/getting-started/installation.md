@@ -2,7 +2,7 @@
 
 ## Install packages
 
-1. Add `@virgo-ui/vue` and its supporting libraries
+1. Add `@virgo-ui/vue`
 
     ::: code-group
       ```bash [pnpm]
