@@ -27,11 +27,7 @@ export const defaultClasses = {
 
 export interface PluginOptions {
 	registerComponents: boolean
-
-	// initialTheme: keyof ConfigThemes
 	classes: PartialDeep<ComponentsClasses>
-
-	// themes: ConfigThemes
 	componentAliases: Record<string, any>
 	propsDefaults: PartialDeep<PluginOptionDefaults>
 	baseZIndex: number
