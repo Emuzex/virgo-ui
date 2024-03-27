@@ -1,4 +1,4 @@
-# useVirgo <coming-badge/>
+# useVirgo
 
 `useVirgo` composable can access the component props, inline styles, attributes, and classList. It is used to create a component with the default configuration previously set in the plugin config.
 
@@ -33,7 +33,7 @@ const { props, inlineStyle, attributes, classList } = useVirgo(_props)
 ```
 
 :::warning
-When you use `useVirgo` composable, you have to use `props.propName` while accessing the props to get props configured by defaults.
+When you use `useVirgo` composable, you have to use `props.propName` while accessing the props to get props configured in plugin.
 
 Even in your template, use `props.propName` to access the props.
 :::
