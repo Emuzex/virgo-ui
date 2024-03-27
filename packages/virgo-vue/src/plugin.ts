@@ -8,7 +8,7 @@ import { useVirgo } from '@/composables/use-virgo'
 import { useZIndex } from '@/composables'
 import { VIRGO_CLASSES, VIRGO_CONFIG, VIRGO_PROPS_DEFAULTS } from '@/symbols'
 import * as ComponentsConfig from '@/components/configs'
-
+import VirgoButton from '@/components/button'
 export interface ComponentsClasses {
 	BaseInput: ComponentsConfig.baseInputClasses
 	VirgoButton: ComponentsConfig.virgoButtonClasses
@@ -25,12 +25,25 @@ export const defaultClasses = {
 	VirgoInput: ComponentsConfig.virgoInputConfig.classes
 }
 
+export type VueClassBinding =
+	| string
+	| Record<string, unknown>
+	| Array<Record<string, unknown> | string>;
+
+type ComponentOptionClass<C extends Component, P = {}> =
+	| VueClassBinding
+	| ClassGenerator<ToNormalizedVariant<ComponentProps<C>> & P>;
+
+
 export interface PluginOptions {
 	registerComponents: boolean
 	classes: PartialDeep<ComponentsClasses>
 	componentAliases: Record<string, any>
 	propsDefaults: PartialDeep<PluginOptionDefaults>
-	baseZIndex: number
+	baseZIndex: number,
+	config?: {
+		VirgoButton? : never
+	}
 }
 
 export const defaultBaseZIndex = 2000
@@ -40,7 +53,9 @@ const configDefaults: PluginOptions = {
 	classes: defaultClasses,
 	componentAliases: {},
 	propsDefaults: {},
-	baseZIndex: defaultBaseZIndex
+	baseZIndex: defaultBaseZIndex,
+	config: {}
+
 }
 
 const registerComponents = (app: App, components: Record<string, any>) => {

@@ -249,6 +249,11 @@ select:-webkit-autofill:focus {
 /* There's height - 1 in VitePress site for maybe shadow, Use actual height */
 .VPNavBar .content-body {
 	height: var(--vp-nav-height);
+	backdrop-filter: blur(6px);
+}
+
+.VPLocalNav {
+	backdrop-filter: blur(6px);
 }
 
 /* Remove border bottom from title in navbar */
@@ -318,6 +323,10 @@ select:-webkit-autofill:focus {
 	/* IE and Edge */
 	scrollbar-width: none;
 	/* Firefox */
+}
+
+.VPSidebar.open {
+	backdrop-filter: blur(6px);
 }
 
 
