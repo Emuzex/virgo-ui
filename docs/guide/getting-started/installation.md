@@ -2,100 +2,53 @@
 
 ## Install packages
 
-1. Add `@virgo-ui/vue` and its supporting libraries
+1. Add `@virgo-ui/vue`
 
     ::: code-group
       ```bash [pnpm]
-      pnpm add @virgo-ui/vue @virgo-ui/preset-theme-default && pnpm add -D unocss @iconify-json/bx
+   pnpm add @virgo-ui/vue
       ```
       ```bash [yarn]
-        yarn add @virgo-ui/vue @virgo-ui/preset-theme-default && yarn add -D unocss @iconify-json/bx
+   yarn add @virgo-ui/vue
       ```
       ```bash [npm]
-        npm i @virgo-ui/vue @virgo-ui/preset-theme-default && npm install -D unocss @iconify-json/bx
+   npm i @virgo-ui/vue
       ```
     :::
 
+2. Update your `main.ts` file as shown below:
 
-## Usage
-
-1. Add UnoCSS to `vite.config.ts`
-
-    ```ts
-    import Unocss from 'unocss/vite'
-
-    export default {
-      plugins: [
-        Unocss(),
-      ],
-    }
-    ```
-
-2. Create the UnoCSS Config file `uno.config.ts` in the root of the project with the content below:
-
-    ```ts
-    import { presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
-    import { presetThemeDefault } from '@virgo-ui/preset-theme-default'
-    import {
-      defineConfig,
-      presetIcons,
-      presetUno,
-    } from 'unocss'
-
-    export default defineConfig({
-      presets: [
-        presetUno(),
-        presetIcons({
-          scale: 1.2,
-          extraProperties: presetIconExtraProperties,
-        }),
-
-        // @virgo-ui/vue preset
-        presetVirgo(),
-
-        // default theme preset
-        presetThemeDefault(),
-      ],
-      include: [/.*\/@virgo-ui_vue\.js(.*)?$/, './**/*.{vue,md,ts}'],
-    })
-    ```
-
-3. Update your `main.ts` file as shown below:
-
-    ```js{3,5-6,8-9,13,11-12,15-16}
+    ```js{3,5-6,8,10}
     import { createApp } from 'vue'
     import App from './App.vue'
     import { virgo } from '@virgo-ui/vue'
 
-    // UnoCSS import
-    import 'uno.css'
-
-    // virgo styles
+    // virgo styles, only includes transitions and a scroll-lock style
     import '@virgo-ui/vue/dist/style.css'
-
-    // default theme styles
-    import '@virgo-ui/preset-theme-default/dist/style.css'
 
     // Using `app.use(virgo)` will register virgo plugin
     createApp(App)
       .use(virgo)
       .mount('#app')
     ```
-
-It's done! 🥳
-
-Now, Just refer to the component in your vue files:
+Now, you can use the components in your vue files:
 
 ```vue
 <template>
-    <button>
+    <virgo-button>
         <tooltip text="Hello!" />
         Hover Over Me
-    </button>
+    </virgo-button>
 </template>
 ```
 
-<em class="block mt-12 mb-10">Probably you might not want to globally register the components. You can also follow the approaches below:</em>
+::: info NOTE
+You can view the default design on the Themes page.
+Don't forget to check out the [theme](/guide/features/theme.md) documentation to learn more about themes.
+This installation does not include the configuration and design that you can see in the documentation. The components are all unstyled
+:::
+
+<em class="block mt-12 mb-10">It's understandable if you prefer not to register the components globally. Consider these alternative methods instead:</em>
 
 ### Tree Shaking
 
@@ -120,10 +73,10 @@ You can also follow À la carte fashion if you don't want to register all the co
     </script>
 
     <template>
-      <button>
+      <virgo-button>
          <tooltip text="Hello!" />
          Hover Over Me
-      </button>
+      </virgo-button>
     </template>
     ```
 
@@ -142,7 +95,7 @@ You can also follow À la carte fashion if you don't want to register all the co
         .mount('#app')
     ```
 
-2. Install unplugin-vue-components:
+2. Install `unplugin-vue-components`:
 
     ::: code-group
       ```bash [pnpm]
@@ -177,14 +130,14 @@ You can also follow À la carte fashion if you don't want to register all the co
     })
     ```
 
-4. Now just use the component and it will be auto imported on demand 🤯
+4. Now just use the component and it will be auto imported on the fly.
 
     ```vue
     <template>
-      <button>
+      <virgo-button>
          <tooltip text="Hello!" />
-      Hover Over Me
-      </button>
+     	 Hover Over Me
+      </virgo-button>
     </template>
     ```
 
@@ -202,6 +155,3 @@ If you are using [Volar](https://marketplace.visualstudio.com/items?itemName=Vue
 ```
 
 If you have a typescript project, you will have to configure the above in the `tsconfig.json` file.
-
-That's it, enjoy the autocompletion 🥳
-

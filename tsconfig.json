@@ -35,11 +35,11 @@
       "@virgo-ui/core/*": [
         "./packages/virgo-vue/src/*"
       ],
-      "@virgo-ui/preset-theme-default": [
-        "./packages/preset-theme-default/src/index.ts"
+      "@virgo-ui/theme-base": [
+        "./packages/theme-base/src/index.ts"
       ],
-      "@virgo-ui/preset-theme-default/*": [
-        "./packages/preset-theme-default/src/*"
+      "@virgo-ui/theme-base/*": [
+        "./packages/theme-base/src/*"
       ],
       "@virgo-ui/nuxt": [
         "./packages/virgo-nuxt/src/module.ts"
@@ -52,7 +52,7 @@
     "./packages/virgo-vue/shims.d.ts",
     "./packages/virgo-vue/volar.d.ts",
     "./docs/components/**/*",
-    // "./docs/components/Playground.vue",
+    "./docs/components/playground.vue",
     "./docs/utils/*",
     "./docs/.vitepress/shims.d.ts",
     "./docs/.vitepress/theme/index.ts"

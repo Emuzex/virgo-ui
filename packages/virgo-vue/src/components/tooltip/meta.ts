@@ -8,44 +8,45 @@ import { floatingProps } from '@/components/floating'
 // 👉 Props
 const { referenceEl: _, ...floatingRestProps } = floatingProps
 export const middlewareFunc: FloatingMiddlewareFunc = () => [
-  offset(10),
-  flip(),
-  shift({ padding: 10 }),
+	offset(10),
+	flip(),
+	shift({ padding: 10 })
 
-  // arrow({
-  //   element: arrowEl,
-  // }),
+	// arrow({
+	//   element: arrowEl,
+	// }),
 ]
 
 export const tooltipProps = {
-  ...{
-    ...floatingRestProps,
-    trigger: {
-      ...floatingRestProps.trigger,
-      default: 'hover',
-    },
-    placement: {
-      ...floatingRestProps.placement,
-      default: 'bottom',
-    },
-    middleware: {
-      ...floatingRestProps.middleware,
-      default: middlewareFunc,
-    },
-  },
+	// Variant and bare inherited from FloatingProps
+	...{
+		...floatingRestProps,
+		trigger: {
+			...floatingRestProps.trigger,
+			default: 'hover'
+		},
+		placement: {
+			...floatingRestProps.placement,
+			default: 'bottom'
+		},
+		middleware: {
+			...floatingRestProps.middleware,
+			default: middlewareFunc
+		}
+	},
 
-  /**
-   * Text to render in tooltip
-   */
-  text: String,
+	/**
+	 * Text to render in tooltip
+	 */
+	text: String
 } as const
-export type TooltipProps = ExtractPublicPropTypes<typeof tooltipProps>
+export type tooltipProps = ExtractPublicPropTypes<typeof tooltipProps>
 
 // 👉 Slots
 export const tooltipSlots = {
 
-  /**
-   * Default slot for rendering tooltip content. If default slot is used `text` prop will be discarded.
-   */
-  default: (_: any) => null as any,
+	/**
+	 * Default slot for rendering tooltip content. If default slot is used `text` prop will be discarded.
+	 */
+	default: (_: any) => null as any
 } as const

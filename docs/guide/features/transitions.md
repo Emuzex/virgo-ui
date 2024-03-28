@@ -12,7 +12,7 @@ Virgo provides useful transitions for your application, and it also uses it inte
 
 Additionally, you can also create your own transitions via `createTransition` function provided by Virgo.
 
-Transitions components in Virgo has pattern `A<transition-name>Transition` (_e.g. `AFadeTransition`_) and transition name will be used as the name of the transition. For example, If you create a transition component for bounce `createTransition('bounce')` then name it `ABounceTransition` and you can use it as `<SomeComponent transition="bounce">`. Don't forget to write the styles for this transition. <i class="i-fluent-emoji-grinning-face-with-sweat"></i>
+Transitions components in Virgo has pattern `Virgo<transition-name>Transition` (_e.g. `VirgoFadeTransition`_) and transition name will be used as the name of the transition. For example, If you create a transition component for bounce `createTransition('bounce')` then name it `ABounceTransition` and you can use it as `<SomeComponent transition="bounce">`. Don't forget to write the styles for this transition. <i class="i-fluent-emoji-grinning-face-with-sweat"></i>
 
 
 ## Naming Convention
@@ -33,7 +33,7 @@ In above graph, if we go in Y direction, then we have to move up so our Slide Y 
 
 <br>
 
-<demo src="../../components/demos/features/transition/DemoFeaturesTransitionDemo.vue" ></demo>
+<demo src="../../components/demos/features/transition/demo-features-transition-demo.vue" ></demo>
 
 
 <!-- 👉 Customizing Transitions -->
@@ -49,7 +49,7 @@ Apart from this, You can even change the transitioning value in case of transiti
 
 <br>
 
-<demo src="../../components/demos/features/transition/DemoFeaturesTransitionCustomizingTransition.vue"></demo>
+<demo src="../../components/demos/features/transition/demo-features-transition-customizing-transition.vue"></demo>
 
 If you noticed, Tooltip now starts animating from bottom 14px (_increased_) instead of default 8px via `[--slide-y-translateY:14px]` class.
 
@@ -64,7 +64,7 @@ Virgo provides `createTransition` composable to create your own transition compo
 ```ts
 import { createTransition } from '@virgo-ui/vue'
 
-export const AFadeTransition = createTransition('fade')
+export const VirgoFadeTransition = createTransition('fade')
 ```
 
 You have transition component now, but you have to write the styles for it. You can write the styles for your transition component in the same way as you write for any other transition.

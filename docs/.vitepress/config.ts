@@ -1,5 +1,4 @@
 import { fileURLToPath } from 'node:url'
-import Container from 'markdown-it-container'
 import Unocss from 'unocss/vite'
 import type { DefaultTheme } from 'vitepress'
 import { defineConfig } from 'vitepress'
@@ -8,9 +7,7 @@ import { applyPlugins } from './plugins'
 const isDev = process.env.NODE_ENV !== 'production'
 
 const nav: DefaultTheme.Config['nav'] = [
-	{ text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },
-	{ text: 'Development', link: '/development/contributing', activeMatch: '/development/' },
-]
+	{ text: 'Guide', link: '/guide/getting-started/installation', activeMatch: '/guide/' },]
 
 if (isDev) nav.push({ text: 'Playground', link: '/playground' })
 
@@ -41,34 +38,35 @@ export default defineConfig({
 					items: [
 						{ text: 'Introduction', link: '/guide/getting-started/' },
 						{ text: 'Installation', link: '/guide/getting-started/installation' },
-						{ text: 'Customization', link: '/guide/getting-started/customization' },
+						{ text: 'Configuration', link: '/guide/getting-started/configuration' },
 					]
 				},
 				{
 					text: 'Features',
 					collapsed: false,
 					items: [
-						{ text: 'Presets', link: '/guide/features/presets' },
 						{ text: 'Theme', link: '/guide/features/theme' },
-						{ text: 'Transitions', link: '/guide/features/transitions' },
-						{ text: 'Icons', link: '/guide/features/icons' }
+						{ text: 'Transitions', link: '/guide/features/transitions' }
 					]
 				},
 				{
 					text: 'Components',
 					collapsed: false,
 					items: [
-						{ text: 'Tooltip', link: '/guide/components/tooltip' }
+						/*{ text: 'Base Input', link: '/guide/components/base-input'},*/
+						{ text: 'Button', link: '/guide/components/button' },
+						{ text: 'Tooltip', link: '/guide/components/tooltip' },
+						{ text: 'Input', link: '/guide/components/input'}
 					]
 				},
 				{
 					text: 'Composables',
 					collapsed: false,
 					items: [
-						{ text: 'useVirgo', link: '/guide/composables/useVirgo' },
-						// { text: 'useSearch', link: '/guide/composables/useSearch' },
-						// { text: 'useSort', link: '/guide/composables/useSort' },
-						// { text: 'useSelection', link: '/guide/composables/useSelection' },
+						{ text: 'useVirgo', link: '/guide/composables/use-virgo' },
+						// { text: 'useSearch', link: '/guide/composables/use-search' },
+						// { text: 'useSort', link: '/guide/composables/use-sort' },
+						// { text: 'useSelection', link: '/guide/composables/use-selection' },
 					]
 				},
 			],

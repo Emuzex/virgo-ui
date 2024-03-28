@@ -13,7 +13,7 @@ const emit = defineEmits<FloatingEvents>()
 defineSlots<typeof floatingSlots>()
 
 defineOptions({
-  name: 'floating',
+  name: 'Floating',
   inheritAttrs: false,
 })
 
@@ -114,29 +114,28 @@ if (props.modelValue === undefined) {
   }
 }
 
-// Expose: https://vuejs.org/api/sfc-script-setup.html#defineexpose
 defineExpose({
   refFloating,
 })
 </script>
 
 <template>
-  <teleport
-    v-if="isMounted"
-    :to="teleportTarget"
-  >
-    <!-- ℹ️ Transition component don't accept null as value of name prop so we need `props.transition || undefined` -->
-    <transition :name="props.transition || undefined">
-      <div
-        v-show="isFloatingElVisibleDebounced"
-        v-bind="$attrs"
-        ref="refFloating"
-        class="a-floating transform"
-        :style="contentStyle"
-        :class="strategy"
-      >
-        <slot />
-      </div>
-    </transition>
-  </teleport>
+	<teleport
+		v-if="isMounted"
+		:to="teleportTarget"
+	>
+		<!-- ℹ️ Transition component don't accept null as value of name prop so we need `props.transition || undefined` -->
+		<transition :name="props.transition || undefined">
+			<div
+				v-show="isFloatingElVisibleDebounced"
+				v-bind="$attrs"
+				ref="refFloating"
+				class="a-floating transform"
+				:style="contentStyle"
+				:class="strategy"
+			>
+				<slot />
+			</div>
+		</transition>
+	</teleport>
 </template>

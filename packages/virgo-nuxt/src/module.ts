@@ -1,15 +1,16 @@
-import type { PresetOptions as PresetThemeDefaultOptions } from '@virgo-ui/preset-theme-default'
-import { presetThemeDefault } from '@virgo-ui/preset-theme-default'
 import { addCustomTab } from '@nuxt/devtools-kit'
 import { addComponent, addImports, addPluginTemplate, defineNuxtModule, extendViteConfig, useLogger } from '@nuxt/kit'
 import presetIcons from '@unocss/preset-icons'
 import presetUno from '@unocss/preset-uno'
-import type { PluginOptions, PresetVirgoOptions } from '@virgo-ui/vue'
-import { components as VirgoComponents, composables as VirgoComposables, presetVirgo, presetIconExtraProperties } from '@virgo-ui/vue'
-import type { PartialDeep } from 'type-fest'
+import type { PluginOptions } from '@virgo-ui/vue'
+import { components as VirgoComponents, composables as VirgoComposables } from '@virgo-ui/vue'
+import type { PresetVirgoOptions } from '@virgo-ui/theme-base'
+import {presetVirgo,presetIconExtraProperties} from '@virgo-ui/theme-base'
+/*import type { PartialDeep } from 'type-fest'*/
 
 import type { UnocssNuxtOptions } from '@unocss/nuxt'
 
+// eslint-disable-next-line import/no-unresolved
 import { name, version } from '../package.json'
 
 const configKey = 'virgo'
@@ -17,20 +18,21 @@ const configKey = 'virgo'
 /** Nuxt Module Options */
 // TODO: (types) We don't get nested autocompletion for options
 export interface ModuleOptions {
+
 	/**
 	 * Import Virgo Preset Theme Default
 	 * When enabled, it will automatically set up the default theme preset for Virgo and Uno.
 	 *
 	 * @default true
 	 */
-	presetThemeDefault?: PresetThemeDefaultOptions | boolean
+	applyDefaultVirgoPreset?: boolean
 
 	/**
 	 * Options for Virgo Preset
 	 */
 	presetVirgoOptions?: PresetVirgoOptions
 
-	/**
+	/*/!**
 	 * Virgo Vue Initial Theme | Source npm pkg: `@virgo-ui/vue
 	 * You can pass in your own initial theme to override the default theme.
 	 *
@@ -38,10 +40,10 @@ export interface ModuleOptions {
 	 * The default theme for `initialTheme` is `light`. You can also make it `dark` by setting it to `dark`.
 	 *
 	 * @default 'light'
-	 */
+	 *!/
 	initialTheme?: PluginOptions['initialTheme']
 
-	/**
+	/!**
 	 * Virgo Vue Themes | Source npm pkg: `@virgo-vue/ui`
 	 * You can pass in your own themes to override the default themes.
 	 *
@@ -74,19 +76,19 @@ export interface ModuleOptions {
 	 *   },
 	 * }
 	 * ```
-	 */
-	themes?: PartialDeep<PluginOptions['themes']>
+	 *!/
+	themes?: PartialDeep<PluginOptions['themes']>*/
 
 	componentAliases?: PluginOptions['componentAliases']
 
 	classes?: PluginOptions['classes']
 
-	propsDefaults?: PluginOptions['propsDefaults']
+	defaultProps?: PluginOptions['defaultProps']
 }
 
 export default defineNuxtModule<ModuleOptions>({
 	defaults: {
-		presetThemeDefault: true
+		applyDefaultVirgoPreset: true
 	},
 	meta: {
 		name,
@@ -126,9 +128,6 @@ export default defineNuxtModule<ModuleOptions>({
 		nuxt.options.unocss.presets = [
 			...(nuxt.options.unocss.presets || []), // Don't override existing presets.
 			presetUno(),
-
-			// Virgo Preset
-			presetVirgo(opts.presetVirgoOptions)
 		]
 
 		/*
@@ -136,9 +135,9 @@ export default defineNuxtModule<ModuleOptions>({
 
       Inject preset theme default into the unocss options if isn't disabled.
     */
-		const isPresetThemeDefaultEnabled = opts.presetThemeDefault !== false
+		const isPresetThemeDefaultEnabled = opts.applyDefaultVirgoPreset !== false
 		if (isPresetThemeDefaultEnabled) {
-			nuxt.options.unocss.presets.push(presetThemeDefault(typeof opts.presetThemeDefault === 'object' ? opts.presetThemeDefault : undefined))
+			nuxt.options.unocss.presets.push(presetVirgo())
 		}
 
 		/*
@@ -163,11 +162,12 @@ export default defineNuxtModule<ModuleOptions>({
 
 		// Add inline plugin template for Virgo
 		const pluginOptions = {
-			initialTheme: opts.initialTheme,
-			themes: opts.themes,
+			/*initialTheme: opts.initialTheme,
+			themes: opts.themes,*/
 
 			// componentAliases: opts.componentAliases || {},
-			propsDefaults: opts.propsDefaults
+			defaultProps: opts.defaultProps,
+			classes: opts.classes
 		}
 
 		addPluginTemplate({
@@ -216,15 +216,13 @@ export default defineNuxtModule<ModuleOptions>({
           })`
 				]
 
-				if (isPresetThemeDefaultEnabled) lines.unshift("import '@virgo-ui/preset-theme-default/dist/style.css'")
-
 				lines.unshift("import '@virgo-ui/vue/dist/style.css'")
 
 				return lines.join('\n')
 			}
 		})
 
-		Object.keys(VirgoComponents).forEach((name) => {
+		Object.keys(VirgoComponents).forEach(name => {
 			addComponent({
 				name,
 				export: name,
@@ -236,8 +234,8 @@ export default defineNuxtModule<ModuleOptions>({
 		const composablesToExclude = ['useProp']
 
 		Object.keys(VirgoComposables)
-			.filter((key) => key.includes('use') && !composablesToExclude.includes(key))
-			.forEach((name) => {
+			.filter(key => key.includes('use') && !composablesToExclude.includes(key))
+			.forEach(name => {
 				addImports({
 					name,
 					from: '@virgo-ui/vue'
@@ -256,7 +254,7 @@ export default defineNuxtModule<ModuleOptions>({
 		})
 
 		// Fixes auto-imports for Virgo Composables
-		extendViteConfig((config) => {
+		extendViteConfig(config => {
 			config.optimizeDeps = config.optimizeDeps || {}
 			config.optimizeDeps.include = config.optimizeDeps.include || []
 			config.optimizeDeps.include.push('@virgo-ui/vue')

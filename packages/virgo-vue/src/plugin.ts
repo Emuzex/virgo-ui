@@ -1,93 +1,85 @@
 import { defu } from 'defu'
 import type { PartialDeep } from 'type-fest'
-import type { App } from 'vue'
-import { defineComponent } from 'vue'
+import type {
+	App,
+	AllowedComponentProps,
+	Component,
+	VNodeProps
+} from 'vue'
+import {
+	defineComponent,
+	h
+} from 'vue'
 import type { PluginOptionDefaults } from './plugin-defaults'
 import * as components from '@/components'
 import { useVirgo } from '@/composables/use-virgo'
-import { useConfiguration } from '@/composables/use-configuration'
 import { useZIndex } from '@/composables'
-import { VIRGO_CLASSES, VIRGO_CONFIG, VIRGO_PROPS_DEFAULTS } from '@/symbols'
+import { VIRGO_CLASSES, VIRGO_CONFIG, VIRGO_DEFAULT_PROPS } from '@/symbols'
 import * as ComponentsConfig from '@/components/configs'
 
-export type ThemeColors = 'primary' | 'success' | 'info' | 'warning' | 'danger'
-export type DefaultThemes = 'light' | 'dark'
-
 export interface ComponentsClasses {
-	tooltip: ComponentsConfig.tooltipClasses
-	floating: ComponentsConfig.floatingClasses
+	VirgoButton: Record<ComponentsConfig.virgoButtonClassesValidKeys, ComponentClass<typeof components.VirgoButton>>;
+	BaseInput: Record<ComponentsConfig.baseInputClassesValidKeys, ComponentClass<typeof components.BaseInput>>;
+	Tooltip: Record<ComponentsConfig.tooltipClassesValidKeys, ComponentClass<typeof components.Tooltip>>;
+	VirgoInput: Record<ComponentsConfig.virgoInputClassesValidKeys, ComponentClass<typeof components.VirgoInput>>;
+
+	// Floating: Record<ComponentsConfig.floatingClassesValidKeys, ComponentClass<typeof components.Floating>>; Not configurable yet
 }
 
 export const defaultClasses = {
-	tooltip: ComponentsConfig.tooltipConfig.classes,
-	floating: ComponentsConfig.floatingConfig.classes
+	BaseInput: ComponentsConfig.baseInputClasses,
+	VirgoButton: ComponentsConfig.virgoButtonClasses,
+	Tooltip: ComponentsConfig.tooltipClasses,
+	VirgoInput: ComponentsConfig.virgoInputClasses
+
+	// Floating: ComponentsConfig.floatingConfig, Not configurable yet
 }
 
-export interface ThemeOptions {
-	class: string
-	colors: Record<ThemeColors, string>
-	cssVars: Record<string, string>
-}
+export type ClassGenerator<T> = (ctx: T) => VueClassBinding;
 
-export type ConfigThemes = Record<DefaultThemes, ThemeOptions>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type ComponentProps<C extends Component> = C extends new (...args: any) => any
+	? Omit<
+		InstanceType<C>['$props'],
+		keyof VNodeProps | keyof AllowedComponentProps
+	>
+	: never;
+
+export type VueClassBinding = string | Record<string, unknown> | Array<Record<string, unknown> | string>;
+
+export type NormalizedVariant = Record<string, boolean>;
+
+export type configFunction<T> = (params: Omit<T, 'variant'> & { variant?: NormalizedVariant }) => VueClassBinding;
+
+export type ComponentClasses<T> = Record<string, configFunction<T> | string>
+
+export type ToNormalizedVariant<T> = Omit<T, 'variant'> & {
+	variant?: NormalizedVariant;
+};
+
+export type ComponentClass<C extends Component> =
+	| VueClassBinding
+	| ClassGenerator<ToNormalizedVariant<ComponentProps<C>>>;
 
 export interface PluginOptions {
 	registerComponents: boolean
-	initialTheme: keyof ConfigThemes
 	classes: PartialDeep<ComponentsClasses>
-	themes: ConfigThemes
 	componentAliases: Record<string, any>
-	propsDefaults: PartialDeep<PluginOptionDefaults>
+	defaultProps: PartialDeep<PluginOptionDefaults>
 	baseZIndex: number
 }
 
-// ℹ️ We are exporting this so that we can use it in tests
 export const defaultBaseZIndex = 2000
 
 const configDefaults: PluginOptions = {
 	registerComponents: true,
-	initialTheme: 'light',
-	themes: {
-		light: {
-			class: '',
-			colors: {
-				primary: '265, 97.7%, 66.3%',
-				success: '94.5, 100%, 39.6%',
-				info: '200.1, 100%, 54.3%',
-				warning: '42.4, 100%, 50%',
-				danger: '358.3, 100%, 64.9%'
-			},
-			cssVars: {
-				'body-color': 'hsla(var(--a-base-c), 0.68)',
-				'body-bg-c': '0,4.8%,95.9%',
-
-				// ℹ️ Used for background on body like select options, card, etc
-				'surface-c': '0, 0%, 100%'
-			}
-		},
-		dark: {
-			class: 'dark',
-			colors: {
-				primary: '261, 73%, 66.3%',
-				success: '94.5, 73%, 39.6%',
-				info: '200.1, 73%, 54.3%',
-				warning: '42.4, 73%, 50%',
-				danger: '358.3, 73%, 64.9%'
-			},
-			cssVars: {
-				'body-color': 'hsla(var(--a-base-c), 0.68)',
-				'body-bg-c': 'var(--a-primary-hue), 15%, 5%',
-				'surface-c': 'var(--a-primary-hue), 7%, 10%'
-			}
-		}
-	},
 	classes: defaultClasses,
 	componentAliases: {},
-	propsDefaults: {},
+	defaultProps: {},
 	baseZIndex: defaultBaseZIndex
 }
 
-const registerComponents = (app: App, config: PluginOptions, components: Record<string, any>) => {
+const registerComponents = (app: App, components: Record<string, any>) => {
 	for (const prop in components) {
 		const component = components[prop]
 		app.component(component?.name, component)
@@ -102,20 +94,22 @@ const handleComponentAliases = (app: App, config: PluginOptions) => {
 			defineComponent({
 				...baseComponent,
 				name: aliasComponentName,
+
 				// TODO: (types) Why we have to use ts-expect-error here?
 				// @ts-expect-error: TS/Vue unable to get types correctly
 				setup(props, ctx) {
 					const {
 						props: modifiedProps,
-						defaultsClass,
-						defaultsStyle,
-						defaultsAttrs
-					} = useConfiguration(props)
+						inlineStyle,
+						attributes,
+						classList
+					} = useVirgo(props)
+
 					return () => h(baseComponent, {
 						...modifiedProps,
-						defaultsClass,
-						defaultsStyle,
-						defaultsAttrs
+						inlineStyle,
+						attributes,
+						classList
 					}, ctx.slots)
 				}
 			})
@@ -123,20 +117,23 @@ const handleComponentAliases = (app: App, config: PluginOptions) => {
 	}
 }
 
+export const defineVirgoConfig = (options: PartialDeep<PluginOptions>) : PartialDeep<PluginOptions> => {
+	return options
+}
+
 export const plugin = {
 	install(app: App, options: PartialDeep<PluginOptions> = {}) {
 		const config: PluginOptions = defu(options, configDefaults)
 
 		if (config.registerComponents) {
-			registerComponents(app, config, components)
+			registerComponents(app, components)
 		}
 		handleComponentAliases(app, config)
 
 		app.provide(VIRGO_CONFIG, config)
-		app.provide(VIRGO_PROPS_DEFAULTS, config.propsDefaults)
+		app.provide(VIRGO_DEFAULT_PROPS, config.defaultProps)
 		app.provide(VIRGO_CLASSES, config.classes)
 
-		useVirgo({ initialTheme: config.initialTheme, themes: config.themes })
 		useZIndex(config.baseZIndex, app)
 	}
 }
