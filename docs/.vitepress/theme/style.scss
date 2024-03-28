@@ -48,7 +48,6 @@ h6 {
 	animation-duration: 0.35s;
 }
 
-// Set default border-color for `hr` element for color scheme compatibility
 hr {
 	border-color: hsla(var(--virgo-base-color),var(--virgo-border-opacity))
 }
@@ -79,7 +78,8 @@ select:-webkit-autofill:focus {
 
 /* Styles adjusting VitePress according to theme */
 :root {
-
+	--virgo-base-color: var(--virgo-primary-hue), 10%, 20%;
+	--virgo-tooltip-bg-color: 0,0%,8%;
 	/* Background colors */
 	--vp-background: hsl(var(--virgo-body-bg-color));
 	--vp-c-bg: var(--vp-background);
@@ -128,10 +128,10 @@ select:-webkit-autofill:focus {
 	--vp-c-brand: hsl(var(--virgo-primary-hue), 73%, 66%);
 	--vp-c-brand-dark: hsl(var(--virgo-primary-hue), 73%, 60%);
 	--vp-c-brand-darker: hsl(var(--virgo-primary-hue), 73%, 55%);
-
+	--virgo-base-color: var(--virgo-primary-hue), 0%, 94%;
+	--virgo-tooltip-bg-color: 0,0%,25%;
 	--vp-code-scrollbar-thumb-bg: hsl(0, 0%, 25%);
 }
-
 /* /**
  * Colors
  * -------------------------------------------------------------------------- */

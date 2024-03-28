@@ -4,6 +4,15 @@ import inputApi from '@virgo-ui/vue/component-meta/virgo-input.json';
 
 # Input
 
+## Default classes
+Base Input (wrapper of Virgo Input)
+
+<<< @/../packages/virgo-vue/src/components/base-input/config.ts
+
+Virgo Input
+
+<<< @/../packages/virgo-vue/src/components/input/config.ts
+
 <!-- 👉 Basic -->
 ## Basic
 

@@ -4,6 +4,10 @@ import buttonApi from '@virgo-ui/vue/component-meta/virgo-button.json';
 
 # Button
 
+## Default classes
+
+<<< @/../packages/virgo-vue/src/components/button/config.ts
+
 ## Icons
 
 You can use `icon` prop to render icon in button.

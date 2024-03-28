@@ -4,7 +4,9 @@ import baseInputApi from '@virgo-ui/vue/component-meta/base-input.json';
 
 # Base Input
 
-Stay tuned...
+## Default classes
+
+<<< @/../packages/virgo-vue/src/components/base-input/config.ts
 
 ## Label
 

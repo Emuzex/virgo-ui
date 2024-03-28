@@ -12,7 +12,6 @@ defineOptions({
 })
 
 const { props, inlineStyle, attributes, classList } = useVirgo(_props)
-console.log('VirgoButton', { props, inlineStyle, attributes, classList })
 </script>
 
 <template>
@@ -21,23 +20,19 @@ console.log('VirgoButton', { props, inlineStyle, attributes, classList })
 		:tabindex="props.disabled ? -1 : 0"
 		:style="inlineStyle"
 		type="button"
-		:class="[
-			classList.buttonBase,
-			props.iconOnly ? classList.buttonIconOnly : classList.button,
-			props.disabled && classList.disabled,
-		]"
+		:class="[classList.button, classList?.inheritedClass]"
 		:disabled="props.disabled ? true : undefined"
 	>
 		<!-- ℹ️ Don't render spinner if not using loading -->
 		<div
 			v-if="typeof props.loading === 'boolean'"
-			:class="[classList.loader,!props.loading && classList.loading]"
+			:class="classList.loader"
 		>
 			Loading
 		</div>
 		<div
 			data-no-reference
-			:class="[classList.content,props.loading && classList.loading]"
+			:class="classList.content"
 		>
 			<i
 				v-if="props.icon"

@@ -4,11 +4,10 @@ import { defu } from 'defu'
 import * as ComponentsConfig from '../../virgo-vue/src/components/configs'
 
 export const defaultClasses = {
-	BaseInput: ComponentsConfig.baseInputConfig.classes,
-	VirgoButton: ComponentsConfig.virgoButtonConfig.classes,
-	Tooltip: ComponentsConfig.tooltipConfig.classes,
-	Floating: ComponentsConfig.floatingConfig.classes,
-	VirgoInput: ComponentsConfig.virgoInputConfig.classes
+	BaseInput: ComponentsConfig.baseInputClasses,
+	VirgoButton: ComponentsConfig.virgoButtonClasses,
+	Tooltip: ComponentsConfig.tooltipClasses,
+	VirgoInput: ComponentsConfig.virgoInputClasses
 }
 
 const configDefaults: PartialDeep<PluginOptions> = {

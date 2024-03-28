@@ -5,24 +5,6 @@ from a multitude of CSS options. Of course, we won't leave you hanging here
 either; the `@virgo-ui/vue` package already includes a basic setup that you
 can customize to your liking by configuring the plugin.
 
-<br>
-
-#### Default configs
-:::details Base-Input
-<<< @/../packages/virgo-vue/src/components/base-input/config.ts
-:::
-:::details Button
-<<< @/../packages/virgo-vue/src/components/button/config.ts
-:::
-:::details Tooltip
-<<< @/../packages/virgo-vue/src/components/tooltip/config.ts
-:::
-:::details Input
-<<< @/../packages/virgo-vue/src/components/input/config.ts
-:::
-
-<br>
-
 Since we are big fan
 of UnoCSS, these base settings are written with it in mind, and a default theme has
 been created for Virgo to support these.
@@ -106,4 +88,4 @@ Here are the steps to use Virgo with UnoCSS, according to our vision.
 
 ## Craft your theme
 
-See in the [Customization](/guide/getting-started/customization.html) section how to craft your own theme.
+See in the [Configuration](/guide/getting-started/configuration.html) section how to craft your own theme.

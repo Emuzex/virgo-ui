@@ -1,12 +1,12 @@
 import { objectKeys, objectPick } from '@antfu/utils'
 import { deepmergeCustom } from 'deepmerge-ts'
 import type { Ref, StyleValue } from 'vue'
-import { toValue } from 'vue'
-import { VIRGO_CLASSES, VIRGO_PROPS_DEFAULTS } from '@/symbols'
+import { normalizeClass, toValue } from 'vue'
+import { VIRGO_CLASSES, VIRGO_DEFAULT_PROPS } from '@/symbols'
 import type { PluginOptionDefaults } from '@/plugin-defaults'
-import type { PluginOptions } from '@/plugin'
+import type { PluginOptions, ToNormalizedVariant } from '@/plugin'
 
-export const mergePropsDefaults = deepmergeCustom({
+export const mergeDefaultProps = deepmergeCustom({
 	mergeArrays: false
 })
 
@@ -24,13 +24,13 @@ export function useVirgo<Props extends Record<string, unknown>>(definitionProps:
 	if (!_componentName) throw new Error('Unable to identify the component name. Please define component name or use the `componentName` parameter while using `useVirgo` composable.')
 
 	// Get defaults
-	const propsDefaults = inject(VIRGO_PROPS_DEFAULTS, {})
+	const defaultProps = inject(VIRGO_DEFAULT_PROPS, {})
 
 	// New defaults
-	const newPropsDefaults = ref({}) as Ref<PluginOptions['propsDefaults']>
+	const newDefaultProps = ref({}) as Ref<PluginOptions['defaultProps']>
 
 	// ℹ️ Pass new reactive value to avoid updates in upward tree
-	provide(VIRGO_PROPS_DEFAULTS, newPropsDefaults)
+	provide(VIRGO_DEFAULT_PROPS, newDefaultProps)
 
 	// Return Values
 	const propsRef = ref() as Ref<ReturnType<Props>['props']>
@@ -38,12 +38,14 @@ export function useVirgo<Props extends Record<string, unknown>>(definitionProps:
 	const attributes = ref() as ReturnType<Props>['attributes']
 
 	const virgoClasses = toValue(inject(VIRGO_CLASSES, {}))
-	const classList = ref() as ReturnType<Props>['classList']
-	classList.value = virgoClasses[_componentName]
+	const classList = ref({}) as ReturnType<Props>['classList']
+	const unCompiledClassList = ref({}) as ReturnType<Props>['classList']
+	unCompiledClassList.value = virgoClasses[_componentName]
+
 	const calculateProps = () => {
-		const _propsDefaults = toValue(propsDefaults)
-		const { class: _class, style, attrs, ...restProps } = _propsDefaults[_componentName] || {}
-		classList.value.inheritedClass = _class
+		const _defaultProps = toValue(defaultProps)
+		const { class: _class, style, attrs, ...restProps } = _defaultProps[_componentName] || {}
+		if(_class) classList.value.inheritedClass = _class
 		inlineStyle.value = style
 		attributes.value = attrs
 
@@ -58,24 +60,70 @@ export function useVirgo<Props extends Record<string, unknown>>(definitionProps:
 		})
 
 		// Provide subProps to the nested component
-		// newDefaults.value = mergePropsDefaults(_propsDefaults, otherProps)
+		// newDefaults.value = mergeDefaultProps(_defaultProps, otherProps)
 		/**
 		 * ℹ️ This line optimizes object by removing nested component's defaults from the current component tree
 		 * Assume we have { card: { button: { color: 'info' } } } then below line will move 'button' on top and remove it from children of 'card'
-		 * To see the difference log the result of `mergePropsDefaults(...)` of below line and comment line above
+		 * To see the difference log the result of `mergeDefaultProps(...)` of below line and comment line above
 		 */
-		newPropsDefaults.value = mergePropsDefaults({ ..._propsDefaults, [_componentName]: componentProps }, otherProps)
+		newDefaultProps.value = mergeDefaultProps({ ..._defaultProps, [_componentName]: componentProps }, otherProps)
 
 		const explicitPropsNames = objectKeys(vm?.vnode.props || {}) as unknown as (keyof Props)[]
 		const explicitProps = objectPick(definitionProps, explicitPropsNames)
 
-		propsRef.value = mergePropsDefaults(definitionProps, componentProps, explicitProps) as Props
+		propsRef.value = mergeDefaultProps(definitionProps, componentProps, explicitProps) as Props
 	}
 
-	watch([() => definitionProps, () => toValue(propsDefaults)], calculateProps, {
-		deep: true,
-		immediate: true
-	})
+	const generateClasses = () => {
+		const compiledClasses: Record<string, unknown> = {}
+
+		for (const key in unCompiledClassList.value) {
+			const currentConfig = unCompiledClassList.value[key]
+			let compiledClass = undefined
+
+			if (currentConfig && !propsRef.value.bare) {
+				if (typeof currentConfig === 'function') {
+					const configClassCtx: ToNormalizedVariant<Props> = Object.assign({}, propsRef.value, {
+						variant: undefined
+					})
+
+					if (propsRef.value.variant) {
+						const normalizedVariants = normalizeClass(propsRef.value.variant)
+							.split(' ')
+							.reduce((acc, v) => {
+								acc[v] = true
+
+								return acc
+							}, {} as Record<string, boolean>)
+
+						configClassCtx.variant = new Proxy(normalizedVariants, {
+							get: (target, prop: string): boolean => {
+								return target[prop] || false
+							}
+						})
+					}
+
+					compiledClass = currentConfig(configClassCtx)
+				} else {
+					compiledClass = currentConfig
+				}
+				compiledClasses[key] = compiledClass
+			}
+		}
+		classList.value = {...classList.value, ...compiledClasses }
+		console.log(classList.value)
+	}
+
+
+	watch([() => definitionProps, () => toValue(defaultProps)], () => {
+			calculateProps()
+			generateClasses()
+		},
+		{
+			deep: true,
+			immediate: true
+		})
+
 
 	return {
 		props: toReactive(propsRef),

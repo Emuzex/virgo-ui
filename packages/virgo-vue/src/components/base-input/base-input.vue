@@ -47,6 +47,7 @@ defineExpose({
 		ref="refRoot"
 		:class="[
 			classList.root,
+			classList?.inheritedClass,
 			props.disabled && classList.disabled,
 			(props.disabled || props.readonly) && classList.disabledOrReadonly,
 			!(props.disabled || props.readonly) && classList.interactive,

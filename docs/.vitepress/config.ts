@@ -38,7 +38,7 @@ export default defineConfig({
 					items: [
 						{ text: 'Introduction', link: '/guide/getting-started/' },
 						{ text: 'Installation', link: '/guide/getting-started/installation' },
-						{ text: 'Customization', link: '/guide/getting-started/customization' },
+						{ text: 'Configuration', link: '/guide/getting-started/configuration' },
 					]
 				},
 				{

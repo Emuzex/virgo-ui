@@ -4,6 +4,10 @@ import tooltipApi from '@virgo-ui/vue/component-meta/tooltip.json';
 
 # Tooltip <new-badge/>
 
+## Default Classes
+
+<<< @/../packages/virgo-vue/src/components/tooltip/config.ts
+
 <!-- 👉 Basic -->
 ## Basic
 

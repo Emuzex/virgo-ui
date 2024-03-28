@@ -10,8 +10,8 @@ export * from './composables'
 export * as composables from './composables'
 
 // Plugin
-export { plugin as virgo } from './plugin'
-export type { PluginOptions/*, ThemeColors, ThemeOptions as ThemeOption */} from './plugin'
+export { plugin as virgo, defineVirgoConfig } from './plugin'
+export type { PluginOptions } from './plugin'
 
 // Other
 export * from './symbols'

@@ -83,7 +83,7 @@ export interface ModuleOptions {
 
 	classes?: PluginOptions['classes']
 
-	propsDefaults?: PluginOptions['propsDefaults']
+	defaultProps?: PluginOptions['defaultProps']
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -166,7 +166,7 @@ export default defineNuxtModule<ModuleOptions>({
 			themes: opts.themes,*/
 
 			// componentAliases: opts.componentAliases || {},
-			propsDefaults: opts.propsDefaults,
+			defaultProps: opts.defaultProps,
 			classes: opts.classes
 		}
 
